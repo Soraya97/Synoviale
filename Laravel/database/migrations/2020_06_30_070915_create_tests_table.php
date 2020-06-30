@@ -15,6 +15,15 @@ class CreateTestsTable extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
+            $table->integer('number');
+            $table->integer('startTime');
+            $table->integer('endTime');
+            $table->string('feedback');
+            $table->foreignId('testday_id');
+            $table->foreignId('edition_id');
+            $table->foreignId('event_id');
+            $table->foreignId('product_id');
+            $table->foreignId('client_id');
             $table->timestamps();
         });
     }

@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 
 Route::resource('Address', 'AddressController');
-Route::resource('AddressType', 'AddressController');
+Route::resource('Addresstype', 'AddressController');
+Route::resource('Badge', 'BadgeController');
+Route::resource('Bike', 'BikeController');
+Route::resource('Brand', 'BrandController');

@@ -15,6 +15,10 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
+            $table->enum('description', ['Direction','Informatique','Accueil','Bar','Cuisine','Autre']);
+            $table->foreignId('event_id');
+            $table->foreignId('edition_id');
+            $table->foreignId('staff_id');
             $table->timestamps();
         });
     }

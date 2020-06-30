@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\AddressType;
+use App\Addresstype;
 use Illuminate\Http\Request;
 
-class AddressTypeController extends Controller {
-
+class AddresstypeController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index()
+    {
         //
-        $addressTypes = AddressType::all();
-
-        return view('addressType', compact('addressTypes'));
     }
 
     /**
@@ -24,9 +22,9 @@ class AddressTypeController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         //
-        return view('addAddressType');
     }
 
     /**
@@ -35,36 +33,30 @@ class AddressTypeController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         //
-        $data = $request->validated([
-            'description' => 'required',
-            'company_id' => 'required',
-            'address_id' => 'required',
-        ]);
-
-        Product::create($data);
-
-        return redirect('product');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\AddressType  $addressType
+     * @param  \App\Addresstype  $addresstype
      * @return \Illuminate\Http\Response
      */
-    public function show(AddressType $addressType) {
+    public function show(Addresstype $addresstype)
+    {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\AddressType  $addressType
+     * @param  \App\Addresstype  $addresstype
      * @return \Illuminate\Http\Response
      */
-    public function edit(AddressType $addressType) {
+    public function edit(Addresstype $addresstype)
+    {
         //
     }
 
@@ -72,24 +64,22 @@ class AddressTypeController extends Controller {
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AddressType  $addressType
+     * @param  \App\Addresstype  $addresstype
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AddressType $addressType) {
+    public function update(Request $request, Addresstype $addresstype)
+    {
         //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\AddressType  $addressType
+     * @param  \App\Addresstype  $addresstype
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AddressType $addressType) {
+    public function destroy(Addresstype $addresstype)
+    {
         //
-        $addressType->delete();
-
-        return redirect('addressType');
     }
-
 }

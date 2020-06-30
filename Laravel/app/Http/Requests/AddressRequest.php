@@ -22,7 +22,6 @@ class AddressRequest extends FormRequest {
      */
     public function rules() {
         return [
-            //
             'number' => 'required',
             'street1' => 'required |min:3|max:100',
             'street2' => 'min:3|max:100',

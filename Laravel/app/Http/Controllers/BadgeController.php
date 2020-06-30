@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Badge;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\BadgeRequest;
+
 class BadgeController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class BadgeController extends Controller
      */
     public function index()
     {
-        //
+        $badges = Badge::all();
+
+        return view('badge',compact('badges'));
     }
 
     /**
@@ -24,7 +28,7 @@ class BadgeController extends Controller
      */
     public function create()
     {
-        //
+        return view('addbadge');
     }
 
     /**
@@ -33,9 +37,13 @@ class BadgeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BadgeRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        Badge::create($data);
+
+        return view('badge');
     }
 
     /**
@@ -46,7 +54,7 @@ class BadgeController extends Controller
      */
     public function show(Badge $badge)
     {
-        //
+        return view('onlybadge',compact('badge'));
     }
 
     /**
@@ -69,7 +77,17 @@ class BadgeController extends Controller
      */
     public function update(Request $request, Badge $badge)
     {
-        //
+        $data = $request->only([
+            'number',
+            'client_id',
+            'test_day_id',
+            'edition_id',
+            'event_id'
+        ]);
+
+        $badge->update($data);
+
+        return redirect('product');
     }
 
     /**
@@ -80,6 +98,8 @@ class BadgeController extends Controller
      */
     public function destroy(Badge $badge)
     {
-        //
+        $badge->delete();
+
+        return redirect('badge');
     }
 }

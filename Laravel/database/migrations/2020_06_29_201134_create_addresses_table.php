@@ -31,7 +31,7 @@ class CreateAddressesTable extends Migration {
                     ->onUpdate('restrict');
             $table->foreignId('addressType_id')
                     ->references('id')
-                    ->on('addressTypes')
+                    ->on('address_types')
                     ->onDelete('restrict')
                     ->onUpdate('restrict');
 

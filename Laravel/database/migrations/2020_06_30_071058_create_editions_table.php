@@ -15,6 +15,11 @@ class CreateEditionsTable extends Migration
     {
         Schema::create('editions', function (Blueprint $table) {
             $table->id();
+            $table->integer('number')->unique();
+            $table->string('place');
+            $table->string('startDate');
+            $table->string('endDate');
+            $table->foreignId('event_id');
             $table->timestamps();
         });
     }

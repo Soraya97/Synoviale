@@ -15,6 +15,11 @@ class CreateBikesTable extends Migration
     {
         Schema::create('bikes', function (Blueprint $table) {
             $table->id();
+            $table->string("frameSize")->nullable();
+            $table->string("frameUnit")->nullable();
+            $table->string("rimSize")->nullable();
+            $table->string("rimUnit")->nullable();
+            $table->foreignId('product_id');
             $table->timestamps();
         });
     }

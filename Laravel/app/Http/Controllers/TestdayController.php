@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\TestDay;
+use App\Testday;
 use Illuminate\Http\Request;
 
-class TestDayController extends Controller
+class TestdayController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TestDayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\TestDay  $testDay
+     * @param  \App\Testday  $testday
      * @return \Illuminate\Http\Response
      */
-    public function show(TestDay $testDay)
+    public function show(Testday $testday)
     {
         //
     }
@@ -52,10 +52,10 @@ class TestDayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\TestDay  $testDay
+     * @param  \App\Testday  $testday
      * @return \Illuminate\Http\Response
      */
-    public function edit(TestDay $testDay)
+    public function edit(Testday $testday)
     {
         //
     }
@@ -64,10 +64,10 @@ class TestDayController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TestDay  $testDay
+     * @param  \App\Testday  $testday
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TestDay $testDay)
+    public function update(Request $request, Testday $testday)
     {
         //
     }
@@ -75,10 +75,10 @@ class TestDayController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\TestDay  $testDay
+     * @param  \App\Testday  $testday
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TestDay $testDay)
+    public function destroy(Testday $testday)
     {
         //
     }
