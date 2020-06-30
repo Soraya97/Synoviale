@@ -14,7 +14,9 @@ class AddresstypeController extends Controller
      */
     public function index()
     {
-        //
+        $addresstypes = Addresstype::all();
+
+        return view('addresstype', compact('adresstypes'));
     }
 
     /**
@@ -24,7 +26,7 @@ class AddresstypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('addadresstype');
     }
 
     /**
@@ -35,7 +37,15 @@ class AddresstypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validated([
+            'description' => 'required',
+            'company_id' => 'required',
+            'address_id' => 'required',
+        ]);
+
+        Addresstype::create($data);
+
+        return redirect('addresstype');
     }
 
     /**
@@ -46,7 +56,7 @@ class AddresstypeController extends Controller
      */
     public function show(Addresstype $addresstype)
     {
-        //
+        return view('onlyaddresstype');
     }
 
     /**
@@ -80,6 +90,8 @@ class AddresstypeController extends Controller
      */
     public function destroy(Addresstype $addresstype)
     {
-        //
+        $addresstype->delete();
+
+        return redirect('adresstype');
     }
 }

@@ -15,6 +15,9 @@ class CreateAddresstypesTable extends Migration
     {
         Schema::create('addresstypes', function (Blueprint $table) {
             $table->id();
+            $table->string('description')->unique();    
+            $table->foreignId('company_id');
+            $table->foreignId('address_id');
             $table->timestamps();
         });
     }
