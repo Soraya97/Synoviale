@@ -14,7 +14,9 @@ class BikeController extends Controller
      */
     public function index()
     {
-        //
+        $bikes = Bike::all();
+
+        return view('bike',compact('bikes'));
     }
 
     /**
@@ -24,7 +26,7 @@ class BikeController extends Controller
      */
     public function create()
     {
-        //
+        return view('addbike');
     }
 
     /**
@@ -35,7 +37,13 @@ class BikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data =$request->validated([
+            'product_id' => 'required',
+        ]);
+
+        Bike::create($data);
+
+        return redirect('bike');
     }
 
     /**
@@ -46,7 +54,7 @@ class BikeController extends Controller
      */
     public function show(Bike $bike)
     {
-        //
+        return view('onlybike',compact('bike'));
     }
 
     /**
@@ -69,7 +77,17 @@ class BikeController extends Controller
      */
     public function update(Request $request, Bike $bike)
     {
-        //
+        $data = $request->only([
+            'framSize',
+            'framUnite',
+            'rimeSize',
+            'rimUnit',
+            'product_id'
+        ]);
+
+        $bike->update($data);
+
+        return redirect('bike');
     }
 
     /**
@@ -80,6 +98,8 @@ class BikeController extends Controller
      */
     public function destroy(Bike $bike)
     {
-        //
+        $bike->delete();
+
+        return redirect('bike');
     }
 }

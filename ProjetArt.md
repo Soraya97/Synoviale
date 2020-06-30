@@ -8,7 +8,7 @@ comment préparer le [projet](Article/preparer.md)
 
 les commandes [git](Article/git.md) les plus utiles
 
-ne pas oublier d'ajouter les dossier
+ne pas oublier d'ajouter les dossiers
 * vendor
 * node_module (avec `npm install`)
 

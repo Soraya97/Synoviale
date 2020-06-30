@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TestDaySeeder extends Seeder
+class TestdaySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +12,9 @@ class TestDaySeeder extends Seeder
     public function run()
     {
         //
-        DB::table('test_days')->delete();
+        DB::table('testdays')->delete();
 
-        DB::table('test_days')->insert([
+        DB::table('testdays')->insert([
            'date' => 'Date' . $i,
             'startHour' => 'Heure de début' . $i,
             'endHour' => 'Heure de fin' . $i,
@@ -22,6 +22,6 @@ class TestDaySeeder extends Seeder
             'edition_id' => $i,
             'badge_id' => $i,
             'test_id' =>  $i,
-        ]);
+    ]);
     }
 }

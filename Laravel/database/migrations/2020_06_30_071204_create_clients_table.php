@@ -15,6 +15,8 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->string('homeCanton')->nullable();
+            $table->foreignId('person_id');
             $table->timestamps();
         });
     }

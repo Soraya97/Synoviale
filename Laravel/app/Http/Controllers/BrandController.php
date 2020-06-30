@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Brand;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\BrandRequest;
+
 class BrandController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        $brands = Brand::all();
+
+        return view('brand',comapct('brands'));
     }
 
     /**
@@ -24,7 +28,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('addbrand');
     }
 
     /**
@@ -33,9 +37,13 @@ class BrandController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BrandRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        Brand::create($data);
+
+        return redirect('brand');
     }
 
     /**
@@ -46,7 +54,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
+        return view('onlybrand',compact('brand'));
     }
 
     /**
@@ -69,7 +77,16 @@ class BrandController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+        $data = $request->only([
+            'name',
+            'shortDescr',
+            'longDescr',
+            'compagny_id'
+        ]);
+
+        $brand->update($data);
+
+        return redirect('brand');
     }
 
     /**
@@ -80,6 +97,8 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        $brand->delete();
+
+        return redirect('brand');
     }
 }

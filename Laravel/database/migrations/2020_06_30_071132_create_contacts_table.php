@@ -15,6 +15,10 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->date('since');
+            $table->string('unitl')->nullable();
+            $table->foreignId('person_id');
+            $table->foreignId('compagny_id');
             $table->timestamps();
         });
     }
