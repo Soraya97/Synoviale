@@ -15,13 +15,13 @@ class TestdaySeeder extends Seeder
         DB::table('testdays')->delete();
 
         DB::table('testdays')->insert([
-           'date' => 'Date' . $i,
-            'startHour' => 'Heure de début' . $i,
-            'endHour' => 'Heure de fin' . $i,
-            'event_id' =>  $i,
-            'edition_id' => $i,
-            'badge_id' => $i,
-            'test_id' =>  $i,
+           'date' => 'Date' . '03.10.2020',
+            'startHour' => 'Heure de début' . '09h00',
+            'endHour' => 'Heure de fin' . '17h00',
+            'event_id' =>  '20',
+            'edition_id' => '14',
+            'badge_id' => '567',
+            'test_id' =>  '747',
     ]);
     }
 }

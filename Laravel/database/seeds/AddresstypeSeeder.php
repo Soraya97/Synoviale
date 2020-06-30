@@ -13,9 +13,9 @@ class AddresstypeSeeder extends Seeder {
         //
         DB::table('addresstypes')->delete();
         DB::table('addresstypes')->insert([
-            'description' => 'Description' . $i,
-            'company_id' => $i,
-            'address_id' => $i
+            'description' => 'Description très belle',
+            'company_id' => '0978',
+            'address_id' => '0643',
         ]);
     }
 

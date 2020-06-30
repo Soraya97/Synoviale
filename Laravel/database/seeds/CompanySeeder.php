@@ -15,11 +15,11 @@ class CompanySeeder extends Seeder
         DB::table('companies')->delete();
 
         DB::table('companies')->insert([
-           'number' => 'Nombre' . $i,
-            'name' =>  'Name' . $i,
-            'brand_id' => $i,
-            'addressType_id' => $i,
-            'contact_id' =>  $i,
+           'number' => 'Nombre' . '06',
+            'name' =>  'Name' . 'Super Sport',
+            'brand_id' => '49',
+            'addressType_id' => '34',
+            'contact_id' =>  '436',
         ]);
     }
 }

@@ -15,10 +15,10 @@ class BikeSeeder extends Seeder
         DB::table('badges')->delete();
 
         DB::table('badges')->insert([
-           'framSize' => 'Taille du cadre' . $i,
-            'framUnite' => 'Unité du cadre' . $i,
-            'rimSize' => 'Taille de la jante' .$i,
-            'rimUnit' => 'Unité de la jante' .$i,
+           'framSize' => 'Taille du cadre' . 'très grande',
+            'framUnite' => 'Unité du cadre' . '6',
+            'rimSize' => 'Taille de la jante' .'petite',
+            'rimUnit' => 'Unité de la jante' .'3',
             'product_id' =>  $i,
         ]);
     }

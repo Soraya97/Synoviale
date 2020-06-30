@@ -15,10 +15,10 @@ class BrandSeeder extends Seeder
         DB::table('brands')->delete();
 
         DB::table('brands')->insert([
-           'name' => 'Nom' . $i,
-            'shortDescr' => 'Description coutre' . $i,
-            'longDescr' => 'Description longue' . $i,
-            'company_id' => $i,
+           'name' => 'Nom' . 'Yeti',
+            'shortDescr' => 'Description coutre' . 'très sympa',
+            'longDescr' => 'Description longue' . 'très très très sympa',
+            'company_id' => '029357',
         ]);
     }
 }

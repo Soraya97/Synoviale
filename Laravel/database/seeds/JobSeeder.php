@@ -14,10 +14,10 @@ class JobSeeder extends Seeder {
         DB::table('jobs')->delete();
 
         DB::table('jobs')->insert([
-            'description' => 'Description' . $i,
-            'event_id' => $i,
-            'edition_id' => $i,
-            'staff_id' => $i,
+            'description' => 'Description' . 'Nettoyeur',
+            'event_id' => '2020',
+            'edition_id' => '14',
+            'staff_id' => '76',
         ]);
     }
 

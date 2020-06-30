@@ -15,11 +15,11 @@ class BadgeSeeder extends Seeder
         DB::table('badges')->delete();
 
         DB::table('badges')->insert([
-           'number' => 'Nombre' . $i,
-            'client_id' =>  $i,
-            'testday_id' => $i,
-            'edition_id' => $i,
-            'event_id' =>  $i,
+           'number' => '756238' ,
+            'client_id' =>  '7562381',
+            'testday_id' => '7562328',
+            'edition_id' => '7562338',
+            'event_id' =>  '7562348',
         ]);
     }
 }

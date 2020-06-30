@@ -15,14 +15,14 @@ class EditionSeeder extends Seeder
         DB::table('editions')->delete();
 
         DB::table('editions')->insert([
-           'number' => 'Nombre' . $i,
-            'place' => 'Place' . $i,
-            'startDate' => 'Date de début' . $i,
-            'endDate' => 'Date de fin' . $i,
-            'event_id' =>  $i,
-            'job_id' => $i,
-            'testday_id' => $i,
-            'brand_id' =>  $i,
+           'number' => 'Nombre' . '9458',
+            'place' => 'Place' . 'Gryon',
+            'startDate' => 'Date de début' . '02.10.2020',
+            'endDate' => 'Date de fin' . '04.10.2020',
+            'event_id' =>  '2020',
+            'job_id' => '9257',
+            'testday_id' => '03',
+            'brand_id' =>  '56',
         ]);
     }
 }

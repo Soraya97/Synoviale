@@ -29,10 +29,11 @@ class DatabaseSeeder extends Seeder {
         $this->call(ProductSeeder::class);
         $this->call(TestDaySeeder::class);
         $this->call(TestSeeder::class);
-        
-        
-        
-        
+
+        // avec les tables pivots
+        $this->call(BrandEditionSeeder::class);
+        $this->call(EditionProductionSeeder::class);
+        $this->call(JobPersonSeeder::class);
     }
 
 }

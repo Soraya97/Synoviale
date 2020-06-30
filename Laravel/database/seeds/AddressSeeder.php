@@ -13,14 +13,14 @@ class AddressSeeder extends Seeder {
         //
         DB::table('addresses')->delete();
         DB::table('addresses')->insert([
-            'number' => 'Nombre' . $i,
-            'street1' => 'Rue 1' . $i,
-            'street2' => 'Rue 2' . $i,
-            'streetNumber' => 'Numéro de rue' . $i,
-            'POBox' => 'Boîte Postale' . $i,
-            'city_id' => $i, // à vérifier
-            'person_id' =>  $i, // à vérifier
-            'addressType_id' =>  $i // à vérifier
+            'number' => '01',
+            'street1' => 'Rue des Paquis 29',
+            'street2' => 'Rue des Grison 23',
+            'streetNumber' => '8A',
+            'POBox' => 'CP324',
+            'city_id' => '384920', 
+            'person_id' =>  '0998767', 
+            'addresstype_id' =>  '302', 
         ]);
     }
 

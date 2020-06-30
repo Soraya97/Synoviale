@@ -15,10 +15,10 @@ class ClientSeeder extends Seeder
          DB::table('clients')->delete();
 
         DB::table('clients')->insert([
-           'homeCanton' => 'Canton' . $i,
-            'person_id' =>  $i,
-            'badge_id' =>  $i,
-            'test_id' =>  $i
+           'homeCanton' => 'Canton' . 'VD',
+            'person_id' =>  '942',
+            'badge_id' =>  '9385',
+            'test_id' =>  '835'
         ]);
     }
 }

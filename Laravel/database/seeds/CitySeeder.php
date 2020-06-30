@@ -15,11 +15,11 @@ class CitySeeder extends Seeder
         DB::table('cities')->delete();
 
         DB::table('cities')->insert([
-           'postalCode' => 'Code postal' . $i,
-            'name' => 'Nom' . $i,
-            'Canton' => 'Canton' . $i,
-            'country_id' =>  $i,
-            'address_id' =>  $i,
+           'postalCode' => 'Code postal' . '1008',
+            'name' => 'Nom' . 'Lausanne',
+            'Canton' => 'Canton' . 'Vaud',
+            'country_id' =>  '0041',
+            'address_id' =>  '0975645',
         ]);
     }
 }

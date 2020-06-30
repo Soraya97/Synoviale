@@ -14,14 +14,14 @@ class ProductSeeder extends Seeder {
         DB::table('products')->delete();
 
         DB::table('products')->insert([
-            'number' => 'Nombre' . $i,
-            'shortDescr' => 'Description courte' . $i,
-            'longDescr' => 'Description longue' . $i,
-            'distinctiveSign' => 'Signe distinctif' . $i,
-            'lienWeb' => 'Lien Web' . $i,
-            'brand_id' => $i,
-            'test_id' => $i,
-            'bike_id' => $i,
+            'number' => 'Nombre' . '356',
+            'shortDescr' => 'Description courte' . 'courte courte',
+            'longDescr' => 'Description longue' . 'longue longue',
+            'distinctiveSign' => 'Signe distinctif' . 'HS',
+            'lienWeb' => 'Lien Web' . 'hhttps://www.google.com',
+            'brand_id' => '345',
+            'test_id' => '457',
+            'bike_id' => '567',
         ]);
     }
 
