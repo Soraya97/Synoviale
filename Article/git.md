@@ -43,3 +43,7 @@ ou
  ## interface graphique
 
     gitk
+
+## Autre
+
+voici un [lien]('https://www.hostinger.fr/tutoriels/commandes-git/') pour plus de commande 
