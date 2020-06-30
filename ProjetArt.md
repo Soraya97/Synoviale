@@ -1,12 +1,23 @@
 # Guide line Dev
 
-## liste des tables
-
-[les tables](Aricle/tables.md)
-
 ## préparation projet
 
 comment préparer le [projet](Article/preparer.md)
+
+## comande git
+
+les commandes [git](Article/git.md) les plus utiles
+
+ne pas oublier d'ajouter les dossier
+* vendor
+* node_module (avec `npm install`)
+
+et le fichier `.env` avec les infos pour la base de données local
+
+## liste des tables
+
+[les tables](Article/tables.md)
+
 
 ## code de développement
 
