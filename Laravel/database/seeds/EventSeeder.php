@@ -12,5 +12,11 @@ class EventSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('events')->delete();
+
+        DB::table('events')->insert([
+           'name' => 'Nom' . $i,
+            'edition_id' => $i,
+        ]);
     }
 }

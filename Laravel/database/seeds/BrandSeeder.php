@@ -12,5 +12,13 @@ class BrandSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('brands')->delete();
+
+        DB::table('brands')->insert([
+           'name' => 'Nom' . $i,
+            'shortDescr' => 'Description coutre' . $i,
+            'longDescr' => 'Description longue' . $i,
+            'company_id' => $i,
+        ]);
     }
 }

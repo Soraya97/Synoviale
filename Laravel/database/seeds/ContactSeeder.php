@@ -12,5 +12,14 @@ class ContactSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('contacts')->delete();
+
+        DB::table('contacts')->insert([
+           'since' => 'Depuis' . $i,
+            'until' => 'Jusqu à'. $i,
+            'person_id' => $i,
+            'company_id' => $i,
+        ]);
+        
     }
 }

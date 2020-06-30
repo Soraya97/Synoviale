@@ -12,5 +12,14 @@ class BadgeSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('badges')->delete();
+
+        DB::table('badges')->insert([
+           'number' => 'Nombre' . $i,
+            'client_id' =>  $i,
+            'testday_id' => $i,
+            'edition_id' => $i,
+            'event_id' =>  $i,
+        ]);
     }
 }
