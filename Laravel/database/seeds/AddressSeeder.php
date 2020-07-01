@@ -14,8 +14,8 @@ class AddressSeeder extends Seeder {
         DB::table('addresses')->delete();
         DB::table('addresses')->insert([
             'number' => '01',
-            'street1' => 'Rue des Paquis 29',
-            'street2' => 'Rue des Grison 23',
+            'street1' => 'Rue des Paquis',
+            'street2' => 'Rue des Grison',
             'streetNumber' => '8A',
             'POBox' => 'CP324',
             'city_id' => '384920', 

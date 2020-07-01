@@ -73,6 +73,18 @@ class AddressController extends Controller {
      */
     public function update(Request $request, Address $address) {
         //
+        $data = $request->only([
+            'number',
+            'street1',
+            'street2',
+            'streetNumber',
+            'POBox',
+            'city_id',
+        ]);
+
+        $address->update($data);
+
+        return redirect('address');
     }
 
     /**

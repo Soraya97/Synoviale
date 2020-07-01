@@ -82,6 +82,15 @@ class AddresstypeController extends Controller
     public function update(Request $request, Addresstype $addresstype)
     {
         //
+        $data = $request->only([
+            'description',
+            'company_id',
+            'address_id',
+        ]);
+
+        $address->update($data);
+
+        return redirect('address');
     }
 
     /**
