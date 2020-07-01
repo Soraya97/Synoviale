@@ -13,15 +13,46 @@ class AddressSeeder extends Seeder {
         //
         DB::table('addresses')->delete();
         DB::table('addresses')->insert([
-            'number' => '01',
-            'street1' => 'Rue des Paquis',
-            'street2' => 'Rue des Grison',
-            'streetNumber' => '8A',
-            'POBox' => 'CP324',
-            'city_id' => '384920', 
-            'person_id' =>  '0998767', 
-            'addressType_id' =>  '302', 
-        ]);
+            'number' => '1',
+            'street1' => 'Avenue des Sports',
+            'street2' => 'Avenue de la Gare',
+            'streetNumber' => '2',
+            'POBox' => 'CP320',
+            'city_id' => '1',
+            'person_id' => '1',
+            'addressType_id' => '1',
+                ],
+                [
+                    'number' => '2',
+                    'street1' => 'Avenue des Alpes',
+                    'street2' => 'Rue des Tulipes',
+                    'streetNumber' => '4',
+                    'POBox' => 'CP330',
+                    'city_id' => '2',
+                    'person_id' => '2',
+                    'addressType_id' => '2',
+        ],
+                [
+                    'number' => '3',
+                    'street1' => 'Chemin du Tessin',
+                    'street2' => 'Chemin de la Perrause',
+                    'streetNumber' => '6',
+                    'POBox' => 'CP340',
+                    'city_id' => '3',
+                    'person_id' => '3',
+                    'addressType_id' => '3',
+        ],
+                [
+                    'number' => '4',
+                    'street1' => 'Murstrasse',
+                    'street2' => 'Spitalstrasse',
+                    'streetNumber' => '8',
+                    'POBox' => 'CP350',
+                    'city_id' => '4',
+                    'person_id' => '4',
+                    'addressType_id' => '4',
+        ]
+                );
     }
 
 }

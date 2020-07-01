@@ -15,10 +15,10 @@ class ContactSeeder extends Seeder
         DB::table('contacts')->delete();
 
         DB::table('contacts')->insert([
-           'since' => 'Depuis' . '03.10.2020',
-            'until' => 'Jusqu à'. '04.10.2020',
-            'person_id' => '04359',
-            'company_id' => '934',
+           'since' => '03.10.2020',
+            'until' => '04.10.2020',
+            'person_id' => '2',
+            'company_id' => '1',
         ]);
         
     }

@@ -14,8 +14,8 @@ class CountrySeeder extends Seeder {
         DB::table('countries')->delete();
 
         DB::table('countries')->insert([
-            'name' => 'Nom' . 'Suisse',
-            'Code' => 'Code' . '0041',
+            'name' => 'Suisse',
+            'Code' => '1',
         ]);
     }
 

@@ -15,8 +15,8 @@ class JobPersonSeeder extends Seeder
         DB::table('job_person')->delete();
         
                 DB::table('job_person')->insert([
-                    'job_id' => '02',
-                    'person_id' => '01' 
+                    'job_id' => '1',
+                    'person_id' => '3' 
                 ]);
     }
 }

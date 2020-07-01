@@ -2,21 +2,21 @@
 
 use Illuminate\Database\Seeder;
 
-class ClientSeeder extends Seeder
-{
+class ClientSeeder extends Seeder {
+
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
         //
-         DB::table('clients')->delete();
+        DB::table('clients')->delete();
 
         DB::table('clients')->insert([
-           'homeCanton' => 'Canton' . 'VD',
-            'person_id' =>  '942',
-        ]);
+            'homeCanton' => 'VD',
+            'person_id' => '4',
+                ]);
     }
+
 }

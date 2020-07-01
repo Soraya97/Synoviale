@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EventSeeder extends Seeder
+class StoreSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,10 +12,10 @@ class EventSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('events')->delete();
+        DB::table('stores')->delete();
 
-        DB::table('events')->insert([
-           'name' => 'Bike Test gryon',
-        ]);
+        DB::table('stores')->insert([
+            'person_id' => '2',
+                ]);
     }
 }

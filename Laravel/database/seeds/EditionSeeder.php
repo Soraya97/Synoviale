@@ -15,11 +15,11 @@ class EditionSeeder extends Seeder
         DB::table('editions')->delete();
 
         DB::table('editions')->insert([
-           'number' => 'Nombre' . '9458',
-            'place' => 'Place' . 'Gryon',
-            'startDate' => 'Date de début' . '02.10.2020',
-            'endDate' => 'Date de fin' . '04.10.2020',
-            'event_id' =>  '2020',
+           'number' => '1',
+            'place' => 'Gryon',
+            'startDate' => '02.10.2020',
+            'endDate' => '04.10.2020',
+            'event_id' =>  '1',
         ]);
     }
 }

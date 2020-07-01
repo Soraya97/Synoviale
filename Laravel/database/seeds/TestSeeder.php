@@ -14,15 +14,15 @@ class TestSeeder extends Seeder {
         DB::table('tests')->delete();
 
         DB::table('tests')->insert([
-            'number' => 'Nombre' . '345',
-            'startTime' => 'Heure de début' . '9h00',
-            'endTime' => 'Heure de fin' . '17h00',
-            'feedback' => 'Feedback' . 'Géniale, rien à dire',
-            'testday_id' => '01',
-            'edition_id' => '14',
-            'event_id' => '2020',
-            'product_id' => '74',
-            'client_id' => '03',
+            'number' => '1',
+            'startTime' => '10:00',
+            'endTime' => '11:30',
+            'feedback' => 'Géniale, rien à dire',
+            'testday_id' => '1',
+            'edition_id' => '1',
+            'event_id' => '1',
+            'product_id' => '1',
+            'client_id' => '4',
         ]);
     }
 

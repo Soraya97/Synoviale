@@ -15,7 +15,13 @@ class EditionProductSeeder extends Seeder {
 
         DB::table('edition_product')->insert([
             'edition_id' => '1',
-            'product_id' => '4',
+            'product_id' => '1',
+            'event_id' => '1',
+            
+        ],
+                [
+            'edition_id' => '1',
+            'product_id' => '2',
             'event_id' => '1',
             
         ]);

@@ -15,10 +15,28 @@ class CitySeeder extends Seeder
         DB::table('cities')->delete();
 
         DB::table('cities')->insert([
-           'postalCode' => 'Code postal 1008',
-            'name' => 'Lausanne',
-            'Canton' => 'Canton' . 'Vaud',
-            'country_id' =>  '0041',
+           'postalCode' => '1400',
+            'name' => 'Yverdon',
+            'Canton' => 'Vaud',
+            'country_id' =>  '1',
+        ],
+                [
+           'postalCode' => '1815',
+            'name' => 'Montreux',
+            'Canton' => 'Vaud',
+            'country_id' =>  '1',
+        ],
+                [
+           'postalCode' => '1052',
+            'name' => 'Le Mont',
+            'Canton' => 'Vaud',
+            'country_id' =>  '1',
+        ],
+                [
+           'postalCode' => '4226',
+            'name' => 'Breitenbach',
+            'Canton' => 'Soleure',
+            'country_id' =>  '1',
         ]);
     }
 }
