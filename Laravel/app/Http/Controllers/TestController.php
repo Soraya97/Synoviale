@@ -4,17 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Test;
 use Illuminate\Http\Request;
+use App\Http\Requests\TestRequest;
 
-class TestController extends Controller
-{
+class TestController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
+        $tests = Test::all();
+
+        return view('test', comapct('tests'));
     }
 
     /**
@@ -22,9 +25,9 @@ class TestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
+        return view('addtest');
     }
 
     /**
@@ -33,9 +36,13 @@ class TestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(TestRequest $request) {
         //
+        $data = $request->validated();
+
+        Test::create($data);
+
+        return redirect('test');
     }
 
     /**
@@ -44,9 +51,9 @@ class TestController extends Controller
      * @param  \App\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function show(Test $test)
-    {
+    public function show(Test $test) {
         //
+        return view('onlytets', compact('tets'));
     }
 
     /**
@@ -55,8 +62,7 @@ class TestController extends Controller
      * @param  \App\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function edit(Test $test)
-    {
+    public function edit(Test $test) {
         //
     }
 
@@ -67,9 +73,23 @@ class TestController extends Controller
      * @param  \App\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Test $test)
-    {
+    public function update(Request $request, Test $test) {
         //
+        $data = $request->only([
+            'number',
+            'startTime',
+            'endTime',
+            'feedback',
+            'testday_id',
+            'edition_id',
+            'event_id',
+            'product_id',
+            'client_id',
+        ]);
+
+        $test->update($data);
+
+        return redirect('test');
     }
 
     /**
@@ -78,8 +98,11 @@ class TestController extends Controller
      * @param  \App\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Test $test)
-    {
+    public function destroy(Test $test) {
         //
+        $test->delete();
+
+        return redirect('test');
     }
+
 }

@@ -5,21 +5,18 @@ namespace App\Http\Controllers;
 use App\Client;
 use Illuminate\Http\Request;
 
-use App\Http\Requests\ClientRequest;
+class ClientController extends Controller {
 
-class ClientController extends Controller
-{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
-         $clients = Client::all();
+        $clients = Client::all();
 
-        return view('client',comapct('clients'));
+        return view('client', comapct('clients'));
     }
 
     /**
@@ -27,10 +24,9 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
-         return view('addclient');
+        return view('addclient');
     }
 
     /**
@@ -39,10 +35,14 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
-        $data = $request->validated();
+        $data = $request->validated([
+            'homeCanton' => 'null',
+            'person_id' => 'required',
+            'badge_id' => 'required',
+            'test_id' => 'required',
+        ]);
 
         Client::create($data);
 
@@ -55,10 +55,9 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client)
-    {
+    public function show(Client $client) {
         //
-        return view('onlyclient',compact('client'));
+        return view('onlyclient', compact('client'));
     }
 
     /**
@@ -67,8 +66,7 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function edit(Client $client)
-    {
+    public function edit(Client $client) {
         //
     }
 
@@ -79,8 +77,7 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Client $client)
-    {
+    public function update(Request $request, Client $client) {
         //
         $data = $request->only([
             'homeCanton',
@@ -98,11 +95,11 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
-    {
+    public function destroy(Client $client) {
         //
         $client->delete();
 
         return redirect('client');
     }
+
 }

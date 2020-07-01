@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Company;
 use Illuminate\Http\Request;
 
-use App\Http\Requests\CompanyRequest;
 
 class CompanyController extends Controller
 {
@@ -39,10 +38,13 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CompanyRequest $request)
+    public function store(Request $request)
     {
         //
-        $data = $request->validated();
+        $data =$request->validated([
+            'number' => 'required|unique',
+            'name' => 'required|min:3',
+        ]);
 
         Company::create($data);
 

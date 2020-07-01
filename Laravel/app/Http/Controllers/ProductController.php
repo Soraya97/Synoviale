@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\ProductRequest;
+
 class ProductController extends Controller
 {
     /**
@@ -15,6 +17,9 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $products = Product::all();
+
+        return view('product',compact('products'));
     }
 
     /**
@@ -25,6 +30,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return view('addproduct');
     }
 
     /**
@@ -33,9 +39,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         //
+         $data = $request->validated();
+
+        Product::create($data);
+
+        return redirect('product');
     }
 
     /**
@@ -47,6 +58,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        return view('onlyproduct',compact('product'));
     }
 
     /**
@@ -70,6 +82,18 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         //
+        $data = $request->only([
+            'number',
+            'shortDescr',
+            'longDescr',
+            'distinctiveSign',
+            'lienWeb',
+            'brand_id',
+        ]);
+
+        $product->update($data);
+
+        return redirect('product');
     }
 
     /**
@@ -81,5 +105,8 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+        $product->delete();
+
+        return redirect('product');
     }
 }

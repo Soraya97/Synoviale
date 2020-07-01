@@ -36,7 +36,7 @@ class AddressController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AdressRequest $request) {
+    public function store(AddressRequest $request) {
         //
         $data = $request->validated();
         Address::create($data);

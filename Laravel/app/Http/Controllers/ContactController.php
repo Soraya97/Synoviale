@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
 
-use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -39,14 +38,19 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ContactRequest $request)
+    public function store(Request $request)
     {
         //
-        $data = $request->validated();
+        $data =$request->validated([
+            'since' => 'required|date',
+            'until' => 'null|date',
+            'person_id' => 'required',
+            'company_' => 'required',
+        ]);
 
-        Contact::create($data);
+        Bike::create($data);
 
-        return redirect('contact');
+        return redirect('bike');
     }
 
     /**

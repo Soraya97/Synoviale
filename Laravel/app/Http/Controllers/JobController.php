@@ -47,9 +47,9 @@ class JobController extends Controller
             'staff_id' => 'required',
         ]);
 
-        Bike::create($data);
+        Job::create($data);
 
-        return redirect('bike');
+        return redirect('Job');
     }
 
     /**

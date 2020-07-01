@@ -22,11 +22,11 @@ class AddressRequest extends FormRequest {
      */
     public function rules() {
         return [
-            'number' => 'required',
+            'number' => 'required|unique',
             'street1' => 'required |min:3|max:100',
-            'street2' => 'min:3|max:100',
-            'streetNumber' => 'min:1',
-            'POBox' => 'min:1',
+            'street2' => 'null',
+            'streetNumber' => 'null',
+            'POBox' => 'null',
             'city_id' => 'required',
             'person_id' => 'required',
             'addressType_id' => 'required',

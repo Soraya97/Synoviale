@@ -38,7 +38,7 @@ class CountryController extends Controller {
     public function store(Request $request) {
         //
           $data =$request->validated([
-            'name' => 'required',
+            'name' => 'required|unique',
             'code' => 'required',
         ]);
 

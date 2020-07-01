@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BrandRequest extends FormRequest
+class EditionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,11 @@ class BrandRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique',
-            'shortDescr' => 'required',
-            'longDescr' => 'null',
-            'compagny_id' => 'required',
-            
+            //
+            'number' => 'required',
+            'place' => 'required|min:3|max:100',
+            'startDate' => 'equired|min:3|max:100',
+            'endDate' => 'equired|min:1',
         ];
     }
 }

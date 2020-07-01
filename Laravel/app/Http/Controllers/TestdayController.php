@@ -15,6 +15,9 @@ class TestdayController extends Controller
     public function index()
     {
         //
+        $testdays = Testday::all();
+
+        return view('testday',compact('testdays'));
     }
 
     /**
@@ -25,6 +28,7 @@ class TestdayController extends Controller
     public function create()
     {
         //
+        return view('addtestday');
     }
 
     /**
@@ -36,6 +40,17 @@ class TestdayController extends Controller
     public function store(Request $request)
     {
         //
+        $data =$request->validated([
+            'date' => 'required',
+            'startHour' => 'required',
+            'endHour' => 'required',
+            'event_id' => 'required',
+            'edition_id' => 'required',
+        ]);
+
+        Testday::create($data);
+
+        return redirect('testday');
     }
 
     /**
@@ -47,6 +62,7 @@ class TestdayController extends Controller
     public function show(Testday $testday)
     {
         //
+        return view('onlytestday',compact('testday'));
     }
 
     /**
@@ -70,6 +86,17 @@ class TestdayController extends Controller
     public function update(Request $request, Testday $testday)
     {
         //
+        $data = $request->only([
+            'date',
+            'startHour',
+            'endHour',
+            'event_id',
+            'edition_id'
+        ]);
+
+        $testday->update($data);
+
+        return redirect('testday');
     }
 
     /**
@@ -81,5 +108,8 @@ class TestdayController extends Controller
     public function destroy(Testday $testday)
     {
         //
+        $testday->delete();
+
+        return redirect('testday');
     }
 }
