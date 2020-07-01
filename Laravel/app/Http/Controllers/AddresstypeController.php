@@ -88,9 +88,9 @@ class AddresstypeController extends Controller
             'address_id',
         ]);
 
-        $address->update($data);
+        $addresstype->update($data);
 
-        return redirect('address');
+        return redirect('addresstype');
     }
 
     /**
