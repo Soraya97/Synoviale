@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder {
         $this->call(BrandSeeder::class);
         $this->call(CitySeeder::class);
         $this->call(ClientSeeder::class);
-        $this->call(ComapanySeeder::class);
+        $this->call(CompanySeeder::class);
         $this->call(ContactSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(EditionSeeder::class);
@@ -27,12 +27,12 @@ class DatabaseSeeder extends Seeder {
         $this->call(JobSeeder::class);
         $this->call(PersonSeeder::class);
         $this->call(ProductSeeder::class);
-        $this->call(TestDaySeeder::class);
+        $this->call(TestdaySeeder::class);
         $this->call(TestSeeder::class);
 
         // avec les tables pivots
         $this->call(BrandEditionSeeder::class);
-        $this->call(EditionProductionSeeder::class);
+        $this->call(EditionProductSeeder::class);
         $this->call(JobPersonSeeder::class);
     }
 

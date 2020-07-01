@@ -14,7 +14,7 @@ class JobSeeder extends Seeder {
         DB::table('jobs')->delete();
 
         DB::table('jobs')->insert([
-            'description' => 'Description' . 'Nettoyeur',
+            'description' => 'Accueil',
             'event_id' => '2020',
             'edition_id' => '14',
             'staff_id' => '76',

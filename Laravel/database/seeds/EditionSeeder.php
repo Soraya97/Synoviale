@@ -20,9 +20,6 @@ class EditionSeeder extends Seeder
             'startDate' => 'Date de début' . '02.10.2020',
             'endDate' => 'Date de fin' . '04.10.2020',
             'event_id' =>  '2020',
-            'job_id' => '9257',
-            'testday_id' => '03',
-            'brand_id' =>  '56',
         ]);
     }
 }

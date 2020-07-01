@@ -20,8 +20,6 @@ class TestdaySeeder extends Seeder
             'endHour' => 'Heure de fin' . '17h00',
             'event_id' =>  '20',
             'edition_id' => '14',
-            'badge_id' => '567',
-            'test_id' =>  '747',
     ]);
     }
 }

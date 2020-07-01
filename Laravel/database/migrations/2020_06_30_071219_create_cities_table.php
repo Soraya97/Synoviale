@@ -19,6 +19,7 @@ class CreateCitiesTable extends Migration
             $table->string('name')->unique();
             $table->string('canton')->nullable();
             $table->foreignId('country_id');
+            
             $table->timestamps();
         });
     }

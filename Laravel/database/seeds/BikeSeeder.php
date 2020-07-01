@@ -15,8 +15,8 @@ class BikeSeeder extends Seeder {
 
         DB::table('bikes')->insert([
             'type' => 'e-vtt',
-            'framSize' => 'Taille du cadre' . ' très grande',
-            'framUnit' => 'Unité du cadre 6',
+            'frameSize' => 'Taille du cadre très grande',
+            'frameUnit' => 'Unité du cadre 6',
             'rimSize' => 'Taille de la jante petite',
             'rimUnit' => 'Unité de la jante 3',
             'product_id' => '9538',

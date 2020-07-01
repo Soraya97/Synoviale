@@ -17,9 +17,6 @@ class CompanySeeder extends Seeder
         DB::table('companies')->insert([
            'number' => 'Nombre' . '06',
             'name' =>  'Name' . 'Super Sport',
-            'brand_id' => '49',
-            'addressType_id' => '34',
-            'contact_id' =>  '436',
         ]);
     }
 }

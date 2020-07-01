@@ -17,8 +17,6 @@ class ClientSeeder extends Seeder
         DB::table('clients')->insert([
            'homeCanton' => 'Canton' . 'VD',
             'person_id' =>  '942',
-            'badge_id' =>  '9385',
-            'test_id' =>  '835'
         ]);
     }
 }

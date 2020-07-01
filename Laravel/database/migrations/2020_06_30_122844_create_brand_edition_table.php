@@ -30,6 +30,7 @@ class CreateBrandEditionTable extends Migration {
         Schema::table('brand_edition', function(Blueprint $table) {
             $table->dropForeign(['brand_id']);
             $table->dropForeign(['edition_id']);
+            
         });
         Schema::dropIfExists('brand_edition');
     }

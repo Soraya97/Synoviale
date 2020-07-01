@@ -23,9 +23,6 @@ class PersonSeeder extends Seeder {
             'email2' => 'email 2' . 'mariav@gmail.com',
             'comment' => 'Commentaire' . 'trop cool',
             'address_id' => '03',
-            'contact_id' => '04',
-            'client_id' => '35',
-            'staff_id' => '78',
         ]);
     }
 

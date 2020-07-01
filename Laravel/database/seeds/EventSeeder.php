@@ -16,7 +16,6 @@ class EventSeeder extends Seeder
 
         DB::table('events')->insert([
            'name' => 'Nom' . 'Bike Test gryon',
-            'edition_id' =>  '2020',
         ]);
     }
 }

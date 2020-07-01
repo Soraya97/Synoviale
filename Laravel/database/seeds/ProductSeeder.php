@@ -20,8 +20,6 @@ class ProductSeeder extends Seeder {
             'distinctiveSign' => 'Signe distinctif' . 'HS',
             'lienWeb' => 'Lien Web' . 'hhttps://www.google.com',
             'brand_id' => '345',
-            'test_id' => '457',
-            'bike_id' => '567',
         ]);
     }
 

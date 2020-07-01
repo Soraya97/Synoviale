@@ -16,7 +16,6 @@ class CountrySeeder extends Seeder {
         DB::table('countries')->insert([
             'name' => 'Nom' . 'Suisse',
             'Code' => 'Code' . '0041',
-            'city_id' => '203948',
         ]);
     }
 

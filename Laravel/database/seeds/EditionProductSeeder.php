@@ -11,11 +11,13 @@ class EditionProductSeeder extends Seeder {
      */
     public function run() {
         //
-        DB::table('edition_production')->delete();
+        DB::table('edition_product')->delete();
 
-        DB::table('edition_production')->insert([
-            'edition_id',
-            'production_id'
+        DB::table('edition_product')->insert([
+            'edition_id' => '1',
+            'product_id' => '4',
+            'event_id' => '1',
+            
         ]);
     }
 
