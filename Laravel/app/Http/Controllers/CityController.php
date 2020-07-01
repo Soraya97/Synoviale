@@ -5,16 +5,20 @@ namespace App\Http\Controllers;
 use App\City;
 use Illuminate\Http\Request;
 
-class CityController extends Controller
-{
+use App\Http\Requests\CityRequest;
+
+class CityController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
+        $cities = City::all();
+
+        return view('city', comapct('cities'));
     }
 
     /**
@@ -22,9 +26,9 @@ class CityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
+        return view('addcity');
     }
 
     /**
@@ -33,9 +37,13 @@ class CityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
+        $data = $request->validated();
+
+        City::create($data);
+
+        return redirect('city');
     }
 
     /**
@@ -44,9 +52,9 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function show(City $city)
-    {
+    public function show(City $city) {
         //
+        return view('onlycity',compact('city'));
     }
 
     /**
@@ -55,8 +63,7 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function edit(City $city)
-    {
+    public function edit(City $city) {
         //
     }
 
@@ -67,9 +74,18 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, City $city)
-    {
+    public function update(Request $request, City $city) {
         //
+        $data = $request->only([
+            'postaleCode',
+            'name',
+            'canton',
+            'country_id'
+        ]);
+
+        $brand->update($data);
+
+        return redirect('brand');
     }
 
     /**
@@ -78,8 +94,11 @@ class CityController extends Controller
      * @param  \App\City  $city
      * @return \Illuminate\Http\Response
      */
-    public function destroy(City $city)
-    {
+    public function destroy(City $city) {
         //
+        $city->delete();
+
+        return redirect('city');
     }
+
 }

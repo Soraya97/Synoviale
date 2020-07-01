@@ -15,6 +15,9 @@ class CompanyController extends Controller
     public function index()
     {
         //
+        $companies = Company::all();
+
+        return view('company',comapct('companies'));
     }
 
     /**
@@ -25,6 +28,7 @@ class CompanyController extends Controller
     public function create()
     {
         //
+        return view('addcompany');
     }
 
     /**
@@ -33,9 +37,14 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompanyRequest $request)
     {
         //
+        $data = $request->validated();
+
+        Company::create($data);
+
+        return redirect('company');
     }
 
     /**
@@ -47,6 +56,7 @@ class CompanyController extends Controller
     public function show(Company $company)
     {
         //
+        return view('onlycompany',compact('company'));
     }
 
     /**
@@ -70,6 +80,14 @@ class CompanyController extends Controller
     public function update(Request $request, Company $company)
     {
         //
+        $data = $request->only([
+            'number',
+            'name',
+        ]);
+
+        $company->update($data);
+
+        return redirect('company');
     }
 
     /**
@@ -81,5 +99,8 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         //
+        $company->delete();
+
+        return redirect('company');
     }
 }

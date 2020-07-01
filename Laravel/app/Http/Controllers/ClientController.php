@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Client;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\ClientRequest;
+
 class ClientController extends Controller
 {
     /**
@@ -15,6 +17,9 @@ class ClientController extends Controller
     public function index()
     {
         //
+         $clients = Client::all();
+
+        return view('client',comapct('clients'));
     }
 
     /**
@@ -25,6 +30,7 @@ class ClientController extends Controller
     public function create()
     {
         //
+         return view('addclient');
     }
 
     /**
@@ -36,6 +42,11 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->validated();
+
+        Client::create($data);
+
+        return redirect('client');
     }
 
     /**
@@ -47,6 +58,7 @@ class ClientController extends Controller
     public function show(Client $client)
     {
         //
+        return view('onlyclient',compact('client'));
     }
 
     /**
@@ -70,6 +82,14 @@ class ClientController extends Controller
     public function update(Request $request, Client $client)
     {
         //
+        $data = $request->only([
+            'homeCanton',
+            'person_id',
+        ]);
+
+        $client->update($data);
+
+        return redirect('client');
     }
 
     /**
@@ -81,5 +101,8 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
+        $client->delete();
+
+        return redirect('client');
     }
 }
