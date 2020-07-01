@@ -11,7 +11,7 @@ class Bike extends Model
     protected $fillable = [
         'type',
         'framSize',
-        'frameUnite',
+        'frameUnit',
         'rimSize',
         'rimUnit',
         'product_id'

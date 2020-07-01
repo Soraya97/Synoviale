@@ -42,7 +42,7 @@ class BikeController extends Controller
         $data =$request->validated([
             'type' => 'required',
             'framSize' => 'null',
-            'frameUnite' => 'null',
+            'frameUnit' => 'null',
             'rimSize' => 'null',
             'rimUnit' => 'null',
             'product_id' => 'required',
