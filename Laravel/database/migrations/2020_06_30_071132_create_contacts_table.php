@@ -18,7 +18,7 @@ class CreateContactsTable extends Migration
             $table->date('since');
             $table->string('unitl')->nullable();
             $table->foreignId('person_id');
-            $table->foreignId('compagny_id');
+            $table->foreignId('company_id');
             $table->timestamps();
         });
     }

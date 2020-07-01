@@ -20,7 +20,7 @@ class AddressSeeder extends Seeder {
             'POBox' => 'CP324',
             'city_id' => '384920', 
             'person_id' =>  '0998767', 
-            'addresstype_id' =>  '302', 
+            'addressType_id' =>  '302', 
         ]);
     }
 

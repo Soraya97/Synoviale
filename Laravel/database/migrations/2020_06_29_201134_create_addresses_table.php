@@ -19,22 +19,9 @@ class CreateAddressesTable extends Migration {
             $table->string('street2')->nullable();
             $table->integer('streetNumber')->nullable();
             $table->string('POBox')->nullable();
-            $table->foreignId('city_id')
-                    ->references('id')
-                    ->on('cities')
-                    ->onDelete('restrict')
-                    ->onUpdate('restrict');
-            $table->foreignId('person_id')
-                    ->references('id')
-                    ->on('people')
-                    ->onDelete('restrict')
-                    ->onUpdate('restrict');
-            $table->foreignId('addressType_id')
-                    ->references('id')
-                    ->on('address_types')
-                    ->onDelete('restrict')
-                    ->onUpdate('restrict');
-
+            $table->foreignId('city_id');
+            $table->foreignId('person_id');
+            $table->foreignId('addresstype_id');
             $table->timestamps();
         });
     }
