@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Addresstype;
 use Illuminate\Http\Request;
 
+
+
 class AddresstypeController extends Controller
 {
     /**

@@ -12,9 +12,10 @@ class BikeSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('badges')->delete();
+        DB::table('bikes')->delete();
 
-        DB::table('badges')->insert([
+        DB::table('bikes')->insert([
+            'type' => 'e-vtt' ,
            'framSize' => 'Taille du cadre' . 'très grande',
             'framUnite' => 'Unité du cadre' . '6',
             'rimSize' => 'Taille de la jante' .'petite',

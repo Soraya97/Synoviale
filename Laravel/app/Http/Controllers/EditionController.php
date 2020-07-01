@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Edition;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\EditionRequest;
+
 class EditionController extends Controller
 {
     /**
@@ -15,6 +17,9 @@ class EditionController extends Controller
     public function index()
     {
         //
+        $editions = Edition::all();
+
+        return view('edition',comapct('editions'));
     }
 
     /**
@@ -25,6 +30,7 @@ class EditionController extends Controller
     public function create()
     {
         //
+        return view('addedition');
     }
 
     /**
@@ -33,9 +39,14 @@ class EditionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EditionRequest $request)
     {
         //
+        $data = $request->validated();
+
+        Edition::create($data);
+
+        return redirect('edition');
     }
 
     /**
@@ -47,6 +58,7 @@ class EditionController extends Controller
     public function show(Edition $edition)
     {
         //
+        return view('onlyedition',compact('edition'));
     }
 
     /**
@@ -70,6 +82,17 @@ class EditionController extends Controller
     public function update(Request $request, Edition $edition)
     {
         //
+        $data = $request->only([
+            'number',
+            'place',
+            'startDate',
+            'endDate',
+            'event_id'
+        ]);
+
+        $edition->update($data);
+
+        return redirect('edition');
     }
 
     /**
@@ -81,5 +104,8 @@ class EditionController extends Controller
     public function destroy(Edition $edition)
     {
         //
+         $edition->delete();
+
+        return redirect('edition');
     }
 }

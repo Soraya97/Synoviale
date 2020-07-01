@@ -9,6 +9,7 @@ class Bike extends Model
     use SoftDeletes;
     
     protected $fillable = [
+        'type',
         'framSize',
         'frameUnite',
         'rimSize',

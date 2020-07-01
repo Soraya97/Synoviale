@@ -15,6 +15,7 @@ class CreateBikesTable extends Migration
     {
         Schema::create('bikes', function (Blueprint $table) {
             $table->id();
+            $table->string("type");
             $table->string("frameSize")->nullable();
             $table->string("frameUnit")->nullable();
             $table->string("rimSize")->nullable();

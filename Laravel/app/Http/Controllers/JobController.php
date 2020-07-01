@@ -15,6 +15,9 @@ class JobController extends Controller
     public function index()
     {
         //
+        $jobs = Job::all();
+
+        return view('job',comapct('jobs'));
     }
 
     /**
@@ -25,6 +28,7 @@ class JobController extends Controller
     public function create()
     {
         //
+        return view('addjob');
     }
 
     /**
@@ -36,6 +40,16 @@ class JobController extends Controller
     public function store(Request $request)
     {
         //
+        $data =$request->validated([
+            'description' => 'required',
+            'event_id' => 'required',
+            'edition_id' => 'required',
+            'staff_id' => 'required',
+        ]);
+
+        Bike::create($data);
+
+        return redirect('bike');
     }
 
     /**
@@ -47,6 +61,7 @@ class JobController extends Controller
     public function show(Job $job)
     {
         //
+         return view('onlyjob',compact('job'));
     }
 
     /**
@@ -58,6 +73,7 @@ class JobController extends Controller
     public function edit(Job $job)
     {
         //
+        
     }
 
     /**
@@ -70,6 +86,16 @@ class JobController extends Controller
     public function update(Request $request, Job $job)
     {
         //
+        $data = $request->only([
+            'description',
+            'event_id',
+            'edition_id',
+            'staff_id'
+        ]);
+
+        $job->update($data);
+
+        return redirect('job');
     }
 
     /**
@@ -81,5 +107,8 @@ class JobController extends Controller
     public function destroy(Job $job)
     {
         //
+        $job->delete();
+
+        return redirect('job');
     }
 }

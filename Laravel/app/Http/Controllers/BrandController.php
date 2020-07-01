@@ -81,7 +81,7 @@ class BrandController extends Controller
             'name',
             'shortDescr',
             'longDescr',
-            'compagny_id'
+            'company_id'
         ]);
 
         $brand->update($data);

@@ -15,6 +15,9 @@ class EventController extends Controller
     public function index()
     {
         //
+        $events = Event::all();
+
+        return view('event',comapct('events'));
     }
 
     /**
@@ -25,6 +28,7 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view('addevent');
     }
 
     /**
@@ -36,6 +40,13 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
+        $data =$request->validated([
+            'name' => 'required',
+        ]);
+
+        Event::create($data);
+
+        return redirect('event');
     }
 
     /**
@@ -47,6 +58,7 @@ class EventController extends Controller
     public function show(Event $event)
     {
         //
+        return view('onlyevent',compact('event'));
     }
 
     /**
@@ -70,6 +82,13 @@ class EventController extends Controller
     public function update(Request $request, Event $event)
     {
         //
+        $data = $request->only([
+            'name',
+        ]);
+
+        $event->update($data);
+
+        return redirect('event');
     }
 
     /**
@@ -81,5 +100,8 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+         $event->delete();
+
+        return redirect('event');
     }
 }

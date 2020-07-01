@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use App\Country;
 use Illuminate\Http\Request;
 
-class CountryController extends Controller
-{
+class CountryController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
+        $country = Country::all();
+
+        return view('country', comapct('countries'));
     }
 
     /**
@@ -22,9 +24,9 @@ class CountryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
+        return view('addcountry');
     }
 
     /**
@@ -33,9 +35,16 @@ class CountryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
+          $data =$request->validated([
+            'name' => 'required',
+            'code' => 'required',
+        ]);
+
+        Country::create($data);
+
+        return redirect('country');
     }
 
     /**
@@ -44,9 +53,9 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function show(Country $country)
-    {
+    public function show(Country $country) {
         //
+        return view('onlycountry',compact('country'));
     }
 
     /**
@@ -55,8 +64,7 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function edit(Country $country)
-    {
+    public function edit(Country $country) {
         //
     }
 
@@ -67,9 +75,16 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Country $country)
-    {
+    public function update(Request $request, Country $country) {
         //
+        $data = $request->only([
+            'name',
+            'code',
+        ]);
+
+        $country->update($data);
+
+        return redirect('country');
     }
 
     /**
@@ -78,8 +93,11 @@ class CountryController extends Controller
      * @param  \App\Country  $country
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Country $country)
-    {
+    public function destroy(Country $country) {
         //
+          $country->delete();
+
+        return redirect('country');
     }
+
 }

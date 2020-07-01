@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Person;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\PersonRequest;
+
 class PersonController extends Controller
 {
     /**
@@ -15,6 +17,9 @@ class PersonController extends Controller
     public function index()
     {
         //
+        $people = Person::all();
+
+        return view('person',comapct('people'));
     }
 
     /**
@@ -25,6 +30,7 @@ class PersonController extends Controller
     public function create()
     {
         //
+        return view('addperson');
     }
 
     /**
@@ -33,9 +39,14 @@ class PersonController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PersonRequest $request)
     {
         //
+        $data = $request->validated();
+
+        Person::create($data);
+
+        return redirect('person');
     }
 
     /**
@@ -47,6 +58,7 @@ class PersonController extends Controller
     public function show(Person $person)
     {
         //
+        return view('onlyperson',compact('person'));
     }
 
     /**
@@ -70,6 +82,21 @@ class PersonController extends Controller
     public function update(Request $request, Person $person)
     {
         //
+        $data = $request->only([
+            'number',
+            'name',
+            'firstname',
+            'phoneNumber1',
+            'phoneNumber2',
+            'email1',
+            'email2',
+            'comment',
+            'address_id',
+        ]);
+
+        $person->update($data);
+
+        return redirect('person');
     }
 
     /**
@@ -81,5 +108,9 @@ class PersonController extends Controller
     public function destroy(Person $person)
     {
         //
+         $person->delete();
+
+        return redirect('person');
+        
     }
 }

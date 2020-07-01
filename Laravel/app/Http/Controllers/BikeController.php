@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Bike;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\BikeRequest;
+
 class BikeController extends Controller
 {
     /**
@@ -38,6 +40,7 @@ class BikeController extends Controller
     public function store(Request $request)
     {
         $data =$request->validated([
+            'type' => 'required',
             'product_id' => 'required',
         ]);
 

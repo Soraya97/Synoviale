@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Contact;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\ContactRequest;
+
 class ContactController extends Controller
 {
     /**
@@ -14,7 +16,10 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        
+        $contacts = Contact::all();
+
+        return view('contact',comapct('contacts'));
     }
 
     /**
@@ -25,6 +30,7 @@ class ContactController extends Controller
     public function create()
     {
         //
+        return view('addcontact');
     }
 
     /**
@@ -33,9 +39,14 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         //
+        $data = $request->validated();
+
+        Contact::create($data);
+
+        return redirect('contact');
     }
 
     /**
@@ -47,6 +58,7 @@ class ContactController extends Controller
     public function show(Contact $contact)
     {
         //
+        return view('onlycontact',compact('contact'));
     }
 
     /**
@@ -70,6 +82,16 @@ class ContactController extends Controller
     public function update(Request $request, Contact $contact)
     {
         //
+        $data = $request->only([
+            'since',
+            'until',
+            'person_id',
+            'company_id'
+        ]);
+
+        $contact->update($data);
+
+        return redirect('contact');
     }
 
     /**
@@ -81,5 +103,8 @@ class ContactController extends Controller
     public function destroy(Contact $contact)
     {
         //
+        $contact->delete();
+
+        return redirect('contact');
     }
 }
