@@ -3,23 +3,24 @@
 Pour chaque [table](tables.md) il faut créer :
 
 * un fichier de migration
-* un fichier de population
+* un fichier de population de table
 * un Model
 * un contrôleur en mode ressource (avec index,update etc..)
 
-un autre fichier va traité des contrôleurs spécifiques pour chaque page, mais nous allons créer ici les contrôleurs ressources de chaque tables et effacé ceux qui ne serons pas utilisé.
+Un autre fichier va traiter des contrôleurs spécifiques pour chaque page, mais nous allons créer ici les contrôleurs ressources de chaque table et effacer ceux qui ne seront pas utilisés.
 
-pour être sûre que les fichiers correspondent entre migration,model, contrôleur et seeder; nous utiliserons une seule commande qui fera le travaille pour nous:
+Pour être sûr que les fichiers correspondent entre migration, model, contrôleur et seeder, nous utiliserons une seule commande qui fera le travail pour nous:
 
     php artisan make:model *Name* -crms
 
-* **-c** créer un contrôleur **-r** précise que c'est une ressource
-* **-m** créer une table de migration
-* **-s** créer un seeder
+* **-c** crée un contrôleur
+* **-r** précise que c'est une ressource
+* **-m** crée une table de migration
+* **-s** crée un seeder
 
 ## Exemple avec la table Product
 
-exemple du code avec la table **Product**
+Exemple du code avec la table **Product**
 
 ### Table Product
 |Product||
@@ -166,8 +167,8 @@ Modifier le fichier: `app/Http/Controller/ProductController.php`
         return redirect('product');
     
     }
->  contrôler la méthode validated
-> on peut aussi utiliser un request
+>  Contrôler la méthode validated
+> On peut aussi utiliser un request
 
     public function show(Product $product)
     {
@@ -211,7 +212,7 @@ Nous pouvons utiliser aussi un *Request* pour valider les données
 
 Cela crée un fichier dans `app/Http/Requests/`
 
-L' on met *authorize* à **true** et on ajoute les règles dans *rules*
+L'on met *authorize* à **true** et on ajoute les règles dans *rules*
 
     class ProductRequest extends FormRequest
     {
@@ -230,13 +231,11 @@ L' on met *authorize* à **true** et on ajoute les règles dans *rules*
         }
     }
 
-On doit ensuite modifier le contrôleur
-
-On ajoute en haut du fichier
+On doit ensuite modifier le contrôleur. On ajoute en haut du fichier:
 
     use App\Http\Requests\ProductRequest;
 
- et dans les méthodes
+ et dans les méthodes:
 
     public function store(ProductRequest $request)
     {
