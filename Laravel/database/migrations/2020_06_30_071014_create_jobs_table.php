@@ -18,7 +18,7 @@ class CreateJobsTable extends Migration
             $table->enum('description', ['Direction','Informatique','Accueil','Bar','Cuisine','Autre']);
             $table->foreignId('event_id');
             $table->foreignId('edition_id');
-            $table->foreignId('staff_id');
+            $table->foreignId('employee_id');
             $table->timestamps();
         });
     }

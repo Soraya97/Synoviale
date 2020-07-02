@@ -12,6 +12,7 @@ class AddressSeeder extends Seeder {
     public function run() {
         //
         DB::table('addresses')->delete();
+        
         DB::table('addresses')->insert([
             'number' => '1',
             'street1' => 'Avenue des Sports',

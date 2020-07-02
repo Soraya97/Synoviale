@@ -44,7 +44,7 @@ class JobController extends Controller
             'description' => 'required',
             'event_id' => 'required',
             'edition_id' => 'required',
-            'staff_id' => 'required',
+            'employee_id' => 'required',
         ]);
 
         Job::create($data);
@@ -90,7 +90,7 @@ class JobController extends Controller
             'description',
             'event_id',
             'edition_id',
-            'staff_id'
+            'employee_id'
         ]);
 
         $job->update($data);

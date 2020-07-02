@@ -17,7 +17,7 @@ class JobSeeder extends Seeder {
             'description' => 'Accueil',
             'event_id' => '1',
             'edition_id' => '1',
-            'staff_id' => '1',
+            'employee_id' => '1',
         ]);
     }
 

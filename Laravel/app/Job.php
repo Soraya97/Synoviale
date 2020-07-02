@@ -12,7 +12,7 @@ class Job extends Model
         'description',
         'event_id',
         'edition_id',
-        'staff_id'
+        'employee_id'
     ];
 
     public function event()
@@ -25,8 +25,8 @@ class Job extends Model
         return $this->hasMany(Edition::class);
     }
     
-    public function staff()
+    public function employee()
     {
-        return $this->hasMany(Staff::class);
+        return $this->hasMany(Employee::class);
     }
 }
