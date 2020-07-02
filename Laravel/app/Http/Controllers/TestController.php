@@ -76,7 +76,6 @@ class TestController extends Controller {
     public function update(Request $request, Test $test) {
         //
         $data = $request->only([
-            'number',
             'startTime',
             'endTime',
             'feedback',

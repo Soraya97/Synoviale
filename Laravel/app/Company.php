@@ -9,7 +9,6 @@ class Company extends Model
     use SoftDeletes;
     
     protected $fillable = [
-        'number',
         'name'
     ];
 

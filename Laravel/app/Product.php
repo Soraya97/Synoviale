@@ -9,7 +9,6 @@ class Product extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'number',
         'shortDescr',
         'longDescr',
         'distinctiveSign',

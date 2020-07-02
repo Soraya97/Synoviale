@@ -42,7 +42,6 @@ class CompanyController extends Controller
     {
         //
         $data =$request->validated([
-            'number' => 'required|unique',
             'name' => 'required|min:3',
         ]);
 
@@ -85,7 +84,7 @@ class CompanyController extends Controller
     {
         //
         $data = $request->only([
-            'number',
+
             'name',
         ]);
 

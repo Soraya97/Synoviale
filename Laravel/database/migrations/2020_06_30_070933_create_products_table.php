@@ -15,7 +15,6 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('number')->unique();
             $table->string('shortDescr');
             $table->string('longDescr')->nullable();
             $table->string('distinctiveSign')->nullable();

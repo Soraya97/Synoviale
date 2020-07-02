@@ -14,7 +14,7 @@ class TestSeeder extends Seeder {
         DB::table('tests')->delete();
 
         DB::table('tests')->insert([
-            'number' => '1',
+            
             'startTime' => '10:00',
             'endTime' => '11:30',
             'feedback' => 'Géniale, rien à dire',

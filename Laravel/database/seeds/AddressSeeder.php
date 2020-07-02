@@ -14,7 +14,7 @@ class AddressSeeder extends Seeder {
         DB::table('addresses')->delete();
         
         DB::table('addresses')->insert([[
-            'number' => '1',
+            
             'street1' => 'Avenue des Sports',
             'street2' => 'Avenue de la Gare',
             'streetNumber' => '2',
@@ -24,7 +24,7 @@ class AddressSeeder extends Seeder {
             'addressType_id' => '1',
                 ],
                 [
-                    'number' => '2',
+                    
                     'street1' => 'Avenue des Alpes',
                     'street2' => 'Rue des Tulipes',
                     'streetNumber' => '4',
@@ -34,7 +34,7 @@ class AddressSeeder extends Seeder {
                     'addressType_id' => '2',
         ],
                 [
-                    'number' => '3',
+                    
                     'street1' => 'Chemin du Tessin',
                     'street2' => 'Chemin de la Perrause',
                     'streetNumber' => '6',
@@ -44,7 +44,7 @@ class AddressSeeder extends Seeder {
                     'addressType_id' => '3',
         ],
                 [
-                    'number' => '4',
+                    
                     'street1' => 'Murstrasse',
                     'street2' => 'Spitalstrasse',
                     'streetNumber' => '8',

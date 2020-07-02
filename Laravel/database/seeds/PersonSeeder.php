@@ -14,7 +14,7 @@ class PersonSeeder extends Seeder {
         DB::table('people')->delete();
 
         DB::table('people')->insert([[
-            'number' => '1',
+           
             'name' => 'Fiechter',
             'firstname' => 'Thomas',
             'phoneNumber1' => '0794567891',
@@ -25,7 +25,7 @@ class PersonSeeder extends Seeder {
             'address_id' => '1',
         ],
                 [
-            'number' => '2',
+            
             'name' => 'Veseli',
             'firstname' => 'Leandra',
             'phoneNumber1' => '0794567892',
@@ -36,7 +36,7 @@ class PersonSeeder extends Seeder {
             'address_id' => '2',
         ],
                 [
-            'number' => '3',
+            
             'name' => 'Maire',
             'firstname' => 'Maxime',
             'phoneNumber1' => '0794567894',
@@ -47,7 +47,7 @@ class PersonSeeder extends Seeder {
             'address_id' => '3',
         ],
                 [
-            'number' => '4',
+            
             'name' => 'Studer',
             'firstname' => 'Lola',
             'phoneNumber1' => '0794567896',

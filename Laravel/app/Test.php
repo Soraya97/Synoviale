@@ -9,7 +9,6 @@ class Test extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'number',
         'startTime',
         'endTime',
         'feedback',

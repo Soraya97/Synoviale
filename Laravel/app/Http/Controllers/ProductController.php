@@ -83,7 +83,6 @@ class ProductController extends Controller
     {
         //
         $data = $request->only([
-            'number',
             'shortDescr',
             'longDescr',
             'distinctiveSign',

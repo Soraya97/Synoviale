@@ -14,7 +14,7 @@ class ProductSeeder extends Seeder {
         DB::table('products')->delete();
 
         DB::table('products')->insert([[
-            'number' => '1',
+            
             'shortDescr' => 'Très joli',
             'longDescr' => 'Magnifiquement bien disigné',
             'distinctiveSign' => 'bleu roi',
@@ -22,7 +22,7 @@ class ProductSeeder extends Seeder {
             'brand_id' => '1',
         ],
                 [
-            'number' => '2',
+            
             'shortDescr' => 'Très beau',
             'longDescr' => 'Magnifiquement bien pensé',
             'distinctiveSign' => 'rouge vif',

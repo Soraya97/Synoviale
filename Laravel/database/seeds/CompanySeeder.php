@@ -15,7 +15,7 @@ class CompanySeeder extends Seeder
         DB::table('companies')->delete();
 
         DB::table('companies')->insert([[
-           'number' => '1',
+           
             'name' =>  'Super Sport',
         ]]);
     }

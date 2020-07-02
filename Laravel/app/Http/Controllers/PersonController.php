@@ -83,7 +83,6 @@ class PersonController extends Controller
     {
         //
         $data = $request->only([
-            'number',
             'name',
             'firstname',
             'phoneNumber1',
