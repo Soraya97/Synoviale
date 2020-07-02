@@ -28,6 +28,22 @@ class ProductSeeder extends Seeder {
             'distinctiveSign' => 'rouge vif',
             'lienWeb' => 'https://www.google.com',
             'brand_id' => '1',
+        ],
+            [
+
+            'shortDescr' => 'Très élégant',
+            'longDescr' => 'Magnifiquement bien réussi',
+            'distinctiveSign' => 'vert sapin',
+            'lienWeb' => 'https://www.google.com',
+            'brand_id' => '1',
+        ],
+                [
+
+            'shortDescr' => 'Très racé',
+            'longDescr' => 'Magnifiquement bien fabriqué',
+            'distinctiveSign' => 'noir mat',
+            'lienWeb' => 'https://www.google.com',
+            'brand_id' => '1',
         ]]);
     }
 
