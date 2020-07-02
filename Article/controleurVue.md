@@ -6,20 +6,21 @@ L'identification et la gestion des rôles se ferra dans une autre section.
 
 Il y a 5 *sections* dans le site web:
 
-* **Home Page**
+* **Homepage**
 * **Espace Accueil**
 * **Espace Client**
 * **Espace Entreprise**
 * **Espace Organisateur**
 
-## Home Page
-|Home Page|||||
-|-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**commente**||
-|Infos pratiques|||||
-|Modèles de vélo|Bike|Bike (ressource)|||
-|News|pas de model|pas de contrôleur|||
-|Réserver mon pass|Badge |Badge (ressource)|||
+## Homepage
+|Home Page||||
+|-|-|-|-|
+|**Nom de page**|**model**|**contrôleur**|**commentaire**|
+|Infos pratiques|Pas de model|Pas de contrôleur||
+|Modèles de vélo|Bike|Bike (ressource)||
+|News|Pas de model|Pas de contrôleur||
+|Réserver mon pass|Badge |Badge (ressource)|Méthode store()|
+|Se connecter|User ? |User ?||
 
 > Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion lorsqu'il cherche à réserver un pass.
 
@@ -27,31 +28,33 @@ Il y a 5 *sections* dans le site web:
 
 |Accueil|||||
 |-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**comment**|**URL**|
-|Ajouter client|Client (User ?)|Client (ressource) (User ?)||BikeTest/client|
-|Liste clients|Client (User ?)|Client (ressource) (User ?)||Bike/client|
-|Liste clients - voir un client|Client (User ?)|Client (ressource) (User ?)||Bike/client/{n}|
+|**Nom de page**|**model**|**contrôleur**|**commentaire**|**URL**|
+|Ajouter client|Client (User ? Badge ?)|Client (ressource) (User ? Badge ?)|Méthode store()|BikeTest/client|
+|Liste clients|Client (User ? Badge ?)|Client (ressource) (User ? Badge ?)||Bike/client|
+|Liste clients - voir un client|Client (User ? Person ?)|Client (ressource) (User ? Person ?)|Méthode show()|Bike/client/{n}|
 
 > Limiter l'accès de l'Accueil à l'Édition en cours.
 
 ## Espace client
 |Client|||||
 |-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**comment**|**URL**|
+|**Nom de page**|**model**|**contrôleur**|**commentaire**|**URL**|
 |Mon Pass|Badge|Badge (ressource)||BikeTest/client/{n}/pass|
-|Réserver mon pass|Badge|Badge (ressource)||BikeTest/client/{n}/passReserve|
-|Mes tests|Client (User ?)|Client (ressource)||BikeTest/client/{n}/test|
+|Réserver mon pass|Badge|Badge (ressource)|Méthode store()|BikeTest/client/{n}/passReserve|
+|Mes tests|Client (User ?)|Client (ressource)|Pas à coder|BikeTest/client/{n}/test|
 |Recherche vélo|Bike| Bike (ressource) |App\Providers\AppServiceProvider.php permet de passer une donnée à plusieurs vues.|BikeTest/bike|
 |Mes paramètres|Client (User ?)|Client (ressource)|||
+|Créer un compte|User|User (ressource)|Méthode store()||
+|Paiement|Badge|Badge|Pas à coder // Manque une table "activer/désactiver"||
 
 ## Espace Entreprise
 |Entreprise|||||
 |-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**commente**|**URL**|
+|**Nom de page**|**model**|**contrôleur**|**commentaire**|**URL**|
 |Gérer produits|Product|Product (ressource)||BikeTest/product|
 |Gérer les test|Test|Test (ressource)|*comment limité les produits de l'édition en cours ?*|Bike/test|
-|Ajouter client au test|Test|Test (ressource)|*comment voir tout les clients (disponible) et en sélectionner un* ||
-|Fin de test|Test|Test (ressource)||BikeTest/test/{n}/edit|
+|Commencer un test|Test|Test (ressource)|*comment voir tout les clients (disponible) et en sélectionner un -> selon QR code* ||
+|Fin de test|Test|Test (ressource)|Méthode store()|BikeTest/test/{n}/edit|
 
 > Comment voir les clients et en sélectionner un ?
 > Doit-on faire apparaître les pages et gérer les tests seulement quand les Edition sont en cours ?
@@ -60,7 +63,7 @@ Il y a 5 *sections* dans le site web:
 ## Espace Organisateur
 |Organisateur|||||
 |-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**comment**|**URL**|
+|**Nom de page**|**model**|**contrôleur**|**commentaire**|**URL**|
 |Général|Event|Event (ressource)||BikeTest/event|
 |Général - Gérer Entreprise|Company|Company (ressource)||BikeTest/compagny|
 |Général - Gérer personne de contact|Contact|Contact (ressource)||BikeTest/contact|
