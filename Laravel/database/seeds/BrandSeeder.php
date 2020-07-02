@@ -14,7 +14,7 @@ class BrandSeeder extends Seeder
         //
         DB::table('brands')->delete();
 
-        DB::table('brands')->insert([
+        DB::table('brands')->insert([[
            'name' => 'Yeti',
             'shortDescr' => 'Très rapide',
             'longDescr' => 'Changement des vitesses rapide',
@@ -25,6 +25,6 @@ class BrandSeeder extends Seeder
             'shortDescr' => 'Très maniable',
             'longDescr' => 'Fait en carbone',
             'company_id' => '1',
-        ]);
+        ]]);
     }
 }

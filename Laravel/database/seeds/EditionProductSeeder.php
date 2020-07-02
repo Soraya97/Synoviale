@@ -13,7 +13,7 @@ class EditionProductSeeder extends Seeder {
         //
         DB::table('edition_product')->delete();
 
-        DB::table('edition_product')->insert([
+        DB::table('edition_product')->insert([[
             'edition_id' => '1',
             'product_id' => '1',
             'event_id' => '1',
@@ -24,7 +24,7 @@ class EditionProductSeeder extends Seeder {
             'product_id' => '2',
             'event_id' => '1',
             
-        ]);
+        ]]);
     }
 
 }

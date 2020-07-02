@@ -13,10 +13,10 @@ class ClientSeeder extends Seeder {
         //
         DB::table('clients')->delete();
 
-        DB::table('clients')->insert([
+        DB::table('clients')->insert([[
             'homeCanton' => 'VD',
             'person_id' => '4',
-                ]);
+                ]]);
     }
 
 }

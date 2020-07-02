@@ -12,7 +12,7 @@ class AddresstypeSeeder extends Seeder {
     public function run() {
         //
         DB::table('addresstypes')->delete();
-        DB::table('addresstypes')->insert([
+        DB::table('addresstypes')->insert([[
             'description' => 'Très paisible',
             'company_id' => '1',
             'address_id' => '1',
@@ -32,7 +32,7 @@ class AddresstypeSeeder extends Seeder {
             'company_id' => '4',
             'address_id' => '4',
         ]
-                );
+                ]);
     }
 
 }

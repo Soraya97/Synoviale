@@ -13,7 +13,7 @@ class AddressSeeder extends Seeder {
         //
         DB::table('addresses')->delete();
         
-        DB::table('addresses')->insert([
+        DB::table('addresses')->insert([[
             'number' => '1',
             'street1' => 'Avenue des Sports',
             'street2' => 'Avenue de la Gare',
@@ -53,7 +53,7 @@ class AddressSeeder extends Seeder {
                     'person_id' => '4',
                     'addressType_id' => '4',
         ]
-                );
+                ]);
     }
 
 }

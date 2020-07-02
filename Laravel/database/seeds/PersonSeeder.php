@@ -13,7 +13,7 @@ class PersonSeeder extends Seeder {
         //
         DB::table('people')->delete();
 
-        DB::table('people')->insert([
+        DB::table('people')->insert([[
             'number' => '1',
             'name' => 'Fiechter',
             'firstname' => 'Thomas',
@@ -56,7 +56,7 @@ class PersonSeeder extends Seeder {
             'email2' => 'lstuder@gmail.com',
             'comment' => 'Cliente',
             'address_id' => '4',
-        ]);
+        ]]);
     }
 
 }

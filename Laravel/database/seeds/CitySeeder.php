@@ -14,7 +14,7 @@ class CitySeeder extends Seeder
         //
         DB::table('cities')->delete();
 
-        DB::table('cities')->insert([
+        DB::table('cities')->insert([[
            'postalCode' => '1400',
             'name' => 'Yverdon',
             'Canton' => 'Vaud',
@@ -37,6 +37,6 @@ class CitySeeder extends Seeder
             'name' => 'Breitenbach',
             'Canton' => 'Soleure',
             'country_id' =>  '1',
-        ]);
+        ]]);
     }
 }

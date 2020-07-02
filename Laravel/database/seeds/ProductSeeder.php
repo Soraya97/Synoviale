@@ -13,7 +13,7 @@ class ProductSeeder extends Seeder {
         //
         DB::table('products')->delete();
 
-        DB::table('products')->insert([
+        DB::table('products')->insert([[
             'number' => '1',
             'shortDescr' => 'Très joli',
             'longDescr' => 'Magnifiquement bien disigné',
@@ -28,7 +28,7 @@ class ProductSeeder extends Seeder {
             'distinctiveSign' => 'rouge vif',
             'lienWeb' => 'https://www.google.com',
             'brand_id' => '1',
-        ]);
+        ]]);
     }
 
 }

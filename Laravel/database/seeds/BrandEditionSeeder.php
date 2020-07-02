@@ -13,7 +13,7 @@ class BrandEditionSeeder extends Seeder {
         //
         DB::table('brand_edition')->delete();
         
-                DB::table('brand_edition')->insert([
+                DB::table('brand_edition')->insert([[
                     'brand_id' => '1' ,
                     'edition_id' => '1',
                     'event_id' => '1',
@@ -22,7 +22,7 @@ class BrandEditionSeeder extends Seeder {
                     'brand_id' => '2' ,
                     'edition_id' => '1',
                     'event_id' => '1',
-                ]);
+                ]]);
             
         
     }

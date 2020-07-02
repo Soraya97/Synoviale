@@ -13,7 +13,7 @@ class BikeSeeder extends Seeder {
         //
         DB::table('bikes')->delete();
 
-        DB::table('bikes')->insert([
+        DB::table('bikes')->insert([[
             'type' => 'e-vtt',
             'frameSize' => 'Grande',
             'frameUnit' => '10',
@@ -44,7 +44,7 @@ class BikeSeeder extends Seeder {
             'rimSize' => 'Moyenne',
             'rimUnit' => '4',
             'product_id' => '4',
-        ]);
+        ]]);
     }
 
 }

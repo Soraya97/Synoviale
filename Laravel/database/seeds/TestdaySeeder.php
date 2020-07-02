@@ -14,7 +14,7 @@ class TestdaySeeder extends Seeder
         //
         DB::table('testdays')->delete();
 
-        DB::table('testdays')->insert([
+        DB::table('testdays')->insert([[
            'date' => '02.10.2020',
             'startHour' => '10:00',
             'endHour' => '17:00',
@@ -34,6 +34,6 @@ class TestdaySeeder extends Seeder
             'endHour' => '16:00',
             'event_id' =>  '1',
             'edition_id' => '1',
-    ]);
+    ]]);
     }
 }
