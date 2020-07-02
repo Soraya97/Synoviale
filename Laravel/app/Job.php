@@ -12,7 +12,7 @@ class Job extends Model
         'description',
         'event_id',
         'edition_id',
-        'employee_id'
+        'employee_id',
     ];
 
     public function event()
