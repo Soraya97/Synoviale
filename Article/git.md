@@ -24,7 +24,7 @@ Pour ajouter tout les fichiers
 
     git commit -m "Commantaire du commit"
 
-## Envois des modifications à la branche de dépôt principale
+## Envoi des modifications à la branche de dépôt principale
 
     git push
 
@@ -36,9 +36,11 @@ ou
 
     git pull
 
-## Charger seulement le fichier inéxistant 
+## Charger seulement le fichier inexistant 
 
- git fetch origin
+```
+ git fetch origin 
+```
 
  ## Interface graphique
 
