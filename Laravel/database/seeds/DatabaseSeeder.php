@@ -22,11 +22,14 @@ class DatabaseSeeder extends Seeder {
         $this->call(ContactSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(EditionSeeder::class);
+        $this->call(EmployeeSeeder::class);
         $this->call(EventSeeder::class);
         $this->call(ContactSeeder::class);
         $this->call(JobSeeder::class);
+        $this->call(OrganizerSeeder::class);
         $this->call(PersonSeeder::class);
         $this->call(ProductSeeder::class);
+        $this->call(StoreSeeder::class);
         $this->call(TestdaySeeder::class);
         $this->call(TestSeeder::class);
 
