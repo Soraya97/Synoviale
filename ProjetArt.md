@@ -1,29 +1,29 @@
 # Guide line Dev
 
-## préparation projet
+## Préparation du projet
 
-comment préparer le [projet](Article/preparer.md)
+Comment préparer le [projet](Article/preparer.md)
 
-## comande git
+## Commandes git
 
-les commandes [git](Article/git.md) les plus utiles
+Les commandes [git](Article/git.md) les plus utiles
 
-ne pas oublier d'ajouter les dossiers
+Attention à ne pas oublier d'ajouter les dossiers suivants
 * vendor
 * node_module (avec `npm install`)
 
-et le fichier `.env` avec les infos pour la base de données local
+et le fichier `.env` avec les infos pour la base de données locale
 
-## liste des tables
+## Liste des tables
 
 [les tables](Article/tables.md)
 
 
-## code de développement
+## Code de développement
 
-la structure de [code](Article/backend.md) pour le migration, seeder, et contrôleur (ressource)
+La structure de [code](Article/backend.md) pour le migration, seeder, et contrôleur (ressource)
 
-## code contrôleurs pour vue
+## Code des contrôleurs pour chaque vue
 
-la structure des contrôleurs pour chaque vue [ici](Article/controleurVue.md)
+La structure des contrôleurs pour chaque vue [ici](Article/controleurVue.md)
 

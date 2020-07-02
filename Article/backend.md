@@ -1,6 +1,6 @@
-# marche à suivre pour développement Backend
+# Marche à suivre pour le développement du Backend
 
-pour chaque [table](tables.md) il faut créer :
+Pour chaque [table](tables.md) il faut créer :
 
 * un fichier de migration
 * un fichier de population
@@ -9,7 +9,7 @@ pour chaque [table](tables.md) il faut créer :
 
 un autre fichier va traité des contrôleurs spécifiques pour chaque page, mais nous allons créer ici les contrôleurs ressources de chaque tables et effacé ceux qui ne serons pas utilisé.
 
-pour être sur que les fichiers correspond entre migration,model, contrôleur et seeder; nous utiliserons une seul commande qui fera le travaille pour nous:
+pour être sûre que les fichiers correspondent entre migration,model, contrôleur et seeder; nous utiliserons une seule commande qui fera le travaille pour nous:
 
     php artisan make:model *Name* -crms
 
@@ -17,11 +17,11 @@ pour être sur que les fichiers correspond entre migration,model, contrôleur et
 * **-m** créer une table de migration
 * **-s** créer un seeder
 
-## exemple avec la table Product
+## Exemple avec la table Product
 
-exemple du code avec la **Product**
+exemple du code avec la table **Product**
 
-### table Product
+### Table Product
 |Product||
 |-|-|
 |id||
@@ -34,9 +34,9 @@ exemple du code avec la **Product**
 ||test - hasMany|
 ||bike - belongsTo|
 
-### migration
+### Migration
 
-le fichier `2020_06_18_122401_create_products_table.php` dans `database/migrations`
+Le fichier `2020_06_18_122401_create_products_table.php` dans `database/migrations`
 
     class CreateProductSTable extends Migration
     {
@@ -61,9 +61,9 @@ le fichier `2020_06_18_122401_create_products_table.php` dans `database/migratio
     }
 
 
-### seeder
+### Seeder
 
-modifier le fichier `database/seeds/productSeeder.php`
+Modifier le fichier `database/seeds/productSeeder.php`
 
     class ProductSeeder extends Seeder
     {
@@ -88,7 +88,7 @@ modifier le fichier `database/seeds/productSeeder.php`
         }
     }
 
-il faut un appel dans le fichier `database/seeds/DatabaseSeeder.php`
+Il faut un appel dans le fichier `database/seeds/DatabaseSeeder.php`
 
     class DatabaseSeeder extends Seeder
     {
@@ -99,11 +99,11 @@ il faut un appel dans le fichier `database/seeds/DatabaseSeeder.php`
     }
 
 
-### model
+### Model
 
-le fichier `Product.php` dans `app/`
+Le fichier `Product.php` dans `app/`
 
-nous ajoutons le SoftDeletes avec `use SoftDeletes`
+Nous ajoutons le SoftDeletes avec `use SoftDeletes`
 
     class Product extends Model
     {
@@ -137,7 +137,7 @@ nous ajoutons le SoftDeletes avec `use SoftDeletes`
 
 ### Controller
 
-modifier le fichier: `app/Http/Controller/ProductController.php`
+Modifier le fichier: `app/Http/Controller/ProductController.php`
 
 
     public function index()
@@ -205,13 +205,13 @@ modifier le fichier: `app/Http/Controller/ProductController.php`
 
 
 ### Request
-nous pouvons utiliser aussi un *Request* pour valider les données
+Nous pouvons utiliser aussi un *Request* pour valider les données
 
     php artisan make:request ProductRequest
 
-cela créer un fichier dans `app/Http/Requests/`
+Cela crée un fichier dans `app/Http/Requests/`
 
-l'on met *authorize* à **true** et on ajoute les règles dans *rules*
+L' on met *authorize* à **true** et on ajoute les règles dans *rules*
 
     class ProductRequest extends FormRequest
     {
@@ -230,13 +230,13 @@ l'on met *authorize* à **true** et on ajoute les règles dans *rules*
         }
     }
 
-on doit ensuite modifier le contrôleur
+On doit ensuite modifier le contrôleur
 
-on ajoute en haut du fichier
+On ajoute en haut du fichier
 
     use App\Http\Requests\ProductRequest;
 
-en dans les méthodes
+ et dans les méthodes
 
     public function store(ProductRequest $request)
     {
@@ -249,9 +249,9 @@ en dans les méthodes
     
     }
 
-### route
+### Route
 
-créer la route dans `routes/web.php`
+Créer la route dans `routes/web.php`
 
     Route::resource('Product', 'ProductController');
 

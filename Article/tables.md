@@ -1,6 +1,6 @@
 # Tables
 
-## Adress
+## Address
 |Address||
 |-|-|
 |id||
@@ -11,16 +11,16 @@
 |PObox (string)|nullable|
 |city_id|city - belongsTo|
 ||person - hasMany|
-||adressType - belongsTo|
+||addresstype - belongsTo|
 
 
 ## AddressType
-|AdressType||
+|AddressType||
 |-|-|
 |id||
 |description (text)||
 |company_id|compagny - hasMany|
-|adress_id|address - hasMany|
+|address_id|address - hasMany|
 
 ## Badge
 |Badge||
@@ -52,7 +52,7 @@
 |name (string)|unique|
 |shortDescr (string)||
 |longDescr (string)|nullable|
-|compagny_id|company - belongsTo|
+|company_id|company - belongsTo|
 ||product - hasMany|
 ||edition - hasMany|
 
@@ -63,7 +63,7 @@
 |postaleCode (integer)|unique|
 |name (string)|unique|
 |canton (string)|nullable|
-|contry_id|contry - belongsTo|
+|country_id|country - belongsTo|
 ||address - hasMany|
 
 ## Client
@@ -83,7 +83,7 @@
 |number (integer)|unique|
 |name (string)||
 ||brand - hasMany|
-||adresstype - hasMany|
+||addresstype - hasMany|
 ||contact - hasMany|
 
 ## Contact
@@ -93,7 +93,7 @@
 |since (date)||
 |until (string)|nullable|
 |person_id|person - belongsTo|
-|company_id|compagny - belongdTo|
+|company_id|company - belongdTo|
 
 ## Country
 |Country||
@@ -119,8 +119,15 @@
 
 > table pivot "Presentation"
 
+## Employee
+
+| Employee  |                    |
+| --------- | ------------------ |
+| id        |                    |
+| person_id | person - belongsTo |
 
 ## Event
+
 |Event||
 |-|-|
 |id||
@@ -138,7 +145,7 @@
 |edition_id||
 |brand_id||
 
-> table pivot ??
+> table pivot : php artisan make:migration create_brand_edition_table
 
 ## Job
 |Job||
@@ -149,8 +156,15 @@
 |edition_id|edition - hasMany|
 |staff_id|staff - hasMany|
 
+## Organizer
+
+| Organizer |                    |
+| --------- | ------------------ |
+| id        |                    |
+| person_id | person - belongsTo |
 
 ## Person
+
 |Person||
 |-|-|
 |id||
@@ -162,7 +176,7 @@
 |email1 (string)|nullable|
 |email2 (string)|nullable|
 |comment (text)|nullable|
-|adress_id|address - blongsTo|
+|address_id|address - blongsTo|
 ||contact - belongsTo|
 ||client - belongsTo|
 ||staff - belongsTo|
@@ -175,7 +189,7 @@
 |edition_id||
 |product_id||
 
-> tabel pivot ?
+> tabel pivot : php artisan make:migration create_edition_product_table
 
 
 ## Product
@@ -199,9 +213,17 @@
 |person_id|person - belongsTo|
 ||job - belongsTo|
 
-> table pivot ??
+> table pivot : php artisan make:migration create_job_person_table
+
+## Store
+
+| Store     |                    |
+| --------- | ------------------ |
+| id        |                    |
+| person_id | person - belongsTo |
 
 ## Test 
+
 |Test||
 |-|-|
 |id||

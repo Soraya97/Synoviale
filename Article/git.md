@@ -1,30 +1,30 @@
-# commande git 
+# Commandes git 
 
-## initiation
+## Initiation
 
     git init
-
+    
     git clone http://example.com
 
 > Attention les dossiers **vendor**, **node_module** et **.env** sont à rajouter dans votre dossier personnel
 
-## ajouter un fichier
+## Ajouter un fichier
 
     git add fichier.txt
 
-pour ajouter tout les fichiers
+Pour ajouter tout les fichiers
 
     git add .
 
-## supprimer un fichier 
+## Supprimer un fichier 
 
     git rm fichier.txt
 
-## valider les modifications
+## Valider les modifications
 
     git commit -m "Commantaire du commit"
 
-## envois des modification a la dépôt principale
+## Envois des modifications à la branche de dépôt principale
 
     git push
 
@@ -32,18 +32,19 @@ ou
 
     git push origin master
 
-## recharger le dépôt principale
+## Recharger le dépôt principal
 
     git pull
 
-## charger seulement le fichier inéxistant 
+## Charger seulement le fichier inéxistant 
 
  git fetch origin
 
- ## interface graphique
+ ## Interface graphique
 
     gitk
 
 ## Autre
 
 voici un [lien]('https://www.hostinger.fr/tutoriels/commandes-git/') pour plus de commande 
+

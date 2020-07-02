@@ -4,6 +4,6 @@
 
 Dans ce dossier se trouve le code du projet d'articulation.
 
-## guid line pour le développement
+## Guide line pour le développement
 
-vous trouvez [ici](ProjetArt.md) le Guide line
+Vous trouvez [ici](ProjetArt.md) le Guide line

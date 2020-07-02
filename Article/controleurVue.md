@@ -1,10 +1,10 @@
-# contrôleur et vue
+# Contrôleur et vue
 
-nous allons créer les contrôleurs pour chaque vue que nous avons besoins ou utiliser un contrôleur ressource déjà créer.
+Nous allons créer les contrôleurs pour chaque vue que nous avons besoins ou utiliser un contrôleur ressource déjà créé.
 
-l'identification et la gestion des rôles se ferra dans une autre section
+L'identification et la gestion des rôles se ferra dans une autre section.
 
-il y a 5 *section* dans le site web:
+Il y a 5 *sections* dans le site web:
 
 * **Home Page**
 * **Espace Accueil**
@@ -16,7 +16,7 @@ il y a 5 *section* dans le site web:
 |Home Page|||||
 |-|-|-|-|-|
 |**Nom de page**|**model**|**contrôleur**|**commente**||
-|infos pratiques|||||
+|Infos pratiques|||||
 |Modèles de vélo|Edition||||
 |News|pas de model|pas de contrôleur|||
 |Réserver mon pass|Badge |Badge (ressource)|||
@@ -24,10 +24,10 @@ il y a 5 *section* dans le site web:
 ## Espace Accueil
 |Accueil|||||
 |-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**commente**|**URL**|
+|**Nom de page**|**model**|**contrôleur**|**comment**|**URL**|
 |Ajouter client|Client|Client (ressource)||BikeTest/client|
-|liste clients|Client|Client (ressource)||Bike/client|
-|liste clients - voir un client|Client|Client (ressource)||Bike/client/{n}|
+|Liste clients|Client|Client (ressource)||Bike/client|
+|Liste clients - voir un client|Client|Client (ressource)||Bike/client/{n}|
 
 
 
@@ -36,11 +36,11 @@ il y a 5 *section* dans le site web:
 ## Espace client
 |Client|||||
 |-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**commente**|**URL**|
-|Mon Pass|Client|client (ressource)||BikeTest/client/{n}/pass|
-|réserver mon pass|Client|client (ressource)||BikeTest/client/{n}/passReserve|
+|**Nom de page**|**model**|**contrôleur**|**comment**|**URL**|
+|Mon Pass|Client|Client (ressource)||BikeTest/client/{n}/pass|
+|Réserver mon pass|Client|Client (ressource)||BikeTest/client/{n}/passReserve|
 |Mes tests|Client|Client (ressource)||BikeTest/client/{n}/test|
-|recherche vélo|Bike| Bike (ressource) ||BikeTest/bike|
+|Recherche vélo|Bike| Bike (ressource) ||BikeTest/bike|
 |Mes paramètres|Client|Client (ressource)|||
 
 ## Espace Entreprise
@@ -49,17 +49,17 @@ il y a 5 *section* dans le site web:
 |**Nom de page**|**model**|**contrôleur**|**commente**|**URL**|
 |Gérer produits|Product|Product (ressource)||BikeTest/product|
 |Gérer les test|Test|Test (ressource)|*comment limité les produits de l'édition en cours ?*|Bike/test|
-|Ajouter client au test|Test|Test (ressource)|*comment voir tout les clients (disponible) et en sélectionner un ||
+|Ajouter client au test|Test|Test (ressource)|*comment voir tout les clients (disponible) et en sélectionner un* ||
 |Fin de test|Test|Test (ressource)||BikeTest/test/{n}/edit|
 
-> comment voir les clients et en sélectionner un ?
-> doit ton faire apparaitre les pages Gérer les tests seulement quand les Edition est en cours ?
-> comment on sépare la liste des tests par édition ?
+> Comment voir les clients et en sélectionner un ?
+> Doit-on faire apparaître les pages et gérer les tests seulement quand les Edition sont en cours ?
+> Comment sépare-t-on la liste des tests par édition ?
 
 ## Espace Organisateur
 |Organisateur|||||
 |-|-|-|-|-|
-|**Nom de page**|**model**|**contrôleur**|**commente**|**URL**|
+|**Nom de page**|**model**|**contrôleur**|**comment**|**URL**|
 |Général|Event|Event (ressource)||BikeTest/event|
 |Général - Gérer Entreprise|Company|Company (ressource)||BikeTest/compagny|
 |Général - Gérer personne de contact|Contact|Contact (ressource)||BikeTest/contact|
