@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class TestdayController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkorganizer');
+        
+        $this->middleware('checkemployee');
+        
+         $this->middleware('checkclient')->only('index'); // à vérifier
+    }
     /**
      * Display a listing of the resource.
      *

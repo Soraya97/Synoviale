@@ -9,6 +9,13 @@ use App\Http\Requests\BikeRequest;
 
 class BikeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkclient')->except('index');
+        
+        $this->middleware('checkcontact');
+        
+    }
     /**
      * Display a listing of the resource.
      *

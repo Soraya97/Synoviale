@@ -9,6 +9,11 @@ use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkcontact'); 
+
+    }
     /**
      * Display a listing of the resource.
      *
