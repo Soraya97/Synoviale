@@ -11,7 +11,7 @@
 
     <div class="carousel carousel-slider">
       <div class="carousel-item">
-        <p>Valable le {{$badge->testday->date}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</p>
+        <p>Valable le {{\Carbon\Carbon::parse($badge->testday->date)->format('j F, Y')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</p>
         <img src="img/qrcode.png" width="200">
       </div>
       <!-- <div class="carousel-item">

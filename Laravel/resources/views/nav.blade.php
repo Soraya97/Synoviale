@@ -54,7 +54,7 @@
 </ul>
 <!-- menu on browser -->
 <nav>
-    <div class="nav-wrapper container">
+    <div class="nav-wrapper container navBar">
         <a href="#" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <a href="{{url('/')}}" class="brand-logo left"><img src="/img/logoBlanc.png" alt="Bike Test Gryon"></a>
         <ul class="right hide-on-med-and-down">
