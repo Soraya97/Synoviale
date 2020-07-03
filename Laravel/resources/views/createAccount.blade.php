@@ -12,7 +12,7 @@
 
     <div class="row">
 
-      <form class="col s12" action="{{ route('create') }}" method="post">
+      <form class="col s12" action="{{ route('user.store') }}" method="post">
         @csrf
         <h2>CRÉATION D'UN COMPTE</h2>
           <div class="{!! $errors->has('username') ? 'has-error' : '' !!} input-field col s12">

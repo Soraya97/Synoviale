@@ -10,11 +10,17 @@ class ContactController extends Controller
 {
     public function __construct()
     {
+<<<<<<< HEAD
         // $this->middleware('checkuser');
         //
         // $this->middleware('checkorganizer');
         //
         // $this->middleware('checkcontact')->only('index', 'show'); // à vérifier
+=======
+        $this->middleware('checkuser'); 
+        
+        $this->middleware('checkcontact')->only('index', 'show'); // à vérifier
+>>>>>>> bbbab25b3c03f0c2c598e3fc3f1236ef82b70964
 
     }
     /**

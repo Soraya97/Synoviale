@@ -15,9 +15,9 @@ class CreateTestdaysTable extends Migration
     {
         Schema::create('testdays', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->time('startHour');
-            $table->time('endHour');
+            $table->string('date');
+            $table->string('startHour');
+            $table->string('endHour');
             $table->foreignId('edition_id');
             $table->foreignId('event_id');
             $table->timestamps();

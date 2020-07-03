@@ -6,7 +6,7 @@ use Closure;
 
 use Session;
 
-class CheckContact
+class RedirectLogin
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,20 @@ class CheckContact
      */
     public function handle($request, Closure $next)
     {
-        if(!Session::has('contact') || !Session::has('organizer'))
+
+        if(Session::has('client'))
+        {
+            return redirect('/');
+        }
+        if(Session::has('contact'))
+        {
+            return redirect('/');
+        }
+        if(Session::has('employee'))
+        {
+            return redirect('/');
+        }
+        if(Session::has('organizer'))
         {
             return redirect('/');
         }
