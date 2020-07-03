@@ -23,3 +23,8 @@ Route::resource('Addresstype', 'AddressController');
 Route::resource('Badge', 'BadgeController');
 Route::resource('Bike', 'BikeController');
 Route::resource('Brand', 'BrandController');
+
+//route pour authentification
+Route::post('user','UserController@connect')->name('connect');
+Route::get('user','UserController@deconnect')->name('deconnect');
+Route::post('register','UserController@create')->name('create');
