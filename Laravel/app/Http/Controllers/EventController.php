@@ -9,11 +9,7 @@ class EventController extends Controller
 {
     public function __construct()
     {
-<<<<<<< HEAD
-        // $this->middleware('checkorganizer'); 
-=======
-        //$this->middleware('checkorganizer'); 
->>>>>>> bbbab25b3c03f0c2c598e3fc3f1236ef82b70964
+        // $this->middleware('checkorganizer');
 
     }
     /**

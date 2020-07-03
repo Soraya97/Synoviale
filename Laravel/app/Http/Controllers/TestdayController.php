@@ -8,19 +8,12 @@ use Illuminate\Http\Request;
 class TestdayController extends Controller
 {
     public function __construct()
-<<<<<<< HEAD
     {
         // $this->middleware('checkorganizer');
         //
         // $this->middleware('checkemployee');
         //
         //  $this->middleware('checkclient')->only('index'); // à vérifier
-=======
-    {        
-        $this->middleware('checkemployee');
-        
-         $this->middleware('checkclient')->only('index'); // à vérifier
->>>>>>> bbbab25b3c03f0c2c598e3fc3f1236ef82b70964
     }
     /**
      * Display a listing of the resource.
