@@ -9,6 +9,13 @@ use App\Http\Requests\BrandRequest;
 
 class BrandController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkcontact'); 
+        
+        $this->middleware('checkclient'); 
+
+    }
     /**
      * Display a listing of the resource.
      *

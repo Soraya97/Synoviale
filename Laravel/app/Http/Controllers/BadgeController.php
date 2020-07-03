@@ -9,6 +9,15 @@ use App\Http\Requests\BadgeRequest;
 
 class BadgeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkuser');
+        
+        $this->middleware('checkemployee');
+        
+        $this->middleware('checkclient');
+        
+    }
     /**
      * Display a listing of the resource.
      *

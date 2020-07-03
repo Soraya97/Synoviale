@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('checkuser');
+        
+        $this->middleware('checkclient');
+
+    }
     /**
      * Display a listing of the resource.
      *

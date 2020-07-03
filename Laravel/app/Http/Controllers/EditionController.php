@@ -9,6 +9,11 @@ use App\Http\Requests\EditionRequest;
 
 class EditionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkorganizer'); 
+
+    }
     /**
      * Display a listing of the resource.
      *

@@ -8,6 +8,11 @@ use App\Http\Requests\TestRequest;
 
 class TestController extends Controller {
 
+    public function __construct()
+    {
+        $this->middleware('checkcontact'); 
+        
+    }
     /**
      * Display a listing of the resource.
      *

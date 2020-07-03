@@ -9,6 +9,7 @@ use App\Http\Requests\CityRequest;
 
 class CityController extends Controller {
 
+    
     /**
      * Display a listing of the resource.
      *
