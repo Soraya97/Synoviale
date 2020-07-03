@@ -9,10 +9,10 @@ class StoreController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkuser');
-        
-        $this->middleware('checkcontact')->only ('index'); // à vérifier
-        
+        // $this->middleware('checkuser');
+        //
+        // $this->middleware('checkcontact')->only ('index'); // à vérifier
+
     }
     /**
      * Display a listing of the resource.

@@ -9,7 +9,7 @@ class JobController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkorgnaizer'); 
+        // $this->middleware('checkorgnaizer'); 
 
     }
     /**
@@ -78,7 +78,7 @@ class JobController extends Controller
     public function edit(Job $job)
     {
         //
-        
+
     }
 
     /**

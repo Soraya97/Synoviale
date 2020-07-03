@@ -23,7 +23,7 @@ class ClientController extends Controller {
         //
         $clients = Client::all();
 
-        return view('paramClient', compact('clients'));
+        return view('reception/clientsList', compact('clients'));
     }
 
     /**
@@ -64,7 +64,7 @@ class ClientController extends Controller {
      */
     public function show(Client $client) {
         //
-        return view('onlyclient', compact('client'));
+        return view('/reception/viewClient', compact('client'));
     }
 
     /**

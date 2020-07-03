@@ -10,8 +10,8 @@ class AddressController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('checkuser');
-        
+        // $this->middleware('checkuser');
+
     }
     /**
      * Display a listing of the resource.
@@ -99,7 +99,7 @@ class AddressController extends Controller {
      */
     public function destroy(Address $address) {
         //
-        
+
         $address->delete();
 
         return redirect('address');

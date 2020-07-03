@@ -10,9 +10,11 @@ class ContactController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkuser'); 
-        
-        $this->middleware('checkcontact')->only('index', 'show'); // à vérifier
+        // $this->middleware('checkuser');
+        //
+        // $this->middleware('checkorganizer');
+        //
+        // $this->middleware('checkcontact')->only('index', 'show'); // à vérifier
 
     }
     /**
@@ -22,7 +24,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        
+
         $contacts = Contact::all();
 
         return view('contact',comapct('contacts'));

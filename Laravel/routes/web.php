@@ -34,9 +34,10 @@ Route::get('inscription', 'UserController@create')->name('user.create');
 
 Route::resource('/', 'EditionController');
 
-Route::resource('/parametre', 'ClientController');
+// route for the reception
+Route::resource('/client', 'ClientController');
 
-Route::resource('/listeVelo', 'BikeController');
+Route::resource('/velo', 'BikeController');
 
 Route::resource('/pass', 'BadgeController');
 

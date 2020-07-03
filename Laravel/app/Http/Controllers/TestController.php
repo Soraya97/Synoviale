@@ -10,8 +10,8 @@ class TestController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('checkcontact'); 
-        
+        // $this->middleware('checkcontact'); 
+
     }
     /**
      * Display a listing of the resource.

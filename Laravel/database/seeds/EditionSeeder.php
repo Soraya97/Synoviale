@@ -17,8 +17,8 @@ class EditionSeeder extends Seeder
         DB::table('editions')->insert([
            'number' => '12',
             'place' => 'Gryon',
-            'startDate' => '02.10.2020',
-            'endDate' => '04.10.2020',
+            'startDate' => '2020-10-02',
+            'endDate' => '2020-10-04',
             'event_id' =>  '1',
         ]);
     }

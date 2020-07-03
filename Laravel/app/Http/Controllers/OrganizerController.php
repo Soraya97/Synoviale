@@ -9,10 +9,10 @@ class OrganizerController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('checkuser');
-        
-        $this->middleware('checkorganizer'); 
-        
+        // $this->middleware('checkuser');
+        //
+        // $this->middleware('checkorganizer'); 
+
     }
     /**
      * Display a listing of the resource.
