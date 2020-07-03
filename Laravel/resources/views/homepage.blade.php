@@ -18,7 +18,7 @@
           @if(Auth::check())
           <a class="btn waves-effect" href="{{url('/reservationPass')}}">RÉSERVER SON PASS</a>
           @else
-          <a class="btn waves-effect" href="{{ route('connect') }}">RÉSERVER SON PASS</a>
+          <a class="btn waves-effect" href="{{ route('user.connect') }}">RÉSERVER SON PASS</a>
           @endif
         </div>
       </li>
@@ -31,7 +31,7 @@
         @if(Auth::check())
         <a class="btn waves-effect" href="{{url('/reservationPass')}}">RÉSERVER SON PASS</a>
         @else
-        <a class="btn waves-effect" href="{{ route('connect') }}">RÉSERVER SON PASS</a>
+        <a class="btn waves-effect" href="{{ route('user.connect') }}">RÉSERVER SON PASS</a>
         @endif
         </div>
       </li>

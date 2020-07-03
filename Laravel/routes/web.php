@@ -25,10 +25,12 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('Brand', 'BrandController');
 //
 // //route pour authentification
-Route::post('user','UserController@connect')->name('connect');
-Route::get('user','UserController@deconnect')->name('deconnect');
-Route::post('inscription','UserController@store')->name('store');
-Route::get('inscription', 'UserController@create')->name('create');
+Route::post('user','UserController@connect')->name('user.connect');
+Route::get('user','UserController@deconnect')->name('user.deconnect');
+Route::post('inscription','UserController@store')->name('user.store');
+Route::get('inscription', 'UserController@create')->name('user.create');
+
+//Route::resource('user','USerController');
 
 Route::resource('/', 'EditionController');
 
@@ -43,7 +45,7 @@ Route::resource('/pass', 'BadgeController');
 
 Route::get('/login', function () {
     return view('login');
-});
+})->middleware('redirectlogin');
 
 // Route::get('/listeVelo', function () {
 //     return view('modelsBike');

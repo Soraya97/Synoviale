@@ -12,8 +12,6 @@ class ContactController extends Controller
     {
         $this->middleware('checkuser'); 
         
-        $this->middleware('checkorganizer'); 
-        
         $this->middleware('checkcontact')->only('index', 'show'); // à vérifier
 
     }
