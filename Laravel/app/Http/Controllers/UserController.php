@@ -77,13 +77,13 @@ class UserController extends Controller
 
         $data = $request->validate([
             'username' => 'required',
-            'email' => 'required|email',
+            'email' => 'required',
             'password' => 'required',
             'name' => 'required',
             'firstname' => 'required',
         ]);
 
-        $personTest = $request->only('name','firstname','email');
+        $personTest = $request->only('name','firstname');
 
         $userTest = $request->only('username','email');
 
@@ -93,7 +93,7 @@ class UserController extends Controller
             return redirect('/');
         }
 
-        if(User::wher($userTest)->first())
+        if(User::where($userTest)->first())
         {
             return redirect('/');
         }
@@ -102,7 +102,7 @@ class UserController extends Controller
 
         Person::create($person);
 
-        $personId = Person::where($person)->first();
+        $personId = Person::where($personTest)->first();
 
         $request->request->add(['person_id' => $personId->id]);
 

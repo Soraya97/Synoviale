@@ -9,7 +9,7 @@ class Person extends Model
 
     protected $fillable = [
         'name',
-        'firstName',
+        'firstname',
         'phoneNumber1',
         'phoneNumber2',
         'email1',

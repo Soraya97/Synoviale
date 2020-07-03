@@ -31,8 +31,8 @@
               {!! $errors->first('password', '<small class="help-block">:message</small>') !!}
           </div>
           <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col s12 l6">
-              <input type="email" name="email1" placeholder="example@gmail.com" class="validate">
-              <label for="email1">Email</label>
+              <input type="email" name="email" placeholder="example@gmail.com" class="validate">
+              <label for="email">Email</label>
               {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
           </div>
           <div class="input-field col s12 l6">
@@ -59,7 +59,7 @@
                 {!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}
             </div>
 
-          <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col s12 l6">
+          <div class="{!! $errors->has('email2') ? 'has-error' : '' !!} input-field col s12 l6">
               <input type="email" name="email2" placeholder="nomprenom@gmail.com" class="validate">
               <label for="email2">Email secondaire</label>
               {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
