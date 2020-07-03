@@ -1,0 +1,147 @@
+@font-face {
+  font-family: Akrobat;
+  src: url(fonts/Akrobat-Black.woff);
+}
+
+#wrapper {
+    display: grid;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: 1fr 1fr auto 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+#wrapper>header {
+    grid-area: header;
+}
+
+#wrapper>main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 100vh;
+    /* grid-template-columns: 1fr;
+    grid-template-areas:
+        "welcome"
+        "last"
+        "slogan"
+        "partner"; */
+}
+
+
+#wrapper>nav {
+    grid-area: nav;
+}
+
+#wrapper>footer {
+    grid-area: footer;
+    background-color: #00acc1;
+}
+
+footer a, footer div {
+  color: white;
+}
+
+html,
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+h1, h2 {
+  font-family: Akrobat;
+}
+
+/* .welcome {
+    height: 100vh;
+} */
+
+/* .lastNews {
+    grid-area: last;
+}
+
+.slogan {
+    grid-area: slogan;
+    height: 10%;
+}
+
+.partners {
+    grid-area: partner;
+} */
+
+
+
+@media screen and (max-width: 30rem), screen and (max-device-width: 30rem) {
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    footer>p {
+        font-size: 0.75rem;
+    }
+
+    .brand-logo {
+      margin-top: 5px;
+    }
+
+}
+
+.img {
+    background-size: cover;
+    background-position: center;
+    width: 85%;
+    height: auto;
+}
+
+.socialMedia {
+  width: 2rem;
+  height: auto;
+}
+
+.filterBike {
+  padding: 0.25rem;
+}
+
+.noBike {
+  color: red;
+}
+
+.someBike {
+  color: green;
+}
+
+.brand-logo {
+  margin-top: 5px;
+}
+
+.divider {
+  color: #ffa000;
+}
+
+.greyBackground {
+  background-color: #f5f5f5;
+  padding: 0.25rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.orange-light {
+  background-color: #ffd180;
+}
+
+.blue-light {
+  background-color: #80deea;
+}

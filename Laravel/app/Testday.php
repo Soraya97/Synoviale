@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Testday extends Model {
 
-    use SoftDeletes;
 
     protected $fillable = [
         'date',

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-    use SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -19,7 +18,7 @@ class Person extends Model
         'address_id'
     ];
 
-    
+
     public function address()
     {
         return $this->belongsTo(Address::class);

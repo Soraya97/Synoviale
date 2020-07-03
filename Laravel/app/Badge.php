@@ -5,9 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Badge extends Model
-{
-    use SoftDeletes;
-    
+{    
     protected $fillable = [
         'number',
         'person_id',

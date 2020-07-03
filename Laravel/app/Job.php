@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
-    use SoftDeletes;
 
     protected $fillable = [
         'description',
@@ -24,7 +23,7 @@ class Job extends Model
     {
         return $this->hasMany(Edition::class);
     }
-    
+
     public function employee()
     {
         return $this->hasMany(Employee::class);

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Organizer extends Model
 {
     //
-    use SoftDeletes;
     
     protected $fillable = [
         'person_id'
@@ -18,5 +17,5 @@ class Organizer extends Model
         return $this->belongsTo(Person::class);
     }
 
-    
+
 }
