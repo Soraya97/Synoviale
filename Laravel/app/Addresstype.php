@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Addresstype extends Model {
 
-    use SoftDeletes;
-
     protected $fillable = [
         'description',
         'company_id',

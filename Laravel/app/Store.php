@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Store extends Model
 {
     //
-    use SoftDeletes;
     
     protected $fillable = [
         'person_id'

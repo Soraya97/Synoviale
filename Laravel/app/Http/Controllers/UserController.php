@@ -27,7 +27,7 @@ class UserController extends Controller
         $user = User::where($data)->first();
 
         if($user)
-        {  
+        {
             $request->session()->put('user',$user);
 
             $organizer = Organizer::where('person_id',$user->person->id)->first();
@@ -45,9 +45,9 @@ class UserController extends Controller
             $request->session()->put('client',$client);
 
             $request->session()->put('store',$store);
-            
+
             $request->session()->put('employee',$employee);
-            
+
             $request->session()->put('contact',$contact);
 
 
@@ -70,7 +70,7 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
-        
+
         $data = $request->validate([
             'username' => 'required',
             'email' => 'required'|email,
@@ -78,13 +78,13 @@ class UserController extends Controller
             'name' => 'required',
             'firstname' => 'required',
         ]);
-    
+
         $personTest = $request->only('name','firstname','email');
 
         $userTest = $request->only('username','email');
 
 
-        if(Person::where($person)->first())
+        if(Person::where($personTest)->first())
         {
             return redirect('/');
         }

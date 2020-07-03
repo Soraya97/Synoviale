@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    use SoftDeletes;
     
     protected $fillable = [
         'name'
