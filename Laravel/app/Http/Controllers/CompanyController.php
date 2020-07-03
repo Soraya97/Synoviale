@@ -10,9 +10,9 @@ class CompanyController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkorganizer');
-        
-        $this->middleware('checkcontact')->except('index'); // à vérifier
+        // $this->middleware('checkorganizer');
+        //
+        // $this->middleware('checkcontact')->except('index'); // à vérifier
 
     }
     /**

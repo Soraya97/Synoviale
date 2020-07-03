@@ -11,9 +11,9 @@ class BrandController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkcontact'); 
-        
-        $this->middleware('checkclient'); 
+        // $this->middleware('checkcontact');
+        //
+        // $this->middleware('checkclient'); 
 
     }
     /**

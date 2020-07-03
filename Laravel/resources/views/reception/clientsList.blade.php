@@ -39,11 +39,11 @@
           @foreach($clients as $client)
           <tr>
             <td>{{$client->person->name}}</td>
-            <td>{{$client->person->firstName}}</td>
+            <td>{{$client->person->firstname}}</td>
             <td>Login</td>
             <td>QR Code</td>
             <td>Jours</td>
-            <td><a href="#" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
+            <td><a href="{{route('client.show', [$client->id])}}" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
           </tr>
           @endforeach
           <tr>
@@ -60,7 +60,7 @@
             <td>Login</td>
             <td>QR Code</td>
             <td>Jours</td>
-            <td><a href="#" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
+            <td><a href="" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
           </tr>
         </tbody>
       </table>

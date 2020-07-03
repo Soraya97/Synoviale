@@ -32,9 +32,10 @@ Route::get('inscription', 'UserController@create')->name('create');
 
 Route::resource('/', 'EditionController');
 
-Route::resource('/parametre', 'ClientController');
+// route for the reception
+Route::resource('/client', 'ClientController');
 
-Route::resource('/listeVelo', 'BikeController');
+Route::resource('/velo', 'BikeController');
 
 Route::resource('/pass', 'BadgeController');
 
@@ -43,6 +44,10 @@ Route::resource('/pass', 'BadgeController');
 
 Route::get('/login', function () {
     return view('login');
+})->middleware('guest');
+
+Route::get('/compte', function () {
+    return view('paramClient');
 });
 
 // Route::get('/listeVelo', function () {
