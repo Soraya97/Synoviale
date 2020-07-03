@@ -15,7 +15,7 @@ class EditionSeeder extends Seeder
         DB::table('editions')->delete();
 
         DB::table('editions')->insert([
-           'number' => '1',
+           'number' => '12',
             'place' => 'Gryon',
             'startDate' => '02.10.2020',
             'endDate' => '04.10.2020',

@@ -27,7 +27,8 @@ use Illuminate\Support\Facades\Route;
 // //route pour authentification
 Route::post('user','UserController@connect')->name('connect');
 Route::get('user','UserController@deconnect')->name('deconnect');
-// Route::post('register','UserController@create')->name('create');
+Route::post('inscription','UserController@store')->name('store');
+Route::get('inscription', 'UserController@create')->name('create');
 
 Route::resource('/', 'EditionController');
 
@@ -38,7 +39,7 @@ Route::resource('/listeVelo', 'BikeController');
 Route::resource('/pass', 'BadgeController');
 
 // Route::resource('/inscription', 'PersonController');
-Route::resource('/compte', 'UserController');
+// Route::resource('/compte', 'UserController');
 
 Route::get('/login', function () {
     return view('login');
@@ -48,9 +49,7 @@ Route::get('/login', function () {
 //     return view('modelsBike');
 // });
 
-// Route::get('/inscription', function () {
-//     return view('old/createAccount');
-// });
+
 
 // Route::resource('inscription', 'PersonController');
 
@@ -80,7 +79,7 @@ Route::get('/veloDispo', function () {
 // Route::resource('parametre', 'ChatController');//->middleware('auth');
 
 /* routes for the reception */
-Route::resource('client', 'Client2Controller');
+// Route::resource('client', 'Client2Controller');
 
  Route::get('/listeClients', function () {
      return view('reception/clientsList');

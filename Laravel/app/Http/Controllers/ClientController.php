@@ -9,9 +9,9 @@ class ClientController extends Controller {
 
     public function __construct()
     {
-        $this->middleware('checkuser');
-        
-        $this->middleware('checkclient');
+        // $this->middleware('checkuser');
+        //
+        // $this->middleware('checkclient');
 
     }
     /**
@@ -23,7 +23,7 @@ class ClientController extends Controller {
         //
         $clients = Client::all();
 
-        return view('client', comapct('clients'));
+        return view('paramClient', compact('clients'));
     }
 
     /**

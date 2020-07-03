@@ -12,13 +12,13 @@
 
     <div class="row">
 
-      <form class="col s12" action="{{ route('compte.store') }}" method="post">
+      <form class="col s12" action="{{ route('create') }}" method="post">
         @csrf
         <h2>CRÉATION D'UN COMPTE</h2>
-          <div class="{!! $errors->has('ID') ? 'has-error' : '' !!} input-field col s12">
-              <input type="text" name="ID" placeholder="057018945120238" class="validate">
-              <label for="ID">Identifiant utilisateur</label>
-              {!! $errors->first('ID', '<small class="help-block">:message</small>') !!}
+          <div class="{!! $errors->has('username') ? 'has-error' : '' !!} input-field col s12">
+              <input type="text" name="username" placeholder="057018945120238" class="validate">
+              <label for="username">Identifiant utilisateur</label>
+              {!! $errors->first('username', '<small class="help-block">:message</small>') !!}
           </div>
           <div class="{!! $errors->has('password') ? 'has-error' : '' !!} input-field col s12 l6">
               <input type="password" name="password" placeholder="• • • • • • • • • • • •" class="validate">
@@ -53,10 +53,10 @@
               {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
           </div>
 
-            <div class="{!! $errors->has('firstName') ? 'has-error' : '' !!} input-field col s12 l6">
-                <input type="text" name="firstName" placeholder="Prénom" class="validate">
-                <label for="firstName">Prénom *</label>
-                {!! $errors->first('firstName', '<small class="help-block">:message</small>') !!}
+            <div class="{!! $errors->has('firstname') ? 'has-error' : '' !!} input-field col s12 l6">
+                <input type="text" name="firstname" placeholder="Prénom" class="validate">
+                <label for="firstname">Prénom *</label>
+                {!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}
             </div>
 
           <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col s12 l6">

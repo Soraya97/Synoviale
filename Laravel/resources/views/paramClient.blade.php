@@ -5,22 +5,21 @@
 @endsection
 
 @section('contenu')
-@foreach($clients as $client)
 <div class="paramClient container">
 
     <h2>MES PARAMÈTRES</h2>
     <h3>MES COORDONNÉES</h3>
 <table>
-    <tr><td>Nom</td><td>{{$client->person->name}}</td></tr>
-    <tr><td>Prénom</td><td>{{$client->person->firstName}}</td></tr>
-    <tr><td>Email</td><td>{{$client->person->email1}}</td></tr>
-    <tr><td>Tél.</td><td>{{$client->person->phoneNumber1}}</td></tr>
-    <tr><td>Rue</td><td>{{$client->person->address->street1}}</td></tr>
-    <tr><td>N° de rue</td><td>{{$client->person->address->streetNumber}}</td></tr>
-    <tr><td>Localité</td><td>{{$client->person->address->city->name}}</td></tr>
-    <tr><td>NPA</td><td>{{$client->person->address->city->postalCode}}</td></tr>
-    <tr><td>Canton</td><td>{{$client->person->address->city->canton}}</td></tr>
-    <tr><td>Pays</td><td>{{$client->person->address->city->country->name}}</td></tr>
+    <tr><td>Nom</td><td>{{Session::get('user.person.name')}}</td></tr>
+    <tr><td>Prénom</td><td>{{Session::get('user.person.firstname')}}</td></tr>
+    <tr><td>Email</td><td>{{Session::get('user.person.email')}}</td></tr>
+    <tr><td>Tél.</td><td>{{Session::get('user.person.phoneNumber1')}}</td></tr>
+    <tr><td>Rue</td><td>{{Session::get('user.person.address.street1')}}</td></tr>
+    <tr><td>N° de rue</td><td>{{Session::get('user.person.address.streetNumber')}}</td></tr>
+    <tr><td>Localité</td><td>{{Session::get('user.person.address.city.name')}}</td></tr>
+    <tr><td>NPA</td><td>{{Session::get('user.person.address.city.postalCode')}}</td></tr>
+    <tr><td>Canton</td><td>{{Session::get('user.person.address.city.canton')}}</td></tr>
+    <tr><td>Pays</td><td>{{Session::get('user.person.address.city.country.name')}}</td></tr>
 </table>
 
 <br>
@@ -38,7 +37,7 @@
       <p class="red-text"><i>Vos données sont sauvegardées pour les entreprises.</i></p>
     </div>
     <div class="modal-footer">
-      <form method="POST" action="{{route('parametre.destroy', [$client->id])}}">
+      <form method="POST" action="">
               @csrf
               @method('DELETE')
               <input type="submit" value="Oui" class="modal-close btn-flat"></input>
@@ -47,5 +46,4 @@
 
     </div>
   </div>
-@endforeach
 @endsection

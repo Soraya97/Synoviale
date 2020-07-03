@@ -12,7 +12,7 @@ use App\Person;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Http\Facades\Session;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -67,13 +67,16 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function create() {
+        return view('createAccount');
+    }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
 
         $data = $request->validate([
             'username' => 'required',
-            'email' => 'required'|email,
+            'email' => 'required|email',
             'password' => 'required',
             'name' => 'required',
             'firstname' => 'required',

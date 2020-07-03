@@ -11,8 +11,8 @@ class PersonController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkuser');
-        
+        // $this->middleware('checkuser');
+
     }
     /**
      * Display a listing of the resource.
@@ -115,6 +115,6 @@ class PersonController extends Controller
          $person->delete();
 
         return redirect('person');
-        
+
     }
 }

@@ -42,7 +42,7 @@
 <div class="input-field center-align">
   <div class="s12">
     <p>Pas de compte ?</p>
-    <a href="{{route('compte.create')}}">CRÉER UN COMPTE</a>
+    <a href="{{route('create')}}">CRÉER UN COMPTE</a>
   </div>
 </div>
 

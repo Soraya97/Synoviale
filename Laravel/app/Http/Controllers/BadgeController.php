@@ -11,12 +11,12 @@ class BadgeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkuser');
-        
-        $this->middleware('checkemployee');
-        
-        $this->middleware('checkclient');
-        
+        // $this->middleware('checkuser');
+        //
+        // $this->middleware('checkemployee');
+        //
+        // $this->middleware('checkclient');
+
     }
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class BadgeController extends Controller
     {
         $badges = Badge::all();
 
-        return view('badge',compact('badges'));
+        return view('pass',compact('badges'));
     }
 
     /**
@@ -37,7 +37,7 @@ class BadgeController extends Controller
      */
     public function create()
     {
-        return view('addbadge');
+        return view('reservationPass');
     }
 
     /**

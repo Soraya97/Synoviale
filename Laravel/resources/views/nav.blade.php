@@ -32,25 +32,25 @@
 <ul class="sidenav" id="mobile">
     <li class="right"><a class="sidenav-close"><i class="material-icons">close</i></a></li>
     <li><a href="{{url('/')}}">BIKE TEST GRYON</a></li>
-    @if(Auth::check())
+    @user
     <li><a href="{{url('/pass')}}">MON PASS</a></li>
     <li><a class="dropdown-triggerAccount" href="" data-target="submenuAccountMob">MON COMPTE</a></li>
-    @endif
+    @enduser
     <li><a class="dropdown-trigger" href="" data-target="submenuInfoMob">INFOS PRATIQUES</a></li>
     <li><a href="{{url('/listeVelo')}}">MODÈLES DE VÉLOS</a></li>
     <li><a href="">NEWS</a></li>
     <li class="left"><a href="">FR</a></li>
     <li class="center-align"><a href="">DE</a></li>
-    @if(Auth::check())
-    <li> <a class="btn-small" href="{{url('/reservationPass')}}">RÉSERVER SON PASS</a> </li>
+    @user
+    <li> <a class="btn-small" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a> </li>
     @else
     <li> <a class="btn-small" href="{{url("login")}}">RÉSERVER SON PASS</a> </li>
-    @endif
-    @if(Auth::check())
-    <li><a href="{{url("logout")}}" class="btn-small">SE DÉCONNECTER</a></li>
+    @enduser
+    @user
+    <li><a href="{{ route('deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
     @else
     <li><a href="{{url("login")}}" class="btn-small ">SE CONNECTER</a></li>
-    @endif
+    @enduser
 </ul>
 <!-- menu on browser -->
 <nav>
@@ -58,26 +58,26 @@
         <a href="#" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <a href="{{url('/')}}" class="brand-logo left"><img src="/img/logoBlanc.png" alt="Bike Test Gryon"></a>
         <ul class="right hide-on-med-and-down">
-          @if(Auth::check())
+          @user
           <li><a href="{{url('/pass')}}">MON PASS</a></li>
           <li><a class="dropdown-triggerAccount" href="" data-target="submenuAccount">MON COMPTE</a></li>
-          @endif
+          @enduser
           <li><a class="dropdown-trigger" href="" data-target="submenuInfo">INFOS PRATIQUES</a></li>
           <li><a href="{{url('/listeVelo')}}">MODÈLES DE VÉLOS</a></li>
           <li><a href="">NEWS</a></li>
           <li class="left"><a href="">FR</a></li>
           <li class="center-align"><a href="">DE</a></li>
-          @if(Auth::check())
-          <li> <a class="btn-small" href="{{url('/reservationPass')}}">RÉSERVER SON PASS</a> </li>
+          @user
+          <li> <a class="btn-small" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a> </li>
           @else
           <li> <a class="btn-small" href="{{url("login")}}">RÉSERVER SON PASS</a> </li>
-          @endif
+          @enduser
           @user
           <li><a href="{{ route('deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
           @else
           <li><a href="{{url("login")}}" class="btn-small ">SE CONNECTER</a></li>
           @enduser
-        
+
         </ul>
     </div>
 </nav>
