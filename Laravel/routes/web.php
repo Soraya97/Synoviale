@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('Brand', 'BrandController');
 //
 // //route pour authentification
-// Route::post('user','UserController@connect')->name('connect');
-// Route::get('user','UserController@deconnect')->name('deconnect');
+Route::post('user','UserController@connect')->name('connect');
+Route::get('user','UserController@deconnect')->name('deconnect');
 // Route::post('register','UserController@create')->name('create');
 
 Route::resource('/', 'EditionController');

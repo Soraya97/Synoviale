@@ -19,7 +19,7 @@ class EditionController extends Controller
         //
         $editions = Edition::all();
 
-        return view('edition',comapct('editions'));
+        return view('homepage',compact('editions'));
     }
 
     /**

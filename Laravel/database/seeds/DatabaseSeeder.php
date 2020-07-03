@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        // $this->call(UserSeeder::class);
+        
         $this->call(AddressSeeder::class);
         $this->call(AddresstypeSeeder::class);
         $this->call(BadgeSeeder::class);
@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder {
         $this->call(StoreSeeder::class);
         $this->call(TestdaySeeder::class);
         $this->call(TestSeeder::class);
+        $this->call(UserSeeder::class);
 
         // avec les tables pivots
         $this->call(BrandEditionSeeder::class);

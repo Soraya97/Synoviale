@@ -10,15 +10,15 @@
   <p>Vous devez avoir un compte pour réserver votre pass.</p>
     <div class="row">
         <div class="col s12">
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('connect') }}">
                         @csrf
 
                         <div class="row">
                             <div class="input-field col s12">
-                              <label for="email">ID</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                              <label for="username">ID</label>
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
-                                @error('email')
+                                @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -43,7 +43,6 @@
   <div class="s12">
     <p>Pas de compte ?</p>
     <a href="{{route('compte.create')}}">CRÉER UN COMPTE</a>
-
   </div>
 </div>
 

@@ -72,11 +72,12 @@
           @else
           <li> <a class="btn-small" href="{{url("login")}}">RÉSERVER SON PASS</a> </li>
           @endif
-          @if(Auth::check())
-          <li><a href="{{url("logout")}}" class="btn-small">SE DÉCONNECTER</a></li>
+          @user
+          <li><a href="{{ route('deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
           @else
           <li><a href="{{url("login")}}" class="btn-small ">SE CONNECTER</a></li>
-          @endif
+          @enduser
+        
         </ul>
     </div>
 </nav>

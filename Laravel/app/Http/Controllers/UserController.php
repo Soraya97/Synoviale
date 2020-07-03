@@ -20,7 +20,7 @@ class UserController extends Controller
     {
 
         $data =  $request->validate([
-            "name"           =>    "required",
+            "username"           =>    "required",
             "password"        =>    "required"
         ]);
 
@@ -102,7 +102,7 @@ class UserController extends Controller
 
         $request->request->add(['person_id' => $personId->id]);
 
-        $user = $request->only('name','email','password','person_id');
+        $user = $request->only('username','email','password','person_id');
 
         $client = $request->only('person_id');
 
