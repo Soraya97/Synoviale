@@ -2,123 +2,109 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Organizer;
-use App\Client;
-use App\Store;
-use App\Employee;
-use App\Contact;
-use App\Person;
-
 use Illuminate\Http\Request;
-
-use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
-    public function connect(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
+        $users = User::all();
 
-        $data =  $request->validate([
-            "username"           =>    "required",
-            "password"        =>    "required"
-        ]);
-
-        $user = User::where($data)->first();
-
-        if($user)
-        {
-            $request->session()->put('user',$user);
-
-            $organizer = Organizer::where('person_id',$user->person->id)->first();
-
-            $client = Client::where('person_id',$user->person->id)->first();
-
-            $store = Store::where('person_id',$user->person->id)->first();
-
-            $employee = Employee::where('person_id',$user->person->id)->first();
-
-            $contact = Contact::where('person_id',$user->person->id)->first();
-
-            $request->session()->put('organizer',$organizer);
-
-            $request->session()->put('client',$client);
-
-            $request->session()->put('store',$store);
-
-            $request->session()->put('employee',$employee);
-
-            $request->session()->put('contact',$contact);
-
-
-          return redirect()->back();
-      }
-      else
-      {
-          return redirect()->back();
-      }
-
+        return view('user',compact('users'));
     }
 
-    public function deconnect()
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        Session::flush();
-
-        return redirect('/');
+        return view('adduser');
     }
 
-    public function create() {
-        
-        return view('createAccount');
-    }
-
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-
         $data = $request->validate([
             'username' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'name' => 'required',
-            'firstname' => 'required',
         ]);
 
-        $personTest = $request->only('name','firstname');
+        User::create($data);
 
-        $userTest = $request->only('username','email');
+        return redirect('user');
+    }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
 
-        if(Person::where($personTest)->first())
-        {
-            return redirect('/');
-        }
+        return view('onlyuser',compact('user'));
 
-        if(User::where($userTest)->first())
-        {
-            return redirect('/');
-        }
-
-        $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber','comment');
-
-        Person::create($person);
-
-        $personId = Person::where($personTest)->first();
-
-        $request->request->add(['person_id' => $personId->id]);
-
-        $user = $request->only('username','email','password','person_id');
-
-        $client = $request->only('person_id');
-
-        User::create($user);
-
-        Client::create($client);
-
-        // ajouter code de connexion
-
-        return redirect('/');
 
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $user = USer::findOrFail($id);
 
+        return view('edituser',compact('user'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $data = $request->validate([
+            'username' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        User::getById($id)->update($data);
+
+        return redirect()->back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        User::findOrFail($id)->delete();
+
+        return redirect('user');
+    }
 }

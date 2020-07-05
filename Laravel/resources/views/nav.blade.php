@@ -47,7 +47,7 @@
     <li> <a class="btn-small" href="{{url("login")}}">RÉSERVER SON PASS</a> </li>
     @enduser
     @user
-    <li><a href="{{ route('user.deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
+    <li><a href="{{ route('compte.deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
     @else
     <li><a href="{{url("login")}}" class="btn-small ">SE CONNECTER</a></li>
     @enduser
@@ -73,7 +73,7 @@
           <li> <a class="btn-small" href="{{url("login")}}">RÉSERVER SON PASS</a> </li>
           @enduser
           @user
-          <li><a href="{{ route('user.deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
+          <li><a href="{{ route('compte.deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
           @else
           <li><a href="{{url("login")}}" class="btn-small ">SE CONNECTER</a></li>
           @enduser
