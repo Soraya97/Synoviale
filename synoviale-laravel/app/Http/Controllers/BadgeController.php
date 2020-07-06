@@ -58,9 +58,7 @@ class BadgeController extends Controller
      */
     public function show($id)
     {
-        //return $id;
-
-        $badges = Badges::findOrFail($id);
+        $badges = Badge::where('client_id',$id)->get();
 
         return view('clients/pass',compact('badges'));
     }
