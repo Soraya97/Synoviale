@@ -20,17 +20,23 @@
 <ul id="submenuAccount" class="dropdown-content">
     @client
     <li><a href="#!">MES TESTS</a></li>
-    <li><a href="{{url('/veloDispo')}}">TROUVER UN VÉLO</a></li>
-    <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
+    <li><a href="{{route('velo.index')}}">TROUVER UN VÉLO</a></li>
     @endclient
+    @user
+    <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
+    @enduser
+
 </ul>
 <!-- submenu of the account for mobile -->
 <ul id="submenuAccountMob" class="dropdown-content">
   @client
   <li><a href="#!">MES TESTS</a></li>
-  <li><a href="{{url('/veloDispo')}}">TROUVER UN VÉLO</a></li>
-  <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
+  <li><a href="{{route('velo.index')}}">TROUVER UN VÉLO</a></li>
   @endclient
+  @user
+  <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
+  @enduser
+
 </ul>
 <!-- menu on mobile -->
 <ul class="sidenav" id="mobile">

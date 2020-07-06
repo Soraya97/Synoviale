@@ -25,7 +25,7 @@ class BikeController extends Controller
     {
         $bikes = Bike::all();
 
-        //return view('modelsBike',compact('bikes'));
+        return view('clients/bikeAvailable', compact('bikes'));
     }
 
     /**

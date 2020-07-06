@@ -27,7 +27,6 @@ class CheckClient
         }
         
         return $next($request);
-
-        
+  
     }
 }
