@@ -11,12 +11,7 @@ class BadgeController extends Controller
 {
     public function __construct()
     {
-        // $this->middleware('checkuser');
-        //
-        // $this->middleware('checkemployee');
-        //
-        // $this->middleware('checkclient');
-
+        $this->middleware('checkclient');
     }
     /**
      * Display a listing of the resource.
@@ -61,9 +56,13 @@ class BadgeController extends Controller
      * @param  \App\Badge  $badge
      * @return \Illuminate\Http\Response
      */
-    public function show(Badge $badge)
+    public function show($id)
     {
-        return view('onlybadge',compact('badge'));
+        //return $id;
+
+        $badges = Badges::findOrFail($id);
+
+        return view('clients/pass',compact('badges'));
     }
 
     /**

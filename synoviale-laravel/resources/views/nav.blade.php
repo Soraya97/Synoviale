@@ -37,7 +37,7 @@
     <li class="right"><a class="sidenav-close"><i class="material-icons">close</i></a></li>
     <li><a href="{{url('/')}}">BIKE TEST GRYON</a></li>
     @client
-    <li><a href="{{url('/pass')}}">MON PASS</a></li>
+    <li><a href="{{route('pass.show',Session::get('user.id'))}}">MON PASS</a></li>
     @endclient
     @user
     <li><a class="dropdown-triggerAccount" href="#!" data-target="submenuAccountMob">MON COMPTE</a></li>
@@ -65,7 +65,7 @@
         <a href="{{url('/')}}" class="brand-logo left"><img src="/img/logoBlanc.png" alt="Logo du Bike Test Gryon"></a>
         <ul class="right hide-on-med-and-down">
           @client
-          <li><a href="{{url('/pass')}}">MON PASS</a></li>
+          <li><a href="{{route('pass.show',Session::get('user.id'))}}">MON PASS</a></li>
           @endclient
           @user
           <li><a class="dropdown-triggerAccount" href="!#" data-target="submenuAccount">MON COMPTE</a></li>
