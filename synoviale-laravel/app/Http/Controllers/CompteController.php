@@ -65,7 +65,7 @@ class CompteController extends Controller
 
     public function create() {
 
-        return view('createAccount');
+        return view('clients/createAccount');
     }
 
     public function store(Request $request)
