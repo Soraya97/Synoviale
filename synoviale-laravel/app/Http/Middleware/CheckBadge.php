@@ -4,9 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-use Session;
-
-class CheckClient
+class CheckBadge
 {
     /**
      * Handle an incoming request.
@@ -21,12 +19,11 @@ class CheckClient
         {
             return redirect('/');
         }
-        if($request->user != Session::get('user.id'))
+        if($request->pass != Session::get('user.id'))
         {
-            return redirect()->route('user.show',Session::get('user.id'));
+            return redirect()->route('pass.show',Session::get('user.id'));
         }
-        
+
         return $next($request);
-  
     }
 }

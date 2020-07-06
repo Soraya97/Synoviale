@@ -70,6 +70,7 @@ class Kernel extends HttpKernel
         'checkorganizer' => \App\Http\Middleware\CheckOrganizer::class,
         'checkuser' => \App\Http\Middleware\CheckUser::class,
         'redirectlogin' => \App\Http\Middleware\RedirectLogin::class,
+        'checkbadge' => \App\Htpp\Middleware\CheckBadge::class,
 
 
     ];

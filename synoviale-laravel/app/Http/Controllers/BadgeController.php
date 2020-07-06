@@ -11,7 +11,7 @@ class BadgeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkclient');
+        $this->middleware('checkbadge');
     }
     /**
      * Display a listing of the resource.
