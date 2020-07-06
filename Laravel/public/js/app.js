@@ -19340,7 +19340,7 @@ $(document).ready(function () {
 
   if (h >= 800) {
     $('.slider').slider({
-      height: h * 0.7,
+      height: h * 0.8,
       indicators: false
     });
   }
@@ -19399,13 +19399,22 @@ $("#bikeAvailable").on("submit", function (evt) {
     $('#selectionBike').append(test);
   }
 
-  ; // const url = 'http://localhost:8000/listeVelo';
-  // $.ajax({
-  //     url
-  // }).then(xml => {
-  //     console.log(127);
-  // })
+  ;
 });
+/*
+When the screen is large, like a desktop, the partners' logos are vertically aligned
+When on mobile, the logos are on a carousel
+ */
+
+if (screen.height < 800) {
+  var partners = '<div class="carousel carousel-slider center"><a class="carousel-item" href="#one!"><img src="img/logo-gryon-tourisme.png"></a><a class="carousel-item" href="#two!"><img src="img/skiClubGryon.png"></a></div>';
+  $('#partners').append(partners);
+}
+
+if (screen.height >= 800) {
+  var _partners = '<div class=""><img src="img/logo-gryon-tourisme.png"><img src="img/skiClubGryon.png"></div>';
+  $('#partners').append(_partners);
+}
 
 /***/ }),
 
@@ -25602,8 +25611,8 @@ M.anime = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\soray\Dropbox\ProjArt\synoviale-laravel\Synoviale\Laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\soray\Dropbox\ProjArt\synoviale-laravel\Synoviale\Laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Soraya\Dropbox\ProjArt\synoviale-laravel\Synoviale\Laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Soraya\Dropbox\ProjArt\synoviale-laravel\Synoviale\Laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
