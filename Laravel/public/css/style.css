@@ -59,6 +59,10 @@ h1, h2 {
   font-family: Akrobat;
 }
 
+span {
+  color: black;
+}
+
 /* .welcome {
     height: 100vh;
 } */
@@ -138,4 +142,8 @@ h1, h2 {
   margin: 0 auto;
   max-width: 1400px;
   width: 90%;
+}
+
+.align-bottom {
+  margin-top: 20rem;
 }

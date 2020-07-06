@@ -57,7 +57,7 @@ $(document).ready(function() {
     }
     if (h >= 800) {
         $('.slider').slider({
-            height: h * 0.75,
+            height: h * 0.7,
             indicators: false
         });
     }
@@ -114,12 +114,18 @@ $("#bikeAvailable").on("submit", evt => {
     for (var i = 0; i < 2; i++) {
         $('#selectionBike').append(test);
     };
-
-    // const url = 'http://localhost:8000/listeVelo';
-    // $.ajax({
-    //     url
-    // }).then(xml => {
-    //     console.log(127);
-    // })
-
 });
+
+/*
+When the screen is large, like a desktop, the partners' logos are vertically aligned
+When on mobile, the logos are on a carousel
+ */
+if (screen.height < 800) {
+  let partners = '<div class="carousel carousel-slider center"><a class="carousel-item" href="#one!"><img src="img/logo-gryon-tourisme.png"></a><a class="carousel-item" href="#two!"><img src="img/skiClubGryon.png"></a></div>';
+  $('#partners').append(partners);
+}
+
+if (screen.height >= 800) {
+  let partners = '<div class=""><img src="img/logo-gryon-tourisme.png"><img src="img/skiClubGryon.png"></div>';
+  $('#partners').append(partners);
+}

@@ -6,7 +6,7 @@
 
 @section('contenu')
 <div class="account container">
-    <a href="{{url("listeClients")}}"><i class="material-icons">arrow_back</i>RETOUR À LA LISTE DES CLIENTS</a>
+    <p><a href="{{url("listeClients")}}"><i class="material-icons">arrow_back</i>RETOUR À LA LISTE DES CLIENTS</a></p>
 
 <div class="greyBackground">
       <div class="">
@@ -16,32 +16,32 @@
               @csrf
 
               <div class="col s12 l6">
-                <div class="{!! $errors->has('name') ? 'has-error' : '' !!} input-field col l6">
+                <div class="{!! $errors->has('name') ? 'has-error' : '' !!} input-field col l6 s12">
                     <input type="text" name="name" placeholder="Nom" class="validate">
                     <label for="name">Nom *</label>
                     {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                 </div>
-                  <div class="{!! $errors->has('firstname') ? 'has-error' : '' !!} input-field col l6">
+                  <div class="{!! $errors->has('firstname') ? 'has-error' : '' !!} input-field col l6 s12">
                       <input type="text" name="firstname" placeholder="Prénom" class="validate">
                       <label for="firstname">Prénom *</label>
                       {!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}
                   </div>
-                  <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6">
+                  <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6 s12">
                       <input type="email" name="email1" placeholder="nomprenom@gmail.com" class="validate">
                       <label for="email1">Email</label>
                       {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                   </div>
-                <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6">
+                <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6 s12">
                     <input type="email" name="email2" placeholder="nomprenom@gmail.com" class="validate">
                     <label for="email2">Email secondaire</label>
                     {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                 </div>
-                <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6">
+                <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6 s12">
                     <input type="text" name="phonenumber1" placeholder="+ 41 79 360 16 26" class="validate">
                     <label for="phonenumber1">N° téléphone</label>
                     {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
               </div>
-                <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6">
+                <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6 s12">
                     <input type="text" name="phonenumber2" placeholder="+ 41 79 360 16 26" class="validate">
                     <label for="phonenumber2">N° téléphone secondaire</label>
                     {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
@@ -56,47 +56,47 @@
                 <div class="col l6">
 
               <div class="row">
-                <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8">
+                <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8 s10">
                     <input type="text" name="street1" placeholder="Avenue des Sports 20" class="validate">
                     <label for="street1">Rue</label>
                     {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
                 </div>
 
-                <div class="{!! $errors->has('streetnumber') ? 'has-error' : '' !!} input-field col l4">
+                <div class="{!! $errors->has('streetnumber') ? 'has-error' : '' !!} input-field col l4 s2">
                     <input type="text" name="streetnumber" placeholder="8A" class="validate">
                     <label for="streetnumber">N° de rue</label>
                     {!! $errors->first('streetnumber', '<small class="help-block">:message</small>') !!}
                 </div>
 
-                <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8">
+                <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8 s10">
                     <input type="text" name="street2" placeholder="Avenue des Alpes 20" class="validate">
                     <label for="street2">Rue secondaire</label>
                     {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
                 </div>
 
-                <div class="{!! $errors->has('pobox') ? 'has-error' : '' !!} input-field col l4">
+                <div class="{!! $errors->has('pobox') ? 'has-error' : '' !!} input-field col l4 s2">
                     <input type="text" name="pobox" placeholder="8A" class="validate">
                     <label for="pobox">CP</label>
                     {!! $errors->first('pobox', '<small class="help-block">:message</small>') !!}
                 </div>
 
-                <div class="{!! $errors->has('city') ? 'has-error' : '' !!} input-field col l8">
+                <div class="{!! $errors->has('city') ? 'has-error' : '' !!} input-field col l8 s10">
                     <input type="text" name="city" placeholder="8A" class="validate">
                     <label for="city">Localité</label>
                     {!! $errors->first('city', '<small class="help-block">:message</small>') !!}
                 </div>
 
-                <div class="{!! $errors->has('postalecode') ? 'has-error' : '' !!} input-field col l4">
+                <div class="{!! $errors->has('postalecode') ? 'has-error' : '' !!} input-field col l4 s2">
                     <input type="text" name="postalecode" placeholder="1008" class="validate">
                     <label for="postalecode">postalecode</label>
                     {!! $errors->first('postalecode', '<small class="help-block">:message</small>') !!}
                 </div>
-                <div class="{!! $errors->has('canton') ? 'has-error' : '' !!} input-field col l6">
+                <div class="{!! $errors->has('canton') ? 'has-error' : '' !!} input-field col l6 s12">
                     <input type="text" name="canton" placeholder="Vaud" class="validate">
                     <label for="canton">Pays</label>
                     {!! $errors->first('canton', '<small class="help-block">:message</small>') !!}
                 </div>
-                <div class="{!! $errors->has('country') ? 'has-error' : '' !!} input-field col l6">
+                <div class="{!! $errors->has('country') ? 'has-error' : '' !!} input-field col l6 s12">
                     <input type="text" name="country" placeholder="Suisse" class="validate">
                     <label for="country">Pays</label>
                     {!! $errors->first('country', '<small class="help-block">:message</small>') !!}
@@ -108,10 +108,12 @@
           </div>
       </div>
 
+<!-- Section for the reservation's status -->
 <div class="divider"></div>
 <div class="section">
   <h2>STATUT DE LA RÉSERVATION</h2>
     <div class="row">
+
       <div class="col s12">
         <ul class="tabs">
           <li class="tab col s3"><a href="#vendrediAM"><i class="material-icons">clear</i>VENDREDI AM</a></li>
@@ -131,7 +133,6 @@
               <a href="#" class="btn red disabled">DÉSACTIVER</a>
             </div>
         </div>
-
       </div>
 
       <div id="vendrediPM" class="col s12">
@@ -145,12 +146,14 @@
               </div>
           </div>
       </div>
+
       <div id="samediAM" class="col s12">SAMEDI AM</div>
       <div id="dimanchePM" class="col s12">DIMANCHE PM</div>
 
     </div>
 </div>
 
+<!-- Choice of the tests days -->
 <div class="divider"></div>
 <div class="section">
   <h2>CHOIX DES JOURS TESTS<h2>

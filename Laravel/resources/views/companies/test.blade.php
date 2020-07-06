@@ -8,12 +8,13 @@
 <div class="container">
 
 <div class="row">
+  <br>
   <div class="col l7 s12 greyBackground">
     <h2>COMMENCER UN TEST</h2>
     <form id="scanQR" method="get">
       <div class="row">
-          <div class="col s10">Marque du vélo</div>
-          <div class="col s10">
+          <div class="col l10 s12">Marque du vélo</div>
+          <div class="col l10 s12">
               <select class="input-field" id="marque">
                   <option value="Yeti" selected>Yeti</option>
                   <option value="Orange">Orange</option>
@@ -22,8 +23,8 @@
         </div>
 
         <div class="row">
-        <div class="col s10">Nom du vélo</div>
-        <div class="col s10">
+        <div class="col l10 s12">Nom du vélo</div>
+        <div class="col l10 s12">
             <select class="input-field" id="nom">
                 <option value="Vélo 1" selected>Vélo 1</option>
                 <option value="Vélo 2">Vélo 2</option>
@@ -32,6 +33,7 @@
     </div>
     <button type="submit" class="btn">SCANNER LE QR CODE</button>
 </form>
+<br>
 </div>
 
   <div class="col l5 s12">

@@ -10,7 +10,7 @@ class TestController extends Controller {
 
     public function __construct()
     {
-        // $this->middleware('checkcontact'); 
+        // $this->middleware('checkcontact');
 
     }
     /**
@@ -22,7 +22,7 @@ class TestController extends Controller {
         //
         $tests = Test::all();
 
-        return view('test', comapct('tests'));
+        return view('companies.test', compact('tests'));
     }
 
     /**

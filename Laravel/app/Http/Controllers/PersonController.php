@@ -24,7 +24,7 @@ class PersonController extends Controller
         //
         $people = Person::all();
 
-        return view('person',comapct('people'));
+        return view('paramClient',compact('people'));
     }
 
     /**

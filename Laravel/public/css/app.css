@@ -4770,9 +4770,9 @@ h2 {
 }
 
 h3 {
-  font-size: 2.92rem;
+  font-size: 2.5rem;
   line-height: 110%;
-  margin: 1.9466666667rem 0 1.168rem 0;
+  margin: 1.6666666667rem 0 1rem 0;
 }
 
 h4 {
@@ -5235,7 +5235,7 @@ small {
   overflow-y: hidden;
   height: 48px;
   width: 100%;
-  background-color: #fff;
+  background-color: transparent;
   margin: 0 auto;
   white-space: nowrap;
 }
@@ -8559,8 +8559,8 @@ input[type=range]::-ms-thumb {
 }
 
 .carousel.carousel-slider .carousel-item {
-  width: 75%;
-  height: 75%;
+  width: 80%;
+  height: 80%;
   min-height: 400px;
   position: absolute;
   top: 0;
@@ -8575,6 +8575,17 @@ input[type=range]::-ms-thumb {
 
 .carousel.carousel-slider .carousel-item p {
   font-size: 15px;
+}
+
+@media only screen and (min-width : 993px) {
+  .carousel.carousel-slider .carousel-item {
+    width: 50%;
+    height: 50%;
+    min-height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .carousel .carousel-item {
