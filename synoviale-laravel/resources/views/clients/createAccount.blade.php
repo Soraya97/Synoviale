@@ -57,46 +57,46 @@
       <label for="email2">Email secondaire</label>
       {!! $errors->first('email2', '<small class="help-block">:message</small>') !!}
   </div>
-  <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col s12 l6">
-      <input type="text" name="phonenumber1" placeholder="+ 41 79 360 16 26" class="validate">
-      <label for="phonenumber1">N° téléphone</label>
-      {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
+  <div class="{!! $errors->has('phoneNumber1') ? 'has-error' : '' !!} input-field col s12 l6">
+      <input type="text" name="phoneNumber1" placeholder="+ 41 79 360 16 26" class="validate">
+      <label for="phoneNumber1">N° téléphone</label>
+      {!! $errors->first('phoneNumber1', '<small class="help-block">:message</small>') !!}
   </div>
-  <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col s12 l6">
-      <input type="text" name="phonenumber2" placeholder="+ 41 79 360 16 26" class="validate">
-      <label for="phonenumber2">N° téléphone secondaire</label>
-      {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
+  <div class="{!! $errors->has('phoneNumber2') ? 'has-error' : '' !!} input-field col s12 l6">
+      <input type="text" name="phoneNumber2" placeholder="+ 41 79 360 16 26" class="validate">
+      <label for="phoneNumber2">N° téléphone secondaire</label>
+      {!! $errors->first('phoneNumber2', '<small class="help-block">:message</small>') !!}
   </div>
 
-  <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col s12 l8">
+  <div class="{!! $errors->has('street1') ? 'has-error' : '' !!} input-field col s12 l8">
       <input type="text" name="street1" placeholder="Avenue des Sports 20" class="validate">
       <label for="street1">Rue</label>
-      {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
+      {!! $errors->first('street1', '<small class="help-block">:message</small>') !!}
   </div>
-  <div class="{!! $errors->has('streetnumber') ? 'has-error' : '' !!} input-field col s12 l4">
-      <input type="text" name="streetnumber" placeholder="8A" class="validate">
-      <label for="streetnumber">N° de rue</label>
-      {!! $errors->first('streetnumber', '<small class="help-block">:message</small>') !!}
+  <div class="{!! $errors->has('streetNumber') ? 'has-error' : '' !!} input-field col s12 l4">
+      <input type="text" name="streetNumber" placeholder="8A" class="validate">
+      <label for="streetNumber">N° de rue</label>
+      {!! $errors->first('streetNumber', '<small class="help-block">:message</small>') !!}
   </div>
-  <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col s12 l8">
+  <div class="{!! $errors->has('street2') ? 'has-error' : '' !!} input-field col s12 l8">
       <input type="text" name="street2" placeholder="Avenue des Alpes 20" class="validate">
       <label for="street2">Rue secondaire</label>
-      {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
+      {!! $errors->first('street2', '<small class="help-block">:message</small>') !!}
   </div>
-  <div class="{!! $errors->has('pobox') ? 'has-error' : '' !!} input-field col s12 l4">
-      <input type="text" name="pobox" placeholder="8A" class="validate">
-      <label for="pobox">CP</label>
-      {!! $errors->first('pobox', '<small class="help-block">:message</small>') !!}
+  <div class="{!! $errors->has('POBox') ? 'has-error' : '' !!} input-field col s12 l4">
+      <input type="text" name="POBox" placeholder="8A" class="validate">
+      <label for="POBox">CP</label>
+      {!! $errors->first('POBox', '<small class="help-block">:message</small>') !!}
   </div>
   <div class="{!! $errors->has('city') ? 'has-error' : '' !!} input-field col s12 l8">
       <input type="text" name="city" placeholder="8A" class="validate">
       <label for="city">Localité</label>
       {!! $errors->first('city', '<small class="help-block">:message</small>') !!}
   </div>
-  <div class="{!! $errors->has('postalecode') ? 'has-error' : '' !!} input-field col s12 l4">
-      <input type="text" name="postalecode" placeholder="1008" class="validate">
-      <label for="postalecode">NPA</label>
-      {!! $errors->first('postalecode', '<small class="help-block">:message</small>') !!}
+  <div class="{!! $errors->has('postalCode') ? 'has-error' : '' !!} input-field col s12 l4">
+      <input type="text" name="postalCode" placeholder="1008" class="validate">
+      <label for="postalCode">NPA</label>
+      {!! $errors->first('postalCode', '<small class="help-block">:message</small>') !!}
   </div>
   <div class="{!! $errors->has('country') ? 'has-error' : '' !!} input-field col s12 l6">
       <input type="text" name="country" placeholder="Suisse" class="validate">

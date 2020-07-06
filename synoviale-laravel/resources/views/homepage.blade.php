@@ -10,9 +10,7 @@
       <li>
         <img src="/img/bike.jpg" alt="Un cycliste de dos">
         <div class="caption center-align">
-          @foreach($editions as $edition)
           <h1 class="white-text">{{$edition->number}}<sup>e</sup> édition</h1>
-          @endforeach
           <h2 class="white-text">2-4 OCTOBRE 2020</h2>
           <p class="align-bottom"><a href="#!" class="bold">EN SAVOIR PLUS</a></p>
           @user

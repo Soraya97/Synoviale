@@ -10,6 +10,7 @@ use App\Employee;
 use App\Person;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CompteRequest;
 
 use Illuminate\Support\Facades\Session;
 
@@ -68,7 +69,7 @@ class CompteController extends Controller
         return view('clients/createAccount');
     }
 
-    public function store(Request $request)
+    public function store(CompteRequest $request)
     {
 
         $data = $request->validate([
@@ -94,7 +95,7 @@ class CompteController extends Controller
             return redirect('/');
         }
 
-        $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber','comment');
+        $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
         Person::create($person);
 
