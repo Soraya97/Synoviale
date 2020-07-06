@@ -11,13 +11,14 @@
     <h2>FILTRE</h2>
 
 
-
     <div class="row">
         <div class="col s4 l2"><h3>MARQUE</h3></div>
         <div class="col s8 l10">
             <select class="input-field">
                 <option value="Toutes" selected>Toutes</option>
-                <option value="bleu">bleu</option>
+                @foreach($bikes as $bike)
+                <option value="{{$bike->product->brand->name}}">{{$bike->product->brand->name}}</option>
+                @endforeach
             </select>
         </div>
     </div>
@@ -26,7 +27,9 @@
         <div class="col s3 l2"><h3>TYPE</h3></div>
         <div class="col s9 l10">
             <select class="input-field">
-                <option value="VTT" selected>VTT</option>
+              @foreach($bikes as $bike)
+                <option value="{{$bike->type}}" selected>{{$bike->type}}</option>
+              @endforeach
             </select>
         </div>
     </div>

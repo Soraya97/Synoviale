@@ -20,7 +20,7 @@
 <ul id="submenuAccount" class="dropdown-content">
     @client
     <li><a href="#!">MES TESTS</a></li>
-    <li><a href="{{url('/veloDispo')}}">TROUVER UN VÉLO</a></li>
+    <li><a href="{{route('velo.index')}}">TROUVER UN VÉLO</a></li>
     <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
     @endclient
 </ul>
@@ -28,7 +28,7 @@
 <ul id="submenuAccountMob" class="dropdown-content">
   @client
   <li><a href="#!">MES TESTS</a></li>
-  <li><a href="{{url('/veloDispo')}}">TROUVER UN VÉLO</a></li>
+  <li><a href="{{route('velo.index')}}">TROUVER UN VÉLO</a></li>
   <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
   @endclient
 </ul>

@@ -25,7 +25,7 @@ class CheckClient
         {
             return $next($request);
         }
-        
+
         return redirect('/');
     }
 }

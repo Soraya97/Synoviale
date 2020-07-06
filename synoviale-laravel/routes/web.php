@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', 'EditionController');
 
+Route::resource('produit','ProductController');
+
+Route::resource('pass', 'BadgeController');
+
+Route::resource('/velo', 'BikeController');
 
 
 // Route::get('/', function () {
@@ -31,11 +36,9 @@ Route::resource('user','UserController');
 // route for the reception
 Route::resource('/client', 'ClientController');
 
-Route::resource('/velo', 'BikeController');
 
-Route::resource('pass', 'BadgeController');
 
-Route::resource('produit','ProductController');
+
 
 // Route::resource('/inscription', 'PersonController');
 // Route::resource('/compte', 'UserController');
