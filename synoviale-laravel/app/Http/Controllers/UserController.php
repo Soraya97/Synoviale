@@ -9,11 +9,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('checkclient');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         $users = User::all();
@@ -107,6 +113,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
+
+        Session::flush();
 
         return redirect('user');
     }
