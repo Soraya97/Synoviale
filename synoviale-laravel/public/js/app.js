@@ -25611,8 +25611,8 @@ M.anime = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Soraya\Dropbox\ProjArt\synoviale-laravel\Synoviale\Laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Soraya\Dropbox\ProjArt\synoviale-laravel\Synoviale\Laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Spike\Documents\Cours Heig\S4\ProjArt\Projet\Synoviale\synoviale-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Spike\Documents\Cours Heig\S4\ProjArt\Projet\Synoviale\synoviale-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
