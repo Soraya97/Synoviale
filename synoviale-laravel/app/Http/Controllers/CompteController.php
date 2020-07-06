@@ -19,7 +19,6 @@ class CompteController extends Controller
     public function connect(Request $request)
     {
 
-
         $data =  $request->validate([
             "username"           =>    "required",
             "password"        =>    "required"
@@ -69,7 +68,7 @@ class CompteController extends Controller
         return view('clients/createAccount');
     }
 
-    public function store(CompteRequest $request)
+    public function store(Request $request)
     {
 
         $data = $request->validate([
@@ -95,7 +94,7 @@ class CompteController extends Controller
             return redirect('/');
         }
 
-        $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
+        $person = $request->only('name','firstname','email'); //,'email2','phoneNumber1','phoneNumber2','comment');
 
         Person::create($person);
 
