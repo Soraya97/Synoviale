@@ -27,7 +27,7 @@ class BadgeController extends Controller
     {
         $badges = Badge::all();
 
-        return view('pass',compact('badges'));
+        return view('clients/pass',compact('badges'));
     }
 
     /**
