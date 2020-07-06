@@ -19,6 +19,9 @@
                 @foreach($bikes as $bike)
                 <option value="{{$bike->product->brand->name}}">{{$bike->product->brand->name}}</option>
                 @endforeach
+
+
+
             </select>
         </div>
     </div>
@@ -39,8 +42,9 @@
 <div class="container">
     <h2>LISTE DES VÉLOS DISPO</h2>
     <div class="collection">
-      <a class="collection-item modal-trigger left-align black-text" href="#map">Vélo 1<span class="badge red-text">0</span></a>
-      <a class="collection-item modal-trigger left-align black-text" href="#map">Vélo 2<span class="badge green-text">1</span></a>
+      @foreach($bikes as $bike)
+      <a class="collection-item modal-trigger left-align black-text" href="#map">{{$bike->type}} {{$bike->product->brand->name}} {{$bike->product->shortDescr}}<span class="badge red-text">0</span></a>
+      @endforeach
     </div>
 </div>
 

@@ -8,7 +8,7 @@ Route::resource('produit','ProductController');
 
 Route::resource('pass', 'BadgeController');
 
-Route::resource('/velo', 'BikeController');
+Route::resource('velo', 'BikeController');
 
 
 // Route::get('/', function () {

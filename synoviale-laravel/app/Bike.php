@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Bike extends Model
-{    
+{
     protected $fillable = [
         'type',
         'framSize',
@@ -17,6 +17,6 @@ class Bike extends Model
 
     public function product()
     {
-        return $this->hasOne(Product::class);
+        return $this->belongsTo(Product::class);
     }
 }
