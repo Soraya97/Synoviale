@@ -50,7 +50,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-        $data =$request->validated([
+        $data =$request->validate([
             'since' => 'required|date',
             'until' => 'null|date',
             'person_id' => 'required',
@@ -68,9 +68,10 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show($id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+
         return view('onlycontact',compact('contact'));
     }
 
@@ -80,9 +81,11 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit($id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+
+        return view('editcontact',compact('contact'));
     }
 
     /**
@@ -105,6 +108,27 @@ class ContactController extends Controller
         $contact->update($data);
 
         return redirect('contact');
+
+
+        //ou avec $id
+
+ //       public function update(Request $request, $id)
+ //       {
+ //       //
+ //       $data = $request->only([
+ //           'since',
+ //           'until',
+ //           'person_id',
+ //           'company_id'
+ //       ]);
+//
+ //       Contact::getById($id)->update($request);
+//
+ //       return redirect('contact');
+//
+ //       }
+//
+
     }
 
     /**
@@ -113,10 +137,9 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
-        $contact->delete();
+        Contact::findOrFail($id)->delete();
 
         return redirect('contact');
     }
