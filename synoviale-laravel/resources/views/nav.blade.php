@@ -43,7 +43,7 @@
     <li><a class="dropdown-triggerAccount" href="#!" data-target="submenuAccountMob">MON COMPTE</a></li>
     @enduser
     <li><a class="dropdown-trigger" href="#!" data-target="submenuInfoMob">INFOS PRATIQUES</a></li>
-    <li><a href="{{url('/velo')}}">MODÈLES DE VÉLOS</a></li>
+    <li><a href="{{url('/produit')}}">MODÈLES DE VÉLOS</a></li>
     <li><a href="#!">NEWS</a></li>
     <li class="left"><a href="#!">FR</a></li>
     <li class="center-align"><a href="#!">DE</a></li>
@@ -71,7 +71,7 @@
           <li><a class="dropdown-triggerAccount" href="!#" data-target="submenuAccount">MON COMPTE</a></li>
           @enduser
           <li><a class="dropdown-trigger" href="#!" data-target="submenuInfo">INFOS PRATIQUES</a></li>
-          <li><a href="{{url('/velo')}}">MODÈLES DE VÉLOS</a></li>
+          <li><a href="{{url('/produit')}}">MODÈLES DE VÉLOS</a></li>
           <li><a href="#!">NEWS</a></li>
           <li class="left"><a href="#!">FR</a></li>
           <li class="center-align"><a href="#!">DE</a></li>
