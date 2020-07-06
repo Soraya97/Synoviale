@@ -42,6 +42,8 @@ Route::resource('/velo', 'BikeController');
 
 Route::resource('/pass', 'BadgeController');
 
+Route::resource('produit','ProductController');
+
 // Route::resource('/inscription', 'PersonController');
 // Route::resource('/compte', 'UserController');
 

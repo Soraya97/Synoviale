@@ -14,7 +14,7 @@
               <select class="input-field" id="marque">
                   <option value="Toutes" selected>Toutes</option>
                   @foreach($bikes as $bike)
-                  <option value="{{$bike->product->brand->name}}">{{$bike->product->brand->name}}</option>
+                  <option value="{{$product->brand->name}}">{{$product->brand->name}}</option>
                   @endforeach
               </select>
           </div>

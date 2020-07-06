@@ -23,7 +23,7 @@ class EditionController extends Controller
     public function index()
     {
         //
-        $edition = Edition::orderBy('name','desc')->get()->first();
+        $edition = Edition::orderBy('number','desc')->get()->first();
 
         return view('homepage',compact('edition'));
     }
