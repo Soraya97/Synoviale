@@ -9,7 +9,6 @@ class CompteController extends Controller
     public function connect(Request $request)
     {
 
-        return $request;
 
         $data =  $request->validate([
             "username"           =>    "required",

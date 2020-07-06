@@ -45,8 +45,6 @@
     <a href="{{route('compte.create')}}">CRÉER UN COMPTE</a>
   </div>
 </div>
-
-
                         <div class="input-field center-align">
                             <div class="s12">
                                 <button type="submit" class="btn btn-primary">
