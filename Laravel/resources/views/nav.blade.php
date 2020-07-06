@@ -22,7 +22,7 @@
     <li><a href="#!">MES TESTS</a></li>
     @endclient
     <li><a href="{{url('/veloDispo')}}">TROUVER UN VÉLO</a></li>
-    <li><a href="{{url('/parametre')}}">MES PARAMÈTRES</a></li>
+    <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
 </ul>
 <!-- submenu of the account for mobile -->
 <ul id="submenuAccountMob" class="dropdown-content">
@@ -30,7 +30,7 @@
   <li><a href="#!">MES TESTS</a></li>
   @endclient
   <li><a href="{{url('/veloDispo')}}">TROUVER UN VÉLO</a></li>
-  <li><a href="{{url('/parametre')}}">MES PARAMÈTRES</a></li>
+  <li><a href="{{route('user.show',Session::get('user.id'))}}">MES PARAMÈTRES</a></li>
 </ul>
 <!-- menu on mobile -->
 <ul class="sidenav" id="mobile">
@@ -68,7 +68,7 @@
           <li><a href="{{url('/pass')}}">MON PASS</a></li>
           @endclient
           @user
-          <li><a class="dropdown-triggerAccount" href="#!" data-target="submenuAccount">MON COMPTE</a></li>
+          <li><a class="dropdown-triggerAccount" href="!#" data-target="submenuAccount">MON COMPTE</a></li>
           @enduser
           <li><a class="dropdown-trigger" href="#!" data-target="submenuInfo">INFOS PRATIQUES</a></li>
           <li><a href="{{url('/listeVelo')}}">MODÈLES DE VÉLOS</a></li>
