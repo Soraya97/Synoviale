@@ -6,7 +6,7 @@ Route::resource('/', 'EditionController');
 
 Route::resource('produit','ProductController');
 
-Route::resource('pass', 'BadgeController');
+Route::resource('/pass', 'BadgeController');
 
 Route::resource('velo', 'BikeController');
 
@@ -71,9 +71,9 @@ Route::get('/login', function () {
 // });
 
 
-Route::get('/veloDispo', function () {
-    return view('bikeAvailable');
-});
+// Route::get('/veloDispo', function () {
+//     return view('bikeAvailable');
+// });
 
 // Route::get('/parametre', function () {
 //     return view('paramClient');

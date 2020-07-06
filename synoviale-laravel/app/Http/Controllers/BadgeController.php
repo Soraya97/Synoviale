@@ -32,7 +32,7 @@ class BadgeController extends Controller
      */
     public function create()
     {
-        return view('reservationPass');
+        return view('/clients/reservationPass');
     }
 
     /**
