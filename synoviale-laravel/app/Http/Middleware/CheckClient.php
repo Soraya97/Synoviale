@@ -17,10 +17,15 @@ class CheckClient
      */
     public function handle($request, Closure $next)
     {
-        if(!Session::has('client') || !Session::has('organizer'))
+        if(!Session::has('client'))
         {
-            return redirect('/');
+            return $next($request);
         }
-        return $next($request);
+        if($request->pass == Session::get('user.id'))
+        {
+            return $next($request);
+        }
+        
+        return redirect('/');
     }
 }
