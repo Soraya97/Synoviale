@@ -7,50 +7,13 @@
 @section('contenu')
 <div class="greyBackground">
 
-<<<<<<< HEAD
 <div class="container">
-=======
-<div class="account container">
-
-
-    <div class="row">
-
-      <form class="col s12" action="{{ route('compte.store') }}" method="post">
-        @csrf
-        <h2>CRÉATION D'UN COMPTE</h2>
-          <div class="{!! $errors->has('username') ? 'has-error' : '' !!} input-field col s12">
-              <input type="text" name="username" placeholder="057018945120238" class="validate">
-              <label for="username">Identifiant utilisateur</label>
-              {!! $errors->first('username', '<small class="help-block">:message</small>') !!}
-          </div>
-          <div class="{!! $errors->has('password') ? 'has-error' : '' !!} input-field col s12 l6">
-              <input type="password" name="password" placeholder="• • • • • • • • • • • •" class="validate">
-              <label for="password">Mot de passe</label>
-              {!! $errors->first('password', '<small class="help-block">:message</small>') !!}
-          </div>
-          <div class="input-field col s12 l6">
-              <input type="password" name="password_confirmation" placeholder="• • • • • • • • • • • •" class="validate">
-              <label for="password_confirmation">Confirmation de mot de passe</label>
-              {!! $errors->first('password', '<small class="help-block">:message</small>') !!}
-          </div>
-          <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col s12 l6">
-              <input type="email" name="email" placeholder="example@gmail.com" class="validate">
-              <label for="email">Email</label>
-              {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
-          </div>
-          <div class="input-field col s12 l6">
-              <input type="email" name="email1_confirmation" placeholder="example@gmail.com" class="validate">
-              <label for="email1_confirmation">Confirmation email</label>
-              {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
-          </div>
->>>>>>> a3d3c9228bbd8b0b0c2053db285e00ac3e73b520
 
 <div class="row">
 
 <form class="col s12" action="{{ route('compte.store') }}" method="post">
   @csrf
 
-<<<<<<< HEAD
   <h2>CRÉATION D'UN COMPTE</h2>
   <div class="{!! $errors->has('username') ? 'has-error' : '' !!} input-field col s12">
       <input type="text" name="username" placeholder="057018945120238" class="validate">
@@ -76,31 +39,6 @@
       <input type="email" name="email1_confirmation" placeholder="example@gmail.com" class="validate">
       <label for="email1_confirmation">Confirmation email</label>
       {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
-=======
-            <div class="{!! $errors->has('firstname') ? 'has-error' : '' !!} input-field col s12 l6">
-                <input type="text" name="firstname" placeholder="Prénom" class="validate">
-                <label for="firstname">Prénom *</label>
-                {!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}
-            </div>
-
-          <div class="{!! $errors->has('email2') ? 'has-error' : '' !!} input-field col s12 l6">
-              <input type="email" name="email2" placeholder="nomprenom@gmail.com" class="validate">
-              <label for="email2">Email secondaire</label>
-              {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
-          </div>
-
-          <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col s12 l6">
-              <input type="text" name="phonenumber1" placeholder="+ 41 79 360 16 26" class="validate">
-              <label for="phonenumber1">N° téléphone</label>
-              {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
-          </div>
-
-          <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col s12 l6">
-              <input type="text" name="phonenumber2" placeholder="+ 41 79 360 16 26" class="validate">
-              <label for="phonenumber2">N° téléphone secondaire</label>
-              {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
-          </div>
->>>>>>> a3d3c9228bbd8b0b0c2053db285e00ac3e73b520
   </div>
 
   <h2>INSCRIPTION</h2>

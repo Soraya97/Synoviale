@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                               <label for="username">ID</label>
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" required autocomplete="username" autofocus>
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -37,19 +37,6 @@
                                 @enderror
                             </div>
                         </div>
-<<<<<<< HEAD
-=======
-
-
-<div class="input-field center-align">
-  <div class="s12">
-    <p>Pas de compte ?</p>
-    <a href="{{route('compte.create')}}">CRÉER UN COMPTE</a>
-  </div>
-</div>
-
-
->>>>>>> a3d3c9228bbd8b0b0c2053db285e00ac3e73b520
                         <div class="input-field center-align">
                             <div class="s12">
                                 <button type="submit" class="btn btn-primary">

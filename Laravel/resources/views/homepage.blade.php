@@ -18,13 +18,8 @@
           @user
           <p><a class="btn waves-effect" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a></p>
           @else
-<<<<<<< HEAD
           <p><a class="btn waves-effect" href="{{ route('compte.connect') }}">RÉSERVER SON PASS</a></p>
           @enduser
-=======
-          <a class="btn waves-effect" href="{{ route('compte.connect') }}">RÉSERVER SON PASS</a>
-          @endif
->>>>>>> a3d3c9228bbd8b0b0c2053db285e00ac3e73b520
         </div>
       </li>
       <li>
@@ -36,13 +31,8 @@
         @user
         <p><a class="btn waves-effect" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a></p>
         @else
-<<<<<<< HEAD
         <p><a class="btn waves-effect" href="{{ route('compte.connect') }}">RÉSERVER SON PASS</a></p>
         @enduser
-=======
-        <a class="btn waves-effect" href="{{ route('compte.connect') }}">RÉSERVER SON PASS</a>
-        @endif
->>>>>>> a3d3c9228bbd8b0b0c2053db285e00ac3e73b520
         </div>
       </li>
     </ul>
