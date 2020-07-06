@@ -21,11 +21,8 @@
     <tr><td>Canton</td><td>{{Session::get('user.person.address.city.canton')}}</td></tr>
     <tr><td>Pays</td><td>{{Session::get('user.person.address.city.country.name')}}</td></tr>
 </table>
-
-<br>
-<a href="" class="btn center-align">Modifier</a><br><br>
-<a href="#sure" class="btn center-align modal-trigger">Supprimer mon compte</a>
-
+<p><a href="" class="btn center-align">Modifier</a></p>
+<p><a href="#sure" class="btn center-align modal-trigger">Supprimer mon compte</a></p>
 </div>
 
 

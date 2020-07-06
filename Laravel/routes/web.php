@@ -24,11 +24,11 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('Bike', 'BikeController');
 // Route::resource('Brand', 'BrandController');
 //
-// //route pour authentification
-Route::post('user','UserController@connect')->name('user.connect');
-Route::get('user','UserController@deconnect')->name('user.deconnect');
-Route::post('inscription','UserController@store')->name('user.store');
-Route::get('inscription', 'UserController@create')->name('user.create');
+//route pour authentification
+Route::post('user','CompteController@connect')->name('compte.connect');
+Route::get('user','CompteController@deconnect')->name('compte.deconnect');
+Route::post('inscription','CompteController@store')->name('compte.store');
+Route::get('inscription', 'CompteController@create')->name('compte.create');
 
 //Route::resource('user','USerController');
 

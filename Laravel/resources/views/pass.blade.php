@@ -11,13 +11,9 @@
 
     <div class="carousel carousel-slider">
       <div class="carousel-item">
-        <p>Valable le {{\Carbon\Carbon::parse($badge->testday->date)->format('j F, Y')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</p>
-        <img src="img/qrcode.png" width="200">
+        <p>Valable le {{\Carbon\Carbon::parse($badge->testday->date)->locale('fr_FR')->isoFormat('LL')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</p>
+        <img src="img/qrcode.png" class="center-align" alt="Code QR">
       </div>
-      <!-- <div class="carousel-item">
-        <p>Valable le samedi 03.10.2020 à 14h00 - 18h00</p>
-        <img src="img/qrcode.png" width="200">
-      </div> -->
     </div>
 
     <div class="center-align">

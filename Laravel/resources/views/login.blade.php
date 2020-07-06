@@ -10,7 +10,7 @@
   <p>Vous devez avoir un compte pour réserver votre pass.</p>
     <div class="row">
         <div class="col s12">
-                    <form method="POST" action="{{ route('user.connect') }}">
+                    <form method="POST" action="{{ route('compte.connect') }}">
                         @csrf
 
                         <div class="row">
@@ -37,16 +37,6 @@
                                 @enderror
                             </div>
                         </div>
-
-
-<div class="input-field center-align">
-  <div class="s12">
-    <p>Pas de compte ?</p>
-    <a href="{{route('user.create')}}">CRÉER UN COMPTE</a>
-  </div>
-</div>
-
-
                         <div class="input-field center-align">
                             <div class="s12">
                                 <button type="submit" class="btn btn-primary">
@@ -58,5 +48,13 @@
                     </form>
         </div>
     </div>
+
+    <div class="input-field center-align">
+      <div class="s12">
+        <p>Pas de compte ?</p>
+        <a href="{{route('user.create')}}">CRÉER UN COMPTE</a>
+      </div>
+    </div>
+
 </div>
 @endsection

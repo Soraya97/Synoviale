@@ -16,8 +16,8 @@
     }
 
     .carousel-item {
-      width: 75%;
-      height: 75%;
+      width: 80%;
+      height: 80%;
       min-height: $carousel-height;
       position: absolute;
       top: 0;
@@ -32,6 +32,18 @@
       p {
         font-size: 15px;
       }
+    }
+
+    @media #{$large-and-up} {
+        .carousel-item {
+          width: 50%;
+          height: 50%;
+          min-height: $carousel-height;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
     }
   }
 

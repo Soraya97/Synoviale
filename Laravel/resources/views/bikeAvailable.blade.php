@@ -17,9 +17,7 @@
         <div class="col s8 l10">
             <select class="input-field">
                 <option value="Toutes" selected>Toutes</option>
-                @foreach($bikes as $bike)
-                <option value="{{$bike->product->brand->name}}">{{$bike->product->brand->name}}</option>
-                @endforeach
+                <option value="bleu">bleu</option>
             </select>
         </div>
     </div>
@@ -28,9 +26,7 @@
         <div class="col s3 l2"><h3>TYPE</h3></div>
         <div class="col s9 l10">
             <select class="input-field">
-              @foreach($bikes as $bike)
-                <option value="{{$bike->type}}" selected>{{$bike->type}}</option>
-                @endforeach
+                <option value="VTT" selected>VTT</option>
             </select>
         </div>
     </div>
@@ -48,8 +44,8 @@
 <div id="map" class="modal">
    <div class="modal-content">
      <a href="#!" class="modal-close btn-flat right">X</a>
-     <h4>Stand n<sup>o</sup>2</h4>
-     <img src="/img/map.jpg" alt="Plan du Bike Gryon Test">
+     <h5>Stand n<sup>o</sup>2</h5>
+     <img src="/img/map.jpg" alt="Plan du Bike Test Gryon" width="75%">
    </div>
    <div class="modal-footer"></div>
  </div>

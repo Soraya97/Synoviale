@@ -19,6 +19,7 @@
 
 <div id="paiement" class="col s12">
 <form method="post" action="">
+  <p>Vous pouvez soit paiement maintenant en ligne soit directement à l'accueil le jour de la manifesation.</p>
  <p>
    <label for="online">
      <input type="checkbox" class="filled-in" name="" value="" id="online"/>
@@ -37,4 +38,5 @@
 </form>
   </div>
   </div>
+</div>
 @endsection
