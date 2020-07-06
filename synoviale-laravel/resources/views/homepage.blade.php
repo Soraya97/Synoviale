@@ -69,7 +69,5 @@
 <a href="https://www.facebook.com/BikeGryon"><img class="socialMedia" src="img/FB.png" height="10rem" height="10rem" alt="Logo de Facebook"></a>
 <p class="center">© 2020 BIKE TEST GRYON<a href="#wrapper" class="right"><i class="material-icons">expand_less</i></a></p>
 
-
-
 </div>
 @endsection

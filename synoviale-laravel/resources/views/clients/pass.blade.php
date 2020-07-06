@@ -6,12 +6,17 @@
 
 @section('contenu')
 <div class="pass container">
+
+<p>Test: {{$badges->testday}}</p>
+
   @foreach($badges as $badge)
     <h2>MON PASS</h2>
 
+    <p>Test: {{$badge}} </p>
+
     <div class="carousel carousel-slider">
       <div class="carousel-item">
-        <p>Valable le {{\Carbon\Carbon::parse($badge->testday->date)->locale('fr_FR')->isoFormat('LL')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</p>
+        {{-- <p>Valable le {{\Carbon\Carbon::parse($badge->testday->date)->locale('fr_FR')->isoFormat('LL')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</p> --}}
         <img src="img/qrcode.png" class="center-align" alt="Code QR">
       </div>
     </div>

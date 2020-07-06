@@ -17,7 +17,7 @@ class CheckClient
      */
     public function handle($request, Closure $next)
     {
-        if(!Session::has('client') || !Session::has('organizer'))
+        if(!Session::has('client'))
         {
             return redirect('/');
         }
