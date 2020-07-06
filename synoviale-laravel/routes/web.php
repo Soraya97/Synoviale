@@ -33,7 +33,7 @@ Route::resource('/client', 'ClientController');
 
 Route::resource('/velo', 'BikeController');
 
-Route::resource('/pass', 'BadgeController');
+Route::resource('pass', 'BadgeController');
 
 Route::resource('produit','ProductController');
 
