@@ -60,7 +60,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('paramClient',compact('user'));
+        return view('clients/paramClient',compact('user'));
 
 
     }
