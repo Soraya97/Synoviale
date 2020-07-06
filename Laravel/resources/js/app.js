@@ -57,7 +57,7 @@ $(document).ready(function() {
     }
     if (h >= 800) {
         $('.slider').slider({
-            height: h * 0.7,
+            height: h * 0.8,
             indicators: false
         });
     }

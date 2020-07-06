@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Organizer;
+use App\Client;
+use App\Contact;
+use App\Employee;
+use App\Person;
+
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Session;
 
 class CompteController extends Controller
 {
     public function connect(Request $request)
     {
 
-        return $request;
 
         $data =  $request->validate([
             "username"           =>    "required",
@@ -26,8 +34,6 @@ class CompteController extends Controller
 
             $client = Client::where('person_id',$user->person->id)->first();
 
-            $store = Store::where('person_id',$user->person->id)->first();
-
             $employee = Employee::where('person_id',$user->person->id)->first();
 
             $contact = Contact::where('person_id',$user->person->id)->first();
@@ -35,8 +41,6 @@ class CompteController extends Controller
             $request->session()->put('organizer',$organizer);
 
             $request->session()->put('client',$client);
-
-            $request->session()->put('store',$store);
 
             $request->session()->put('employee',$employee);
 
@@ -60,7 +64,7 @@ class CompteController extends Controller
     }
 
     public function create() {
-        
+
         return view('createAccount');
     }
 

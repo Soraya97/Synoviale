@@ -25,8 +25,6 @@
 <p><a href="#sure" class="btn center-align modal-trigger">Supprimer mon compte</a></p>
 </div>
 
-
-
 <div id="sure" class="modal">
     <div class="modal-content">
       <h5>Suppression des données</h5>

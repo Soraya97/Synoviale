@@ -25,12 +25,13 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('Brand', 'BrandController');
 //
 //route pour authentification
-Route::post('user','CompteController@connect')->name('compte.connect');
-Route::get('user','CompteController@deconnect')->name('compte.deconnect');
+Route::post('compte','CompteController@connect')->name('compte.connect');
+Route::get('compte','CompteController@deconnect')->name('compte.deconnect');
 Route::post('inscription','CompteController@store')->name('compte.store');
 Route::get('inscription', 'CompteController@create')->name('compte.create');
 
-//Route::resource('user','USerController');
+//pour la gestion des users
+Route::resource('user','UserController');
 
 Route::resource('/', 'EditionController');
 

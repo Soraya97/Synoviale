@@ -37,6 +37,14 @@
                                 @enderror
                             </div>
                         </div>
+
+
+<div class="input-field center-align">
+  <div class="s12">
+    <p>Pas de compte ?</p>
+    <a href="{{route('compte.create')}}">CRÉER UN COMPTE</a>
+  </div>
+</div>
                         <div class="input-field center-align">
                             <div class="s12">
                                 <button type="submit" class="btn btn-primary">
@@ -52,7 +60,7 @@
     <div class="input-field center-align">
       <div class="s12">
         <p>Pas de compte ?</p>
-        <a href="{{route('user.create')}}">CRÉER UN COMPTE</a>
+        <a href="{{route('compte.create')}}">CRÉER UN COMPTE</a>
       </div>
     </div>
 
