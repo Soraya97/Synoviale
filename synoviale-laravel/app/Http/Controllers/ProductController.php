@@ -24,7 +24,7 @@ class ProductController extends Controller
         //
         $products = Product::all();
 
-        return view('product',compact('products'));
+        return view('modelsBike',compact('products'));
     }
 
     /**
