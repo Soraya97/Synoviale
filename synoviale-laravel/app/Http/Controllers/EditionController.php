@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Edition;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests\EditionRequest;
@@ -22,9 +23,9 @@ class EditionController extends Controller
     public function index()
     {
         //
-        $editions = Edition::all();
+        $edition = Edition::orderBy('name','desc')->get()->first();
 
-        return view('homepage',compact('editions'));
+        return view('homepage',compact('edition'));
     }
 
     /**
