@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkclient');
+        $this->middleware('checkuser');
     }
     /**
      * Display a listing of the resource.

@@ -20,13 +20,8 @@ class CheckClient
         if(!Session::has('client'))
         {
             return redirect('/');
-        }
-        if($request->user != Session::get('user.id'))
-        {
-            return redirect()->route('user.show',Session::get('user.id'));
-        }
-        
+        }     
         return $next($request);
-  
+
     }
 }

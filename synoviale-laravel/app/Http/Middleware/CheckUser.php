@@ -21,6 +21,11 @@ class CheckUser
         {
             return redirect('/');
         }
+        if($request->pass != Session::get('user.id'))
+        {
+            return redirect()->route('user.show',Session::get('user.id'));
+        }
+        
         return $next($request);
     }
 }
