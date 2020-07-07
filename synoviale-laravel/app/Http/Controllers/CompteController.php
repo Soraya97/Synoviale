@@ -82,7 +82,7 @@ class CompteController extends Controller
 
         Person::create($person);
 
-        $personId = Person::where($personTest)->first();
+        $personId = Person::where($person)->first();
 
         $request->request->add(['person_id' => $personId->id]);
 
@@ -98,7 +98,6 @@ class CompteController extends Controller
         
         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
 
-        $
 
         // ajouter code de connexion
 
