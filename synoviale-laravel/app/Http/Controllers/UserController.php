@@ -82,7 +82,7 @@ class UserController extends Controller
     {
         $user = USer::findOrFail($id);
 
-        return view('edituser',compact('user'));
+        return view('clients/paramClientUpdate',compact('user'));
     }
 
     /**
@@ -115,7 +115,7 @@ class UserController extends Controller
     {
         User::findOrFail($id)->delete();
 
-        
+
 
         Session::flush();
 

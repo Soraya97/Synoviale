@@ -24,7 +24,7 @@
         @endif
         <tr><td>Commentaire</td><td>{{$user->person->comment}}</td></tr>
     </table>
-    <p><a href="" class="btn center-align">Modifier</a></p>
+    <p><a href="{{route('user.edit', [$user->id])}}" class="btn center-align">Modifier</a></p>
     <p><a href="#sure" class="btn center-align modal-trigger">Supprimer mon compte</a></p>
 </div>
 

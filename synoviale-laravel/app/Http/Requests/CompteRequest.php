@@ -49,7 +49,6 @@ class CompteRequest extends FormRequest
 
           // country
           'country' => 'regex:([A-Z]{1})'
-
         ];
     }
 }
