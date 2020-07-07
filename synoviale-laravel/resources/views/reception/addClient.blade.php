@@ -109,25 +109,22 @@
                     <div class="col l4">
                       @foreach($days as $day)
                       @if($day->date == '02.10.2020')
-                      <p>
                           <label for="{{$day->id}}">
                               <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
                               <span>VENDREDI {{$day->startHour}} - {{$day->endHour}}</span>
-                          </label>
-                      </p>
+                          </label><br>
                       @endif
                       @endforeach
-                    </div>
+                     </div>
 
                     <div class="col l4">
                       @foreach($days as $day)
                       @if($day->date == '03.10.2020')
-                      <p>
+
                           <label for="{{$day->id}}">
                               <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
                               <span>SAMEDI {{$day->startHour}} - {{$day->endHour}}</span>
-                          </label>
-                      </p>
+                          </label><br>
                       @endif
                       @endforeach
                     </div>
@@ -135,12 +132,10 @@
                     <div class="col l4">
                       @foreach($days as $day)
                       @if($day->date == '04.10.2020')
-                      <p>
                           <label for="{{$day->id}}">
                               <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
                               <span>DIMANCHE {{$day->startHour}} - {{$day->endHour}}</span>
-                          </label>
-                      </p>
+                          </label><br>
                       @endif
                       @endforeach
                     </div>

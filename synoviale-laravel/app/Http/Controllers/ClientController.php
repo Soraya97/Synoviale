@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Person;
 use App\User;
+use App\Testday;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\CompteRequest;
@@ -36,8 +37,8 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
-        return view('reception/addClient');
+        $days = Testday::all();
+        return view('reception/addClient', compact('days'));
     }
 
     /**
@@ -46,36 +47,51 @@ class ClientController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(CompteRequest $request) {
+
+        $data = $request->validated();
+        echo $data;
+        // $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
         //
-        // $data = $request->validated([
-        //     'homeCanton' => 'null',
-        //     'person_id' => 'required',
-        //     'badge_id' => 'required',
-        //     'test_id' => 'required',
-        // ]);
+        // Person::create($person);
         //
-        // Client::create($data);
+        // $personId = Person::where($personTest)->first();
         //
-        // return redirect('client');
-
-        // $data = $request->validate();
-
-        $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
-
-        Person::create($person);
-
-        $personId = Person::where($personTest)->first();
-
-        $request->request->add(['person_id' => $personId->id]);
-
-        $user = $request->only('username','email','password','person_id');
-
-        $client = $request->only('person_id');
-
-        User::create($user);
-
-        Client::create($client);
+        // $request->request->add(['person_id' => $personId->id]);
+        //
+        // $client = $request->only('person_id');
+        //
+        // User::create($user);
+        //
+        // Client::create($client);
+        //
+        // // adresse
+        //
+        // $address = $request->only('street1','street2','streetNumber','POBox','city_id');
+        //
+        // $request->request->add(['event_id' => 1]);
+        // $request->request->add(['edition_id' => 1]);
+        // $request->request->add(['client_id' => Client::where($client)->first()]);
+        //
+        // if(isset($request->date)) {
+        //     foreach ($request->date as $testday)
+        //     {
+        //         $request->request->add(['testday_id'=> $testday]);
+        //
+        //         do {
+        //
+        //             $number = uniqid(rand());
+        //
+        //         }while ($number == Badge::where('number',$number)->get());
+        //
+        //         $request->request->add(['number' => $number]);
+        //
+        //         $badge = $request->only('event_id','edition_id','client_id','testday_id','number');
+        //
+        //         Badge::create($badge);
+        //
+        //     }
+        // };
 
     }
 
