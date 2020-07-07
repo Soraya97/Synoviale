@@ -6,11 +6,11 @@
     <li><a href="">PRODUITS</a></li>
     <li><a href="{{ route('test.index') }}">TESTS</a></li>
     <li><a href="">LISTE DES TESTS</a></li>
-    @if(Auth::check())
-    <li><a href="{{url("logout")}}" class="btn-small">SE DÉCONNECTER</a></li>
+    @user
+    <li><a href="{{route('compte.deconnect')}}" class="btn-small">SE DÉCONNECTER</a></li>
     @else
-    <li><a href="{{url("login")}}" class="btn-small">SE CONNECTER</a></li>
-    @endif
+    <li><a href="{{route('compte.create')}}" class="btn-small">SE CONNECTER</a></li>
+    @enduser
 </ul>
 <!-- menu on browser -->
 <nav>
@@ -21,11 +21,11 @@
             <li><a href="">PRODUITS</a></li>
             <li><a href="{{ route('test.index') }}">TESTS</a></li>
             <li><a href="">LISTE DES TESTS</a></li>
-            @if(Auth::check())
-            <li><a href="{{url("logout")}}" class="btn-small">SE DÉCONNECTER</a></li>
+            @user
+            <li><a href="{{route('compte.deconnect')}}" class="btn-small">SE DÉCONNECTER</a></li>
             @else
-            <li><a href="{{url("login")}}" class="btn-small">SE CONNECTER</a></li>
-            @endif
+            <li><a href="{{route('compte.create')}}" class="btn-small">SE CONNECTER</a></li>
+            @enduser
         </ul>
     </div>
 </nav>

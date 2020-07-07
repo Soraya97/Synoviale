@@ -95,7 +95,7 @@ class CompteController extends Controller
         Client::create($client);
 
         // adresse
-        
+
 
 
         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
@@ -107,11 +107,17 @@ class CompteController extends Controller
         $request->session()->put('user',$userC);
 
         $clientC = Client::where('person_id',$userC->person->id)->first();
-        
+
         $request->session()->put('client',$clientC);
 
     return redirect('/');
 
     }
+
+    public function login() {
+
+        return view('login');
+    }
+
 
 }

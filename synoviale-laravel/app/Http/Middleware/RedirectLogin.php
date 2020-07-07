@@ -24,11 +24,11 @@ class RedirectLogin
         }
         if(Session::has('contact'))
         {
-            return redirect('/');
+            return redirect('/test');
         }
         if(Session::has('employee'))
         {
-            return redirect('/');
+            return redirect('/client');
         }
         if(Session::has('organizer'))
         {
