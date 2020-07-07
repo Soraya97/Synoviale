@@ -14,42 +14,42 @@
             <h2>INFORMATIONS PERSONNELLES</h2>
 
             <div class="row">
-                <form class="" action="" method="post">
+                <form class="" action="{{route('client.edit', [$client->id])}}" method="post">
                     @csrf
 
                     <div class="col s12 l6">
                         <div class="{!! $errors->has('name') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="text" name="name" placeholder="Nom" class="validate">
+                            <input type="text" name="name" value="{{$client->person->name}}" class="validate">
                             <label for="name">Nom *</label>
                             {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('firstname') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="text" name="firstname" placeholder="Prénom" class="validate">
+                            <input type="text" name="firstname" value="{{$client->person->firstname}}" class="validate">
                             <label for="firstname">Prénom *</label>
                             {!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="email" name="email1" placeholder="nomprenom@gmail.com" class="validate">
+                            <input type="email" name="email1" value="{{$client->person->email}}" class="validate">
                             <label for="email1">Email</label>
                             {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="email" name="email2" placeholder="nomprenom@gmail.com" class="validate">
+                            <input type="email" name="email2" value="{{$client->person->email2}}" class="validate">
                             <label for="email2">Email secondaire</label>
                             {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="text" name="phonenumber1" placeholder="+ 41 79 360 16 26" class="validate">
+                            <input type="text" name="phonenumber1" value="{{$client->person->phoneNumber1}}" class="validate">
                             <label for="phonenumber1">N° téléphone</label>
                             {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="text" name="phonenumber2" placeholder="+ 41 79 360 16 26" class="validate">
+                            <input type="text" name="phonenumber2" value="{{$client->person->phoneNumber2}}" class="validate">
                             <label for="phonenumber2">N° téléphone secondaire</label>
                             {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('comment') ? 'has-error' : '' !!} input-field col s12">
-                            <input type="text" name="comment" placeholder="Quelque chose à ajouter ?" class="validate">
+                            <input type="text" name="comment" value="{{$client->person->comment}}" class="validate">
                             <label for="comment">Commentaire</label>
                             {!! $errors->first('comment', '<small class="help-block">:message</small>') !!}
                         </div>
@@ -57,42 +57,42 @@
 
                     <div class="col l6 s12">
                         <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8 s9">
-                            <input type="text" name="street1" placeholder="Avenue des Sports 20" class="validate">
+                            <input type="text" name="street1" value="{{$client->person->address->street1}}" class="validate">
                             <label for="street1">Rue</label>
                             {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('streetnumber') ? 'has-error' : '' !!} input-field col l4 s3">
-                            <input type="text" name="streetnumber" placeholder="8A" class="validate">
+                            <input type="text" name="streetnumber" value="{{$client->person->address->streetNumber}}" class="validate">
                             <label for="streetnumber">N° de rue</label>
                             {!! $errors->first('streetnumber', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8 s9">
-                            <input type="text" name="street2" placeholder="Avenue des Alpes 20" class="validate">
+                            <input type="text" name="street2" value="{{$client->person->address->street2}}" class="validate">
                             <label for="street2">Rue secondaire</label>
                             {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('pobox') ? 'has-error' : '' !!} input-field col l4 s3">
-                            <input type="text" name="pobox" placeholder="8A" class="validate">
+                            <input type="text" name="pobox" value="{{$client->person->address->POBox}}" class="validate">
                             <label for="pobox">CP</label>
                             {!! $errors->first('pobox', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('city') ? 'has-error' : '' !!} input-field col l8 s9">
-                            <input type="text" name="city" placeholder="8A" class="validate">
+                            <input type="text" name="city" value="{{$client->person->address->city->name}}" class="validate">
                             <label for="city">Localité</label>
                             {!! $errors->first('city', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('postalecode') ? 'has-error' : '' !!} input-field col l4 s3">
-                            <input type="text" name="postalecode" placeholder="1008" class="validate">
+                            <input type="text" name="postalecode" value="{{$client->person->address->city->postalCode}}" class="validate">
                             <label for="postalecode">NPA</label>
                             {!! $errors->first('postalecode', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('canton') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="text" name="canton" placeholder="Vaud" class="validate">
+                            <input type="text" name="canton" value="{{$client->person->address->city->canton}}" class="validate">
                             <label for="canton">Canton</label>
                             {!! $errors->first('canton', '<small class="help-block">:message</small>') !!}
                         </div>
                         <div class="{!! $errors->has('country') ? 'has-error' : '' !!} input-field col l6 s12">
-                            <input type="text" name="country" placeholder="Suisse" class="validate">
+                            <input type="text" name="country" value="{{$client->person->address->city->country->name}}" class="validate">
                             <label for="country">Pays</label>
                             {!! $errors->first('country', '<small class="help-block">:message</small>') !!}
                         </div>

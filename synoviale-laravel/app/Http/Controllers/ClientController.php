@@ -21,9 +21,11 @@ class ClientController extends Controller {
      */
     public function index() {
         //
-        $clients = Client::all();
+        $clients = Client::all()
+                  ->paginate(5);
+        $links = $clients->render();
+        return view('reception/clientsList', compact('clients', 'links'));
 
-        return view('reception/clientsList', compact('clients'));
     }
 
     /**
