@@ -8,7 +8,7 @@
 <div class="slider welcome">
     <ul class="slides">
         <li>
-            <img src="/img/bike.jpg" alt="Un cycliste de dos">
+            <img src="img/bike.jpg" alt="Un cycliste de dos">
             <div class="caption center-align">
                 <h1 class="white-text">{{$edition->number}}<sup>e</sup> édition</h1>
                 <h2 class="white-text">2-4 OCTOBRE 2020</h2>
@@ -21,7 +21,7 @@
             </div>
         </li>
         <li>
-            <img src="/img/fonctionnalites.jpg" alt="Un cycliste regardant le soleil couchant">
+            <img src="img/fonctionnalites.jpg" alt="Un cycliste regardant le soleil couchant">
             <div class="caption center-align">
                 <h2 class="white-text">Nouvelle fonctionnalité !</h2 >
                 <p class="white-text bold">Vous pouvez maintenant voir la disponibilité des vélos.</p>
