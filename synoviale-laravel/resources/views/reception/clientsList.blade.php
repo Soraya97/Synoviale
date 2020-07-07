@@ -10,7 +10,8 @@
     <div class="row">
         <form class="col l3 s12 right">
             <div class="input-field">
-                <label class="label-icon" for="search"><i class="material-icons">search</i>Rechercher</label>
+                <i class="material-icons prefix">search</i>
+                <label class="label-icon" for="search" placeholder="Rechercher"></label>
                 <input id="search" type="search">
             </div>
         </form>

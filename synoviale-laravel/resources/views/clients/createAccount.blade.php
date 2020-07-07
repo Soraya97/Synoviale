@@ -108,7 +108,10 @@
                     <label for="comment">Commentaire</label>
                     @error('comment')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
-                <button type="submit" class="btn right modal-trigger" href="#confirmCreation">CRÉER</button>
+                <div class="row">
+                  <button type="submit" class="btn right modal-trigger col s12 l2" href="#confirmCreation">CRÉER</button>
+                </div>
+
 
             </form>
 

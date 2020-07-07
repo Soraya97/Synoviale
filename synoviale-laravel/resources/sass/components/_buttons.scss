@@ -8,8 +8,12 @@
   line-height: $button-height;
   padding: $button-padding;
   text-transform: uppercase;
+  font-weight: bold;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent; // Gets rid of tap active state
+  margin-left: auto;
+  margin-right: auto;
+  width: 0 auto;
 }
 
 // Disabled shared style

@@ -2730,6 +2730,8 @@ nav {
   height: 1px;
   overflow: hidden;
   background-color: #ffa000;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 blockquote {
@@ -2795,7 +2797,7 @@ video.responsive-video {
 }
 
 .pagination li.active {
-  background-color: #00acc1;
+  background-color: #ffa000;
 }
 
 .pagination li.disabled a {
@@ -3493,6 +3495,7 @@ table span.badge {
 .material-icons {
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga";
+  vertical-align: middle;
 }
 
 .container {
@@ -4758,15 +4761,15 @@ h6 a {
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 3.75rem;
   line-height: 110%;
-  margin: 2.8rem 0 1.68rem 0;
+  margin: 2.5rem 0 1.5rem 0;
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 3rem;
   line-height: 110%;
-  margin: 2.3733333333rem 0 1.424rem 0;
+  margin: 2rem 0 1.2rem 0;
 }
 
 h3 {
@@ -5373,8 +5376,12 @@ small {
   line-height: 36px;
   padding: 0 16px;
   text-transform: uppercase;
+  font-weight: bold;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  width: 0 auto;
 }
 
 .btn.disabled,

@@ -115,6 +115,8 @@ a {
   height: 1px;
   overflow: hidden;
   background-color: color("amber", "darken-2");
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 
@@ -182,7 +184,7 @@ video.responsive-video {
 
     &.active a { color: #fff; }
 
-    &.active { background-color: $primary-color; }
+    &.active { background-color: $secondary-color; }
 
     &.disabled a {
       cursor: default;

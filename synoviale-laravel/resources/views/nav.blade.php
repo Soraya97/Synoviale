@@ -46,22 +46,25 @@
     <li><a href="{{route('pass.show',Session::get('client.id'))}}">MON PASS</a></li>
     @endclient
     @user
-    <li><a class="dropdown-triggerAccount" href="#!" data-target="submenuAccountMob">MON COMPTE</a></li>
+    <li><a class="dropdown-triggerAccount" href="#!" data-target="submenuAccountMob">MON COMPTE<i class="material-icons right">arrow_drop_down</i></a></li>
     @enduser
-    <li><a class="dropdown-trigger" href="#!" data-target="submenuInfoMob">INFOS PRATIQUES</a></li>
+    <li><a class="dropdown-trigger" href="#!" data-target="submenuInfoMob">INFOS PRATIQUES<i class="material-icons right">arrow_drop_down</i></a></li>
     <li><a href="{{ route('produit.index') }}">MODÈLES DE VÉLOS</a></li>
     <li><a href="#!">NEWS</a></li>
-    <li class="left"><a href="#!">FR</a></li>
-    <li class="center-align"><a href="#!">DE</a></li>
+    <div class="row">
+      <li class="col s6 underline"><a href="#!">FR</a></li>
+      <li class="col s6"><a href="#!">DE</a></li>
+    </div>
     @user
-    <li> <a class="btn-small" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a> </li>
+    <li> <a class="btn" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a> </li>
     @else
-    <li> <a class="btn-small" href="{{ route('compte.login') }}">RÉSERVER SON PASS</a> </li>
+    <li> <a class="btn" href="{{ route('compte.login') }}">RÉSERVER SON PASS</a> </li>
     @enduser
+    <br>
     @user
-    <li><a href="{{ route('compte.deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
+    <li><a href="{{ route('compte.deconnect') }}" class="btn">SE DÉCONNECTER</a></li>
     @else
-    <li><a href="{{ route('compte.login') }}" class="btn-small ">SE CONNECTER</a></li>
+    <li><a href="{{ route('compte.login') }}" class="btn ">SE CONNECTER</a></li>
     @enduser
 </ul>
 <!-- menu on browser -->
@@ -70,28 +73,29 @@
         <a href="#" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 
         <a href="{{route('index')}}" class="brand-logo left"><img src="/img/logoBlanc.png" alt="Logo du Bike Test Gryon"></a>
-        
-        <ul class="right hide-on-med-and-down">
+
+        <ul class="right hide-on-med-and-down menu">
             @client
             <li><a href="{{route('pass.show',Session::get('client.id'))}}">MON PASS</a></li>
             @endclient
             @user
-            <li><a class="dropdown-triggerAccount" href="!#" data-target="submenuAccount">MON COMPTE</a></li>
+            <li><a class="dropdown-triggerAccount" href="!#" data-target="submenuAccount">MON COMPTE<i class="material-icons right">arrow_drop_down</i></a></li>
             @enduser
-            <li><a class="dropdown-trigger" href="#!" data-target="submenuInfo">INFOS PRATIQUES</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="submenuInfo">INFOS PRATIQUES<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="{{route('produit.index')}}">MODÈLES DE VÉLOS</a></li>
             <li><a href="#!">NEWS</a></li>
-            <li class="left"><a href="#!">FR</a></li>
+            <li class="left underline"><a href="#!">FR</a></li>
             <li class="center-align"><a href="#!">DE</a></li>
             @user
-            <li> <a class="btn-small" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a> </li>
+            <li> <a class="btn" href="{{ route('pass.create') }}">RÉSERVER SON PASS</a> </li>
             @else
-            <li> <a class="btn-small" href="{{ route('compte.login') }}">RÉSERVER SON PASS</a> </li>
+            <li> <a class="btn" href="{{ route('compte.login') }}">RÉSERVER SON PASS</a> </li>
             @enduser
+
             @user
-            <li><a href="{{ route('compte.deconnect') }}" class="btn-small">SE DÉCONNECTER</a></li>
+            <li><a href="{{ route('compte.deconnect') }}" class="btn">SE DÉCONNECTER</a></li>
             @else
-            <li><a href="{{ route('compte.login') }}" class="btn-small ">SE CONNECTER</a></li>
+            <li><a href="{{ route('compte.login') }}" class="btn ">SE CONNECTER</a></li>
             @enduser
 
         </ul>

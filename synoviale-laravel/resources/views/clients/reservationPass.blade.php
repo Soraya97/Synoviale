@@ -54,8 +54,8 @@
                 </p>
                 @endif
                 @endforeach
-                <div>
-                    <button type="submit" class="btn" value="passSub">SUIVANT</button>
+                <div class="row">
+                    <button type="submit" class="btn col s12 l2">SUIVANT</button>
                 </div>
             </form>
         </div>

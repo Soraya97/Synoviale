@@ -5,11 +5,9 @@
 @endsection
 
 @section('contenu')
+<div class="greyBackgroundContainer">
+
 <div class="container">
-    <p><a href="{{route('client.index')}}"><i class="material-icons">arrow_back</i>RETOUR À LA LISTE DES CLIENTS</a></p>
-
-    <div class="greyBackground">
-
 
 <div class="row">
 
@@ -104,48 +102,54 @@
 
 <div class="divider"></div>
 <div class="section">
-    <h2>CHOIX DES JOURS TESTS<h2>
+    <h2>CHOIX DES JOURS TESTS</h2>
             <div class="row">
 
                     <div class="col l4">
+                      <h5>VENDREDI 02.10.2020</h5><br>
                       @foreach($days as $day)
                       @if($day->date == '02.10.2020')
                           <label for="{{$day->id}}">
                               <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
                               <span>VENDREDI {{$day->startHour}} - {{$day->endHour}}</span>
-                          </label><br>
+                          </label><br><br>
                       @endif
                       @endforeach
                      </div>
 
                     <div class="col l4">
+                      <h5>SAMEDI 03.10.2020</h5><br>
                       @foreach($days as $day)
                       @if($day->date == '03.10.2020')
 
                           <label for="{{$day->id}}">
                               <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
                               <span>SAMEDI {{$day->startHour}} - {{$day->endHour}}</span>
-                          </label><br>
+                          </label><br><br>
                       @endif
                       @endforeach
                     </div>
 
                     <div class="col l4">
+                      <h5>DIMANCHE 04.10.2020</h5><br>
                       @foreach($days as $day)
                       @if($day->date == '04.10.2020')
                           <label for="{{$day->id}}">
                               <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
                               <span>DIMANCHE {{$day->startHour}} - {{$day->endHour}}</span>
-                          </label><br>
+                          </label><br><br>
                       @endif
                       @endforeach
                     </div>
 
                   </div>
-
+<p class="bold red-text right-align">  <i class="material-icons">report</i>Cliquez sur ajouter dès que le client a payé</p>
                 </div>
-                <p class="right-align "></p>
-                    <button type="submit" class="btn right">AJOUTER</button>
+
+                <div class="row">
+                  <button type="submit" class="btn right col l2 s12">AJOUTER</button>
+                </div>
+
 
     </form>
 
