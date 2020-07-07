@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Badge extends Model
-{    
+{
     protected $fillable = [
         'number',
         'client_id',

@@ -6,7 +6,7 @@
 
 @section('contenu')
 <div class="container">
-    <p><a href="{{url("listeClients")}}"><i class="material-icons">arrow_back</i>RETOUR À LA LISTE DES CLIENTS</a></p>
+    <p><a href="{{route('client.index')}}"><i class="material-icons">arrow_back</i>RETOUR À LA LISTE DES CLIENTS</a></p>
 
     <div class="greyBackground">
 

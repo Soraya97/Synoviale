@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\Person;
+use App\User;
+use App\Testday;
+use App\Badge;
+
 use Illuminate\Http\Request;
+
+use App\Http\Requests\CompteRequest;
 
 class ClientController extends Controller {
 
@@ -32,8 +39,8 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
-        return view('addclient');
+        $days = Testday::all();
+        return view('reception/addClient', compact('days'));
     }
 
     /**
@@ -42,31 +49,43 @@ class ClientController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CompteRequest $request) {
-        //
-        $data = $request->validated();
+    public function store(Request $request) {
+
+         $data = $request->validate([
+             'name' => 'required|unique:people',
+             'firstname' => 'required'
+         ]);
+
+        $personTest = $request->only('name','firstname');
 
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
+        if(Person::where($personTest)->first())
+        {
+            return redirect('client/create');
+        }
+
         Person::create($person);
 
-        $personId = Person::where($personTest)->first();
+        $personId = Person::where($person)->first();
 
         $request->request->add(['person_id' => $personId->id]);
 
         $client = $request->only('person_id');
 
-        User::create($user);
+        // User::create($user);
 
         Client::create($client);
 
         // adresse
-        
+
         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
+
+        $client = Client::where($client)->first();
 
         $request->request->add(['event_id' => 1]);
         $request->request->add(['edition_id' => 1]);
-        $request->request->add(['client_id' => Client::where($client)->first()]);
+        $request->request->add(['client_id' => $client->id]);
 
         if(isset($request->date)) {
             foreach ($request->date as $testday)
@@ -89,6 +108,7 @@ class ClientController extends Controller {
         };
 
         return redirect('client');
+
     }
 
     /**

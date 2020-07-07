@@ -10,6 +10,7 @@ Route::resource('/pass', 'BadgeController');
 
 Route::resource('velo', 'BikeController');
 
+Route::resource('/client', 'ClientController');
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -35,7 +36,7 @@ Route::resource('user','UserController');
 
 
 // route for the reception
-Route::resource('/client', 'ClientController');
+
 
  Route::get('/listeClients', function () {
      return view('reception/clientsList');

@@ -29,7 +29,7 @@
                 <tr>
                     <th>NOM</th>
                     <th>PRÉNOM</th>
-                    <th>N<sup>o</sup> LOGIN</th>
+                    <th>LOGIN</th>
                     <th>N<sup>o</sup> QR CODE</th>
                     <th>JOURS INSCRITS</th>
                     <th></th>
@@ -40,32 +40,16 @@
                 <tr>
                     <td>{{$client->person->name}}</td>
                     <td>{{$client->person->firstname}}</td>
-                    <td>Login</td>
-                    <td>QR Code</td>
-                    <td>Jours</td>
+                    <td>@if(($client->person->email) == null)-@else{{$client->person->email}}@endif</td>
+                    <td>@foreach($client->badge as $pass) @if(($pass->number) == null)-@else{{$pass->number}}@endif <br>@endforeach</td>
+                    <td>@foreach($client->badge as $pass) {{$pass->testday->date}} de {{$pass->testday->startHour}} à {{$pass->testday->endHour}} <br>@endforeach</td>
                     <td><a href="{{route('client.show', [$client->id])}}" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
                 </tr>
                 @endforeach
-                <tr>
-                    <td>Nom</td>
-                    <td>Prénom</td>
-                    <td>Login</td>
-                    <td>QR Code</td>
-                    <td>Jours</td>
-                    <td><a href="#" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
-                </tr>
-                <tr>
-                    <td>Nom</td>
-                    <td>Prénom</td>
-                    <td>Login</td>
-                    <td>QR Code</td>
-                    <td>Jours</td>
-                    <td><a href="" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
-                </tr>
             </tbody>
         </table>
     </div>
-    
+
     <div class="center">
         <ul class="pagination">
             <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>

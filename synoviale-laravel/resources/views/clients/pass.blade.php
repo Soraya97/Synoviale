@@ -7,20 +7,22 @@
 @section('contenu')
 <div class="pass container">
 
-    @foreach($badges as $badge)
+
     <h2>MON PASS</h2>
 
     <div class="carousel carousel-slider">
+      @foreach($badges as $badge)
         <div class="carousel-item">
             <p>Valable le {{\Carbon\Carbon::parse($badge->testday->date)->locale('fr_FR')->isoFormat('LL')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</p>
-            <img src="/img/qrcode.png" class="center-align" alt="Code QR">
+            <img src="/img/qrcode.png" class="center" alt="Code QR">
         </div>
+      @endforeach
     </div>
 
     <div class="center-align">
         <i class="material-icons">navigate_before</i><i class="material-icons">navigate_next</i>
     </div>
-    @endforeach
+
 
     @if($badges == '[]')
     <div class="center">

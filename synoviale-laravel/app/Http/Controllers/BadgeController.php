@@ -6,6 +6,7 @@ use App\Badge;
 use Illuminate\Http\Request;
 
 use App\Testday;
+use Session;
 
 use App\Http\Requests\BadgeRequest;
 
@@ -80,7 +81,7 @@ class BadgeController extends Controller
      */
     public function show($id)
     {
-        $badges = Badge::where('client_id',$id)->get();
+        $badges = Badge::where('client_id', $id)->get();
 
         return view('clients/pass',compact('badges'));
     }
