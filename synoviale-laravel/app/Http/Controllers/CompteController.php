@@ -122,7 +122,7 @@ class CompteController extends Controller
         
         $employeeC = Employee::where('person_id',$userC->person->id)->first();
         
-        $contact = Contact::where('person_id',$userC->person->id)->first();
+        $contactC = Contact::where('person_id',$userC->person->id)->first();
         
         $request->session()->put('organizer',$organizerC);
         

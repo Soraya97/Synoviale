@@ -115,6 +115,8 @@ class UserController extends Controller
     {
         User::findOrFail($id)->delete();
 
+        
+
         Session::flush();
 
         return redirect('/');
