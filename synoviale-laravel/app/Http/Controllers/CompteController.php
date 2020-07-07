@@ -95,9 +95,7 @@ class CompteController extends Controller
         Client::create($client);
 
         // adresse
-
-
-
+        
         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
 
         // ajouter code de connexion

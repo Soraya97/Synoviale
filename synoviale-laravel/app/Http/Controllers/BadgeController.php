@@ -48,26 +48,29 @@ class BadgeController extends Controller
     public function store(Request $request)
     {
 
-      $clientID = Session::get('client.id');
+        $request->request->add(['event_id' => 1]);
+        $request->request->add(['edition_id' => 1]);
+        $request->request->add(['client_id' => $request->session()->get('client.id')]);
 
+        if(isset($request->date)) {
+            foreach ($request->date as $testday)
+            {
+                $request->request->add(['testday_id'=> $testday]);
 
-      if(isset($_POST['date'])) {
-        foreach ($_POST['date'] as $val)
-      {
-      echo $val . ' et ' . $clientID . '<br>';
+                do {
 
+                    $number = uniqid(rand());
 
-      }};
+                }while ($number == Badge::where('number',$number)->get());
 
+                $request->request->add(['number' => $number]);
 
+                $badge = $request->only('event_id','edition_id','client_id','testday_id','number');
 
-        // return view('badge');
+                Badge::create($badge);
 
-        // $data = $request->validated();
-
-        // Badge::create($data);
-
-
+            }
+        };
     }
 
     /**

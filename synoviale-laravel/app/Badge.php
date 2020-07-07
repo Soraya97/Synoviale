@@ -8,6 +8,7 @@ class Badge extends Model
 {
     protected $fillable = [
         'number',
+        'client_id',
         'person_id',
         'testday_id',
         'edition_id',
