@@ -96,8 +96,6 @@ class CompteController extends Controller
 
         // adresse
         
-
-
         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
 
         // ajouter code de connexion
