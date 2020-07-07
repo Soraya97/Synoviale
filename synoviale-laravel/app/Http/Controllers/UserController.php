@@ -113,9 +113,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::findOrFail($id)->delete();
+        //on ne supprime pas la "Person",seulement l'"User"
 
-        
+        User::findOrFail($id)->delete();
 
         Session::flush();
 

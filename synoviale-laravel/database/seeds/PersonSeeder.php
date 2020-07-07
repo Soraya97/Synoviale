@@ -22,7 +22,6 @@ class PersonSeeder extends Seeder {
             'email' => 'thomasfiechter@gmail.com',
             'email2' => 'tfiechter@gmail.com',
             'comment' => 'Organisateur',
-            'address_id' => '1',
         ],
                 [
 
@@ -33,7 +32,6 @@ class PersonSeeder extends Seeder {
             'email' => 'leandraveselir@gmail.com',
             'email2' => 'lveseli@gmail.com',
             'comment' => 'Entrepreneuse',
-            'address_id' => '2',
         ],
                 [
 
@@ -44,7 +42,6 @@ class PersonSeeder extends Seeder {
             'email' => 'maximemaire@gmail.com',
             'email2' => 'mmaire@gmail.com',
             'comment' => 'Staff Accueil',
-            'address_id' => '3',
         ],
                 [
 
@@ -55,7 +52,6 @@ class PersonSeeder extends Seeder {
             'email' => 'lolastuder@gmail.com',
             'email2' => 'lstuder@gmail.com',
             'comment' => 'Cliente',
-            'address_id' => '4',
         ]]);
     }
 
