@@ -22,7 +22,6 @@ class CreatePeopleTable extends Migration
             $table->string('email')->nullable();
             $table->string('email2')->nullable();
             $table->text('comment')->nullable();
-            $table->foreignId('address_id')->nullable();
             $table->timestamps();
         });
     }

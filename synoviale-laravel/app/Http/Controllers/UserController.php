@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 
+use App\Person;
+
 use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
@@ -67,7 +69,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('clients/paramClient',compact('user'));
+        return view('clients/paramClient', compact('user'));
 
 
     }
@@ -80,7 +82,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = USer::findOrFail($id);
+        $user = User::findOrFail($id);
 
         return view('clients/paramClientUpdate',compact('user'));
     }
@@ -113,9 +115,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        //on ne supprime pas la "Person",seulement l'"User"
+
         User::findOrFail($id)->delete();
-
-
 
         Session::flush();
 

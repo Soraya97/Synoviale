@@ -14,14 +14,13 @@ class Person extends Model
         'phoneNumber2',
         'email1',
         'email2',
-        'comment',
-        'address_id'
+        'comment'
     ];
 
 
     public function address()
     {
-        return $this->belongsTo(Address::class);
+        return $this->hasOne(Address::class);
     }
 
     public function contact()

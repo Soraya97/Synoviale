@@ -12,21 +12,22 @@ class Address extends Model
         'street2',
         'streetNumber',
         'POBox',
-        'city_id'
+        'city_id',
+        'person_id'
         ];
-     
+
      public function city()
     {
-        return $this->belongsTo(City::class); 
+        return $this->belongsTo(City::class);
     }
-    
+
      public function person()
     {
-        return $this->hasMany(City::class); 
+        return $this->belongsTo(Person::class);
     }
-    
+
      public function addressType()
     {
-        return $this->belongsTo(City::class); 
+        return $this->belongsTo(Addresstype::class);
     }
 }

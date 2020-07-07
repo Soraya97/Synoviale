@@ -9,6 +9,11 @@ use App\Contact;
 use App\Employee;
 use App\Person;
 
+//for adresss
+use App\Country;
+use App\City;
+use App\Address;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\CompteRequest;
 
@@ -68,33 +73,12 @@ class CompteController extends Controller
         return view('clients/createAccount');
     }
 
-    public function store(Request $request)
+    public function store(CompteRequest $request)
     {
 
-        $data = $request->validate([
-            'username' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'name' => 'required',
-            'firstname' => 'required',
-        ]);
+        $data = $request->validate();
 
-        $personTest = $request->only('name','firstname');
-
-        $userTest = $request->only('username','email');
-
-
-        if(Person::where($personTest)->first())
-        {
-            return redirect('/');
-        }
-
-        if(User::where($userTest)->first())
-        {
-            return redirect('/');
-        }
-
-        $person = $request->only('name','firstname','email'); //,'email2','phoneNumber1','phoneNumber2','comment');
+        $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
         Person::create($person);
 
@@ -110,27 +94,21 @@ class CompteController extends Controller
 
         Client::create($client);
 
+        // adresse
+        
+
+
+        $address = $request->only('street1','street2','streetNumber','POBox','city_id');
+
         // ajouter code de connexion
 
         $userC = User::where($userTest)->first();
 
         $request->session()->put('user',$userC);
 
-        $organizerC = Organizer::where('person_id',$userC->person->id)->first();
-
         $clientC = Client::where('person_id',$userC->person->id)->first();
-
-        $employeeC = Employee::where('person_id',$userC->person->id)->first();
-
-        $contact = Contact::where('person_id',$userC->person->id)->first();
-
-        $request->session()->put('organizer',$organizerC);
-
+        
         $request->session()->put('client',$clientC);
-
-        $request->session()->put('employee',$employeeC);
-
-        $request->session()->put('contact',$contactC);
 
     return redirect('/');
 
