@@ -8,7 +8,7 @@ class CreateJobsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table jobs permettant à l'organisateur d'attribuer un job à un employée
      * @return void
      */
     public function up()

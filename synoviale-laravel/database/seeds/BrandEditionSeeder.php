@@ -6,7 +6,7 @@ class BrandEditionSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *BrandEditionSeeder permet d'attribuer des marques à une ou des éditions
      * @return void
      */
     public function run() {

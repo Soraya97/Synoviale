@@ -6,7 +6,7 @@ class TestSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *TestSeeder permet de compléter des informations relatives à un test
      * @return void
      */
     public function run() {

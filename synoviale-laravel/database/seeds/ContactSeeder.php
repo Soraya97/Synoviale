@@ -6,7 +6,7 @@ class ContactSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *ContactSeeder permet de compléter des informations relatives à une personnes de contact d'uen entrerpise
      * @return void
      */
     public function run()

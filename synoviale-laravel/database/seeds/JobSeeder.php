@@ -6,7 +6,7 @@ class JobSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *JobSeeder permet de compléter des informations relatives à un job
      * @return void
      */
     public function run() {

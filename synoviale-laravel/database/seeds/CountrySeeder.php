@@ -6,7 +6,7 @@ class CountrySeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *CountrySeeder permet de compléter des inforamtions relatives à un pays et une addresse
      * @return void
      */
     public function run() {

@@ -6,7 +6,7 @@ class BrandSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *BrandSeeder permet d'afficher des marques de vélos
      * @return void
      */
     public function run()

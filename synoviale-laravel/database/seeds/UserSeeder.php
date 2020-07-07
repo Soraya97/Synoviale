@@ -6,7 +6,7 @@ class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *UserSeeder permet de compléter des informations relatives à un utilisateur
      * @return void
      */
     public function run()

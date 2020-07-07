@@ -8,7 +8,7 @@ class CreateOrganizersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table organizers, table centrale qui est attribué à l'organisateur
      * @return void
      */
     public function up()

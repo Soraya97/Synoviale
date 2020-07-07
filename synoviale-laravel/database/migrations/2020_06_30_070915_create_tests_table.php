@@ -8,7 +8,7 @@ class CreateTestsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table de tests indispensable pour les entreprises et l'organisateur
      * @return void
      */
     public function up()

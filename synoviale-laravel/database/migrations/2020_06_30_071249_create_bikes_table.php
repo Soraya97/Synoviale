@@ -8,7 +8,7 @@ class CreateBikesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Tables bikes est indispensable pour les clients et entreprises
      * @return void
      */
     public function up()

@@ -8,7 +8,7 @@ class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table countries essentielles pour les addresses
      * @return void
      */
     public function up()

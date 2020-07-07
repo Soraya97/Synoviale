@@ -6,7 +6,7 @@ class BikeSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *BikeSeeder permet de générer différents type de vélos
      * @return void
      */
     public function run() {

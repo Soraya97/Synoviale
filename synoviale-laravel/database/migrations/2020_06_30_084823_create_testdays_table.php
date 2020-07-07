@@ -8,7 +8,7 @@ class CreateTestdaysTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table testdays essentiel pour l'organisation de l'événement et de l'édition
      * @return void
      */
     public function up()

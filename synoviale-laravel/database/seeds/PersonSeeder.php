@@ -6,7 +6,7 @@ class PersonSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *PersonSeeder pemret de compléter des informations relatives à une personne
      * @return void
      */
     public function run() {

@@ -6,7 +6,7 @@ class TestdaySeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *TestdaySeeder permet de compléter des informations relatives à des jours de test
      * @return void
      */
     public function run()

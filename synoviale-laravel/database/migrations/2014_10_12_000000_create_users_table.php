@@ -8,7 +8,7 @@ class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table Users permettantd'enregistrer des personnes
      * @return void
      */
     public function up()
