@@ -6,6 +6,8 @@ use App\Client;
 use App\Person;
 use App\User;
 use App\Testday;
+use App\Badge;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests\CompteRequest;
@@ -49,8 +51,19 @@ class ClientController extends Controller {
      */
     public function store(Request $request) {
 
-        // $data = $request->validate();
+         $data = $request->validate([
+             'name' => 'required|unique:people',
+             'firstname' => 'required'
+         ]);
+
+        $personTest = $request->only('name','firstname');
+
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
+
+        if(Person::where($personTest)->first())
+        {
+            return redirect('client/create');
+        }
 
         Person::create($person);
 
@@ -68,9 +81,11 @@ class ClientController extends Controller {
 
         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
 
+        $client = Client::where($client)->first();
+
         $request->request->add(['event_id' => 1]);
         $request->request->add(['edition_id' => 1]);
-        $request->request->add(['client_id' => Client::where($client)->first()]);
+        $request->request->add(['client_id' => $client->id]);
 
         if(isset($request->date)) {
             foreach ($request->date as $testday)
@@ -91,6 +106,8 @@ class ClientController extends Controller {
 
             }
         };
+
+        return redirect('client');
 
     }
 
