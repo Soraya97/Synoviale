@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Badge;
 use Illuminate\Http\Request;
 
+use App\Testday;
+
 use App\Http\Requests\BadgeRequest;
 
 class BadgeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkbadge');
+        // $this->middleware('checkbadge');
     }
     /**
      * Display a listing of the resource.
@@ -32,7 +34,8 @@ class BadgeController extends Controller
      */
     public function create()
     {
-        return view('/clients/reservationPass');
+      $days = Testday::all();
+        return view('/clients/reservationPass', compact('days'));
     }
 
     /**
@@ -41,13 +44,26 @@ class BadgeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BadgeRequest $request)
+    public function store(Request $request,$id)
     {
-        $data = $request->validated();
 
-        Badge::create($data);
+      return $id;
 
-        return view('badge');
+      if(isset($_POST['date'])) {
+        foreach ($_POST['date'] as $val)
+      {
+      echo $val;
+    }};
+
+
+
+    return view('badge');
+
+        // $data = $request->validated();
+        //
+        // Badge::create($data);
+        //
+        //
     }
 
     /**

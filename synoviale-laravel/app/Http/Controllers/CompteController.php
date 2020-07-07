@@ -105,11 +105,17 @@ class CompteController extends Controller
         $request->session()->put('user',$userC);
 
         $clientC = Client::where('person_id',$userC->person->id)->first();
-        
+
         $request->session()->put('client',$clientC);
 
     return redirect('/');
 
     }
+
+    public function login() {
+
+        return view('login');
+    }
+
 
 }

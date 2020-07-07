@@ -65,7 +65,7 @@
             </tbody>
         </table>
     </div>
-{{!! links !!}}
+    
     <div class="center">
         <ul class="pagination">
             <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>

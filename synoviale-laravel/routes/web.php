@@ -27,6 +27,7 @@ Route::post('compte','CompteController@connect')->name('compte.connect');
 Route::get('compte','CompteController@deconnect')->name('compte.deconnect');
 Route::post('inscription','CompteController@store')->name('compte.store');
 Route::get('inscription', 'CompteController@create')->name('compte.create');
+Route::get('login','CompteController@login')->name('compte.login')->middleware('redirectlogin');
 
 //pour la gestion des users
 Route::resource('user','UserController');
@@ -36,16 +37,22 @@ Route::resource('user','UserController');
 // route for the reception
 Route::resource('/client', 'ClientController');
 
+ Route::get('/listeClients', function () {
+     return view('reception/clientsList');
+ });
 
+ Route::get('/ajouterClient', function () {
+     return view('reception/addClient');
+ });
 
-
+Route::resource('test', 'TestController');
 
 // Route::resource('/inscription', 'PersonController');
 // Route::resource('/compte', 'UserController');
 
-Route::get('/login', function () {
-    return view('login');
-})->middleware('redirectlogin');
+// Route::get('/login', function () {
+//     return view('login');
+// })->middleware('redirectlogin');
 
 // Route::get('/listeVelo', function () {
 //     return view('modelsBike');
@@ -83,18 +90,9 @@ Route::get('/login', function () {
 /* routes for the reception */
 // Route::resource('client', 'Client2Controller');
 
- Route::get('/listeClients', function () {
-     return view('reception/clientsList');
- });
-
- Route::get('/ajouterClient', function () {
-     return view('reception/addClient');
- });
 
 /* routes for the companies */
 
 // Route::get('/commencerTest', function () {
 //     return view('companies/startTest');
 // });
-
-Route::resource('test', 'TestController');

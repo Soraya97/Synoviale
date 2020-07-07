@@ -18,14 +18,17 @@
         <div id="jours" class="col s12">
             <form method="post" action="{{route('pass.store')}}">
                 @csrf
-                <h3>VENDREDI 02.10.2020</h3>
+
+                @foreach($days as $day)
+                <h3></h3>
                 <p>
-                    <label for="veMa">
-                        <input type="checkbox" class="filled-in" name="date[]" value="" id="veMa"/>
-                        <span>10h00 - 13h30</span>
+                    <label for="{{$day->id}}">
+                        <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
+                        <span>{{$day->date}} {{$day->startHour}} - {{$day->endHour}}</span>
                     </label>
                 </p>
-                <p>
+                  @endforeach
+                <!-- <p>
                     <label for="veAp">
                         <input type="checkbox" class="filled-in" name="date[]" value="" id="veAp"/>
                         <span>13h30 - 17h00</span>
@@ -56,7 +59,7 @@
                         <input type="checkbox" class="filled-in" name="date[]" value="" id="diAp"/>
                         <span>12h30 - 16h00</span>
                     </label>
-                </p>
+                </p> -->
                 <div>
                     <button type="submit" class="btn" value="passSub">SUIVANT</button>
                 </div>
