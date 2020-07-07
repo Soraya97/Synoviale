@@ -50,48 +50,48 @@ class ClientController extends Controller {
     public function store(CompteRequest $request) {
 
         $data = $request->validated();
-        echo $data;
-        // $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
-        //
-        // Person::create($person);
-        //
-        // $personId = Person::where($personTest)->first();
-        //
-        // $request->request->add(['person_id' => $personId->id]);
-        //
-        // $client = $request->only('person_id');
-        //
-        // User::create($user);
-        //
-        // Client::create($client);
-        //
-        // // adresse
-        //
-        // $address = $request->only('street1','street2','streetNumber','POBox','city_id');
-        //
-        // $request->request->add(['event_id' => 1]);
-        // $request->request->add(['edition_id' => 1]);
-        // $request->request->add(['client_id' => Client::where($client)->first()]);
-        //
-        // if(isset($request->date)) {
-        //     foreach ($request->date as $testday)
-        //     {
-        //         $request->request->add(['testday_id'=> $testday]);
-        //
-        //         do {
-        //
-        //             $number = uniqid(rand());
-        //
-        //         }while ($number == Badge::where('number',$number)->get());
-        //
-        //         $request->request->add(['number' => $number]);
-        //
-        //         $badge = $request->only('event_id','edition_id','client_id','testday_id','number');
-        //
-        //         Badge::create($badge);
-        //
-        //     }
-        // };
+
+         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
+        
+         Person::create($person);
+        
+         $personId = Person::where($person)->first();
+        
+         $request->request->add(['person_id' => $personId->id]);
+        
+         $client = $request->only('person_id');
+        
+         User::create($user);
+        
+         Client::create($client);
+        
+         // adresse
+        
+         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
+        
+         $request->request->add(['event_id' => 1]);
+         $request->request->add(['edition_id' => 1]);
+         $request->request->add(['client_id' => Client::where($client)->first()]);
+        
+         if(isset($request->date)) {
+             foreach ($request->date as $testday)
+             {
+                 $request->request->add(['testday_id'=> $testday]);
+        
+                 do {
+        
+                     $number = uniqid(rand());
+        
+                 }while ($number == Badge::where('number',$number)->get());
+        
+                 $request->request->add(['number' => $number]);
+        
+                 $badge = $request->only('event_id','edition_id','client_id','testday_id','number');
+        
+                 Badge::create($badge);
+        
+             }
+         };
 
     }
 
