@@ -112,7 +112,27 @@ class CompteController extends Controller
 
         // ajouter code de connexion
 
-        return redirect('/');
+        $userC = User::where($userTest)->first();
+
+        $request->session()->put('user',$userC);
+
+        $organizerC = Organizer::where('person_id',$userC->person->id)->first();
+
+        $clientC = Client::where('person_id',$userC->person->id)->first();
+        
+        $employeeC = Employee::where('person_id',$userC->person->id)->first();
+        
+        $contact = Contact::where('person_id',$userC->person->id)->first();
+        
+        $request->session()->put('organizer',$organizerC);
+        
+        $request->session()->put('client',$clientC);
+        
+        $request->session()->put('employee',$employeeC);
+        
+        $request->session()->put('contact',$contactC);
+
+    return redirect('/');
 
     }
 

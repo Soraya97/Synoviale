@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkuser');
+        $this->middleware('checkuser')->only('show');
     }
     /**
      * Display a listing of the resource.
@@ -117,6 +117,6 @@ class UserController extends Controller
 
         Session::flush();
 
-        return redirect('user');
+        return redirect('/');
     }
 }
