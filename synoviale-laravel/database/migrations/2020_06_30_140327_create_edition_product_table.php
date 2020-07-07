@@ -8,7 +8,7 @@ class CreateEditionProductTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table pivot indispensable pour l'attribution d'un produit à une édition
      * @return void
      */
     public function up()

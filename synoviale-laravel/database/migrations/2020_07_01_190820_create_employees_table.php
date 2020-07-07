@@ -8,7 +8,7 @@ class CreateEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table employee permet à l'organisteur de prendre des personnes est de les lister comme employés
      * @return void
      */
     public function up()

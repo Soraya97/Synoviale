@@ -6,7 +6,7 @@ class EventSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *EventSeederpermet de compléter le nom de l'événement
      * @return void
      */
     public function run()

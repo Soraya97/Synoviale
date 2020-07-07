@@ -6,7 +6,7 @@ class ClientSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *ClientSeeder permet de compléter des informations relatifs à un client
      * @return void
      */
     public function run() {

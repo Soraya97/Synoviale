@@ -8,7 +8,7 @@ class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table companies attribuée aux entreprises
      * @return void
      */
     public function up()

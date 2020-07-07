@@ -8,7 +8,7 @@ class CreateBadgesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table badges nécessaire pour les clients pour la participation à l'événement
      * @return void
      */
     public function up()

@@ -8,7 +8,7 @@ class CreateEditionsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table Edition permettant à l'organisateur de créer des éditions ou de les visualiser
      * @return void
      */
     public function up()

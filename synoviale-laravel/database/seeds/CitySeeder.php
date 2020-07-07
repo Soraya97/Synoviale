@@ -6,7 +6,7 @@ class CitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *CitySeeder permet de compléter les villes
      * @return void
      */
     public function run()

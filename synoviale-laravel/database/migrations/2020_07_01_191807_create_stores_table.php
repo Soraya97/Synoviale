@@ -8,7 +8,7 @@ class CreateStoresTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table stores permettant d'attribué une personne à une entreprise
      * @return void
      */
     public function up()

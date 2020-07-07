@@ -6,7 +6,7 @@ class AddresstypeSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *AddresstypeSeeder est un complément à address
      * @return void
      */
     public function run() {

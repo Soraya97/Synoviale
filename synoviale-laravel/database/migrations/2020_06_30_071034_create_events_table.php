@@ -8,7 +8,7 @@ class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table event permettant à l'organistaur d'avoir d'en créer un nouveau
      * @return void
      */
     public function up()

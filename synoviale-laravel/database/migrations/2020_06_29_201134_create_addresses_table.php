@@ -8,7 +8,7 @@ class CreateAddressesTable extends Migration {
 
     /**
      * Run the migrations.
-     *
+     *Table Adresses permettant d'attribuer une adresse à une personne
      * @return void
      */
     public function up() {
