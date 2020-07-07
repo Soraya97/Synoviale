@@ -44,26 +44,32 @@ class BadgeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+    public function store(Request $request)
     {
 
-      return $id;
+        $request->request->add(['event_id' => 1]);
+        $request->request->add(['edition_id' => 1]);
+        $request->request->add(['client_id' => $request->session()->get('client.id')]);
 
-      if(isset($_POST['date'])) {
-        foreach ($_POST['date'] as $val)
-      {
-      echo $val;
-    }};
+        if(isset($request->date)) {
+            foreach ($request->date as $testday)
+            {
+                $request->request->add(['testday_id'=> $testday]);
 
+                do {
 
+                    $number = uniqid(rand());
 
-    return view('badge');
+                }while ($number == Badge::where('number',$number)->get());
 
-        // $data = $request->validated();
-        //
-        // Badge::create($data);
-        //
-        //
+                $request->request->add(['number' => $number]);
+
+                $badge = $request->only('event_id','edition_id','client_id','testday_id','number');
+
+                Badge::create($badge);
+
+            }
+        };
     }
 
     /**
