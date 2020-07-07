@@ -18,83 +18,83 @@
                     @csrf
 
                     <div class="col s12 l6">
-                        <div class="{!! $errors->has('name') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('name') is-invalid @enderror input-field col l6 s12">
                             <input type="text" name="name" value="{{$client->person->name}}" class="validate">
                             <label for="name">Nom *</label>
-                            {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                            @error('name')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('firstname') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('firstname') is-invalid @enderror input-field col l6 s12">
                             <input type="text" name="firstname" value="{{$client->person->firstname}}" class="validate">
                             <label for="firstname">Prénom *</label>
-                            {!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}
+                            @error('firstname')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('email') is-invalid @enderror input-field col l6 s12">
                             <input type="email" name="email1" value="{{$client->person->email}}" class="validate">
                             <label for="email1">Email</label>
-                            {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
+                            @error('email')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('email') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('email2') is-invalid @enderror input-field col l6 s12">
                             <input type="email" name="email2" value="{{$client->person->email2}}" class="validate">
                             <label for="email2">Email secondaire</label>
                             {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                         </div>
-                        <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('phoneNumber1') is-invalid @enderror input-field col l6 s12">
                             <input type="text" name="phonenumber1" value="{{$client->person->phoneNumber1}}" class="validate">
                             <label for="phonenumber1">N° téléphone</label>
-                            {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
+                            @error('phoneNumber1')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('phonenumber') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('phoneNumber2') is-invalid @enderror input-field col l6 s12">
                             <input type="text" name="phonenumber2" value="{{$client->person->phoneNumber2}}" class="validate">
                             <label for="phonenumber2">N° téléphone secondaire</label>
-                            {!! $errors->first('phonenumber', '<small class="help-block">:message</small>') !!}
+                            @error('phoneNumber2')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('comment') ? 'has-error' : '' !!} input-field col s12">
+                        <div class="@error('comment') is-invalid @enderror input-field col s12">
                             <input type="text" name="comment" value="{{$client->person->comment}}" class="validate">
                             <label for="comment">Commentaire</label>
-                            {!! $errors->first('comment', '<small class="help-block">:message</small>') !!}
+                            @error('comment')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                     </div>
 
                     <div class="col l6 s12">
-                        <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8 s9">
+                        <div class="@error('street1') is-invalid @enderror input-field col l8 s9">
                             <input type="text" name="street1" value="{{$client->person->address->street1}}" class="validate">
                             <label for="street1">Rue</label>
-                            {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
+                            @error('street1')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('streetnumber') ? 'has-error' : '' !!} input-field col l4 s3">
+                        <div class="@error('streetNumber') is-invalid @enderror input-field col l4 s3">
                             <input type="text" name="streetnumber" value="{{$client->person->address->streetNumber}}" class="validate">
                             <label for="streetnumber">N° de rue</label>
-                            {!! $errors->first('streetnumber', '<small class="help-block">:message</small>') !!}
+                            @error('streetNumber')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('street') ? 'has-error' : '' !!} input-field col l8 s9">
+                        <div class="@error('street2') is-invalid @enderror input-field col l8 s9">
                             <input type="text" name="street2" value="{{$client->person->address->street2}}" class="validate">
                             <label for="street2">Rue secondaire</label>
-                            {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
+                            @error('street2')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('pobox') ? 'has-error' : '' !!} input-field col l4 s3">
+                        <div class="@error('POBox') is-invalid @enderror input-field col l4 s3">
                             <input type="text" name="pobox" value="{{$client->person->address->POBox}}" class="validate">
                             <label for="pobox">CP</label>
-                            {!! $errors->first('pobox', '<small class="help-block">:message</small>') !!}
+                            @error('POBox')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('city') ? 'has-error' : '' !!} input-field col l8 s9">
+                        <div class="@error('city') is-invalid @enderror input-field col l8 s9">
                             <input type="text" name="city" value="{{$client->person->address->city->name}}" class="validate">
                             <label for="city">Localité</label>
-                            {!! $errors->first('city', '<small class="help-block">:message</small>') !!}
+                            @error('city')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('postalecode') ? 'has-error' : '' !!} input-field col l4 s3">
+                        <div class="@error('postaleCode') is-invalid @enderror input-field col l4 s3">
                             <input type="text" name="postalecode" value="{{$client->person->address->city->postalCode}}" class="validate">
                             <label for="postalecode">NPA</label>
-                            {!! $errors->first('postalecode', '<small class="help-block">:message</small>') !!}
+                            @error('postaleCode')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('canton') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('canton') is-invalid @enderror input-field col l6 s12">
                             <input type="text" name="canton" value="{{$client->person->address->city->canton}}" class="validate">
                             <label for="canton">Canton</label>
-                            {!! $errors->first('canton', '<small class="help-block">:message</small>') !!}
+                            @error('canton')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
-                        <div class="{!! $errors->has('country') ? 'has-error' : '' !!} input-field col l6 s12">
+                        <div class="@error('country') is-invalid @enderror input-field col l6 s12">
                             <input type="text" name="country" value="{{$client->person->address->city->country->name}}" class="validate">
                             <label for="country">Pays</label>
-                            {!! $errors->first('country', '<small class="help-block">:message</small>') !!}
+                            @error('country')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <button type="submit" class="btn right col s12 l3 s6" href="#!">Enregistrer</button>
                     </div>

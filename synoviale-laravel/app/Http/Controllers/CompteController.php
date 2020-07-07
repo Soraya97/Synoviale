@@ -90,12 +90,12 @@ class CompteController extends Controller
 
         $client = $request->only('person_id');
 
-        User::create($user);
+        User::create($user); //'password' => Hash::make($data['password']),
 
         Client::create($client);
 
         // adresse
-        
+
         $address = $request->only('street1','street2','streetNumber','POBox','city_id');
 
 

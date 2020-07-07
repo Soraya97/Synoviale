@@ -71,6 +71,7 @@ class BadgeController extends Controller
 
             }
         };
+        return redirect('pass');
     }
 
     /**
