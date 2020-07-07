@@ -6,13 +6,13 @@
 
 @section('contenu')
 <div class="container">
-    <p><a href="{{url("listeClients")}}"><i class="material-icons">arrow_back</i>RETOUR À LA LISTE DES CLIENTS</a></p>
+    <p><a href="{{route('client.index')}}"><i class="material-icons">arrow_back</i>RETOUR À LA LISTE DES CLIENTS</a></p>
 
     <div class="greyBackground">
 
 <div class="row">
 
-  <form class="" action="" method="post">
+  <form class="" action="{{route('client.store')}}" method="post">
       @csrf
 
       <div class="section">

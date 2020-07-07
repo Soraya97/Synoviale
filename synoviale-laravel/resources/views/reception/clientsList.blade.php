@@ -29,7 +29,7 @@
                 <tr>
                     <th>NOM</th>
                     <th>PRÉNOM</th>
-                    <th>N<sup>o</sup> LOGIN</th>
+                    <th>LOGIN</th>
                     <th>N<sup>o</sup> QR CODE</th>
                     <th>JOURS INSCRITS</th>
                     <th></th>
@@ -40,9 +40,11 @@
                 <tr>
                     <td>{{$client->person->name}}</td>
                     <td>{{$client->person->firstname}}</td>
-                    <td>Login</td>
-                    <td>QR Code</td>
-                    <td>Jours</td>
+                    <td>{{$client->person->email}}</td>
+                    @foreach($client->badge as $pass)
+                    <td>{{$pass->number}}</td>
+                    <td>{{$pass->testday->date}} de {{$pass->testday->startHour}} à {{$pass->testday->endHour}}</td>
+                    @endforeach
                     <td><a href="{{route('client.show', [$client->id])}}" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
                 </tr>
                 @endforeach
@@ -65,7 +67,7 @@
             </tbody>
         </table>
     </div>
-    
+
     <div class="center">
         <ul class="pagination">
             <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>

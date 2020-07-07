@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
-        <link rel="shortcut icon" type="image/jpeg" href="img/favicon-32x32.png">
+        <link rel="shortcut icon" type="image/jpeg" href="/img/favicon-32x32.png">
         <style></style>
     </head>
 

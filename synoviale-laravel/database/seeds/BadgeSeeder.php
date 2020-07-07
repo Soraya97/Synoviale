@@ -16,7 +16,7 @@ class BadgeSeeder extends Seeder
 
         DB::table('badges')->insert([
            'number' => '1' ,
-            'client_id' =>  '4',
+            'client_id' =>  '1',
             'testday_id' => '1',
             'edition_id' => '1',
             'event_id' =>  '1',

@@ -19,47 +19,41 @@
             <form method="post" action="{{route('pass.store')}}">
                 @csrf
 
+                <h3>VENDREDI 02.10.2020</h3>
                 @foreach($days as $day)
-                <h3></h3>
+                @if($day->date == '02.10.2020')
                 <p>
                     <label for="{{$day->id}}">
                         <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
-                        <span>{{$day->date}} {{$day->startHour}} - {{$day->endHour}}</span>
+                        <span>{{$day->startHour}} - {{$day->endHour}}</span>
                     </label>
                 </p>
-                  @endforeach
-                <!-- <p>
-                    <label for="veAp">
-                        <input type="checkbox" class="filled-in" name="date[]" value="" id="veAp"/>
-                        <span>13h30 - 17h00</span>
-                    </label>
-                </p>
+                @endif
+                @endforeach
+
                 <h3>SAMEDI 03.10.2020</h3>
+                @foreach($days as $day)
+                @if($day->date == '03.10.2020')
                 <p>
-                    <label for="saMa">
-                        <input type="checkbox" class="filled-in" name="date[]" value="" id="saMa"/>
-                        <span>9h00 -  12h30</span>
+                    <label for="{{$day->id}}">
+                        <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
+                        <span>{{$day->startHour}} - {{$day->endHour}}</span>
                     </label>
                 </p>
-                <p>
-                    <label for="saAp">
-                        <input type="checkbox" class="filled-in" name="date[]" value="" id="saAp"/>
-                        <span>12h30 - 16h00</span>
-                    </label>
-                </p>
+                @endif
+                @endforeach
+
                 <h3>DIMANCHE 04.10.2020</h3>
+                @foreach($days as $day)
+                @if($day->date == '04.10.2020')
                 <p>
-                    <label for="diMa">
-                        <input type="checkbox" class="filled-in" name="date[]" value="" id="diMa"/>
-                        <span>9h00 - 12h30</span>
+                    <label for="{{$day->id}}">
+                        <input type="checkbox" class="filled-in" name="date[]" value="{{$day->id}}" id="{{$day->id}}"/>
+                        <span>{{$day->startHour}} - {{$day->endHour}}</span>
                     </label>
                 </p>
-                <p>
-                    <label for="diAp">
-                        <input type="checkbox" class="filled-in" name="date[]" value="" id="diAp"/>
-                        <span>12h30 - 16h00</span>
-                    </label>
-                </p> -->
+                @endif
+                @endforeach
                 <div>
                     <button type="submit" class="btn" value="passSub">SUIVANT</button>
                 </div>

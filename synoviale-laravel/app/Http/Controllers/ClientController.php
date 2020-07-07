@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\Person;
+use App\User;
 use Illuminate\Http\Request;
+
+use App\Http\Requests\CompteRequest;
 
 class ClientController extends Controller {
 
@@ -33,7 +37,7 @@ class ClientController extends Controller {
      */
     public function create() {
         //
-        return view('addclient');
+        return view('reception/addClient');
     }
 
     /**
@@ -44,16 +48,35 @@ class ClientController extends Controller {
      */
     public function store(Request $request) {
         //
-        $data = $request->validated([
-            'homeCanton' => 'null',
-            'person_id' => 'required',
-            'badge_id' => 'required',
-            'test_id' => 'required',
-        ]);
+        // $data = $request->validated([
+        //     'homeCanton' => 'null',
+        //     'person_id' => 'required',
+        //     'badge_id' => 'required',
+        //     'test_id' => 'required',
+        // ]);
+        //
+        // Client::create($data);
+        //
+        // return redirect('client');
 
-        Client::create($data);
+        // $data = $request->validate();
 
-        return redirect('client');
+        $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
+
+        Person::create($person);
+
+        $personId = Person::where($personTest)->first();
+
+        $request->request->add(['person_id' => $personId->id]);
+
+        $user = $request->only('username','email','password','person_id');
+
+        $client = $request->only('person_id');
+
+        User::create($user);
+
+        Client::create($client);
+
     }
 
     /**

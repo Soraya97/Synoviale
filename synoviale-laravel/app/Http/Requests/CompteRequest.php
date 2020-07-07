@@ -30,9 +30,9 @@ class CompteRequest extends FormRequest
           'email' => 'required|email|confirmed',
 
           // person
-          'name' => 'required |min:3|max:100|regex:([A-Z]{1})',
+          'name' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'firstname' => 'required|min:3|max:100|regex:([A-Z]{1})',
-          'email2' => 'required|email|confirmed',
+          'email2' => 'email',
           'phoneNumber1' => 'numeric|min:10|max:10|regex:([0-9])',
           'phoneNumber2' => 'numeric|min:10|max:10|regex:([0-9])',
           'comment' => 'max:250',
