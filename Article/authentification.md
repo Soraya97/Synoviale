@@ -1,46 +1,46 @@
 # Authentification
 
-nous allons créer une système d'authentification plus léger que celle proposer par Lararvel et plus spécifique à nos besoins.
+Nous allons créer un système d'authentification plus léger que celui proposé par Lararvel et plus spécifique par rapport à nos besoins.
 
-quand un *User* (utilisateur du site) se connect, sont compte est relié à une *Person* (utilisateur du Bike Test) celui ci peut être : un *Client*, un memebre du *staff*, un *Contact* d'une entreprise ou l'*Organisateur* (*Profile*).
+Quand un *User* (utilisateur du site) se connecte: son compte est relié à une *Person* (utilisateur du Bike Test) celui-ci peut être : un *Client*, un membre du *staff*, un *Contact* d'une entreprise ou l'*Organisateur* (*Profile*).
 
-voici le schema relationnel:
+Voici le schéma relationnel:
 
 > insérer image ici
 
-pour un compte utilisateur nous avons besoins
+Pour un compte utilisateur nous avons besoins
 
-* que l'utilisateur reste connecté, on utilisera les sessions
-* que des parties du site soin visible que par des type d'utilisateur (*client*,*Contact* et etc...), nous utiliserons des directive *Blade* personalisé
+* que l'utilisateur reste connecté, nous utiliserons les sessions
+* que des parties du site soient visibles que par certains types d'utilisateur (*client*,*contact* et etc...), pour cela nous utiliserons des directives *Blade* personalisées
 * protéger les routes, à l'aide de *Middleware*
-* de créer un compte, se connecter etc.., grace à un controleur *UserController*
-* et enfin de liée directement l'*User* à *Person*, qu'on fera dans le controleur *UserController*
+* de créer un compte, se connecter, etc, grâce à un controleur *UserController*
+* et enfin de lier directement l'*User* à *Person*, que nous ferons dans le contrôleur *UserController*
 
 
-# création des fichiers pour les profils
+# Création des fichiers pour les profils
 
-pour chaque profil nous créons un Migration, un Seeder, un Model et un Controleur avec la commande:
+Pour chaque profil nous créons une Migration, un Seeder, un Model et un Controleur avec la commande:
 
     php artisan make:model *name* -crms
 
-> ce n'est pas sur que nous utilisons le controleur mais mieux vos créer maintenent et le supprimer après
+> Ce n'est pas sûre que nous utilisons le contrôleur mais, il nous est préférable de le créer maintenant et éventuellement le supprimer après.
 
-il nous faut 4 Profile:
+Il nous faut 4 *Profile*:
 
 * **Organizer**
 * **Client** (existe déja)
 * **Contact** (existe déja)
 * **Employee** (pour différencier de **Staff**)
 
-> comme il y a dèja des fichiers pour la table **User** on va créer se qu'on aura besoin fur à mesure
+> Comme il y a déjà des fichiers pour la table **User** nous allons créer ce que nous auvons besoin au fur et à mesure.
 
-## migration
+## Migration
 
-on modifie la table de migration de **User** `2014_10_12_000000_create_users_table.php` dans `dans database/migrations`
+Nous modifions la table de migration de **User** `2014_10_12_000000_create_users_table.php` dans `dans database/migrations`
 
-on ajoute la ligne `$table->foreignId('person_id');`
+Nous ajoutons la ligne `$table->foreignId('person_id');`
 
-comme la table sera liée à *Person* on risque d'avoir un conflie avec l'attribut `name` on le modifie en `username`
+Comme la table sera liée à *Person*, nous risquons d'avoir un conflit avec l'attribut `name`, ainsi nous le modifions en `username`
 
     class CreateUsersTable extends Migration
     {
@@ -58,12 +58,12 @@ comme la table sera liée à *Person* on risque d'avoir un conflie avec l'attrib
             });
         }
     }
-pour chaque table de migration de chaque *profile* utilisateur (exemple avec **Organizer**)
-nous ajouton le clé étrangére de **Person**
+Pour chaque table de migration de chaque *profile* utilisateur (exemple avec **Organizer**)
+nous ajoutons la clé étrangère de **Person**
 
     $table->foreignId('person_id');
 
-cela donne:
+Cela donne:
 
     public function up()
     {
@@ -74,19 +74,19 @@ cela donne:
         });
     }
 
-> dans la migration *people* nous modifions le email1 en email car c'est le même que celui de *users*
+> dans la table migration *people* nous modifions l'email1 en email car c'est le même que celui de *users*
 
  $table->string('email')->nullable();
 
-## seeder
+## Seeder
 
-> à ajouter les table de Profil et la table Person
+> À ajouter les tables de Profil et la table Person
 
-nous créons un seeder
+Nous créons un seeder
 
     php artisan make:seeder UserSeeder
 
-on créer un **User** pour chaque **Person**
+Nous créons un **User** pour chaque **Person**
 
     public function run()
     {
@@ -122,15 +122,15 @@ on créer un **User** pour chaque **Person**
 
 ## Model
 
-il y a pas de modification dans le model **Person**
+Il n'y a pas de modification dans le modèle **Person**
 
-le model **User** existe dèja, nous allons juste ajouter `person_id` dans *$fillable*
+Le modèle **User** existe dèja, nous allons juste ajouter `person_id` dans *$fillable*
 
     protected $fillable = [
         'name', 'email', 'password','person_id',
     ];
 
-on rajoute une relation avec la table **Person**
+Nous rajoutons une relation avec la table **Person**
 
      public function person()
     {
@@ -138,7 +138,7 @@ on rajoute une relation avec la table **Person**
     }
 
 
-pour les tables *profile* on rajoute la même chose:
+Pour les tables *profile*, nous rajoutons la même chose:
 
     class Organizer extends Model
     {
@@ -155,30 +155,30 @@ pour les tables *profile* on rajoute la même chose:
         }
     }
 
-## controleur
+## Contrôleur
 
-Les controleurs *Profile* sont des controleurs resource normale
+Les contrôleurs *Profile* sont des contrôleurs resource normale
 
-### controleur UserController
+### Contrôleur UserController
 
-nous allons créer un controleur **UserController** qui va gérer:
+Nous allons créer un contrôleur **UserController** qui va gérer:
 
-* la connection d'un utilisateur - **connect**
-* la déconnection - **deconnect**
+* la connexion d'un utilisateur - **connect**
+* la déconnexion - **deconnect**
 * la création d'un nouveau compte - **create**
 
-pour qu'un utilisateur sois connecté nous utiliserons les sessions
+Pour qu'un utilisateur soit connecté nous utiliserons les sessions
 
-création du nouveau controleur:
+Création du nouveau contrôleur:
 
     php artisan make:controller UserController --model=User
 
-> --model=User lie directement le controleur au model
-> si il créer un fichier ressource, vous pouvez effacer tout les models
+> --model=User lie directement le contrôleur au model
+> S'il crée un fichier ressource, vous pouvez effacer tous les modèles
 
-le fichier est dans `app/Http/Controllers`
+Le fichier est dans `app/Http/Controllers`
 
-nous devons ajoute les *Use* 1 pour les sessions et ceux de tous les models des tables *Profile* + plus *Person*
+Nous devons ajouter les *Use* 1 pour les sessions et ceux de tous les modèles des tables *Profile* + plus *Person*
 
     namespace App\Http\Controllers;
     
@@ -193,9 +193,9 @@ nous devons ajoute les *Use* 1 pour les sessions et ceux de tous les models des 
     
     use Illuminate\Http\Facades\Session;
 
-#### méthode connect
+#### Méthode connect
 
-nous créons un première méthode `connect()` pour la connexion d'un utilisateur dèja existant
+Nous créons une première méthode `connect()` pour la connexion d'un utilisateur déjà existant
 
     public function connect(Request $request)
     {
@@ -233,27 +233,27 @@ nous créons un première méthode `connect()` pour la connexion d'un utilisateu
     }
 
 
-explication:
+Explication:
 
-on valide les données entrantes
+Nous validons les données entrantes
 
         $data =  $request->validate([
             "username" => "required",
             "password" => "required"
         ]);
 
-on récupéré l'utilisateur
+Nous récupérons l'utilisateur
 
     $user = User::where($data)->first();
 
-> first permer d'avoir un tableau, et pas un tableau dans un tableau
+> first permet d'avoir un tableau, et pas un tableau dans un tableau
 
- si l'utilisateur existe on lance le traitement:
+ Si l'utilisateur existe nous lançons le traitement:
         if($user)
         { 
             //traitement
         }
-si l'utilisateur n'existe pas, en renvois à la page courant
+Si l'utilisateur n'existe pas, nous le renvoyons à la page courante
         else
         {
             return redirect()->back();
@@ -261,31 +261,31 @@ si l'utilisateur n'existe pas, en renvois à la page courant
 
 **Traitement** (si l'utilisateur existe)
 
-on rajoute les informations de l'utilisateur dans la Session *user*
+Nous rajoutons les informations de l'utilisateur dans la Session *user*
 
     $request->session()->put('user',$user);
 
-on récuper en même temps la table *Person* à travers *User*
+Nous récuperons en même temps la table *Person* à travers *User*
 
-en suite, on regarde si la *Person* existe dans les tables *Profile*
+Ensuite, nous regardons si la *Person* existe dans les tables *Profile*
 
     $organizer = Organizer::where('person_id',$user->person->id)->first();
 
-et on le rajoute dans une session, si il n'existe pas, il sera null
+Et nous le rajoutons dans une session, s'il n'existe pas, il sera null
 
     $request->session()->put('organizer',$organizer);
 
-> même si il sont *null* c'est importent de les créer, il vont être utile pour les directive Blade
+> même s'ils sont *null*, c'est important de les créer, car ils vont être utile pour les directives Blade
 
-on retourne à la page courente
+Nous retournons à la page courante
 
     return redirect()->back();
 
 > un middleware va l'empécher d'aller dans la page *login*
 
-#### méthode disconnect
+#### Méthode disconnect
 
-pour deconnecter un utilisateur on va semplement vite la Session avec la mhétode `Session::flush()`
+Pour déconnecter un utilisateur on va simplement vider la Session avec la méthode `Session::flush()`
 
     public function deconnect()
     {
@@ -294,13 +294,13 @@ pour deconnecter un utilisateur on va semplement vite la Session avec la mhétod
         return redirect('/');
     }
 
-dans le frontend on ora simplement un lien
+Dans le frontend, nous aurons simplement un lien
 
     <a href="{{route('deconnect')}}">disconnect</a>
 
-#### méthode create
+#### Méthode create
 
-**create** est la méhtode pour qu'un utilisateur créer un compte
+**create** est la méhtode pour qu'un utilisateur crée un compte
 
     public function create(Request $request)
     {
@@ -347,9 +347,9 @@ dans le frontend on ora simplement un lien
     
     }
 
-> un utilisateur ne peut créer seulement un compte Client
+> un utilisateur ne peut créer seulement qu'un seul compte Client
 
-## route
+## Route
 
     Route::post('user','UserController@connect')->name('connect');
     Route::get('user','UserController@deconnect')->name('deconnect');
@@ -357,7 +357,7 @@ dans le frontend on ora simplement un lien
 
 ## Middleware
 
-pour protéger nos route nous allons créer des middlewares:
+Pour protéger nos routes nous allons créer des middlewares:
 
 * **Guest** pour l'utilisateur pas connecté
 * **CheckUser** pour l'utilisateur connecté
@@ -366,13 +366,13 @@ pour protéger nos route nous allons créer des middlewares:
 * **CheckEmployee** pour l'utilisateur employer
 * **CheckContact** pour l'utilisateur entreprise
 
-donc **Guest** et **User** sont pour les route plus générale (utilisateur connecté ou non) alors que les autres agise selon le *Profile* de l'utilisateur
+Donc **Guest** et **User** sont pour les routes plus générales (utilisateur connecté ou non) alors que les autres agissent selon le *Profile* de l'utilisateur
 
-pour créer un middleware nous utilisons la commande
+Pour créer un middleware, nous utilisons la commande
 
     php artisan make:middleware *name*
 
-exemple code : dans `app/Http/Middleware/CheckClient.php`
+Exemple code : dans `app/Http/Middleware/CheckClient.php`
 
     public function handle($request, Closure $next)
     {
@@ -383,11 +383,11 @@ exemple code : dans `app/Http/Middleware/CheckClient.php`
         return $next($request);
     }
 
-modifier `app/Http/Kernel.php`
+Modifier `app/Http/Kernel.php`
 
 dans `protected $routeMiddleware = []`
 
-ajouter:
+Ajouter:
 
     'guest' => \App\Http\Middleware\Guest::class,
     'checkclient' => \App\Http\Middleware\CheckClient::class,
@@ -396,26 +396,26 @@ ajouter:
     'checkorganizer' => \App\Http\Middleware\CheckOrganizer::class,
     'checkuser' => \App\Http\Middleware\CheckUser::class,
 
-#### utilisation de middleware
+#### Utilisation de middleware
 
-dans une route:
+Dans une route:
 
     Route::view('login','login')->name('login')->middleware('guest');
 
-dans un controleur, exemple `app/Http/Controllers/PersonController`
+Dans un contrôleur, par exemple `app/Http/Controllers/PersonController`
 
     public function __construct()
     {
         $this->middleware('checkuser');
     }
 
-> On passe par le premier middleware, puis au suivent et etc..
+> Nous passons par le premier middleware, puis au suivant, etc..
 
-## directive *Blade*
+## Directives *Blade*
 
-6 directive blade contidionnel que l'on code dans `app/Provider/AppServiceProvider.php`
+6 directives blade contidionnelles que nous codons dans `app/Provider/AppServiceProvider.php`
 
-pour tous les utilisateurs connecté
+pour tous les utilisateurs connectés
 
     Blade::if('user', function () {
         return Session::get('user');
@@ -427,7 +427,7 @@ pour tous les utilisateurs **pas** connecté
         return !Session::get('user');
     });
 
-pour les différent *Profile*
+pour les différents *Profile*
 
     Blade::if('organizer', function () {
         return Session::get('organizer');
@@ -456,7 +456,7 @@ cela donne dans un page *Blade*
         //visible par les utilisateurs pas connecté
     @endguest
 
-les profiles:
+les profils:
 
     @organizer
     
@@ -479,9 +479,9 @@ les profiles:
     @endcontact
 
 
-## exemple view
+## Exemple view
 
-avec les directives blade 
+Avec les directives blade 
 
     @user 
     
@@ -530,4 +530,4 @@ utilisation de session
     
     <a href="{{route('deconnect')}}">disconnect</a>
 
-> on a accès *User* qui contient *Person*
+> nous avons accès à *User* qui contient *Person*
