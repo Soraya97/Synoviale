@@ -12,25 +12,12 @@ class AddresstypeSeeder extends Seeder {
     public function run() {
         //
         DB::table('addresstypes')->delete();
-        DB::table('addresstypes')->insert([[
-            'description' => 'Professionnelle',
-            'company_id' => '1',
-            'address_id' => '1',
-        ],
+        DB::table('addresstypes')->insert([
+//            
                 [
             'description' => 'Professionnelle',
             'company_id' => '1',
             'address_id' => '2',
-        ],
-                [
-            'description' => 'Privée',
-            'company_id' => '1',
-            'address_id' => '3',
-        ],
-                [
-            'description' => 'Privée',
-            'company_id' => '1',
-            'address_id' => '4',
         ]
                 ]);
     }

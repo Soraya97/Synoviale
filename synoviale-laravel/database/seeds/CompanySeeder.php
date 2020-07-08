@@ -17,6 +17,7 @@ class CompanySeeder extends Seeder
         DB::table('companies')->insert([[
            
             'name' =>  'Super Sport',
-        ]]);
+        ]
+            ]);
     }
 }
