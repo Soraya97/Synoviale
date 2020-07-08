@@ -23,9 +23,9 @@ class BadgeController extends Controller
      */
     public function index()
     {
-        $badges = Badge::all();
-
-        return view('clients/pass',compact('badges'));
+        // $badges = Badge::all();
+        //
+        // return view('clients/pass',compact('badges'));
     }
 
     /**
@@ -77,7 +77,7 @@ class BadgeController extends Controller
                 }
             }
         };
-        return redirect('pass');
+        return redirect()->route('pass.show', $request->session()->get('client.id'));
     }
 
     /**

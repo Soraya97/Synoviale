@@ -124,7 +124,7 @@ span {
 .img {
     background-size: cover;
     background-position: center;
-    width: 75%;
+    width: 100%;
     height: auto;
 }
 
@@ -169,7 +169,7 @@ span {
 }
 
 .align-bottom {
-  margin-top: 17rem;
+  margin-top: 15rem;
 }
 .align-bottom-link{
   margin-top: 2.2rem;

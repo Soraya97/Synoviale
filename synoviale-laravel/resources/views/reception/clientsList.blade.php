@@ -43,7 +43,7 @@
                     <td>{{$client->person->firstname}}</td>
                     <td>@if(($client->person->email) == null)-@else{{$client->person->email}}@endif</td>
                     <td>@foreach($client->badge as $pass) @if(($pass->number) == null)-@else{{$pass->number}}@endif <br>@endforeach</td>
-                    <td>@foreach($client->badge as $pass) {{$pass->testday->date}} de {{$pass->testday->startHour}} à {{$pass->testday->endHour}} <br>@endforeach</td>
+                    <td>@foreach($client->badge as $pass) @if(($pass->testday) == null)-@else{{$pass->testday->date}} de {{$pass->testday->startHour}} à {{$pass->testday->endHour}}@endif <br>@endforeach</td>
                     <td><a href="{{route('client.show', [$client->id])}}" class="btn blue-light greyDark-text"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
                 </tr>
                 @endforeach

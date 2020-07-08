@@ -21,7 +21,7 @@
                     @error('username')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="@error('password') is-invalid @enderror input-field col s12 l6">
-                    <input type="password" name="password" value="• • • • • • • • • • • •" class="validate">
+                    <input type="password" name="password" value="{{$user->password}}" class="validate">
                     <label for="password">Mot de passe *</label>
                     @error('password')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
@@ -68,37 +68,37 @@
                 </div>
 
                 <div class="@error('street1') is-invalid @enderror input-field col s12 l8">
-                    <input type="text" name="street1" value="{{$user->person->address->street1}}" class="validate">
+                    <input type="text" name="street1" value="@if(($user->person->address) == null)@else{{$user->person->address->street1}}@endif" class="validate">
                     <label for="street1">Rue</label>
                     @error('street1')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="@error('streetNumber') is-invalid @enderror input-field col s12 l4">
-                    <input type="text" name="streetNumber" value="{{$user->person->address->streetNumber}}" class="validate">
+                    <input type="text" name="streetNumber" value="@if(($user->person->address) == null)@else{{$user->person->address->streetNumber}}@endif" class="validate">
                     <label for="streetNumber">N° de rue</label>
                     @error('streetNumber')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="@error('street2') is-invalid @enderror input-field col s12 l8">
-                    <input type="text" name="street2" value="{{$user->person->address->street2}}" class="validate">
+                    <input type="text" name="street2" value="@if(($user->person->address) == null)@else{{$user->person->address->street2}}@endif" class="validate">
                     <label for="street2">Rue secondaire</label>
                     @error('street2')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="@error('POBox') is-invalid @enderror input-field col s12 l4">
-                    <input type="text" name="POBox" value="{{$user->person->address->POBox}}" class="validate">
+                    <input type="text" name="POBox" value="@if(($user->person->address) == null)@else{{$user->person->address->POBox}}@endif" class="validate">
                     <label for="POBox">CP</label>
                     @error('POBox')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="@error('city') is-invalid @enderror input-field col s12 l8">
-                    <input type="text" name="city" value="{{$user->person->address->city->name}}" class="validate">
+                    <input type="text" name="city" value="@if(($user->person->address) == null)@else{{$user->person->address->city->name}}@endif" class="validate">
                     <label for="city">Localité</label>
                     @error('city')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="@error('postalCode') is-invalid @enderror input-field col s12 l4">
-                    <input type="text" name="postalCode" value="{{$user->person->address->city->postalCode}}" class="validate">
+                    <input type="text" name="postalCode" value="@if(($user->person->address) == null)@else{{$user->person->address->city->postalCode}}@endif" class="validate">
                     <label for="postalCode">NPA</label>
                     @error('postalCode')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="@error('country') is-invalid @enderror input-field col s12 l6">
-                    <input type="text" name="country" value="{{$user->person->address->city->country->name}}" class="validate">
+                    <input type="text" name="country" value="@if(($user->person->address) == null)@else{{$user->person->address->city->country->name}}@endif" class="validate">
                     <label for="country">Pays</label>
                     @error('country')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>

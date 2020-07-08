@@ -19,7 +19,7 @@
         <tr><td>N° de rue</td><td>@if(($user->person->address->streetNumber) == null)-@else{{$user->person->address->streetNumber}}@endif</td></tr>
         <tr><td>Localité</td><td>@if(($user->person->address->city->name) == null)-@else{{$user->person->address->city->name}}@endif</td></tr>
         <tr><td>NPA</td><td>@if(($user->person->address->city->postalCode) == null)-@else{{$user->person->address->city->postalCode}}@endif</td></tr>
-        <tr><td>Canton</td><td>@if(({{$user->person->address->city->canton}}) == null)-@else{{$user->person->phoneNumber1}}@endif</td></tr>
+        <tr><td>Canton</td><td>@if(($user->person->address->city->canton) == null)-@else{{$user->person->address->city->canton}}@endif</td></tr>
         <tr><td>Pays</td><td>@if(($user->person->address->city->country->name) == null)-@else{{$user->person->address->city->country->name}}@endif</td></tr>
         @endif
         <tr><td>Commentaire</td><td>@if(($user->person->comment) == null)-@else{{$user->person->comment}}@endif</td></tr>
