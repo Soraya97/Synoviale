@@ -30,8 +30,8 @@ Il y a 5 *sections* dans le site web:
 |-|-|-|-|-|
 |**Nom de page**|**model**|**contrôleur**|**commentaire**|**URL**|
 |Ajouter client|Client|Client (ressource)|Méthode store()|client/create|
-|Liste clients|Client|Client (ressource)|| client        |
-|Liste clients - voir un client|Client|Client (ressource)|Méthode show()|client/{show}|
+|Liste clients|Client|Client (ressource)|| client             |
+|Liste clients - voir un client|Client|Client (ressource)|Méthode show()|client/{client_id}|
 
 > Limiter l'accès de l'Accueil à l'Édition en cours.
 
@@ -39,13 +39,13 @@ Il y a 5 *sections* dans le site web:
 |Client|||||
 |-|-|-|-|-|
 |**Nom de page**|**model**|**contrôleur**|**commentaire**|**URL**|
-|Mon Pass|Badge|Badge (ressource)||BikeTest/client/{n}/pass|
-|Réserver mon pass|Badge|Badge (ressource)|Méthode store()|BikeTest/client/{n}/passReserve|
-|Mes tests|Client (User ?)|Client (ressource)|Pas à coder|BikeTest/client/{n}/test|
-|Recherche vélo|Bike| Bike (ressource) |App\Providers\AppServiceProvider.php permet de passer une donnée à plusieurs vues.|BikeTest/bike|
-|Mes paramètres|Client (User ?)|Client (ressource)|||
-|Créer un compte|User|User (ressource)|Méthode store()||
-|Paiement|Badge|Badge|Pas à coder // Manque une table "activer/désactiver"||
+|Mon Pass|Badge|Badge (ressource)|| pass/{client_id} |
+|Réserver mon pass|Badge|Badge (ressource)|Méthode store()| pass/create      |
+|Mes tests|User|User (ressource)|Pas à coder|                  |
+|Recherche vélo|Bike| Bike (ressource) |App\Providers\AppServiceProvider.php permet de passer une donnée à plusieurs vues.| velo             |
+|Mes paramètres|User|User (ressource)||user/{user_id}|
+|Créer un compte|Compte|Compte (ressource)|Méthode store()|compte/create|
+|Paiement|Badge|Badge|Pas à coder||
 
 ## Espace Entreprise
 |Entreprise|||||
