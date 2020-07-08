@@ -11,9 +11,7 @@ class BikeController extends Controller
 {
     public function __construct()
     {
-        // $this->middleware('checkclient')->except('index');
-        //
-        // $this->middleware('checkcontact');
+        $this->middleware('checkclient');
 
     }
     /**

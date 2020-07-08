@@ -7,6 +7,9 @@ use App\Person;
 use App\User;
 use App\Testday;
 use App\Badge;
+use App\Country;
+use App\City;
+use App\Address;
 
 use Illuminate\Http\Request;
 
@@ -46,12 +49,9 @@ class ClientController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(ClientRequest $request) {
 
-         $data = $request->validate([
-             'name' => 'required|unique:people',
-             'firstname' => 'required'
-         ]);
+         $data = $request->validate();
 
         $personTest = $request->only('name','firstname');
 
@@ -74,16 +74,16 @@ class ClientController extends Controller {
 
 
         // adresse
-        
+
         if($request->country != '[]')
         {
-        // gestion du paye     
+        // gestion du paye
 
             if(!Country::where('name',$request->country)->first())
             {
                 Country::create(['name' => $request->country]);
             }
-        
+
             //On ajoute country_id à la requet
 
             $countryId = Country::where('name',$request->country)->first();

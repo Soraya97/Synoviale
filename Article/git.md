@@ -12,7 +12,7 @@
 
     git add fichier.txt
 
-Pour ajouter tout les fichiers
+Pour ajouter tous les fichiers
 
     git add .
 

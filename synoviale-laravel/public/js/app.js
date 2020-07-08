@@ -19416,10 +19416,36 @@ When the screen is large, like a desktop, the partners' logos are vertically ali
 When on mobile, the logos are on a carousel
  */
 
+if (screen.height < 800) {
+  var startCard = '<div class="carousel carousel-slider center">';
+  var logo1 = '<a class="carousel-item" href="#!"><img src="/img/logo-gryon-tourisme.png"></a>';
+  var logo2 = '<a class="carousel-item" href="#!"><img src="/img/logo-skiclubgryon.png"></a>';
+  var logo3 = '<a class="carousel-item" href="#!"><img src="/img/logo-gryon.png"></a>';
+  var logo4 = '<a class="carousel-item" href="#!"><img src="/img/logo-detgcharlet.jpg"></a>';
+  var logo5 = '<a class="carousel-item" href="#!"><img src="/img/logo-cookie.png"></a>';
+  var endCard = '</div>';
+  var partners = startCard + logo1 + logo2 + logo3 + logo4 + logo5 + endCard;
+  $('#partners').append(partners);
+}
+
+if (screen.height >= 800) {
+  var _startCard = '<div class="">';
+  var _logo = '<img src="img/logo-gryon-tourisme.png">';
+  var _logo2 = '<img src="img/logo-skiclubgryon.png">';
+  var _logo3 = '<img src="img/logo-gryon.png">';
+  var _logo4 = '<img src="img/logo-detgcharlet.jpg">';
+  var _logo5 = '<img src="img/logo-cookie.png">';
+  var _endCard = '</div>';
+
+  var _partners = _startCard + _logo + _logo2 + _logo3 + _logo4 + _logo5 + _endCard;
+
+  $('#partners').append(_partners);
+}
 /*
  This code is used on the page of a specific client, chosen by the reception
 It's used to change the state of the button for activate or desactivate the QR code
  */
+
 
 $("#reservationStatus .activate").on("click", function (evt) {
   evt.preventDefault();

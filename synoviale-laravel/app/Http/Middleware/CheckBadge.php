@@ -18,7 +18,7 @@ class CheckBadge
     {
         if(!Session::has('client'))
         {
-            return redirect('/');
+            return redirect('404');
         }
         if($request->pass != Session::get('user.id'))
         {
