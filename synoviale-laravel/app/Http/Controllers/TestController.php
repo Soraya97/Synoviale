@@ -10,7 +10,7 @@ class TestController extends Controller {
 
     public function __construct()
     {
-        // $this->middleware('checkcontact');
+        $this->middleware('checkcontact')->only('index','store');
 
     }
     /**

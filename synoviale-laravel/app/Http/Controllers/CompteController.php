@@ -25,7 +25,7 @@ class CompteController extends Controller
     {
 
         $data =  $request->validate([
-            "username"           =>    "required|unique:users",
+            "username"           =>    "required",
             "password"        =>    "required"
         ]);
 
