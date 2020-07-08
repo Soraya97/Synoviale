@@ -2,16 +2,16 @@
 
 Nous allons créer un système d'authentification plus léger que celui proposé par Lararvel et plus spécifique par rapport à nos besoins.
 
-Quand un *User* (utilisateur du site) se connecte: son compte est relié à une *Person* (utilisateur du Bike Test) celui-ci peut être : un *Client*, un membre du *staff*, un *Contact* d'une entreprise ou l'*Organisateur* (*Profile*).
+Quand un *User* (utilisateur du site) se connecte : son compte est relié à une *Person* (utilisateur du Bike Test) celui-ci peut être : un *Client*, un membre du *staff*, un *Contact* d'une entreprise ou l'*Organisateur* (*Profile*).
 
-Voici le schéma relationnel:
+Voici le schéma relationnel :
 
 > insérer image ici
 
-Pour un compte utilisateur nous avons besoins
+Pour un compte utilisateur, nous avons besoin :
 
 * que l'utilisateur reste connecté, nous utiliserons les sessions
-* que des parties du site soient visibles que par certains types d'utilisateur (*client*,*contact*, etc.), pour cela nous utiliserons des directives *Blade* personalisées
+* que des parties du site soient visibles que par certains types d'utilisateurs (*client*,*contact*, etc.), pour cela nous utiliserons des directives *Blade* personalisées
 * protéger les routes, à l'aide de *Middleware*
 * de créer un compte, se connecter, etc, grâce à un controleur *UserController*
 * et enfin de lier directement l'*User* à *Person*, que nous ferons dans le contrôleur *UserController*
@@ -19,13 +19,13 @@ Pour un compte utilisateur nous avons besoins
 
 # Création des fichiers pour les profils
 
-Pour chaque profil nous créons une Migration, un Seeder, un Model et un Controleur avec la commande:
+Pour chaque profil nous créons une Migration, un Seeder, un Model et un Controleur avec la commande :
 
     php artisan make:model *name* -crms
 
 > Ce n'est pas sûre que nous utilisons le contrôleur mais, il nous est préférable de le créer maintenant et éventuellement le supprimer après.
 
-Il nous faut 4 *Profile*:
+Il nous faut 4 *Profile* :
 
 * **Organizer**
 * **Client** (existe déjà)
@@ -63,7 +63,7 @@ nous ajoutons la clé étrangère de **Person**
 
     $table->foreignId('person_id');
 
-Cela donne:
+Cela donne :
 
     public function up()
     {
@@ -161,7 +161,7 @@ Les contrôleurs *Profile* sont des contrôleurs resource normale
 
 ### Contrôleur UserController
 
-Nous allons créer un contrôleur **UserController** qui va gérer:
+Nous allons créer un contrôleur **UserController** qui va gérer :
 
 * la connexion d'un utilisateur - **connect**
 * la déconnexion - **deconnect**
@@ -169,7 +169,7 @@ Nous allons créer un contrôleur **UserController** qui va gérer:
 
 Pour qu'un utilisateur soit connecté nous utiliserons les sessions
 
-Création du nouveau contrôleur:
+Création du nouveau contrôleur :
 
     php artisan make:controller UserController --model=User
 
@@ -233,7 +233,7 @@ Nous créons une première méthode `connect()` pour la connexion d'un utilisate
     }
 
 
-Explication:
+Explication :
 
 Nous validons les données entrantes
 
@@ -248,7 +248,7 @@ Nous récupérons l'utilisateur
 
 > first permet d'avoir un tableau, et pas un tableau dans un tableau
 
- Si l'utilisateur existe nous lançons le traitement:
+ Si l'utilisateur existe nous lançons le traitement :
         if($user)
         { 
             //traitement
@@ -387,7 +387,7 @@ Modifier `app/Http/Kernel.php`
 
 dans `protected $routeMiddleware = []`
 
-Ajouter:
+Ajouter :
 
     'guest' => \App\Http\Middleware\Guest::class,
     'checkclient' => \App\Http\Middleware\CheckClient::class,
@@ -398,7 +398,7 @@ Ajouter:
 
 #### Utilisation de middleware
 
-Dans une route:
+Dans une route :
 
     Route::view('login','login')->name('login')->middleware('guest');
 
@@ -456,7 +456,7 @@ cela donne dans un page *Blade*
         //visible par les utilisateurs pas connecté
     @endguest
 
-les profils:
+les profils :
 
     @organizer
     
