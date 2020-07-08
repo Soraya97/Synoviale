@@ -49,12 +49,9 @@ class ClientController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(ClientRequest $request) {
 
-         $data = $request->validate([
-             'name' => 'required|unique:people',
-             'firstname' => 'required'
-         ]);
+         $data = $request->validate();
 
         $personTest = $request->only('name','firstname');
 

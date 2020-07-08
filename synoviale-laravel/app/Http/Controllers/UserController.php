@@ -14,6 +14,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
+
         $this->middleware('checkuser')->only('show');
     }
     /**
@@ -25,9 +26,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
-
-        return view('user',compact('users'));
+        return view('404');
     }
 
     /**
@@ -70,8 +69,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         return view('clients/paramClient', compact('user'));
-
-
+        
     }
 
     /**

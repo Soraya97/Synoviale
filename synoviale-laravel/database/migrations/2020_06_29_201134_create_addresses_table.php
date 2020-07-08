@@ -16,7 +16,7 @@ class CreateAddressesTable extends Migration {
             $table->id();
             $table->string('street1');
             $table->string('street2')->nullable();
-            $table->integer('streetNumber')->nullable();
+            $table->string('streetNumber')->nullable();
             $table->string('POBox')->nullable();
             $table->foreignId('city_id');
             $table->foreignId('person_id');
