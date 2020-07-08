@@ -11,7 +11,7 @@ Voici le schéma relationnel:
 Pour un compte utilisateur nous avons besoins
 
 * que l'utilisateur reste connecté, nous utiliserons les sessions
-* que des parties du site soient visibles que par certains types d'utilisateur (*client*,*contact* et etc...), pour cela nous utiliserons des directives *Blade* personalisées
+* que des parties du site soient visibles que par certains types d'utilisateur (*client*,*contact*, etc.), pour cela nous utiliserons des directives *Blade* personalisées
 * protéger les routes, à l'aide de *Middleware*
 * de créer un compte, se connecter, etc, grâce à un controleur *UserController*
 * et enfin de lier directement l'*User* à *Person*, que nous ferons dans le contrôleur *UserController*
@@ -28,8 +28,8 @@ Pour chaque profil nous créons une Migration, un Seeder, un Model et un Control
 Il nous faut 4 *Profile*:
 
 * **Organizer**
-* **Client** (existe déja)
-* **Contact** (existe déja)
+* **Client** (existe déjà)
+* **Contact** (existe déjà)
 * **Employee** (pour différencier de **Staff**)
 
 > Comme il y a déjà des fichiers pour la table **User** nous allons créer ce que nous auvons besoin au fur et à mesure.
