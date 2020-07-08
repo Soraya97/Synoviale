@@ -52,6 +52,26 @@ class PersonSeeder extends Seeder {
             'email' => 'lolastuder@gmail.com',
             'email2' => 'lstuder@gmail.com',
             'comment' => 'Cliente',
+        ],
+            [
+
+            'name' => 'Sutter',
+            'firstname' => 'Lenny',
+            'phoneNumber1' => '0794567899',
+            'phoneNumber2' => '0214567810',
+            'email' => 'lennySutter@gmail.com',
+            'email2' => 'lSutter@gmail.com',
+            'comment' => 'Client',
+        ],
+            [
+
+            'name' => 'Sanen',
+            'firstname' => 'lea',
+            'phoneNumber1' => '0794567811',
+            'phoneNumber2' => '0214567812',
+            'email' => 'leasanen@gmail.com',
+            'email2' => 'lsanen@gmail.com',
+            'comment' => 'Cliente',
         ]]);
     }
 

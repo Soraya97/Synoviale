@@ -48,6 +48,24 @@ class AddressSeeder extends Seeder {
                     'POBox' => 'CP350',
                     'city_id' => '4',
                     'person_id' => '4',                    
+        ],
+            [
+                    
+                    'street1' => 'Kriegstrasse',
+                    'street2' => 'Kirschestrasse',
+                    'streetNumber' => '10',
+                    'POBox' => 'CP360',
+                    'city_id' => '4',
+                    'person_id' => '5',                    
+        ],
+            [
+                    
+                    'street1' => 'Apfelstrasse',
+                    'street2' => 'Vespastrasse',
+                    'streetNumber' => '12',
+                    'POBox' => 'CP370',
+                    'city_id' => '4',
+                    'person_id' => '6',                    
         ]
                 ]);
     }
