@@ -20,7 +20,6 @@ class CreateAddressesTable extends Migration {
             $table->string('POBox')->nullable();
             $table->foreignId('city_id');
             $table->foreignId('person_id');
-            $table->foreignId('addresstype_id');
             $table->timestamps();
         });
     }

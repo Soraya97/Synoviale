@@ -26,29 +26,29 @@ class CompteRequest extends FormRequest
         return [
           // user
           'username' => 'required',
-          'password' => 'required|min:6|confirmed',
+          'password' => 'required|min:4|confirmed',
           'email' => 'required|email|confirmed',
 
           // person
           'name' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'firstname' => 'required|min:3|max:100|regex:([A-Z]{1})',
-          'email2' => 'email',
-          'phoneNumber1' => 'numeric|min:10|max:10|regex:([0-9])',
-          'phoneNumber2' => 'numeric|min:10|max:10|regex:([0-9])',
-          'comment' => 'max:250',
+          'email2' => 'nullable|email',
+          'phoneNumber1' => 'nullable|numeric|min:10|max:10|regex:([0-9])',
+          'phoneNumber2' => 'nullable|numeric|min:10|max:10|regex:([0-9])',
+          'comment' => 'nullable|max:250',
 
           // address
-          'street1' => 'max:250',
-          'streetNumber' => '',
-          'street2' => 'max:250',
-          'POBox' => '',
+          'street1' => 'nullable|max:250',
+          'streetNumber' => 'nullable',
+          'street2' => 'nullable|max:250',
+          'POBox' => 'nullable',
 
           // city
-          'city' => 'regex:([A-Z]{1})',
-          'postalCode' => 'min:4|max:4|numeric',
+          'city' => 'nullable|regex:([A-Z]{1})',
+          'postalCode' => 'nullable|min:4|max:4|numeric',
 
           // country
-          'country' => 'regex:([A-Z]{1})'
+          'country' => 'nullable|regex:([A-Z]{1})'
         ];
     }
 }
