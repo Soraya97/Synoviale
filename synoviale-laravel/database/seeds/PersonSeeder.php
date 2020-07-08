@@ -59,7 +59,7 @@ class PersonSeeder extends Seeder {
             'firstname' => 'Lenny',
             'phoneNumber1' => '0794567899',
             'phoneNumber2' => '0214567810',
-            'email' => 'lennySutter@gmail.com',
+            'email' => 'lennysutter@gmail.com',
             'email2' => 'lSutter@gmail.com',
             'comment' => 'Client',
         ],
