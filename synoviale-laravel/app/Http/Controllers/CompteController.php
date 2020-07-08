@@ -73,16 +73,16 @@ class CompteController extends Controller
         return view('clients/createAccount');
     }
 
-    public function store(CompteRequest $request)
+    public function store(Request $request)
     {
 
-        $data = $request->validate();
+        // $data = $request->validate();
 
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
         Person::create($person);
-
-        $personId = Person::where($person)->first();
+        $personTest = $request->only('name', 'firstname');
+        $personId = Person::where($personTest)->first();
 
         $request->request->add(['person_id' => $personId->id]);
 
@@ -100,8 +100,7 @@ class CompteController extends Controller
 
 
         // ajouter code de connexion
-
-        $userC = User::where($userTest)->first();
+        $userC = User::where($user)->first();
 
         $request->session()->put('user',$userC);
 

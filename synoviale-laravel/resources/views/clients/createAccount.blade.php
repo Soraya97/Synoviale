@@ -5,8 +5,6 @@
 @endsection
 
 @section('contenu')
-<div class="greyBackground">
-
     <div class="container">
 
         <div class="row">
@@ -118,6 +116,4 @@
         </div>
 
     </div>
-
-</div>
 @endsection

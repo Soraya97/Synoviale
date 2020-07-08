@@ -5,8 +5,6 @@
 @endsection
 
 @section('contenu')
-<div class="greyBackgroundContainer">
-
 <div class="container">
 
 <div class="row">
@@ -143,7 +141,7 @@
                     </div>
 
                   </div>
-<p class="bold red-text right-align">  <i class="material-icons">report</i>Cliquez sur ajouter dès que le client a payé</p>
+                  <p class="bold red-text right-align">  <i class="material-icons">report</i>Cliquez sur ajouter dès que le client a payé</p>
                 </div>
 
                 <div class="row">
@@ -154,8 +152,6 @@
     </form>
 
          </div>
-
-                    </div>
 
                     </div>
                     @endsection
