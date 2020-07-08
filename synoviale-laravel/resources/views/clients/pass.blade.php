@@ -12,7 +12,7 @@
     <div class="col s12">
         <ul id="tabs-badges" class="tabs">
           @foreach($badges as $badge)
-            <li class="tab col s3"><a href="#{{$badge->number}}">{{\Carbon\Carbon::parse($badge->testday->date)->locale('fr_FR')->isoFormat('LL')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</a></li>
+            <li class="tab col s2"><a href="#{{$badge->number}}">{{\Carbon\Carbon::parse($badge->testday->date)->locale('fr_FR')->isoFormat('LL')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</a></li>
             @endforeach
           </ul>
     </div>
