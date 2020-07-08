@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenu')
-<div class="paramClient container">
+<div class="container">
     <h2>RÉSERVER MON JOUR</h2>
 
     <div class="row">

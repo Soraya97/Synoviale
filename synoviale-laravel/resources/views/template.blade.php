@@ -34,8 +34,11 @@
 
         <!--Import jQuery before materialize.js-->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="/js/materialize.min.js"></script>
-        <script type="text/javascript" src="/js/test.js"></script>
+
+        <!--Before putting JavaScript code in the resources/js/app.js file, these two lines were used to test the code-->
+        <!-- <script type="text/javascript" src="/js/materialize.min.js"></script>
+        <script type="text/javascript" src="/js/test.js"></script> -->
+
         <!-- Compiled and minified JavaScript -->
         <script type="text/javascript" src="/js/app.js"></script>
 
