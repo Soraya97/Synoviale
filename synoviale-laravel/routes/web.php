@@ -12,6 +12,19 @@ Route::resource('velo', 'BikeController');
 
 Route::resource('/client', 'ClientController');
 
+//pour la gestion des users
+Route::resource('user','UserController');
+
+Route::resource('test', 'TestController');
+
+//route pour authentification
+Route::post('compte','CompteController@connect')->name('compte.connect');
+Route::get('compte','CompteController@deconnect')->name('compte.deconnect');
+Route::post('inscription','CompteController@store')->name('compte.store');
+Route::get('inscription', 'CompteController@create')->name('compte.create');
+Route::get('login','CompteController@login')->name('compte.login')->middleware('redirectlogin');
+
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -23,30 +36,24 @@ Route::resource('/client', 'ClientController');
 // Route::resource('Bike', 'BikeController');
 // Route::resource('Brand', 'BrandController');
 //
-//route pour authentification
-Route::post('compte','CompteController@connect')->name('compte.connect');
-Route::get('compte','CompteController@deconnect')->name('compte.deconnect');
-Route::post('inscription','CompteController@store')->name('compte.store');
-Route::get('inscription', 'CompteController@create')->name('compte.create');
-Route::get('login','CompteController@login')->name('compte.login')->middleware('redirectlogin');
 
-//pour la gestion des users
-Route::resource('user','UserController');
+
+
 
 
 
 // route for the reception
 
 
- Route::get('/listeClients', function () {
-     return view('reception/clientsList');
- });
+ // Route::get('/listeClients', function () {
+ //     return view('reception/clientsList');
+ // });
+ //
+ // Route::get('/ajouterClient', function () {
+ //     return view('reception/addClient');
+ // });
 
- Route::get('/ajouterClient', function () {
-     return view('reception/addClient');
- });
 
-Route::resource('test', 'TestController');
 
 // Route::resource('/inscription', 'PersonController');
 // Route::resource('/compte', 'UserController');

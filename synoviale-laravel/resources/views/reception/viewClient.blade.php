@@ -114,15 +114,13 @@
                     <ul class="tabs">
                         <li class="tab col l3 s6"><a href="#vendrediAM"><i class="material-icons">clear</i>VENDREDI AM</a></li>
                         <li class="tab col l3 s6"><a href="#vendrediPM"><i class="material-icons">done</i>VENDREDI PM</a></li>
-                        <li class="tab col l3 s6"><a href="#samediAM"><i class="material-icons">clear</i>SAMEDI AM</a></li>
-                        <li class="tab col l3 s6"><a href="#dimanchePM"><i class="material-icons">done</i>DIMANCHE PM</a></li>
                     </ul>
                 </div>
 
                 <div id="vendrediAM" class="col s12">
                     <h3>ÉTAT DU QR CODE</h3>
                     <div class="row valign-wrapper">
-                        <img src="img/qrcode.png" alt="QR code" class="col s2">
+                        <img src="/img/qrcode.png" alt="QR code" class="col s2">
                         <p class="col l4">Le paiement n'a pas encore été effectué</p>
                         <div class="right col l4">
                             <a href="#!" class="btn green activate">ACTIVER</a>
@@ -134,7 +132,7 @@
                 <div id="vendrediPM" class="col s12">
                     <h3>ÉTAT DU QR CODE</h3>
                     <div class="row valign-wrapper">
-                        <img src="img/qrcode.png" alt="QR code" class="col s2">
+                        <img src="/img/qrcode.png" alt="QR code" class="col s2">
                         <p class="col l4">Le paiement a  été effectué</p>
                         <div class="right col l4">
                             <a href="#!" class="btn green disabled activate">ACTIVER</a>
@@ -142,9 +140,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div id="samediAM" class="col s12">SAMEDI AM</div>
-                <div id="dimanchePM" class="col s12">DIMANCHE PM</div>
             </div>
 
         </div>
