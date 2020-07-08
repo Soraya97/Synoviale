@@ -17,10 +17,10 @@ Il y a 5 *sections* dans le site web:
 |-|-|-|-|
 |**Nom de page**|**model**|**contrôleur**|**commentaire**|
 |Infos pratiques|Pas de model|Pas de contrôleur||
-|Modèles de vélo|Bike|Bike (ressource)||
+|Modèles de vélo|Product|Product (ressource)||
 |News|Pas de model|Pas de contrôleur||
 |Réserver mon pass|Badge |Badge (ressource)|Méthode store()|
-|Se connecter|User ? |User ?||
+|Se connecter|Compte |Compte|Méthode connect()|
 
 > Si l'utilisateur n'est pas connecté, il est redirigé sur la page de connexion lorsqu'il cherche à réserver un pass.
 
@@ -29,9 +29,9 @@ Il y a 5 *sections* dans le site web:
 |Accueil|||||
 |-|-|-|-|-|
 |**Nom de page**|**model**|**contrôleur**|**commentaire**|**URL**|
-|Ajouter client|Client (User ? Badge ?)|Client (ressource) (User ? Badge ?)|Méthode store()|BikeTest/client|
-|Liste clients|Client (User ? Badge ?)|Client (ressource) (User ? Badge ?)||Bike/client|
-|Liste clients - voir un client|Client (User ? Person ?)|Client (ressource) (User ? Person ?)|Méthode show()|Bike/client/{n}|
+|Ajouter client|Client|Client (ressource)|Méthode store()|client/create|
+|Liste clients|Client|Client (ressource)|| client        |
+|Liste clients - voir un client|Client|Client (ressource)|Méthode show()|client/{show}|
 
 > Limiter l'accès de l'Accueil à l'Édition en cours.
 

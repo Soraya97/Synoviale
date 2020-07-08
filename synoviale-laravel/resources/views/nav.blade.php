@@ -72,7 +72,7 @@
     <div class="nav-wrapper container navBar">
         <a href="#" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 
-        <a href="{{route('index')}}" class="brand-logo left"><img src="/img/logoBlanc.png" alt="Logo du Bike Test Gryon" width="80%"></a>
+        <a href="{{route('index')}}" class="brand-logo left"><img src="/img/logo_blanc.svg" alt="Logo du Bike Test Gryon" width="auto" height="38px"></a>
 
         <ul class="right hide-on-med-and-down menu">
             @client

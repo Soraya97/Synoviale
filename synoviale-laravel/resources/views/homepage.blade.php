@@ -50,9 +50,9 @@
       <img src="img/news.jpg" class="img img-responsive" alt="Pré dans la montagne lors de la Golden Hour">
     </div>
 
-    <p>Les parcours vert, rouge, noir, bleu et jaune seront à votre disposition pendant tout l'événement !</p>
+    <p class="desktopTextP">Les parcours vert, rouge, noir, bleu et jaune seront à votre disposition pendant tout l'événement !</p>
     <div class="row">
-      <a href="" class="waves-effect waves-light btn col s12 l2">EN SAVOIR PLUS</a>
+      <a href="" class="waves-effect waves-light btn col s12 l2 right">EN SAVOIR PLUS</a>
     </div>
 </div>
 

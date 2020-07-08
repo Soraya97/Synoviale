@@ -57,42 +57,42 @@
 
                     <div class="col l6 s12">
                         <div class="@error('street1') is-invalid @enderror input-field col l8 s9">
-                            <input type="text" name="street1" value="{{$client->person->address->street1}}" class="validate">
+                            <input type="text" name="street1" value="@if(($client->person->address) == null)@else{{$client->person->address->street1}}@endif" class="validate">
                             <label for="street1">Rue</label>
                             @error('street1')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <div class="@error('streetNumber') is-invalid @enderror input-field col l4 s3">
-                            <input type="text" name="streetnumber" value="{{$client->person->address->streetNumber}}" class="validate">
+                            <input type="text" name="streetnumber" value="@if(($client->person->address) == null)@else{{$client->person->address->streetNumber}}@endif" class="validate">
                             <label for="streetnumber">N° de rue</label>
                             @error('streetNumber')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <div class="@error('street2') is-invalid @enderror input-field col l8 s9">
-                            <input type="text" name="street2" value="{{$client->person->address->street2}}" class="validate">
+                            <input type="text" name="street2" value="@if(($client->person->address) == null)@else{{$client->person->address->street2}}@endif" class="validate">
                             <label for="street2">Rue secondaire</label>
                             @error('street2')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <div class="@error('POBox') is-invalid @enderror input-field col l4 s3">
-                            <input type="text" name="pobox" value="{{$client->person->address->POBox}}" class="validate">
+                            <input type="text" name="pobox" value="@if(($client->person->address) == null)@else{{$client->person->address->POBox}}@endif" class="validate">
                             <label for="pobox">CP</label>
                             @error('POBox')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <div class="@error('city') is-invalid @enderror input-field col l8 s9">
-                            <input type="text" name="city" value="{{$client->person->address->city->name}}" class="validate">
+                            <input type="text" name="city" value="@if(($client->person->address) == null)@else{{$client->person->address->city->name}}@endif" class="validate">
                             <label for="city">Localité</label>
                             @error('city')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <div class="@error('postaleCode') is-invalid @enderror input-field col l4 s3">
-                            <input type="text" name="postalecode" value="{{$client->person->address->city->postalCode}}" class="validate">
+                            <input type="text" name="postalecode" value="@if(($client->person->address) == null)@else{{$client->person->address->city->postalCode}}@endif" class="validate">
                             <label for="postalecode">NPA</label>
                             @error('postaleCode')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <div class="@error('canton') is-invalid @enderror input-field col l6 s12">
-                            <input type="text" name="canton" value="{{$client->person->address->city->canton}}" class="validate">
+                            <input type="text" name="canton" value="@if(($client->person->address) == null)@else{{$client->person->address->city->canton}}@endif" class="validate">
                             <label for="canton">Canton</label>
                             @error('canton')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
                         <div class="@error('country') is-invalid @enderror input-field col l6 s12">
-                            <input type="text" name="country" value="{{$client->person->address->city->country->name}}" class="validate">
+                            <input type="text" name="country" value="@if(($client->person->address) == null)@else{{$client->person->address->city->country->name}}@endif" class="validate">
                             <label for="country">Pays</label>
                             @error('country')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
                         </div>
@@ -152,7 +152,7 @@
         <!-- Choice of the tests days -->
         <div class="divider"></div>
         <div class="section">
-            <h2>CHOIX DES JOURS TESTS<h2>
+            <h2>CHOIX DES JOURS TESTS</h2>
                     <div class="row">
                         <form method="post" action="">
                             @csrf
