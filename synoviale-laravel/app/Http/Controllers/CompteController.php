@@ -102,34 +102,40 @@ class CompteController extends Controller
         Client::create($client);
 
         // adresse
-
+        if($request->country == '[]')
+        {
         // gestion du paye
 
-        if(!Country::where('name',$request->country)->first())
-        {
-            Country::create(['name' => $request->country]);
+        
+
+            if(!Country::where('name',$request->country)->first())
+            {
+                Country::create(['name' => $request->country]);
+            }
+        
+
+            //On ajoute country_id à la requet
+
+            $countryId = Country::where('name',$request->country)->first();
+
+            $request->request->add(['country_id' => $countryId->id]);
+
+            // Gestion de la ville
+
+            if(!City::where('name',$request->city)->first())
+            {
+                City::create(['name' => $request->city,'postalCode' => $request->postalCode,'country_id' => $request->country_id,'canton' => $request->canton]);
+            }
+
+            $cityId = City::where('name',$request->city)->first();
+
+            $request->request->add(['city_id' => $cityId->id]);
+
+            $address = $request->only('street1','street2','streetNumber','POBox','city_id','person_id');
+
+            Address::create($address);
+
         }
-
-        //On ajoute country_id à la requet
-
-        $countryId = Country::where('name',$request->country)->first();
-
-        $request->request->add(['country_id' => $countryId->id]);
-
-        // Gestion de la ville
-
-        if(!City::where('name',$request->city)->first())
-        {
-            City::create(['name' => $request->city,'postalCode' => $request->postalCode,'country_id' => $request->country_id,'canton' => $request->canton]);
-        }
-
-        $cityId = City::where('name',$request->city)->first();
-
-        $request->request->add(['city_id' => $cityId->id]);
-
-        $address = $request->only('street1','street2','streetNumber','POBox','city_id','person_id');
-
-        Address::create($address);
 
         // code de connexion
 

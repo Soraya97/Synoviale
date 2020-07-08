@@ -11,6 +11,7 @@ class Test extends Model
         'startTime',
         'endTime',
         'feedback',
+        'active',
         'testDay_id',
         'edition_id',
         'event_id',

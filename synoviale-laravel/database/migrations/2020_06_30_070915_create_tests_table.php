@@ -18,6 +18,7 @@ class CreateTestsTable extends Migration
             $table->time('startTime');
             $table->time('endTime');
             $table->string('feedback');
+            $table->boolean('active')->nullable();
             $table->foreignId('testday_id');
             $table->foreignId('edition_id');
             $table->foreignId('event_id');

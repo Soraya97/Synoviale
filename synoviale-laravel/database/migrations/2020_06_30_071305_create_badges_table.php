@@ -16,6 +16,7 @@ class CreateBadgesTable extends Migration
         Schema::create('badges', function (Blueprint $table) {
             $table->id();
             $table->string('number')->unique();
+            $table->boolean('active')->nullable();
             $table->foreignId('client_id');     
             $table->foreignId('testday_id');
             $table->foreignId('edition_id');

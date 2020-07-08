@@ -8,8 +8,7 @@ class Country extends Model
 {
 
     protected $fillable = [
-        'name',
-        'code'
+        'name'
     ];
 
     public function city()
