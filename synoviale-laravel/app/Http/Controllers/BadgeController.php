@@ -35,7 +35,8 @@ class BadgeController extends Controller
      */
     public function create()
     {
-      $days = Testday::all();
+        $days = Testday::all();
+
         return view('/clients/reservationPass', compact('days'));
     }
 
@@ -55,20 +56,25 @@ class BadgeController extends Controller
         if(isset($request->date)) {
             foreach ($request->date as $testday)
             {
-                $request->request->add(['testday_id'=> $testday]);
 
-                do {
+            // on créer une date seulement si un badge du testday avec ce client n'existe pas encore
+            if(!Badge::where(['client_id' => $request->session()->get('client.id'),'testday_id' => $request->date])->first())
+            {
 
-                    $number = uniqid(rand());
+                    $request->request->add(['testday_id'=> $testday]);
 
-                }while ($number == Badge::where('number',$number)->get());
+                    do {
 
-                $request->request->add(['number' => $number]);
+                        $number = uniqid(rand());
 
-                $badge = $request->only('event_id','edition_id','client_id','testday_id','number');
+                    }while ($number == Badge::where('number',$number)->get());
 
-                Badge::create($badge);
+                    $request->request->add(['number' => $number]);
 
+                    $badge = $request->only('event_id','edition_id','client_id','testday_id','number');
+
+                    Badge::create($badge);
+                }
             }
         };
         return redirect('pass');
