@@ -73,10 +73,10 @@ class CompteController extends Controller
         return view('clients/createAccount');
     }
 
-    public function store(Request $request)
+    public function store(CompteRequest $request)
     {
 
-       // $data = $request->validate();
+        $data = $request->validate();
 
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
