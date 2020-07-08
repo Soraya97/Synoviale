@@ -35,7 +35,7 @@ class BrandSeeder extends Seeder
                 [
            'name' => 'Scott',
             'shortDescr' => 'Heroes inspire heroes',
-            'longDescr' => 'Très bonne marque, vélo fait avec des amtériaux de qualité',
+            'longDescr' => 'Très bonne marque, vélo fait avec des matériaux de qualité',
             'company_id' => '1',
         ]]);
     }
