@@ -82,7 +82,7 @@ $(document).ready(function() {
 });
 
 /*
-This code is used on the page of test, when the company wanna start a new test and this one will "go" on the right of the page
+This code is used on the page of test (test.blade.php), when the company wanna start a new test and this one will "go" on the right of the page
  */
  $("#startTest").on("click", "#scanQR", evt => {
      evt.preventDefault();
@@ -101,6 +101,7 @@ This code is used on the page of test, when the company wanna start a new test a
 
 /*
  This code is used to delete the div of the test from the DOM when the company wanna end a test
+ It's used on the vied test.blade.php
  */
  $("#endTestFeedback").on("click", evt => {
      evt.preventDefault();
@@ -111,6 +112,7 @@ This code is used on the page of test, when the company wanna start a new test a
 
 /*
 This code is used to search some infos of a bike depending on his brand and his type
+It's used on the view bikeAvailable.blade.php
  */
 $("#bikeAvailable").on("submit", evt => {
     evt.preventDefault();
@@ -129,6 +131,7 @@ $("#bikeAvailable").on("submit", evt => {
 /*
 When the screen is large, like a desktop, the partners' logos are vertically aligned
 When on mobile, the logos are on a carousel
+It's used on the homepage
  */
  if (screen.height < 800) {
    let startCard = '<div class="carousel carousel-slider center">';
@@ -157,6 +160,7 @@ When on mobile, the logos are on a carousel
 /*
  This code is used on the page of a specific client, chosen by the reception
 It's used to change the state of the button for activate or desactivate the QR code
+It's used on the view reception/viewClient.blade.php
  */
 $("#reservationStatus .activate").on("click", evt => {
     evt.preventDefault();
