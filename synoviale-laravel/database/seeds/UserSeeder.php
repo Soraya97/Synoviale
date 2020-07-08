@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             'email' => 'example6@test.com',
             'password' => '1234',
             'person_id' => 6,
-            ],
+            ]
         ]);
     }
 }
