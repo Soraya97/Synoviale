@@ -19,17 +19,17 @@ class AddresstypeSeeder extends Seeder {
         ],
                 [
             'description' => 'Professionnelle',
-            'company_id' => '2',
+            'company_id' => '1',
             'address_id' => '2',
         ],
                 [
             'description' => 'Privée',
-            'company_id' => '3',
+            'company_id' => '1',
             'address_id' => '3',
         ],
                 [
             'description' => 'Privée',
-            'company_id' => '4',
+            'company_id' => '1',
             'address_id' => '4',
         ]
                 ]);
