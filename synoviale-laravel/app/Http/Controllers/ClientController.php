@@ -147,8 +147,10 @@ class ClientController extends Controller {
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show(Client $client) {
-        //
+    public function show($id) {
+
+        $client = Client::findOrFail($id);
+        
         return view('/reception/viewClient', compact('client'));
     }
 
