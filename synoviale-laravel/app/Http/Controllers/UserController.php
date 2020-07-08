@@ -26,7 +26,7 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('errors/404');
+        return redirect('404');
     }
 
     /**

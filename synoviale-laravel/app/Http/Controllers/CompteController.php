@@ -21,8 +21,15 @@ use Illuminate\Support\Facades\Session;
 
 class CompteController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest')->only('create','store');
+    }
+
     public function connect(Request $request)
     {
+
 
         $data =  $request->validate([
             "username"           =>    "required",
@@ -75,8 +82,6 @@ class CompteController extends Controller
 
     public function store(CompteRequest $request)
     {
-
-        $data = $request->validate();
 
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 

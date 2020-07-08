@@ -10,11 +10,6 @@ use App\Http\Requests\EditionRequest;
 
 class EditionController extends Controller
 {
-    public function __construct()
-    {
-        // $this->middleware('checkorganizer');
-
-    }
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +31,7 @@ class EditionController extends Controller
     public function create()
     {
         //
-        return view('addedition');
+        return redirect('404');
     }
 
     /**
@@ -47,8 +42,6 @@ class EditionController extends Controller
      */
     public function store(EditionRequest $request)
     {
-        //
-        $data = $request->validated();
 
         Edition::create($data);
 

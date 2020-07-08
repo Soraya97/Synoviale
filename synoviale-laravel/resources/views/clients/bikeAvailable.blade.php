@@ -40,7 +40,7 @@
     </div>
 
     <div class="container">
-        <h2>LISTE DES VÉLOS DISPO</h2>
+        <h2>LISTE DES VÉLOS DISPONIBLES</h2>
         <div class="collection">
             @foreach($bikes as $bike)
             <a class="collection-item modal-trigger left-align black-text" href="#map">{{$bike->type}} {{$bike->product->brand->name}} {{$bike->product->shortDescr}}<span class="badge red-text">0</span></a>

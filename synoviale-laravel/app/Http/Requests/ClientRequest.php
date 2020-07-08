@@ -28,8 +28,8 @@ class ClientRequest extends FormRequest
           'name' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'firstname' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'email2' => 'nullable|email',
-          'phoneNumber1' => 'nullable|numeric|digits:10',
-          'phoneNumber2' => 'nullable|numeric|digits:10',
+          'phoneNumber1' => 'nullable',
+          'phoneNumber2' => 'nullable',
           'comment' => 'nullable|max:250',
 
           // address

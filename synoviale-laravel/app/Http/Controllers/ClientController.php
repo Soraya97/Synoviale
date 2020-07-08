@@ -39,7 +39,9 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
+
         $days = Testday::all();
+        
         return view('reception/addClient', compact('days'));
     }
 
@@ -50,8 +52,6 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(ClientRequest $request) {
-
-         $data = $request->validate();
 
         $personTest = $request->only('name','firstname');
 

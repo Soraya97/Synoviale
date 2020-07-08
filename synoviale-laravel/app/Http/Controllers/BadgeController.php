@@ -14,7 +14,7 @@ class BadgeController extends Controller
 {
     public function __construct()
     {
-         // $this->middleware('checkbadge');
+        $this->middleware('checkbadge');
     }
     /**
      * Display a listing of the resource.
@@ -22,10 +22,8 @@ class BadgeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        // $badges = Badge::all();
-        //
-        // return view('clients/pass',compact('badges'));
+    {   
+         return redirect('404');
     }
 
     /**
@@ -58,7 +56,8 @@ class BadgeController extends Controller
             {
 
             // on créer une date seulement si un badge du testday avec ce client n'existe pas encore
-            if(!Badge::where(['client_id' => $request->session()->get('client.id'),'testday_id' => $request->date])->first())
+
+            if(!Badge::where(['client_id' => $request->session()->get('client.id'),'testday_id' => $testday])->first())
             {
 
                     $request->request->add(['testday_id'=> $testday]);
@@ -76,8 +75,11 @@ class BadgeController extends Controller
                     Badge::create($badge);
                 }
             }
+
+            return redirect()->route('pass.show', $request->session()->get('client.id'));
         };
-        return redirect()->route('pass.show', $request->session()->get('client.id'));
+
+        return redirect('404');
     }
 
     /**
