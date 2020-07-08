@@ -75,7 +75,7 @@ class ClientController extends Controller {
 
         // adresse
         
-        if($request->country == '[]')
+        if($request->country != '[]')
         {
         // gestion du paye     
 
@@ -84,7 +84,6 @@ class ClientController extends Controller {
                 Country::create(['name' => $request->country]);
             }
         
-
             //On ajoute country_id à la requet
 
             $countryId = Country::where('name',$request->country)->first();
@@ -150,7 +149,7 @@ class ClientController extends Controller {
     public function show($id) {
 
         $client = Client::findOrFail($id);
-        
+
         return view('/reception/viewClient', compact('client'));
     }
 
