@@ -25,9 +25,9 @@ class CompteRequest extends FormRequest
     {
         return [
           // user
-          'username' => 'required',
+          'username' => 'required|unique:users',
           'password' => 'required|min:4|confirmed',
-          'email' => 'required|email|confirmed',
+          'email' => 'required|email|confirmed|unique:users',
 
           // person
           'name' => 'required|min:3|max:100|regex:([A-Z]{1})',
