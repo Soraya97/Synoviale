@@ -19368,20 +19368,6 @@ $(document).ready(function () {
 This code is used on the page of test, when the company wanna start a new test and this one will "go" on the right of the page
  */
 
-$("#scanQR").on("submit", function (evt) {
-  evt.preventDefault();
-  var marque = $("#marque").val();
-  var nom = $("#nom").val();
-  var now = new Date();
-  var heure = now.getHours();
-  var minute = now.getMinutes();
-  var seconde = now.getSeconds();
-  var time = heure + 'h' + minute;
-  var cardStart = '<div class="row"><div class="col s12"><div class="card greyBackground"><div class="card-content">';
-  var cardEnd = '</div><div class="card-action"><a class="btn modal-trigger orange-light black-text" href="#endTest">TERMINER LE TEST</a></div></div></div></div>';
-  var test = cardStart + '<p>Nom 2 Prénom 2</p><p>VTT ' + marque + ' ' + nom + '</p><p>' + time + '</p>' + cardEnd;
-  $('#tests').append(test);
-});
 /*
 This code is used to search some infos of a bike depending on his brand and his type
  */

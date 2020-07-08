@@ -114,6 +114,11 @@ span {
 .desktopTextP {
   font-size: 1.2rem;
 }
+
+.qrCodeDesktop {
+  width: 25%;
+}
+
 }
 
 .img {

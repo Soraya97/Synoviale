@@ -5,13 +5,13 @@
 @endsection
 
 @section('contenu')
-<div class="container">
+<div id="startTest" class="container">
 
     <div class="row">
         <br>
         <div class="col l7 s12 greyBackground">
             <h2>COMMENCER UN TEST</h2>
-            <form id="scanQR" method="get">
+            <form method="get">
                 <div class="row">
                     <div class="col s12">Marque du vélo</div>
                     <div class="col s12">
@@ -33,7 +33,7 @@
                 </div>
                   <div class="input-field center-align row">
                       <div class="s12">
-                <button type="submit" class="btn">SCANNER LE QR CODE</button>
+                <button type="submit" class="btn modal-trigger" href="#scanQR">SCANNER LE QR CODE</button>
               </div>
             </div>
             </form>
@@ -43,24 +43,26 @@
         <div class="col l5 s12">
             <h2>TESTS EN COURS</h2>
             <div id="tests">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card greyBackground">
-                            <div class="card-content">
-                                <p>Nom 1 Prénom 1</p>
-                                <p>VTT Yéti</p>
-                                <p>13h02</p>
-                            </div>
-                            <div class="card-action">
-                              <div class="center-align row">
-                                  <a class="btn modal-trigger orange-light black-text s12" href="#endTest">TERMINER LE TEST</a>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
+        </div>
+    </div>
+
+    <div id="scanQR" class="modal greyBackground">
+        <div class="modal-content">
+            <form action="" method="post">
+              <div class="row">
+                <div class="input-field col s12">
+                <input type="text" id="code" class="autocomplete">
+                <label for="code">Code</label>
+        </div>
+      </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn" ><a href="#" class="modal-close white-text">CONFIRMER</a></button>
+            <a href="#!" class="btn-flat modal-close orange-light black-text">ANNULER</a>
         </div>
     </div>
 
@@ -119,7 +121,7 @@
             </div>
         </div>
         <div class="modal-footer center">
-            <a href="#!" class="modal-close btn">CONFIRMER</a>
+            <a href="#!" class="modal-close btn" id="endTestFeedback">CONFIRMER</a>
             <a href="#!" class="modal-close btn orange-light black-text">IGNORER</a>
         </div>
     </div>

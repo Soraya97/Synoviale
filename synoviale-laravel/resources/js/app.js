@@ -84,20 +84,30 @@ $(document).ready(function() {
 /*
 This code is used on the page of test, when the company wanna start a new test and this one will "go" on the right of the page
  */
-$("#scanQR").on("submit", evt => {
-    evt.preventDefault();
-    let marque = $("#marque").val();
-    let nom = $("#nom").val();
-    let now = new Date();
-    let heure = now.getHours();
-    let minute = now.getMinutes();
-    let seconde = now.getSeconds();
-    let time = heure + 'h' + minute;
-    let cardStart = '<div class="row"><div class="col s12"><div class="card greyBackground"><div class="card-content">';
-    let cardEnd = '</div><div class="card-action"><a class="btn modal-trigger orange-light black-text" href="#endTest">TERMINER LE TEST</a></div></div></div></div>';
-    let test = cardStart + '<p>Nom 2 Prénom 2</p><p>VTT ' + marque + ' ' + nom + '</p><p>' + time + '</p>' + cardEnd;
-    $('#tests').append(test);
-});
+ $("#startTest").on("click", "#scanQR", evt => {
+     evt.preventDefault();
+     let marque = $("#marque").val();
+     let nom = $("#nom").val();
+     let now = new Date();
+     let heure = now.getHours();
+     let minute = now.getMinutes();
+     let seconde = now.getSeconds();
+     let time = heure + 'h' + minute;
+     let cardStart = '<div class="row" id="testExecuted"><div class="col s12"><div class="card greyBackground"><div class="card-content">';
+     let cardEnd = '</div><div class="card-action"><div class="center-align row"><a class="btn modal-trigger orange-light black-text s12" href="#endTest">TERMINER LE TEST</a></div></div></div></div></div>';
+     let test = cardStart + '<p>Nom 2 Prénom 2</p><p>VTT ' + marque + ' ' + nom + '</p><p>' + time + '</p>' + cardEnd;
+     $('#tests').append(test);
+ });
+
+/*
+ This code is used to delete the div of the test from the DOM when the company wanna end a test
+ */
+ $("#endTestFeedback").on("click", evt => {
+     evt.preventDefault();
+     let testToDelete = document.getElementById("testExecuted");
+     let tests = document.getElementById('tests');
+     tests.removeChild(testToDelete);
+ });
 
 /*
 This code is used to search some infos of a bike depending on his brand and his type
@@ -121,7 +131,11 @@ When the screen is large, like a desktop, the partners' logos are vertically ali
 When on mobile, the logos are on a carousel
  */
 if (screen.height < 800) {
-  let partners = '<div class="carousel carousel-slider center"><a class="carousel-item" href="#one!"><img src="img/logo-gryon-tourisme.png"></a><a class="carousel-item" href="#two!"><img src="img/skiClubGryon.png"></a></div>';
+  let startCard = '<div class="carousel carousel-slider center">';
+  let logo1 = '<a class="carousel-item" href="#!"><img src="img/logo-gryon-tourisme.png"></a>';
+  let logo2 = '<a class="carousel-item" href="#!"><img src="img/skiClubGryon.png"></a>';
+  let endCard = '</div>'
+  let partners = '';
   $('#partners').append(partners);
 }
 
@@ -129,3 +143,19 @@ if (screen.height >= 800) {
   let partners = '<div class=""><img src="img/logo-gryon-tourisme.png"><img src="img/skiClubGryon.png"></div>';
   $('#partners').append(partners);
 }
+
+/*
+ This code is used on the page of a specific client, chosen by the reception
+It's used to change the state of the button for activate or desactivate the QR code
+ */
+$("#reservationStatus .activate").on("click", evt => {
+    evt.preventDefault();
+    $(".activate").addClass('disabled');
+    $('.desactivate').removeClass('disabled');
+});
+
+$("#reservationStatus .desactivate").on("click", evt => {
+    evt.preventDefault();
+    $(".activate").removeClass('disabled');
+    $('.desactivate').addClass('disabled');
+});

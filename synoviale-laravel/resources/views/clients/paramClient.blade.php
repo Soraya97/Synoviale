@@ -14,9 +14,17 @@
         <tr><td>Prénom</td><td>{{$user->person->firstname}}</td></tr>
         <tr><td>Email</td><td>@if(($user->email) == null)-@else{{$user->email}}@endif</td></tr>
         <tr><td>Tél.</td><td>@if(($user->person->phoneNumber1) == null)-@else{{$user->person->phoneNumber1}}@endif</td></tr>
+        @if(($user->person->address) != null)
         <tr><td>Rue</td><td>{{$user->person->address->street1}}</td></tr>
         <tr><td>N° de rue</td><td>{{$user->person->address->streetNumber}}</td></tr>
-        <tr><td>Commentaire</td><td>{{$user->person->comment}}</td></tr>
+        {{--
+        <!-- <tr><td>Localité</td><td>{{$user->person->address->city->name}}</td></tr>
+        <tr><td>NPA</td><td>{{$user->person->address->city->postalCode}}</td></tr>
+        <tr><td>Canton</td><td>{{$user->person->address->city->canton}}</td></tr>
+        <tr><td>Pays</td><td>{{$user->person->address->city->country->name}}</td></tr> -->
+        --}}
+        @endif
+        <tr><td>Commentaire</td><td>@if(($user->person->comment) == null)-@else{{$user->person->comment}}@endif</td></tr>
     </table>
     <br>
     <div class="row">
