@@ -22,7 +22,7 @@ class TestController extends Controller {
         //
         $tests = Test::all();
 
-        return view('companies.test', compact('tests'));
+        return view('companies/test', compact('tests'));
     }
 
     /**

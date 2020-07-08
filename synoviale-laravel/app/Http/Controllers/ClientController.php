@@ -13,7 +13,7 @@ use App\Address;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\CompteRequest;
+use App\Http\Requests\ClientRequest;
 
 class ClientController extends Controller {
 

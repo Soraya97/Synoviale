@@ -28,8 +28,8 @@ class ClientRequest extends FormRequest
           'name' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'firstname' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'email2' => 'nullable|email',
-          'phoneNumber1' => 'nullable|numeric|min:10|max:10|regex:([0-9])',
-          'phoneNumber2' => 'nullable|numeric|min:10|max:10|regex:([0-9])',
+          'phoneNumber1' => 'nullable|numeric|digits:10',
+          'phoneNumber2' => 'nullable|numeric|digits:10',
           'comment' => 'nullable|max:250',
 
           // address
@@ -40,8 +40,9 @@ class ClientRequest extends FormRequest
 
           // city
           'city' => 'nullable|regex:([A-Z]{1})',
-          'postalCode' => 'nullable|min:4|max:4|numeric',
+          'postalCode' => 'nullable|digits:4|numeric',
           'canton' => 'nullable|regex:([A-Z]{1})',
+          
           // country
           'country' => 'nullable|regex:([A-Z]{1})'
         ];

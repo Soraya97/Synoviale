@@ -5,8 +5,6 @@
 @endsection
 
 @section('contenu')
-<div class="greyBackground">
-
     <div class="container">
 
         <div class="row">
@@ -107,13 +105,15 @@
                     <label for="comment">Commentaire</label>
                     @error('comment')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
-                <button type="submit" class="btn right modal-trigger" href="#confirmCreation">ENREGISTRER</button>
+                <div class="row">
+                  <p><button type="submit" class="btn right modal-trigger col s12 l3 right">ENREGISTRER</button></p>
+                  <p><a href="javascript:history.back()" class="btn col s12 l3">RETOUR</a></p>
+                </div>
+
 
             </form>
 
         </div>
 
     </div>
-
-</div>
 @endsection

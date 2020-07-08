@@ -26,7 +26,7 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('404');
+        return view('errors/404');
     }
 
     /**
@@ -69,7 +69,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
 
         return view('clients/paramClient', compact('user'));
-        
+
     }
 
     /**
