@@ -27,3 +27,6 @@ La structure de [code](Article/backend.md) pour le migration, seeder, et contrô
 
 La structure des contrôleurs pour chaque vue [ici](Article/controleurVue.md)
 
+## Code pour l'authentification
+
+comment coder l'[authentification](Article/authentification.md)
