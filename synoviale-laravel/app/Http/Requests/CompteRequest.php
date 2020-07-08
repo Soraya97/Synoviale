@@ -26,15 +26,15 @@ class CompteRequest extends FormRequest
         return [
           // user
           'username' => 'required',
-          'password' => 'required|min:6|confirmed',
+          'password' => 'required|min:4|confirmed',
           'email' => 'required|email|confirmed',
 
           // person
           'name' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'firstname' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'email2' => 'nullable|email',
-          'phoneNumber1' => 'nullable|numeric|regex:([0-9]{10})|max:10',
-          'phoneNumber2' => 'nullable|numeric|regex:([0-9]{10})|max:10',
+          'phoneNumber1' => 'nullable|numeric|min:10|max:10|regex:([0-9])',
+          'phoneNumber2' => 'nullable|numeric|min:10|max:10|regex:([0-9])',
           'comment' => 'nullable|max:250',
 
           // address
@@ -45,9 +45,8 @@ class CompteRequest extends FormRequest
 
           // city
           'city' => 'nullable|regex:([A-Z]{1})',
-          'postalCode' => 'nullable|regex:([0-9]{4})|max:4',
+          'postalCode' => 'nullable|min:4|max:4|numeric',
           'canton' => 'nullable|regex:([A-Z]{1})',
-
           // country
           'country' => 'nullable|regex:([A-Z]{1})'
         ];

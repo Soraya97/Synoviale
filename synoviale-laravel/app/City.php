@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {    
     protected $fillable = [
-        'postaleCode',
+        'postalCode',
         'name',
         'canton',
-        'contry_id'
+        'country_id'
     ];
 
     public function country()

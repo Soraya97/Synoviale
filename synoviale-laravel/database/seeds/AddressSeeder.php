@@ -20,7 +20,7 @@ class AddressSeeder extends Seeder {
             'streetNumber' => '2',
             'POBox' => 'CP320',
             'city_id' => '1',
-            'person_id' => '1',         
+            'person_id' => '1',
                 ],
                 [
                     
@@ -29,7 +29,7 @@ class AddressSeeder extends Seeder {
                     'streetNumber' => '4',
                     'POBox' => 'CP330',
                     'city_id' => '2',
-                    'person_id' => '2',                 
+                    'person_id' => '2',
         ],
                 [
                     
@@ -38,7 +38,7 @@ class AddressSeeder extends Seeder {
                     'streetNumber' => '6',
                     'POBox' => 'CP340',
                     'city_id' => '3',
-                    'person_id' => '3',                
+                    'person_id' => '3',
         ],
                 [
                     

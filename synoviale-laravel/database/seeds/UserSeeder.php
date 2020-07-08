@@ -38,6 +38,18 @@ class UserSeeder extends Seeder
             'password' => '1234',
             'person_id' => 4,
             ],
+            [
+            'username' => 'lenny',
+            'email' => 'example5@test.com',
+            'password' => '1234',
+            'person_id' => 5,
+            ],
+            [
+            'username' => 'lea',
+            'email' => 'example6@test.com',
+            'password' => '1234',
+            'person_id' => 6,
+            ]
         ]);
     }
 }

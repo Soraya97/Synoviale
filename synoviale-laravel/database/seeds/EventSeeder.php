@@ -15,7 +15,7 @@ class EventSeeder extends Seeder
         DB::table('events')->delete();
 
         DB::table('events')->insert([
-           'name' => 'Bike Test gryon',
+           'name' => 'Bike Test Gryon',
         ]);
     }
 }

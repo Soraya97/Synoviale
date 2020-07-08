@@ -14,8 +14,16 @@ class ClientSeeder extends Seeder {
         DB::table('clients')->delete();
 
         DB::table('clients')->insert([[
-            'homeCanton' => 'VD',
+            'homeCanton' => 'SO',
             'person_id' => '4',
+                ],
+            [
+            'homeCanton' => 'SO',
+            'person_id' => '5',
+                ],
+            [
+            'homeCanton' => 'SO',
+            'person_id' => '6',
                 ]]);
     }
 
