@@ -6,7 +6,7 @@ class CompanySeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *CompanySeeder permet de compléter des informations relatives à une companie
      * @return void
      */
     public function run()
@@ -17,6 +17,7 @@ class CompanySeeder extends Seeder
         DB::table('companies')->insert([[
            
             'name' =>  'Super Sport',
-        ]]);
+        ]
+            ]);
     }
 }

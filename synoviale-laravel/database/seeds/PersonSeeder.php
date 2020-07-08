@@ -6,7 +6,7 @@ class PersonSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *PersonSeeder pemret de compléter des informations relatives à une personne
      * @return void
      */
     public function run() {
@@ -51,6 +51,26 @@ class PersonSeeder extends Seeder {
             'phoneNumber2' => '0214567897',
             'email' => 'lolastuder@gmail.com',
             'email2' => 'lstuder@gmail.com',
+            'comment' => 'Cliente',
+        ],
+            [
+
+            'name' => 'Sutter',
+            'firstname' => 'Lenny',
+            'phoneNumber1' => '0794567899',
+            'phoneNumber2' => '0214567810',
+            'email' => 'lennysutter@gmail.com',
+            'email2' => 'lSutter@gmail.com',
+            'comment' => 'Client',
+        ],
+            [
+
+            'name' => 'Sanen',
+            'firstname' => 'Lea',
+            'phoneNumber1' => '0794567811',
+            'phoneNumber2' => '0214567812',
+            'email' => 'leasanen@gmail.com',
+            'email2' => 'lsanen@gmail.com',
             'comment' => 'Cliente',
         ]]);
     }

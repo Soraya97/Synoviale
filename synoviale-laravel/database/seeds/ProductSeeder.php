@@ -6,7 +6,7 @@ class ProductSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *Product Seeder permet de compléter des informations relatives à un produit
      * @return void
      */
     public function run() {
@@ -14,36 +14,36 @@ class ProductSeeder extends Seeder {
         DB::table('products')->delete();
 
         DB::table('products')->insert([[
-            
-            'shortDescr' => 'Très joli',
-            'longDescr' => 'Magnifiquement bien disigné',
-            'distinctiveSign' => 'bleu roi',
+
+            'shortDescr' => 'SB165',
+            'longDescr' => 'MASTER OF THE GNARNIVERSE. BOLD CLAIM FOR SOME.',
+            'distinctiveSign' => '165',
             'lienWeb' => 'https://www.google.com',
             'brand_id' => '1',
         ],
                 [
-            
-            'shortDescr' => 'Très beau',
-            'longDescr' => 'Magnifiquement bien pensé',
-            'distinctiveSign' => 'rouge vif',
+
+            'shortDescr' => 'Piolet Complete Bike',
+            'longDescr' => 'The Piolet is our dependable, simple, and capable rough-and-tumble bike.',
+            'distinctiveSign' => 'Piolet',
             'lienWeb' => 'https://www.google.com',
-            'brand_id' => '1',
+            'brand_id' => '2',
         ],
             [
 
-            'shortDescr' => 'Très élégant',
-            'longDescr' => 'Magnifiquement bien réussi',
-            'distinctiveSign' => 'vert sapin',
+            'shortDescr' => 'Dimanche 28',
+            'longDescr' => 'Pour tous ! Partout ! Tout le temps !',
+            'distinctiveSign' => '28',
             'lienWeb' => 'https://www.google.com',
-            'brand_id' => '1',
+            'brand_id' => '3',
         ],
                 [
 
-            'shortDescr' => 'Très racé',
-            'longDescr' => 'Magnifiquement bien fabriqué',
-            'distinctiveSign' => 'noir mat',
+            'shortDescr' => 'Gravel 10',
+            'longDescr' => 'Le SCOTT Addict Gravel 10 se prête à toutes les routes et à toutes les conditions météo',
+            'distinctiveSign' => '274774',
             'lienWeb' => 'https://www.google.com',
-            'brand_id' => '1',
+            'brand_id' => '4',
         ]]);
     }
 

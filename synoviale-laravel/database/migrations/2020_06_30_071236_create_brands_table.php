@@ -8,7 +8,7 @@ class CreateBrandsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table brands est en realtion avec les companies qui les représentes
      * @return void
      */
     public function up()

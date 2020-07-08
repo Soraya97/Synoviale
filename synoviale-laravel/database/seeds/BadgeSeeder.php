@@ -6,7 +6,7 @@ class BadgeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *BadgeSeeder permet de créer des badge
      * @return void
      */
     public function run()

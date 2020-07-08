@@ -16,14 +16,14 @@
         <tr><td>Tél.</td><td>@if(($user->person->phoneNumber1) == null)-@else{{$user->person->phoneNumber1}}@endif</td></tr>
         <tr><td>Rue</td><td>{{$user->person->address->street1}}</td></tr>
         <tr><td>N° de rue</td><td>{{$user->person->address->streetNumber}}</td></tr>
-        <tr><td>Localité</td><td>{{$user->person->address->city->name}}</td></tr>
-        <tr><td>NPA</td><td>{{$user->person->address->city->postalCode}}</td></tr>
-        <tr><td>Canton</td><td>{{$user->person->address->city->canton}}</td></tr>
-        <tr><td>Pays</td><td>{{$user->person->address->city->country->name}}</td></tr>
         <tr><td>Commentaire</td><td>{{$user->person->comment}}</td></tr>
     </table>
-    <p><a href="{{route('user.edit', [$user->id])}}" class="btn center-align">Modifier</a></p>
-    <p><a href="#sure" class="btn center-align modal-trigger">Supprimer mon compte</a></p>
+    <br>
+    <div class="row">
+    <p><a href="{{route('user.edit', [$user->id])}}" class="btn col s12 l4 right">Modifier</a></p>
+    <p><a href="#sure" class="modal-trigger col s12 bold align-bottom-link center hide-on-med-and-up">SUPPRIMER MON COMPTE</a></p>
+    <p><a href="#sure" class="modal-trigger col s12 bold align-bottom-link hide-on-small-only">SUPPRIMER MON COMPTE</a></p>
+  </div>
 </div>
 
 <div id="sure" class="modal">
@@ -36,7 +36,7 @@
         <form method="POST" action="">
             @csrf
             @method('DELETE')
-            <input type="submit" value="Oui" class="modal-close btn-flat">Oui</input>
+            <input type="submit" value="Oui" class="modal-close btn-flat"></input>
             <a href="" class="modal-close btn-flat">Non</a>
         </form>
 

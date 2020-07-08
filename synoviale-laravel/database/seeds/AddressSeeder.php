@@ -6,7 +6,7 @@ class AddressSeeder extends Seeder {
 
     /**
      * Run the database seeds.
-     *
+     *AddressSeeder permet de compléter les address pour des personnes
      * @return void
      */
     public function run() {
@@ -47,7 +47,25 @@ class AddressSeeder extends Seeder {
                     'streetNumber' => '8',
                     'POBox' => 'CP350',
                     'city_id' => '4',
-                    'person_id' => '4',
+                    'person_id' => '4',                    
+        ],
+            [
+                    
+                    'street1' => 'Kriegstrasse',
+                    'street2' => 'Kirschestrasse',
+                    'streetNumber' => '10',
+                    'POBox' => 'CP360',
+                    'city_id' => '4',
+                    'person_id' => '5',                    
+        ],
+            [
+                    
+                    'street1' => 'Apfelstrasse',
+                    'street2' => 'Vespastrasse',
+                    'streetNumber' => '12',
+                    'POBox' => 'CP370',
+                    'city_id' => '4',
+                    'person_id' => '6',                    
         ]
                 ]);
     }

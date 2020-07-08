@@ -11,3 +11,10 @@ $("#reservationStatus .desactivate").on("click", evt => {
     $(".activate").removeClass('disabled');
     $('.desactivate').addClass('disabled');
 });
+
+// 
+// $(".menu li").on("click", evt => {
+//   let btn = $(evt.currentTarget);
+//   $('li').removeClass('active');
+//   btn.addClass('active');
+// });

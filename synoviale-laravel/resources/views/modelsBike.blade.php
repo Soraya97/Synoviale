@@ -31,7 +31,10 @@
                 </select>
             </div>
         </div>
-        <button type="submit" class="btn">VALIDER</button>
+        <div class="row">
+          <button type="submit" class="btn col s12 l2 right">VALIDER</button>
+        </div>
+
     </form>
 
     <hr>

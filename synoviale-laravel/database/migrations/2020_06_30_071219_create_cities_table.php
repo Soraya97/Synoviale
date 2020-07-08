@@ -8,7 +8,7 @@ class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table cities indispensable dans l'adresse des personnes enregistrées
      * @return void
      */
     public function up()

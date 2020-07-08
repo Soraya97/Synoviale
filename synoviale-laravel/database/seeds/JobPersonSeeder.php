@@ -6,7 +6,7 @@ class JobPersonSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *JobPersonSeeder permet de compléter le job d'une personne
      * @return void
      */
     public function run()

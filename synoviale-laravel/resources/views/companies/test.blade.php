@@ -13,8 +13,8 @@
             <h2>COMMENCER UN TEST</h2>
             <form id="scanQR" method="get">
                 <div class="row">
-                    <div class="col l10 s12">Marque du vélo</div>
-                    <div class="col l10 s12">
+                    <div class="col s12">Marque du vélo</div>
+                    <div class="col s12">
                         <select class="input-field" id="marque">
                             <option value="Yeti" selected>Yeti</option>
                             <option value="Orange">Orange</option>
@@ -23,15 +23,19 @@
                 </div>
 
                 <div class="row">
-                    <div class="col l10 s12">Nom du vélo</div>
-                    <div class="col l10 s12">
+                    <div class="col s12">Nom du vélo</div>
+                    <div class="col s12">
                         <select class="input-field" id="nom">
                             <option value="Vélo 1" selected>Vélo 1</option>
                             <option value="Vélo 2">Vélo 2</option>
                         </select>
                     </div>
                 </div>
+                  <div class="input-field center-align row">
+                      <div class="s12">
                 <button type="submit" class="btn">SCANNER LE QR CODE</button>
+              </div>
+            </div>
             </form>
             <br>
         </div>
@@ -48,7 +52,9 @@
                                 <p>13h02</p>
                             </div>
                             <div class="card-action">
-                                <a class="btn modal-trigger orange-light black-text" href="#endTest">TERMINER LE TEST</a>
+                              <div class="center-align row">
+                                  <a class="btn modal-trigger orange-light black-text s12" href="#endTest">TERMINER LE TEST</a>
+                              </div>
                             </div>
                         </div>
                     </div>

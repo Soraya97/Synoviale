@@ -46,7 +46,7 @@ class CompteRequest extends FormRequest
           // city
           'city' => 'nullable|regex:([A-Z]{1})',
           'postalCode' => 'nullable|min:4|max:4|numeric',
-
+          'canton' => 'nullable|regex:([A-Z]{1})',
           // country
           'country' => 'nullable|regex:([A-Z]{1})'
         ];

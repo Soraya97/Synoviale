@@ -8,7 +8,7 @@ class CreateBrandEditionTable extends Migration {
 
     /**
      * Run the migrations.
-     *
+     *Table brand est en realtion avec les companies qui les représentes
      * @return void
      */
     public function up() {

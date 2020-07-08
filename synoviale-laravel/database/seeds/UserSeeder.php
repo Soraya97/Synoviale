@@ -6,7 +6,7 @@ class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *UserSeeder permet de compléter des informations relatives à un utilisateur
      * @return void
      */
     public function run()
@@ -38,6 +38,18 @@ class UserSeeder extends Seeder
             'password' => '1234',
             'person_id' => 4,
             ],
+            [
+            'username' => 'lenny',
+            'email' => 'example5@test.com',
+            'password' => '1234',
+            'person_id' => 5,
+            ],
+            [
+            'username' => 'lea',
+            'email' => 'example6@test.com',
+            'password' => '1234',
+            'person_id' => 6,
+            ]
         ]);
     }
 }

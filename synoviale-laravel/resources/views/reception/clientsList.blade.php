@@ -10,7 +10,8 @@
     <div class="row">
         <form class="col l3 s12 right">
             <div class="input-field">
-                <label class="label-icon" for="search"><i class="material-icons">search</i>Rechercher</label>
+                <i class="material-icons prefix">search</i>
+                <label class="label-icon" for="search" placeholder="Rechercher"></label>
                 <input id="search" type="search">
             </div>
         </form>
@@ -40,30 +41,12 @@
                 <tr>
                     <td>{{$client->person->name}}</td>
                     <td>{{$client->person->firstname}}</td>
-                    <td>{{$client->person->email}}</td>
-                    @foreach($client->badge as $pass)
-                    <td>{{$pass->number}}</td>
-                    <td>{{$pass->testday->date}} de {{$pass->testday->startHour}} à {{$pass->testday->endHour}}</td>
-                    @endforeach
-                    <td><a href="{{route('client.show', [$client->id])}}" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
+                    <td>@if(($client->person->email) == null)-@else{{$client->person->email}}@endif</td>
+                    <td>@foreach($client->badge as $pass) @if(($pass->number) == null)-@else{{$pass->number}}@endif <br>@endforeach</td>
+                    <td>@foreach($client->badge as $pass) {{$pass->testday->date}} de {{$pass->testday->startHour}} à {{$pass->testday->endHour}} <br>@endforeach</td>
+                    <td><a href="{{route('client.show', [$client->id])}}" class="btn blue-light greyDark-text"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
                 </tr>
                 @endforeach
-                <tr>
-                    <td>Nom</td>
-                    <td>Prénom</td>
-                    <td>Login</td>
-                    <td>QR Code</td>
-                    <td>Jours</td>
-                    <td><a href="#" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
-                </tr>
-                <tr>
-                    <td>Nom</td>
-                    <td>Prénom</td>
-                    <td>Login</td>
-                    <td>QR Code</td>
-                    <td>Jours</td>
-                    <td><a href="" class="btn blue-light"><i class="material-icons">remove_red_eye</i> VOIR</a></td>
-                </tr>
             </tbody>
         </table>
     </div>

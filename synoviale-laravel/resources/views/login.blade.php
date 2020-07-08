@@ -38,12 +38,13 @@
                     </div>
                 </div>
 
-                <div class="input-field center-align">
+                <div class="input-field center-align row">
                     <div class="s12">
-                        <button type="submit" class="btn btn-primary">
+                      <p class="col l5 show-on-medium-and-up"></p>
+                        <button type="submit" class="btn btn-primary col s12 l2">
                             {{ __('Se connecter') }}
                         </button>
-
+                      <p class="col l5 show-on-medium-and-up"></p>
                     </div>
                 </div>
             </form>
@@ -53,7 +54,7 @@
     <div class="input-field center-align">
         <div class="s12">
             <p>Pas de compte ?</p>
-            <a href="{{route('compte.create')}}">CRÉER UN COMPTE</a>
+            <a href="{{route('compte.create')}}" class="bold">CRÉER UN COMPTE</a>
         </div>
     </div>
 

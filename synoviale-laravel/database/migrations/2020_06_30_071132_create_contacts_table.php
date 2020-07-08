@@ -8,7 +8,7 @@ class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table contact est indispensable pour les entreprises, celle-ci leurs permet d'avoir une personne de contact à disposition
      * @return void
      */
     public function up()

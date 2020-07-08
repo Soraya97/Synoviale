@@ -8,7 +8,7 @@ class CreateJobPersonTable extends Migration {
 
     /**
      * Run the migrations.
-     *
+     *Table pivot job person nécessaire pour attribuer un job à une person
      * @return void
      */
     public function up() {

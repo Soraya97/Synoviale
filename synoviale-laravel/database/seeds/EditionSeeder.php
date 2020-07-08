@@ -6,7 +6,7 @@ class EditionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     *EditionSeeder permet de compléter des informations relatives à une édition
      * @return void
      */
     public function run()

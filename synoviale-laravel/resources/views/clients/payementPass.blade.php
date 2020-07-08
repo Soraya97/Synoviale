@@ -32,8 +32,8 @@
                         <span>Sur place</span>
                     </label>
                 </p>
-                <div>
-                    <a href="{{url('/pass')}}" class="btn">SUIVANT</a>
+                <div class="row">
+                    <a href="{{url('/pass')}}" class="btn col s12 l2 left">SUIVANT</a>
                 </div>
             </form>
         </div>

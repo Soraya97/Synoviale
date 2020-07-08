@@ -70,7 +70,8 @@
 
     &.disabled a,
     &.disabled a:hover {
-      color: rgba($tabs-text-color, .4);
+      color: #ffa000;
+      font-weight: bold;
       cursor: default;
     }
   }

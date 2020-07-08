@@ -8,7 +8,7 @@ class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table clients nécessaire pour l'espace qui leur est dédié
      * @return void
      */
     public function up()

@@ -8,7 +8,7 @@ class CreateAddresstypesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Table addresstypes indispensable pour toutes personnes pssédant une addresse
      * @return void
      */
     public function up()

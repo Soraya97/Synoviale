@@ -19324,7 +19324,7 @@ $(document).ready(function () {
 
   $('.carousel.carousel-slider').carousel({
     fullWidth: true,
-    indicators: true
+    indicators: false
   });
   /*
   This function comes from https://materializecss.com/media.html
@@ -25611,8 +25611,8 @@ M.anime = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\soray\Dropbox\ProjArt\synoviale-laravel\Synoviale\synoviale-laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\soray\Dropbox\ProjArt\synoviale-laravel\Synoviale\synoviale-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Soraya\Dropbox\ProjArt\synoviale-laravel\Synoviale\synoviale-laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Soraya\Dropbox\ProjArt\synoviale-laravel\Synoviale\synoviale-laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

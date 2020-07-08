@@ -45,6 +45,11 @@
 
 footer a, footer div {
   color: white;
+
+}
+
+footer a:hover {
+  color: #ffa000;
 }
 
 html,
@@ -99,12 +104,22 @@ span {
       margin-top: 5px;
     }
 
+
+}
+@media screen and (min-width: 30rem), screen and (min-device-width: 30rem) {
+.desktopText {
+  font-size: 5rem;
+}
+
+.desktopTextP {
+  font-size: 1.2rem;
+}
 }
 
 .img {
     background-size: cover;
     background-position: center;
-    width: 85%;
+    width: 75%;
     height: auto;
 }
 
@@ -121,9 +136,13 @@ span {
   margin-top: 5px;
 }
 
-.greyBackground {
+.greyBackground, .greyBackgroundContainer {
   background-color: #f5f5f5;
-  padding: 0.25rem;
+}
+
+.greyBackgroundContainer {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .bold {
@@ -145,5 +164,17 @@ span {
 }
 
 .align-bottom {
-  margin-top: 20rem;
+  margin-top: 17rem;
+}
+.align-bottom-link{
+  margin-top: 2.2rem;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1rem;
+}
+
+.greyDark-text {
+  color: #424242
 }
