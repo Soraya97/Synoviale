@@ -106,8 +106,9 @@
                     @error('comment')<small class="alert alert-danger red-text">{{ $message }}</small>@enderror
                 </div>
                 <div class="row">
-                  <p><button type="submit" class="btn right modal-trigger col s12 l3 right">ENREGISTRER</button></p>
-                  <p><a href="javascript:history.back()" class="btn col s12 l3">RETOUR</a></p>
+                  <p><button type="submit" class="btn right modal-trigger col s12 l3 right">ENREGISTRER</button></p><br>
+                  <p><a href="javascript:history.back()" class="btn col s12 l3 align-bottom-link hide-on-med-and-up">RETOUR</a></p>
+                  <p><a href="javascript:history.back()" class="btn col s12 l3 hide-on-small-only">RETOUR</a></p>
                 </div>
 
 
