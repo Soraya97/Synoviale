@@ -19,7 +19,7 @@ class Guest
     {
         if(Session::has('user'))
         {
-            return redirect('/');
+            return redirect('404');
         }
         return $next($request);
     }

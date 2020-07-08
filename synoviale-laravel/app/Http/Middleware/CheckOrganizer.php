@@ -19,7 +19,7 @@ class CheckOrganizer
     {
         if(!Session::has('organizer'))
         {
-            return redirect('/');
+            return redirect('404');
         }
         return $next($request);
     }

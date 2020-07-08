@@ -16,10 +16,7 @@ class ClientController extends Controller {
 
     public function __construct()
     {
-        // $this->middleware('checkuser');
-        //
-        // $this->middleware('checkclient');
-
+        $this->middleware('checkemployee');
     }
     /**
      * Display a listing of the resource.
@@ -67,25 +64,58 @@ class ClientController extends Controller {
 
         Person::create($person);
 
-        $personId = Person::where($person)->first();
+        $personId = Person::where($personTest)->first();
 
         $request->request->add(['person_id' => $personId->id]);
 
         $client = $request->only('person_id');
 
-        // User::create($user);
-
         Client::create($client);
 
-        // adresse
 
-        $address = $request->only('street1','street2','streetNumber','POBox','city_id');
+        // adresse
+        
+        if($request->country == '[]')
+        {
+        // gestion du paye     
+
+            if(!Country::where('name',$request->country)->first())
+            {
+                Country::create(['name' => $request->country]);
+            }
+        
+
+            //On ajoute country_id à la requet
+
+            $countryId = Country::where('name',$request->country)->first();
+
+            $request->request->add(['country_id' => $countryId->id]);
+
+            // Gestion de la ville
+
+            if(!City::where('name',$request->city)->first())
+            {
+                City::create(['name' => $request->city,'postalCode' => $request->postalCode,'country_id' => $request->country_id,'canton' => $request->canton]);
+            }
+
+            $cityId = City::where('name',$request->city)->first();
+
+            $request->request->add(['city_id' => $cityId->id]);
+
+            $address = $request->only('street1','street2','streetNumber','POBox','city_id','person_id');
+
+            Address::create($address);
+
+        }
+
+        // création des pass
 
         $client = Client::where($client)->first();
 
         $request->request->add(['event_id' => 1]);
         $request->request->add(['edition_id' => 1]);
         $request->request->add(['client_id' => $client->id]);
+
 
         if(isset($request->date)) {
             foreach ($request->date as $testday)

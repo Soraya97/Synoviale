@@ -17,9 +17,9 @@ class CheckEmployee
      */
     public function handle($request, Closure $next)
     {
-        if(!Session::has('employee') || !Session::has('organizer'))
+        if(!Session::has('employee'))
         {
-            return redirect('/');
+            return redirect('404');
         }
         return $next($request);
     }

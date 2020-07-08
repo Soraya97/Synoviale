@@ -19,7 +19,7 @@ class CheckClient
     {
         if(!Session::has('client'))
         {
-            return redirect('/');
+            return redirect('404');
         }     
         return $next($request);
 

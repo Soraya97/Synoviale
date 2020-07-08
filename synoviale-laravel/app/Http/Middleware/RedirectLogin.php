@@ -17,7 +17,6 @@ class RedirectLogin
      */
     public function handle($request, Closure $next)
     {
-
         if(Session::has('client'))
         {
             return redirect('/');

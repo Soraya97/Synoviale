@@ -19,13 +19,12 @@ class CheckUser
     {
         if(!Session::has('user'))
         {
-            return redirect('/');
+            return redirect('404');
         }
         elseif($request->user != Session::get('user.id'))
         {
             return redirect()->route('user.show',Session::get('user.id'));
-        }
-        
+        }  
         return $next($request);
     }
 }

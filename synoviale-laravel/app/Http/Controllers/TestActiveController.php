@@ -17,7 +17,7 @@ class TestActiveController extends Controller
     public function index()
     {
 
-        return TestResource::collection(Test::all());
+       // return TestResource::collection(Test::all());
 
         return TestResource::collection(Test::where('active',1)->get());
     }

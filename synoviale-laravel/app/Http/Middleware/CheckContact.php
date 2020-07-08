@@ -19,7 +19,7 @@ class CheckContact
     {
         if(!Session::has('contact'))
         {
-            return redirect('/');
+            return redirect('404');
         }
         return $next($request);
     }

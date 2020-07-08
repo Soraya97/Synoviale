@@ -101,7 +101,9 @@ class CompteController extends Controller
 
         Client::create($client);
 
+
         // adresse
+
         if($request->country == '[]')
         {
         // gestion du paye
@@ -111,8 +113,7 @@ class CompteController extends Controller
             if(!Country::where('name',$request->country)->first())
             {
                 Country::create(['name' => $request->country]);
-            }
-        
+            }  
 
             //On ajoute country_id à la requet
 
