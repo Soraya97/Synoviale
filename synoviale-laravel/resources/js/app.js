@@ -130,19 +130,7 @@ $("#bikeAvailable").on("submit", evt => {
 When the screen is large, like a desktop, the partners' logos are vertically aligned
 When on mobile, the logos are on a carousel
  */
-if (screen.height < 800) {
-  let startCard = '<div class="carousel carousel-slider center">';
-  let logo1 = '<a class="carousel-item" href="#!"><img src="img/logo-gryon-tourisme.png"></a>';
-  let logo2 = '<a class="carousel-item" href="#!"><img src="img/skiClubGryon.png"></a>';
-  let endCard = '</div>'
-  let partners = '';
-  $('#partners').append(partners);
-}
 
-if (screen.height >= 800) {
-  let partners = '<div class=""><img src="img/logo-gryon-tourisme.png"><img src="img/skiClubGryon.png"></div>';
-  $('#partners').append(partners);
-}
 
 /*
  This code is used on the page of a specific client, chosen by the reception
