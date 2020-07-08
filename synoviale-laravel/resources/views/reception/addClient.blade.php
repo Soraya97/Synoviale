@@ -79,10 +79,10 @@
               <label for="city">Localité</label>
               @error('city')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
           </div>
-          <div class="@error('postaleCode') is-invalid @enderror input-field col l4 s3">
-              <input type="text" name="postaleCode" placeholder="1008" class="validate">
-              <label for="postaleCode">NPA</label>
-              @error('postaleCode')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
+          <div class="@error('postalCode') is-invalid @enderror input-field col l4 s3">
+              <input type="text" name="postalCode" placeholder="1008" class="validate">
+              <label for="postalCode">NPA</label>
+              @error('postalCode')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
           </div>
           <div class="@error('canton') is-invalid @enderror input-field col l6 s12">
               <input type="text" name="canton" placeholder="Vaud" class="validate">

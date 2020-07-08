@@ -43,7 +43,7 @@ npm
 
 ## jQuery
 
-nous utilisons un CDN de jQuery (voir plus bas).
+Nous utilisons un CDN de jQuery (voir plus bas).
 
 ## Materialize
 

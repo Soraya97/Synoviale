@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompteRequest extends FormRequest
+class ClientRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,6 @@ class CompteRequest extends FormRequest
     public function rules()
     {
         return [
-          // user
-          'username' => 'required|unique:users',
-          'password' => 'required|min:4|confirmed',
-          'email' => 'required|email|confirmed|unique:users',
-
           // person
           'name' => 'required|min:3|max:100|regex:([A-Z]{1})',
           'firstname' => 'required|min:3|max:100|regex:([A-Z]{1})',
@@ -46,7 +41,7 @@ class CompteRequest extends FormRequest
           // city
           'city' => 'nullable|regex:([A-Z]{1})',
           'postalCode' => 'nullable|min:4|max:4|numeric',
-
+          'canton' => 'nullable|regex:([A-Z]{1})',
           // country
           'country' => 'nullable|regex:([A-Z]{1})'
         ];
