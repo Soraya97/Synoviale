@@ -18,10 +18,11 @@
         <tr><td>N° de rue</td><td>{{$user->person->address->streetNumber}}</td></tr>
         <tr><td>Commentaire</td><td>{{$user->person->comment}}</td></tr>
     </table>
+    <br>
     <div class="row">
-    <p><a href="{{route('user.edit', [$user->id])}}" class="btn col s12 l4">Modifier</a></p>
-    <p class="col l4 show-on-medium-and-up"></p>
-    <p><a href="#sure" class="btn modal-trigger col s12 l4">Supprimer mon compte</a></p>
+    <p><a href="{{route('user.edit', [$user->id])}}" class="btn col s12 l4 right">Modifier</a></p>
+    <p><a href="#sure" class="modal-trigger col s12 bold align-bottom-link center hide-on-med-and-up">SUPPRIMER MON COMPTE</a></p>
+    <p><a href="#sure" class="modal-trigger col s12 bold align-bottom-link hide-on-small-only">SUPPRIMER MON COMPTE</a></p>
   </div>
 </div>
 

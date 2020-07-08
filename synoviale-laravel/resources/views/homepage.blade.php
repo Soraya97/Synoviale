@@ -10,9 +10,9 @@
         <li>
             <img src="img/bike.jpg" alt="Un cycliste de dos">
             <div class="caption center-align">
-                <h1 class="white-text">{{$edition->number}}<sup>e</sup> édition</h1>
-                <h2 class="white-text">2-4 OCTOBRE 2020</h2>
-                <p><a href="#!" class="bold">EN SAVOIR PLUS</a></p>
+                <h1 class="white-text desktopText">{{$edition->number}}<sup>e</sup> édition</h1>
+                <h2 class="white-text desktopText">2-4 OCTOBRE 2020</h2>
+                <p><a href="#!" class="bold desktopTextP">EN SAVOIR PLUS</a></p>
                 <div class="row align-bottom">
                   <p class="col l5 show-on-medium-and-up"></p>
                 @user
@@ -27,9 +27,9 @@
         <li>
             <img src="img/fonctionnalites.jpg" alt="Un cycliste regardant le soleil couchant">
             <div class="caption center-align">
-                <h2 class="white-text">Nouvelle fonctionnalité !</h2 >
-                <p class="white-text bold">Vous pouvez maintenant voir la disponibilité des vélos.</p>
-                <p><a href="" class="bold">DÉCOUVRIR</a><br></p>
+                <h2 class="white-text desktopText">Nouvelle fonctionnalité !</h2 >
+                <p class="white-text bold desktopTextP">Vous pouvez maintenant voir la disponibilité des vélos.</p>
+                <p><a href="" class="bold desktopTextP">DÉCOUVRIR</a><br></p>
                 <div class="row align-bottom">
                   <p class="col l5 show-on-medium-and-up"></p>
                 @user
@@ -46,7 +46,7 @@
 
 <div class="container section">
     <h2>DÉCOUVREZ NOS PARCOURS</h2>
-    <div class=" center-align">
+    <div class="">
       <img src="img/news.jpg" class="img img-responsive" alt="Pré dans la montagne lors de la Golden Hour">
     </div>
 

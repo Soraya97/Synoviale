@@ -3522,8 +3522,8 @@ table span.badge {
 }
 
 .section {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .section.no-pad {
@@ -4773,9 +4773,9 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 110%;
-  margin: 1.6666666667rem 0 1rem 0;
+  margin: 1.3333333333rem 0 0.8rem 0;
 }
 
 h4 {
@@ -5306,7 +5306,8 @@ small {
 
 .tabs .tab.disabled a,
 .tabs .tab.disabled a:hover {
-  color: rgba(255, 160, 0, 0.4);
+  color: #ffa000;
+  font-weight: bold;
   cursor: default;
 }
 

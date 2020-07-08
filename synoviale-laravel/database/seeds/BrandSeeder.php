@@ -16,14 +16,26 @@ class BrandSeeder extends Seeder
 
         DB::table('brands')->insert([[
            'name' => 'Yeti',
-            'shortDescr' => 'Très rapide',
-            'longDescr' => 'Changement des vitesses rapide',
+            'shortDescr' => 'Designed to Race. Built to Rally.',
+            'longDescr' => 'Très bonne marque',
             'company_id' => '1',
         ],
                 [
            'name' => 'Orange',
-            'shortDescr' => 'Très maniable',
-            'longDescr' => 'Fait en carbone',
+            'shortDescr' => 'The finiest bicycle product',
+            'longDescr' => 'Très bonne marque',
+            'company_id' => '1',
+        ],
+                [
+           'name' => 'Moustache',
+            'shortDescr' => 'Pour laisser la voiture au garage...',
+            'longDescr' => 'Très bonne marque',
+            'company_id' => '1',
+        ],
+                [
+           'name' => 'Scott',
+            'shortDescr' => 'Heroes inspire heroes',
+            'longDescr' => 'Très bonne marque',
             'company_id' => '1',
         ]]);
     }

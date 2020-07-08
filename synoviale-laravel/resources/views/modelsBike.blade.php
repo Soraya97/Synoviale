@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="row">
-          <button type="submit" class="btn col s12 l2">VALIDER</button>
+          <button type="submit" class="btn col s12 l2 right">VALIDER</button>
         </div>
 
     </form>
