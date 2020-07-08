@@ -25,7 +25,7 @@ class CompteController extends Controller
     {
 
         $data =  $request->validate([
-            "username"           =>    "required|unique:users",
+            "username"           =>    "required",
             "password"        =>    "required"
         ]);
 
@@ -76,7 +76,7 @@ class CompteController extends Controller
     public function store(Request $request)
     {
 
-       // $data = $request->validate();   
+       // $data = $request->validate();
 
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
