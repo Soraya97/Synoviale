@@ -76,16 +76,11 @@ class CompteController extends Controller
     public function store(Request $request)
     {
 
-<<<<<<< HEAD
        // $data = $request->validate();   
-=======
-        // $data = $request->validate();
->>>>>>> 79999219829e3465813411b73cdf81bc7badeb54
 
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
         Person::create($person);
-<<<<<<< HEAD
 
         $personTest =  $request->only('name','firstname');
 
@@ -95,10 +90,6 @@ class CompteController extends Controller
         {
             return redirect('inscription');
         }
-=======
-        $personTest = $request->only('name', 'firstname');
-        $personId = Person::where($personTest)->first();
->>>>>>> 79999219829e3465813411b73cdf81bc7badeb54
 
         $request->request->add(['person_id' => $personId->id]);
 
@@ -111,11 +102,6 @@ class CompteController extends Controller
         Client::create($client);
 
         // adresse
-<<<<<<< HEAD
-=======
-
-        $address = $request->only('street1','street2','streetNumber','POBox','city_id');
->>>>>>> 79999219829e3465813411b73cdf81bc7badeb54
 
         // gestion du paye
 
@@ -147,14 +133,9 @@ class CompteController extends Controller
 
         // code de connexion
 
-<<<<<<< HEAD
         $userTest = $request->only('username','password');
 
         $userC = User::where($userTest)->first();
-=======
-        // ajouter code de connexion
-        $userC = User::where($user)->first();
->>>>>>> 79999219829e3465813411b73cdf81bc7badeb54
 
         $request->session()->put('user',$userC);
 
