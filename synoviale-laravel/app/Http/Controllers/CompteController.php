@@ -120,7 +120,7 @@ class CompteController extends Controller
 
         if(!City::where('name',$request->city)->first())
         {
-            //City::create(['name' => $request->city,'postalCode' => $request->postalCode,'country_id' => $request->country_id,'canton' => $request->canton]);
+            City::create(['name' => $request->city,'postalCode' => $request->postalCode,'country_id' => $request->country_id,'canton' => $request->canton]);
         }
 
         $cityId = City::where('name',$request->city)->first();

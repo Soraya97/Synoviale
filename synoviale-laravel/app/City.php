@@ -10,7 +10,7 @@ class City extends Model
         'postalCode',
         'name',
         'canton',
-        'contry_id'
+        'country_id'
     ];
 
     public function country()

@@ -16,6 +16,7 @@
         <tr><td>Tél.</td><td>@if(($user->person->phoneNumber1) == null)-@else{{$user->person->phoneNumber1}}@endif</td></tr>
         <tr><td>Rue</td><td>{{$user->person->address->street1}}</td></tr>
         <tr><td>N° de rue</td><td>{{$user->person->address->streetNumber}}</td></tr>
+        <tr><td>Localité</td><td>{{$user->person->address->city->name}}</td></tr>
         <tr><td>Commentaire</td><td>{{$user->person->comment}}</td></tr>
     </table>
     <br>
