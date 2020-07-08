@@ -13,22 +13,22 @@ class AddresstypeSeeder extends Seeder {
         //
         DB::table('addresstypes')->delete();
         DB::table('addresstypes')->insert([[
-            'description' => 'Très paisible',
+            'description' => 'Professionnelle',
             'company_id' => '1',
             'address_id' => '1',
         ],
                 [
-            'description' => 'Très sympa',
+            'description' => 'Professionnelle',
             'company_id' => '2',
             'address_id' => '2',
         ],
                 [
-            'description' => 'Très ensoleillé',
+            'description' => 'Privée',
             'company_id' => '3',
             'address_id' => '3',
         ],
                 [
-            'description' => 'Très bien',
+            'description' => 'Privée',
             'company_id' => '4',
             'address_id' => '4',
         ]
