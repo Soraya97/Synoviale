@@ -95,49 +95,49 @@ class BadgeController extends Controller
         return view('clients/pass',compact('badges'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Badge  $badge
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Badge $badge)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Badge  $badge
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Badge $badge)
-    {
-        $data = $request->only([
-            'number',
-            'client_id',
-            'test_day_id',
-            'edition_id',
-            'event_id'
-        ]);
-
-        $badge->update($data);
-
-        return redirect('product');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Badge  $badge
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Badge $badge)
-    {
-        $badge->delete();
-
-        return redirect('badge');
-    }
+//    /**
+//     * Show the form for editing the specified resource.
+//     *
+//     * @param  \App\Badge  $badge
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function edit(Badge $badge)
+//    {
+//        //
+//    }
+//
+//    /**
+//     * Update the specified resource in storage.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     * @param  \App\Badge  $badge
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function update(Request $request, Badge $badge)
+//    {
+//        $data = $request->only([
+//            'number',
+//            'client_id',
+//            'test_day_id',
+//            'edition_id',
+//            'event_id'
+//        ]);
+//
+//        $badge->update($data);
+//
+//        return redirect('product');
+//    }
+//
+//    /**
+//     * Remove the specified resource from storage.
+//     *
+//     * @param  \App\Badge  $badge
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function destroy(Badge $badge)
+//    {
+//        $badge->delete();
+//
+//        return redirect('badge');
+//    }
 }

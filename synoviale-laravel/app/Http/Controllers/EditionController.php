@@ -23,88 +23,88 @@ class EditionController extends Controller
         return view('homepage',compact('edition'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return redirect('404');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(EditionRequest $request)
-    {
-
-        Edition::create($data);
-
-        return redirect('edition');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Edition  $edition
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Edition $edition)
-    {
-        //
-        return view('onlyedition',compact('edition'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Edition  $edition
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Edition $edition)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Edition  $edition
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Edition $edition)
-    {
-        //
-        $data = $request->only([
-            'number',
-            'place',
-            'startDate',
-            'endDate',
-            'event_id'
-        ]);
-
-        $edition->update($data);
-
-        return redirect('edition');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Edition  $edition
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Edition $edition)
-    {
-        //
-         $edition->delete();
-
-        return redirect('edition');
-    }
+//    /**
+//     * Show the form for creating a new resource.
+//     *
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function create()
+//    {
+//        //
+//        return redirect('404');
+//    }
+//
+//    /**
+//     * Store a newly created resource in storage.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function store(EditionRequest $request)
+//    {
+//
+//        Edition::create($data);
+//
+//        return redirect('edition');
+//    }
+//
+//    /**
+//     * Display the specified resource.
+//     *
+//     * @param  \App\Edition  $edition
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function show(Edition $edition)
+//    {
+//        //
+//        return view('onlyedition',compact('edition'));
+//    }
+//
+//    /**
+//     * Show the form for editing the specified resource.
+//     *
+//     * @param  \App\Edition  $edition
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function edit(Edition $edition)
+//    {
+//        //
+//    }
+//
+//    /**
+//     * Update the specified resource in storage.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     * @param  \App\Edition  $edition
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function update(Request $request, Edition $edition)
+//    {
+//        //
+//        $data = $request->only([
+//            'number',
+//            'place',
+//            'startDate',
+//            'endDate',
+//            'event_id'
+//        ]);
+//
+//        $edition->update($data);
+//
+//        return redirect('edition');
+//    }
+//
+//    /**
+//     * Remove the specified resource from storage.
+//     *
+//     * @param  \App\Edition  $edition
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function destroy(Edition $edition)
+//    {
+//        //
+//         $edition->delete();
+//
+//        return redirect('edition');
+//    }
 }

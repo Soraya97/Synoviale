@@ -28,34 +28,34 @@ class UserController extends Controller
         return redirect('404');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('adduser');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'username' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-        ]);
-
-        User::create($data);
-
-        return redirect('user');
-    }
+//    /**
+//     * Show the form for creating a new resource.
+//     *
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function create()
+//    {
+//        return view('adduser');
+//    }
+//
+//    /**
+//     * Store a newly created resource in storage.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function store(Request $request)
+//    {
+//        $data = $request->validate([
+//            'username' => 'required',
+//            'email' => 'required',
+//            'password' => 'required',
+//        ]);
+//
+//        User::create($data);
+//
+//        return redirect('user');
+//    }
 
     /**
      * Display the specified resource.

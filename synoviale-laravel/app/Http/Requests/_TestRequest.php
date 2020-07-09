@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BadgeRequest extends FormRequest
+class TestRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,15 @@ class BadgeRequest extends FormRequest
     public function rules()
     {
         return [
-            'number' => 'required|unique',
-            'client_id' => 'required',
-            'test_day_id' => 'required',
+            'number' => 'required',
+            'startTime' => 'required',
+            'endTime' => 'nullable|min:3',
+            'feedback' => 'nullable|min:3',
+            'testday_id' => 'min:1',
             'edition_id' => 'required',
-            'event_id' => 'required'
+            'event_id' => 'required',
+            'product_id' => 'required',
+            'client_id' => 'required',
         ];
     }
 }

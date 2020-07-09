@@ -26,92 +26,92 @@ class BikeController extends Controller
         return view('clients/bikeAvailable', compact('bikes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('addbike');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $data =$request->validated([
-            'type' => 'required',
-            'framSize' => 'null',
-            'frameUnit' => 'null',
-            'rimSize' => 'null',
-            'rimUnit' => 'null',
-            'product_id' => 'required',
-        ]);
-
-        Bike::create($data);
-
-        return redirect('bike');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Bike  $bike
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Bike $bike)
-    {
-        return view('onlybike',compact('bike'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Bike  $bike
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Bike $bike)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Bike  $bike
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Bike $bike)
-    {
-        $data = $request->only([
-            'framSize',
-            'framUnite',
-            'rimeSize',
-            'rimUnit',
-            'product_id'
-        ]);
-
-        $bike->update($data);
-
-        return redirect('bike');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Bike  $bike
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Bike $bike)
-    {
-        $bike->delete();
-
-        return redirect('bike');
-    }
+//    /**
+//     * Show the form for creating a new resource.
+//     *
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function create()
+//    {
+//        return view('addbike');
+//    }
+//
+//    /**
+//     * Store a newly created resource in storage.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function store(Request $request)
+//    {
+//        $data =$request->validated([
+//            'type' => 'required',
+//            'framSize' => 'null',
+//            'frameUnit' => 'null',
+//            'rimSize' => 'null',
+//            'rimUnit' => 'null',
+//            'product_id' => 'required',
+//        ]);
+//
+//        Bike::create($data);
+//
+//        return redirect('bike');
+//    }
+//
+//    /**
+//     * Display the specified resource.
+//     *
+//     * @param  \App\Bike  $bike
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function show(Bike $bike)
+//    {
+//        return view('onlybike',compact('bike'));
+//    }
+//
+//    /**
+//     * Show the form for editing the specified resource.
+//     *
+//     * @param  \App\Bike  $bike
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function edit(Bike $bike)
+//    {
+//        //
+//    }
+//
+//    /**
+//     * Update the specified resource in storage.
+//     *
+//     * @param  \Illuminate\Http\Request  $request
+//     * @param  \App\Bike  $bike
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function update(Request $request, Bike $bike)
+//    {
+//        $data = $request->only([
+//            'framSize',
+//            'framUnite',
+//            'rimeSize',
+//            'rimUnit',
+//            'product_id'
+//        ]);
+//
+//        $bike->update($data);
+//
+//        return redirect('bike');
+//    }
+//
+//    /**
+//     * Remove the specified resource from storage.
+//     *
+//     * @param  \App\Bike  $bike
+//     * @return \Illuminate\Http\Response
+//     */
+//    public function destroy(Bike $bike)
+//    {
+//        $bike->delete();
+//
+//        return redirect('bike');
+//    }
 }
