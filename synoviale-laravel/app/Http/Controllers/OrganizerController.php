@@ -5,15 +5,8 @@ namespace App\Http\Controllers;
 use App\Organizer;
 use Illuminate\Http\Request;
 
-class OrganizerController extends Controller {
-
-    public function __construct()
-    {
-        // $this->middleware('checkuser');
-        //
-        // $this->middleware('checkorganizer'); 
-
-    }
+class OrganizerController extends Controller 
+{
     /**
      * Display a listing of the resource.
      *

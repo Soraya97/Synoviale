@@ -29,4 +29,5 @@ La structure des contrôleurs pour chaque vue [ici](Article/controleurVue.md)
 
 ## Code pour l'authentification
 
-Comment coder l'[authentification](Article/authentification.md)
+comment coder l'[authentification](Article/authentification.md)
+

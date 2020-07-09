@@ -24,7 +24,7 @@ class CompteController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest')->only('create','store');
+        $this->middleware('guest')->except('deconnect');
     }
 
     public function connect(Request $request)
