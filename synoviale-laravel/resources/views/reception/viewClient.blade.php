@@ -14,7 +14,8 @@
             <h2>INFORMATIONS PERSONNELLES</h2>
 
             <div class="row">
-                <form class="" action="{{route('client.edit', [$client->id])}}" method="post">
+              {{--<!-- todo: add action: {{route('client.edit', [$client->id])}} and record of new informations-->--}}
+                <form class="" action="" method="post">
                     @csrf
 
                     <div class="col s12 l6">
@@ -105,6 +106,7 @@
         </div>
 
         <!-- Section for the reservation's status -->
+        {{--<!-- todo: show client's real informations -->--}}
         <div class="divider"></div>
         <div class="section">
             <h2>STATUT DE LA RÉSERVATION</h2>
@@ -145,6 +147,7 @@
         </div>
 
         <!-- Choice of the tests days -->
+        {{--<!-- todo: disabled boxes of days already reserved -->--}}
         <div class="divider"></div>
         <div class="section">
             <h2>CHOIX DES JOURS TESTS</h2>

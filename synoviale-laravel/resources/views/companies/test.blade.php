@@ -5,6 +5,7 @@
 @endsection
 
 @section('contenu')
+{{--<!-- todo: store tests informations in database from controller and display real informations of bikes -->--}}
 <div id="startTest" class="container">
 
     <div class="row">

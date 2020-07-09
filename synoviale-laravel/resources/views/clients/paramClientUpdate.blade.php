@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="row">
-
+          {{--<!-- todo: store changes in database, from controller -->--}}
             <form class="col s12" action="{{route('user.update', [$user->id])}}" method="post">
                 @csrf
 
@@ -110,8 +110,6 @@
                   <p><a href="javascript:history.back()" class="btn col s12 l3 align-bottom-link hide-on-med-and-up">RETOUR</a></p>
                   <p><a href="javascript:history.back()" class="btn col s12 l3 hide-on-small-only">RETOUR</a></p>
                 </div>
-
-
             </form>
 
         </div>

@@ -10,19 +10,19 @@
     <h2>MES PARAMÈTRES</h2>
     <h3>MES COORDONNÉES</h3>
     <table>
-        <tr><td>Nom</td><td>{{$user->person->name}}</td></tr>
-        <tr><td>Prénom</td><td>{{$user->person->firstname}}</td></tr>
-        <tr><td>Email</td><td>@if(($user->email) == null)-@else{{$user->email}}@endif</td></tr>
-        <tr><td>Tél.</td><td>@if(($user->person->phoneNumber1) == null)-@else{{$user->person->phoneNumber1}}@endif</td></tr>
+        <tr><td class="bold">Nom</td><td>{{$user->person->name}}</td></tr>
+        <tr><td class="bold">Prénom</td><td>{{$user->person->firstname}}</td></tr>
+        <tr><td class="bold">Email</td><td>@if(($user->email) == null)-@else{{$user->email}}@endif</td></tr>
+        <tr><td class="bold">Tél.</td><td>@if(($user->person->phoneNumber1) == null)-@else{{$user->person->phoneNumber1}}@endif</td></tr>
         @if(($user->person->address) != null)
-        <tr><td>Rue</td><td>@if(($user->person->address->street1) == null)-@else{{$user->person->address->street1}}@endif</td></tr>
-        <tr><td>N° de rue</td><td>@if(($user->person->address->streetNumber) == null)-@else{{$user->person->address->streetNumber}}@endif</td></tr>
-        <tr><td>Localité</td><td>@if(($user->person->address->city->name) == null)-@else{{$user->person->address->city->name}}@endif</td></tr>
-        <tr><td>NPA</td><td>@if(($user->person->address->city->postalCode) == null)-@else{{$user->person->address->city->postalCode}}@endif</td></tr>
-        <tr><td>Canton</td><td>@if(($user->person->address->city->canton) == null)-@else{{$user->person->address->city->canton}}@endif</td></tr>
-        <tr><td>Pays</td><td>@if(($user->person->address->city->country->name) == null)-@else{{$user->person->address->city->country->name}}@endif</td></tr>
+        <tr><td class="bold">Rue</td><td>@if(($user->person->address->street1) == null)-@else{{$user->person->address->street1}}@endif</td></tr>
+        <tr><td class="bold">N° de rue</td><td>@if(($user->person->address->streetNumber) == null)-@else{{$user->person->address->streetNumber}}@endif</td></tr>
+        <tr><td class="bold">Localité</td><td>@if(($user->person->address->city->name) == null)-@else{{$user->person->address->city->name}}@endif</td></tr>
+        <tr><td class="bold">NPA</td><td>@if(($user->person->address->city->postalCode) == null)-@else{{$user->person->address->city->postalCode}}@endif</td></tr>
+        <tr><td class="bold">Canton</td><td>@if(($user->person->address->city->canton) == null)-@else{{$user->person->address->city->canton}}@endif</td></tr>
+        <tr><td class="bold">Pays</td><td>@if(($user->person->address->city->country->name) == null)-@else{{$user->person->address->city->country->name}}@endif</td></tr>
         @endif
-        <tr><td>Commentaire</td><td>@if(($user->person->comment) == null)-@else{{$user->person->comment}}@endif</td></tr>
+        <tr><td class="bold">Commentaire</td><td>@if(($user->person->comment) == null)-@else{{$user->person->comment}}@endif</td></tr>
     </table>
     <br>
     <div class="row">
@@ -43,7 +43,7 @@
             @csrf
             @method('DELETE')
             <input type="submit" value="Oui" class="modal-close btn-flat"></input>
-            <a href="" class="modal-close btn-flat">Non</a>
+            <a href="#!" class="modal-close btn-flat">Non</a>
         </form>
 
     </div>

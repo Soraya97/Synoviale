@@ -3,7 +3,7 @@ require('./bootstrap');
 // import $ from './jquery.min.js';
 require('./materialize.min');
 
-console.log('app.js')
+console.log('app.js');
 
 $(document).ready(function() {
     let h = screen.height;
@@ -84,7 +84,7 @@ $(document).ready(function() {
 /*
 This code is used on the page of test (test.blade.php), when the company wanna start a new test and this one will "go" on the right of the page
  */
- $("#startTest").on("click", "#scanQR", evt => {
+ $("#startTest").on("click", "#scanQR button", evt => {
      evt.preventDefault();
      let marque = $("#marque").val();
      let nom = $("#nom").val();
@@ -121,41 +121,12 @@ $("#bikeAvailable").on("submit", evt => {
     let type = $("#type").val();
     let cardStart = '<li><div class="collapsible-header">';
     let cardEnd = '</p></span></div></li>';
-    let test = cardStart + marque + ' Velo ' + type + '</div><div class="collapsible-body"><span><p>' + 'Description' + '</p><p>Le cadre mesure ' + 'Framesize' + ' cm</p><p>Le vélo mesure ' + 'RimSize' + ' cm' + cardEnd;
+    let test = cardStart + marque + ' Velo ' + type + '</div><div class="collapsible-body"><span><p>' + 'Description' + '</p><p>Le cadre mesure 130 cm</p><p>Les roues mesurent 25 pouces' + cardEnd;
 
     for (var i = 0; i < 2; i++) {
         $('#selectionBike').append(test);
     };
 });
-
-/*
-When the screen is large, like a desktop, the partners' logos are vertically aligned
-When on mobile, the logos are on a carousel
-It's used on the homepage
- */
- if (screen.height < 800) {
-   let startCard = '<div class="carousel carousel-slider center">';
-   let logo1 = '<a class="carousel-item" href="#!"><img src="/img/logo-gryon-tourisme.png"></a>';
-   let logo2 = '<a class="carousel-item" href="#!"><img src="/img/logo-skiclubgryon.png"></a>';
-   let logo3 = '<a class="carousel-item" href="#!"><img src="/img/logo-gryon.png"></a>';
-   let logo4 = '<a class="carousel-item" href="#!"><img src="/img/logo-detgcharlet.jpg"></a>';
-   let logo5 = '<a class="carousel-item" href="#!"><img src="/img/logo-cookie.png"></a>';
-   let endCard = '</div>';
-   let partners = startCard + logo1 + logo2 + logo3 + logo4 + logo5 + endCard;
-   $('#partners').append(partners);
- }
-
- if (screen.height >= 800) {
-   let startCard = '<div class="">';
-   let logo1 = '<img src="img/logo-gryon-tourisme.png">';
-   let logo2 = '<img src="img/logo-skiclubgryon.png">';
-   let logo3 = '<img src="img/logo-gryon.png">';
-   let logo4 = '<img src="img/logo-detgcharlet.jpg">';
-   let logo5 = '<img src="img/logo-cookie.png">';
-   let endCard = '</div>';
-   let partners = startCard + logo1 + logo2 + logo3 + logo4 + logo5 + endCard;
-   $('#partners').append(partners);
- }
 
 /*
  This code is used on the page of a specific client, chosen by the reception

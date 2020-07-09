@@ -19368,7 +19368,7 @@ $(document).ready(function () {
 This code is used on the page of test (test.blade.php), when the company wanna start a new test and this one will "go" on the right of the page
  */
 
-$("#startTest").on("click", "#scanQR", function (evt) {
+$("#startTest").on("click", "#scanQR button", function (evt) {
   evt.preventDefault();
   var marque = $("#marque").val();
   var nom = $("#nom").val();
@@ -19405,7 +19405,7 @@ $("#bikeAvailable").on("submit", function (evt) {
   var type = $("#type").val();
   var cardStart = '<li><div class="collapsible-header">';
   var cardEnd = '</p></span></div></li>';
-  var test = cardStart + marque + ' Velo ' + type + '</div><div class="collapsible-body"><span><p>' + 'Description' + '</p><p>Le cadre mesure ' + 'Framesize' + ' cm</p><p>Le vélo mesure ' + 'RimSize' + ' cm' + cardEnd;
+  var test = cardStart + marque + ' Velo ' + type + '</div><div class="collapsible-body"><span><p>' + 'Description' + '</p><p>Le cadre mesure 130 cm</p><p>Les roues mesurent 25 pouces' + cardEnd;
 
   for (var i = 0; i < 2; i++) {
     $('#selectionBike').append(test);
@@ -19414,42 +19414,10 @@ $("#bikeAvailable").on("submit", function (evt) {
   ;
 });
 /*
-When the screen is large, like a desktop, the partners' logos are vertically aligned
-When on mobile, the logos are on a carousel
-It's used on the homepage
- */
-
-if (screen.height < 800) {
-  var startCard = '<div class="carousel carousel-slider center">';
-  var logo1 = '<a class="carousel-item" href="#!"><img src="/img/logo-gryon-tourisme.png"></a>';
-  var logo2 = '<a class="carousel-item" href="#!"><img src="/img/logo-skiclubgryon.png"></a>';
-  var logo3 = '<a class="carousel-item" href="#!"><img src="/img/logo-gryon.png"></a>';
-  var logo4 = '<a class="carousel-item" href="#!"><img src="/img/logo-detgcharlet.jpg"></a>';
-  var logo5 = '<a class="carousel-item" href="#!"><img src="/img/logo-cookie.png"></a>';
-  var endCard = '</div>';
-  var partners = startCard + logo1 + logo2 + logo3 + logo4 + logo5 + endCard;
-  $('#partners').append(partners);
-}
-
-if (screen.height >= 800) {
-  var _startCard = '<div class="">';
-  var _logo = '<img src="img/logo-gryon-tourisme.png">';
-  var _logo2 = '<img src="img/logo-skiclubgryon.png">';
-  var _logo3 = '<img src="img/logo-gryon.png">';
-  var _logo4 = '<img src="img/logo-detgcharlet.jpg">';
-  var _logo5 = '<img src="img/logo-cookie.png">';
-  var _endCard = '</div>';
-
-  var _partners = _startCard + _logo + _logo2 + _logo3 + _logo4 + _logo5 + _endCard;
-
-  $('#partners').append(_partners);
-}
-/*
  This code is used on the page of a specific client, chosen by the reception
 It's used to change the state of the button for activate or desactivate the QR code
 It's used on the view reception/viewClient.blade.php
  */
-
 
 $("#reservationStatus .activate").on("click", function (evt) {
   evt.preventDefault();

@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenu')
-
+{{--<!-- todo: add filters with dynamic data from database -->--}}
 <div class="models container">
     <h2>MODÈLES DE VÉLOS</h2>
     <form id="bikeAvailable" method="get">

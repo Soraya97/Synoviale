@@ -5,6 +5,7 @@
 @endsection
 
 @section('contenu')
+{{--<!-- todo: add this view in the process of reservation and the possibility to pay online -->--}}
 <div class="container">
     <h2>RÉSERVER MON JOUR</h2>
 

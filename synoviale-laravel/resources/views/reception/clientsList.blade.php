@@ -41,6 +41,7 @@
                 <tr>
                     <td>{{$client->person->name}}</td>
                     <td>{{$client->person->firstname}}</td>
+                    {{--<!-- todo: change email for the real login (username) -->--}}
                     <td>@if(($client->person->email) == null)-@else{{$client->person->email}}@endif</td>
                     <td>@foreach($client->badge as $pass) @if(($pass->number) == null)-@else{{$pass->number}}@endif <br>@endforeach</td>
                     <td>@foreach($client->badge as $pass) @if(($pass->testday) == null)-@else{{$pass->testday->date}} de {{$pass->testday->startHour}} à {{$pass->testday->endHour}}@endif <br>@endforeach</td>

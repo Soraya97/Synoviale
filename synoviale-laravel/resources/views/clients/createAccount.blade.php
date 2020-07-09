@@ -109,8 +109,6 @@
                 <div class="row">
                   <button type="submit" class="btn right modal-trigger col s12 l2" href="#confirmCreation">CRÉER</button>
                 </div>
-
-
             </form>
 
         </div>

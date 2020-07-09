@@ -41,7 +41,7 @@ class ClientController extends Controller {
     public function create() {
 
         $days = Testday::all();
-        
+
         return view('reception/addClient', compact('days'));
     }
 

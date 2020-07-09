@@ -47,7 +47,7 @@ Nous utilisons un CDN de jQuery (voir plus bas).
 
 ## Materialize
 
-Télécharger [materialize]('https://materializecss.com/getting-started.html') (en sass), ajouter tous les fichiers du dossier `sass` dans `resource/sass` et ajouter le fichier `materialize.js` dans `resources/js`.
+Télécharger [Materialize]('https://materializecss.com/getting-started.html') (en sass), ajouter tous les fichiers du dossier `sass` dans `resource/sass` et ajouter le fichier `materialize.js` dans `resources/js`.
 
 Dans le fichier `resources/sass/app.scss`, rajouter ce code pour l'utilisation de materialize:
 
