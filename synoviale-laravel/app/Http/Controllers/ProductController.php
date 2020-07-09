@@ -9,13 +9,20 @@ use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
+
+    /**
+     * La classe n'est accessible que par les contacts des entreprises (rôle contact)
+     * sauf l'index(), qui est accessible à tous
+     */
     public function __construct()
     {
-        $this->middleware('checkcontact')->except('index'); 
+        $this->middleware('checkcontact')->except('index');
 
     }
     /**
      * Display a listing of the resource.
+     *
+     * Renvoi les produits sur la vue modelsBike
      *
      * @return \Illuminate\Http\Response
      */

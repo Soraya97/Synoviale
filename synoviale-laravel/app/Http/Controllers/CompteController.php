@@ -21,12 +21,17 @@ use Illuminate\Support\Facades\Session;
 
 class CompteController extends Controller
 {
-
+    /**
+     * La classe est accessible par les personnes non connectées, sauf la deconnexion
+     */
     public function __construct()
     {
         $this->middleware('guest')->except('deconnect');
     }
 
+    /**
+     * Permet de connecter un utilisateur et est redirigé selon son rôle
+     */
     public function connect(Request $request)
     {
 
@@ -68,6 +73,10 @@ class CompteController extends Controller
 
     }
 
+/**
+ * Deconnecte un utilisateur et renvoi à la homepage
+ * @return [type] [description]
+ */
     public function deconnect()
     {
         Session::flush();
@@ -80,9 +89,12 @@ class CompteController extends Controller
         return view('clients/createAccount');
     }
 
+/**
+ * Une personne, un client et un utilisateur sont créés lors de la soumission du formulaire
+ */
     public function store(CompteRequest $request)
-    { 
-        
+    {
+
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
         Person::create($person);
@@ -110,14 +122,14 @@ class CompteController extends Controller
 
         if($request->country)
         {
-        // gestion du paye
+        // gestion du pays
 
             if(!Country::where('name',$request->country)->first())
             {
                 Country::create(['name' => $request->country]);
-            }  
+            }
 
-            //On ajoute country_id à la requet
+            //On ajoute country_id à la requête
 
             $countryId = Country::where('name',$request->country)->first();
 
@@ -156,6 +168,9 @@ class CompteController extends Controller
 
     }
 
+/**
+ * Retourne la vue du login, pour se connecter
+ */
     public function login() {
 
         return view('login');

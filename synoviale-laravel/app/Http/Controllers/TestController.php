@@ -8,6 +8,9 @@ use App\Http\Requests\TestRequest;
 
 class TestController extends Controller {
 
+  /**
+   * La classe n'est accessible que par les contacts des entreprises (rôle contact)
+   */
     public function __construct()
     {
         $this->middleware('checkcontact');
@@ -15,6 +18,8 @@ class TestController extends Controller {
     }
     /**
      * Display a listing of the resource.
+     *
+     * Affiche la vue test
      *
      * @return \Illuminate\Http\Response
      */

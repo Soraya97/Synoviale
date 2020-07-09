@@ -13,6 +13,8 @@ class EditionController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * Renvoi les données de la dernière édition enregistrée
+     *
      * @return \Illuminate\Http\Response
      */
     public function index()

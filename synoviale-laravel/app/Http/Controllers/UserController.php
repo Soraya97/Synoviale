@@ -12,6 +12,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+  /**
+   * La classe n'est accessible que par les contacts des utilisateur connecté (rôle user)
+   * sauf show(), qui est accessible à tous
+   */
     public function __construct()
     {
         $this->middleware('checkuser')->only('show');
@@ -19,10 +23,10 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * L'URL /user redirige sur la vue 404 sauf si l'utilisateur est connecté
+     *
      * @return \Illuminate\Http\Response
      */
-
-
     public function index()
     {
         return redirect('404');
@@ -60,6 +64,8 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
+     * Permet de voir les paramètres du client connecté
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -74,6 +80,9 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * Permet d'arriver sur la vue du formulaire de mofication des paramètres
+     * du client connecté
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -86,6 +95,10 @@ class UserController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * Pas encore codé:
+     * Doit permettre d'enregistrer les modifications faites par le
+     * client connecté sur ses paramètres
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -107,13 +120,15 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * La suppression ne supprime que l'utilisateur de la table users
+     * mais les informations des tables clients et persons sont conservées
+     * pour archive
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //on ne supprime pas la "Person",seulement l'"User"
-
         User::findOrFail($id)->delete();
 
         Session::flush();

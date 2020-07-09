@@ -9,6 +9,9 @@ use App\Http\Requests\BikeRequest;
 
 class BikeController extends Controller
 {
+  /**
+   * La classe n'est accessible que par les clients (rôle client)
+   */
     public function __construct()
     {
         $this->middleware('checkclient');
@@ -17,6 +20,8 @@ class BikeController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * La vue bikeAvailable affiche les données des vélos
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()

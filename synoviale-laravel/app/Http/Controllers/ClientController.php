@@ -17,12 +17,17 @@ use App\Http\Requests\ClientRequest;
 
 class ClientController extends Controller {
 
+  /**
+   * La classe n'est accessible que par le staff (rôle staff)
+   */
     public function __construct()
     {
         $this->middleware('checkemployee');
     }
     /**
      * Display a listing of the resource.
+     *
+     * La vue des clients affichent les données de tous les clients disponibles dans la base de données
      *
      * @return \Illuminate\Http\Response
      */
@@ -36,6 +41,9 @@ class ClientController extends Controller {
     /**
      * Show the form for creating a new resource.
      *
+     * Redirige sur le formulaire d'ajout d'un client, qui permet de créer directement un client avec un(des) badge(s)
+     * L'ID des testdays est renvoyés lors de la création du badge
+     *
      * @return \Illuminate\Http\Response
      */
     public function create() {
@@ -47,6 +55,12 @@ class ClientController extends Controller {
 
     /**
      * Store a newly created resource in storage.
+     *
+     * Un client et une personne sont créés
+     * Un badge est enregistré dans la base de données
+     * Il faut envoyer l'ID de l'event, de l'edition et du client qui vient d'être créé,
+     * ainsi que les IDs des jours qu'il a réservé
+     * La vue des clients est ensuite affichée avec le nouveau client
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -77,14 +91,14 @@ class ClientController extends Controller {
 
         if($request->country)
         {
-        // gestion du paye
+        // gestion du pays
 
             if(!Country::where('name',$request->country)->first())
             {
                 Country::create(['name' => $request->country]);
             }
 
-            //On ajoute country_id à la requet
+            //On ajoute country_id à la requête
 
             $countryId = Country::where('name',$request->country)->first();
 
@@ -142,6 +156,8 @@ class ClientController extends Controller {
 
     /**
      * Display the specified resource.
+     *
+     * Il est possible de voir les informations spécifiques de chaque client
      *
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
