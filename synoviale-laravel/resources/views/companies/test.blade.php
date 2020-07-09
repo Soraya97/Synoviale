@@ -62,7 +62,7 @@
             </form>
         </div>
         <div class="modal-footer">
-            <button type="submit" class="btn" ><a href="#" class="modal-close white-text">CONFIRMER</a></button>
+            <button type="submit" class="btn" ><a href="#!" class="modal-close white-text">CONFIRMER</a></button>
             <a href="#!" class="btn-flat modal-close orange-light black-text">ANNULER</a>
         </div>
     </div>

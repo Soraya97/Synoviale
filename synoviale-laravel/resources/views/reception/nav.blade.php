@@ -14,8 +14,8 @@
 <!-- menu on browser -->
 <nav>
     <div class="nav-wrapper container">
-        <a href="#" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-        <a href="{{ route('index') }}" class="brand-logo left"><img src="/img/logo_blanc.svg" alt="Logo du Bike Test Gryon" width="auto" height="38px"></a>
+        <a href="#!" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+        <a href="{{ route('index') }}" class="brand-logo left"><img src="/synoviale/img/logo_blanc.svg" alt="Logo du Bike Test Gryon" width="auto" height="38px"></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="{{ route('client.create') }}">AJOUTER UN CLIENT</a></li>
             <li><a href="{{ route('client.index') }}">LISTE DE CLIENTS</a></li>

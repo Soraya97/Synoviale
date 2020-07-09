@@ -53,7 +53,7 @@
         <div class="modal-content">
             <a href="#!" class="modal-close btn-flat right">X</a>
             <h5>Stand n<sup>o</sup>2</h5>
-            <img src="/img/map.jpg" alt="Plan du Bike Test Gryon" width="75%">
+            <img src="/synoviale/img/map.jpg" alt="Plan du Bike Test Gryon" width="75%">
         </div>
         <div class="modal-footer"></div>
     </div>
