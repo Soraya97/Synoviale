@@ -12,7 +12,7 @@ class Test extends Model
         'endTime',
         'feedback',
         'active',
-        'testDay_id',
+        'testday_id',
         'edition_id',
         'event_id',
         'product_id',
@@ -23,7 +23,7 @@ class Test extends Model
 
     public function testday()
     {
-        return $this->belongsTo(TestDay::class);
+        return $this->belongsTo(Testday::class);
     }
 
     public function edition()
