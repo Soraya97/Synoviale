@@ -6,7 +6,7 @@ Route::resource('/', 'EditionController')->only('index');
 
 Route::resource('produit','ProductController')->only('index');
 
-Route::resource('/pass', 'BadgeController')->execpt(['edit','update','destroy']);
+Route::resource('/pass', 'BadgeController')->except(['edit','update','destroy']);
 
 Route::resource('velo', 'BikeController')->only('index');
 
