@@ -16,10 +16,6 @@ class CheckBadge
      */
     public function handle($request, Closure $next)
     {
-        if(!Session::has('client'))
-        {
-            return redirect('404');
-        }
         if($request->pass != Session::get('client.id'))
         {
             return redirect()->route('pass.show',Session::get('client.id'));

@@ -8,13 +8,6 @@ use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
-    public function __construct()
-    {
-        // $this->middleware('checkorganizer');
-        //
-        // $this->middleware('checkcontact')->except('index'); // à vérifier
-
-    }
     /**
      * Display a listing of the resource.
      *

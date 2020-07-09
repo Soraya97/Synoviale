@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    public function __construct()
-    {
-        // $this->middleware('checkorganizer');
-
-    }
     /**
      * Display a listing of the resource.
      *

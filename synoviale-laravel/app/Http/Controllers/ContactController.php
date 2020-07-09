@@ -8,15 +8,6 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function __construct()
-    {
-        // $this->middleware('checkuser');
-        //
-        // $this->middleware('checkorganizer');
-        //
-        // $this->middleware('checkcontact')->only('index', 'show'); // à vérifier
-
-    }
     /**
      * Display a listing of the resource.
      *
