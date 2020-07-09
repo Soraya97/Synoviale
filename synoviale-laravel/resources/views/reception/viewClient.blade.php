@@ -122,7 +122,7 @@
                 <div id="vendrediAM" class="col s12">
                     <h3>ÉTAT DU QR CODE</h3>
                     <div class="row valign-wrapper">
-                        <img src="/img/qrcode.png" alt="QR code" class="col s2">
+                        <img src="/synoviale/img/qrcode.png" alt="QR code" class="col s2">
                         <p class="col l4">Le paiement n'a pas encore été effectué</p>
                         <div class="right col l4">
                             <a href="#!" class="btn green activate">ACTIVER</a>
@@ -134,7 +134,7 @@
                 <div id="vendrediPM" class="col s12">
                     <h3>ÉTAT DU QR CODE</h3>
                     <div class="row valign-wrapper">
-                        <img src="/img/qrcode.png" alt="QR code" class="col s2">
+                        <img src="/synoviale/img/qrcode.png" alt="QR code" class="col s2">
                         <p class="col l4">Le paiement a  été effectué</p>
                         <div class="right col l4">
                             <a href="#!" class="btn green disabled activate">ACTIVER</a>

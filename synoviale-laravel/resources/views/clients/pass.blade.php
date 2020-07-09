@@ -19,7 +19,7 @@
     @foreach($badges as $badge)
     <div id="{{$badge->number}}" class="col s12">
       <h3 class="bold" style="font-size:1.6rem;">{{\Carbon\Carbon::parse($badge->testday->date)->locale('fr_FR')->isoFormat('LL')}} de {{$badge->testday->startHour}} à {{$badge->testday->endHour}}</h3>
-      <img src="/img/qrcode.png" class="center qrCodeDesktop" alt="Code QR" width="100%">
+      <img src="/synoviale/img/qrcode.png" class="center qrCodeDesktop" alt="Code QR" width="100%">
       <p><span class="bold">Numéro de badge:</span> {{$badge->number}}</p>
     </div>
     @endforeach
