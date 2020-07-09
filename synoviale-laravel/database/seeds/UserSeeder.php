@@ -17,37 +17,37 @@ class UserSeeder extends Seeder
             [
             'username' => 'thomas',
             'email' => 'example1@test.com',
-            'password' => '1234',
+            'password' => '',
             'person_id' => 1,
             ],
             [
             'username' => 'leandra',
             'email' => 'example2@test.com',
-            'password' => '1234',
+            'password' => '',
             'person_id' => 2,
             ],
             [
             'username' => 'maxime',
             'email' => 'example3@test.com',
-            'password' => '1234',
+            'password' => '',
             'person_id' => 3,
             ],
             [
             'username' => 'lola',
             'email' => 'example4@test.com',
-            'password' => '1234',
+            'password' => '',
             'person_id' => 4,
             ],
             [
             'username' => 'lenny',
             'email' => 'example5@test.com',
-            'password' => '1234',
+            'password' => '',
             'person_id' => 5,
             ],
             [
             'username' => 'lea',
             'email' => 'example6@test.com',
-            'password' => '1234',
+            'password' => '',
             'person_id' => 6,
             ]
         ]);
