@@ -81,8 +81,8 @@ class CompteController extends Controller
     }
 
     public function store(CompteRequest $request)
-    {
-
+    { 
+        
         $person = $request->only('name','firstname','email','email2','phoneNumber1','phoneNumber2','comment');
 
         Person::create($person);
@@ -106,14 +106,11 @@ class CompteController extends Controller
 
         Client::create($client);
 
-
         // adresse
 
-        if($request->country != '[]')
+        if(!$request->country)
         {
         // gestion du paye
-
-        
 
             if(!Country::where('name',$request->country)->first())
             {
