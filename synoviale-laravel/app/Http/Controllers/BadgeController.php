@@ -12,6 +12,11 @@ use App\Http\Requests\BadgeRequest;
 
 class BadgeController extends Controller
 {
+
+    /**
+     * La classe n'est accessible que par les clients (rôle client)
+     * checkbadge ne donne accès qu'aux badges de la personne connectée
+     */
     public function __construct()
     {
         $this->middleware('checkclient');
@@ -19,6 +24,8 @@ class BadgeController extends Controller
     }
     /**
      * Display a listing of the resource.
+     *
+     * L'URL /pass redirige sur la vue 404 sauf si l'utilisateur est un client connecté
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,6 +36,9 @@ class BadgeController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *
+     * Redirige sur le formulaire pour que l'utilisateur puisse réserver un pass
+     * L'ID des testdays est renvoyés lors de la création du badge
      *
      * @return \Illuminate\Http\Response
      */
@@ -41,6 +51,11 @@ class BadgeController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * Un badge est enregistré dans la base de données
+     * Il faut envoyer l'ID de l'event, de l'edition et du client actuellement connecté,
+     * ainsi que les IDs des jours qu'il a réservé
+     * La vue 404 est renvoyée en cas d'erreur
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -85,6 +100,8 @@ class BadgeController extends Controller
     /**
      * Display the specified resource.
      *
+     * Seuls les badges du client connecté sont affichés
+     * 
      * @param  \App\Badge  $badge
      * @return \Illuminate\Http\Response
      */
