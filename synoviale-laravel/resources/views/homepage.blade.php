@@ -29,7 +29,7 @@
             <div class="caption center-align">
                 <h2 class="white-text desktopText">Nouvelle fonctionnalité !</h2 >
                 <p class="white-text bold desktopTextP">Vous pouvez maintenant voir la disponibilité des vélos.</p>
-                <p><a href="" class="bold desktopTextP">DÉCOUVRIR</a><br></p>
+                <p><a href="#!" class="bold desktopTextP">DÉCOUVRIR</a><br></p>
                 <div class="row align-bottom">
                   <p class="col l5 show-on-medium-and-up"></p>
                 @user
@@ -52,7 +52,7 @@
 
     <p class="desktopTextP">Les parcours vert, rouge, noir, bleu et jaune seront à votre disposition pendant tout l'événement !</p>
     <div class="row">
-      <a href="" class="waves-effect waves-light btn col s12 l2 right">EN SAVOIR PLUS</a>
+      <a href="#!" class="waves-effect waves-light btn col s12 l2 right">EN SAVOIR PLUS</a>
     </div>
 </div>
 
@@ -87,12 +87,12 @@
 <div class="container">
     <div class="section bold">
         <h2>INFOS PRATIQUES</h2>
-        <p><a href="">GÉNÉRALITÉS</a></p>
-        <p><a href="">PARCOURS</a></p>
-        <p><a href="">TARIFS/HORAIRES</a></p>
-        <p><a href="">ACCÈS/PLAN</a></p>
-        <p><a href="">LOGEMENTS</a></p>
-        <p><a href="">CONTACT</a></p>
+        <p><a href="#!">GÉNÉRALITÉS</a></p>
+        <p><a href="#!">PARCOURS</a></p>
+        <p><a href="#!">TARIFS/HORAIRES</a></p>
+        <p><a href="#!">ACCÈS/PLAN</a></p>
+        <p><a href="#!">LOGEMENTS</a></p>
+        <p><a href="#!">CONTACT</a></p>
     </div>
     <a href="https://www.facebook.com/BikeGryon" target="_blank"><img class="socialMedia" src="img/FB.png" height="10rem" height="10rem" alt="Logo de Facebook"></a>
     <p class="center">© 2020 BIKE TEST GRYON<a href="#wrapper" class="right"><i class="material-icons">expand_less</i></a></p>

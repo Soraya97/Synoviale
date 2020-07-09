@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="row">
-          {{--<!-- todo: enregistrer les changements dans la base de données, depuis le contrôleur -->--}}
+          {{--<!-- todo: store changes in database, from controller -->--}}
             <form class="col s12" action="{{route('user.update', [$user->id])}}" method="post">
                 @csrf
 

@@ -5,6 +5,7 @@
 @endsection
 
 @section('contenu')
+{{--<!-- todo: disabled boxes of days already reserved -->--}}
 <div class="container">
     <h2>RÉSERVER MON JOUR</h2>
     <div class="row">

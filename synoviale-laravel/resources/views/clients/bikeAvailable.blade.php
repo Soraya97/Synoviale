@@ -9,7 +9,7 @@
     <div class="greyBackground filterBike">
         <div class="container">
             <h2>FILTRE</h2>
-            {{--<!-- todo: mettre en place les filtres avec ajout dynamique des données depuis la base de données -->--}}
+            {{--<!-- todo: add filters with dynamic data from database -->--}}
             <form id="bikeAvailable" method="get">
             <div class="row">
                 <div class="col s4 l2"><h3>MARQUE</h3></div>

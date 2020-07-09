@@ -108,7 +108,7 @@ class CompteController extends Controller
 
         // adresse
 
-        if(!$request->country)
+        if($request->country)
         {
         // gestion du paye
 

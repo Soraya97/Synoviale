@@ -43,7 +43,7 @@
             @csrf
             @method('DELETE')
             <input type="submit" value="Oui" class="modal-close btn-flat"></input>
-            <a href="" class="modal-close btn-flat">Non</a>
+            <a href="#!" class="modal-close btn-flat">Non</a>
         </form>
 
     </div>

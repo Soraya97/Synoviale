@@ -28,7 +28,7 @@
           </div>
           <div class="@error('email') is-invalid @enderror input-field col l6 s12">
               <input type="email" name="email" placeholder="nomprenom@gmail.com" class="validate">
-              <label for="email">Email</label>
+              <label for="email">Email *</label>
               @error('email')<div class="alert alert-danger red-text">{{ $message }}</div>@enderror
           </div>
           <div class="@error('email2') is-invalid @enderror input-field col l6 s12">
