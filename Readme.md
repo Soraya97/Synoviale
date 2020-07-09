@@ -10,7 +10,7 @@ Vous trouvez [ici](ProjetArt.md) le Guide line
 
 ## utilisation du site
 
-pour utiliser le site nous avons créer des utilisateurs pour chaque rôle
+Pour utiliser le site, nous avons créé des utilisateurs pour chaque rôle.
 
-chaque rôle on des accées différent, regarder [ici](Role.md)
+Chaque rôle possède des accès différents, regardez [ici](Role.md)
 
