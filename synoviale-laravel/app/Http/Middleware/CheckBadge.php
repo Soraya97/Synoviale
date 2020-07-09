@@ -20,9 +20,9 @@ class CheckBadge
         {
             return redirect('404');
         }
-        if($request->pass != Session::get('user.id'))
+        if($request->pass != Session::get('client.id'))
         {
-            return redirect()->route('pass.show',Session::get('user.id'));
+            return redirect()->route('pass.show',Session::get('client.id'));
         }
 
         return $next($request);

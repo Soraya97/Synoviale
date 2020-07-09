@@ -14,8 +14,8 @@ class BadgeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('checkbadge')->except('create');
-        $this->middleware('checkclient')->only('create');
+        $this->middleware('checkbadge')->except('create','store');
+        $this->middleware('checkclient')->only('create','store');
     }
     /**
      * Display a listing of the resource.
@@ -55,7 +55,6 @@ class BadgeController extends Controller
         if(isset($request->date)) {
             foreach ($request->date as $testday)
             {
-
             // on créer une date seulement si un badge du testday avec ce client n'existe pas encore
 
             if(!Badge::where(['client_id' => $request->session()->get('client.id'),'testday_id' => $testday])->first())
