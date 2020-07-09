@@ -26,7 +26,7 @@ class BadgeRequest extends FormRequest
         return [
             'number' => 'required|unique',
             'client_id' => 'required',
-            'test_day_id' => 'required',
+            'testday_id' => 'required',
             'edition_id' => 'required',
             'event_id' => 'required'
         ];

@@ -5,13 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" , initial-scale="1">
         <title>Bike Test Gryon</title>
-        <link type="text/css" rel="stylesheet" href="/synoviale/css/app.css" media="screen,projection" />
+        <link type="text/css" rel="stylesheet" href="/css/app.css" media="screen,projection" />
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/synoviale/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
         <meta name="theme-color" content="amber">
         <meta name="description" content="Bike Test Gryon app for the 2020 event">
-        <link rel="shortcut icon" type="image/jpeg" href="/synoviale/img/favicon-32x32.png">
+        <link rel="shortcut icon" type="image/jpeg" href="/img/favicon-32x32.png">
         <style></style>
     </head>
 
@@ -42,7 +42,7 @@
         {{-- <!-- <script type="text/javascript" src="/js/test.js"></script> --> --}}
 
         <!-- Compiled and minified JavaScript -->
-        <script type="text/javascript" src="/synoviale/js/app.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script>
 
     </body>
 

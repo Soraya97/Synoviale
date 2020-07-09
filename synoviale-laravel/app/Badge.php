@@ -18,7 +18,7 @@ class Badge extends Model
 
     public function testday()
     {
-        return $this->belongsTo(TestDay::class);
+        return $this->belongsTo(Testday::class);
     }
 
     public function client()

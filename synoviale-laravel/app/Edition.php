@@ -27,7 +27,7 @@ class Edition extends Model
 
     public function testday()
     {
-        return $this->hasMany(TestDay::class);
+        return $this->hasMany(Testday::class);
     }
 
     public function brand()
