@@ -9,6 +9,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
+        <meta name="theme-color" content="amber">
+        <meta name="description" content="Bike Test Gryon app for the 2020 event">
         <link rel="shortcut icon" type="image/jpeg" href="/img/favicon-32x32.png">
         <style></style>
     </head>
@@ -36,8 +38,8 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
         <!--Before putting JavaScript code in the resources/js/app.js file, these two lines were used to test the code-->
-        <!-- <script type="text/javascript" src="/js/materialize.min.js"></script>
-        <script type="text/javascript" src="/js/test.js"></script> -->
+        <!-- <script type="text/javascript" src="/js/materialize.min.js"></script> -->
+        <!-- <script type="text/javascript" src="/js/test.js"></script> -->
 
         <!-- Compiled and minified JavaScript -->
         <script type="text/javascript" src="/js/app.js"></script>

@@ -14,7 +14,8 @@
             <h2>INFORMATIONS PERSONNELLES</h2>
 
             <div class="row">
-                <form class="" action="{{route('client.edit', [$client->id])}}" method="post">
+              {{--<!-- todo: ajout de l'action: {{route('client.edit', [$client->id])}} -->--}}
+                <form class="" action="" method="post">
                     @csrf
 
                     <div class="col s12 l6">

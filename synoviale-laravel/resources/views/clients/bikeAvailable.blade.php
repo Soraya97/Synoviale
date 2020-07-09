@@ -9,8 +9,8 @@
     <div class="greyBackground filterBike">
         <div class="container">
             <h2>FILTRE</h2>
-
-
+            {{--<!-- todo: mettre en place les filtres avec ajout dynamique des données depuis la base de données -->--}}
+            <form id="bikeAvailable" method="get">
             <div class="row">
                 <div class="col s4 l2"><h3>MARQUE</h3></div>
                 <div class="col s8 l10">
@@ -19,9 +19,6 @@
                         @foreach($bikes as $bike)
                         <option value="{{$bike->product->brand->name}}">{{$bike->product->brand->name}}</option>
                         @endforeach
-
-
-
                     </select>
                 </div>
             </div>
@@ -36,6 +33,10 @@
                     </select>
                 </div>
             </div>
+            <div class="row">
+              <button type="submit" class="btn col s12 l2 right">VALIDER</button>
+            </div>
+            </form>
         </div>
     </div>
 
